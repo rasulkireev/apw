@@ -1,0 +1,27 @@
+---
+import Navigation from '../components/Navigation.astro';
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{pageTitle}</title>
+
+    <script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+  </head>
+  <body>
+    <div class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode">
+
+      <Navigation />
+
+      <slot />
+
+    </div>
+  </body>
+</html>

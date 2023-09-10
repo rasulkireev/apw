@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const articleEntries = await getCollection('articles');
+  return articleEntries.map(entry => ({
+    params: {
+      slug: entry.slug
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<ArticleLayout>
+  <p class="mb-10 text-blue-700">
+    ← <a href="/articles/">back to posts</a>
+  </p>
+
+  <article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article">
+    <h1>{entry.data.title}</h1>
+    <Content />
+  </article>
+</ArticleLayout>
