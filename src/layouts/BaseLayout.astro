@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
   <body>
     <footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode">
 
-      <Navbar client:only="vue" />
+      <Navbar client:load />
 
       <slot />
 
