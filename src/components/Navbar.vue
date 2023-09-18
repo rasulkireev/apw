@@ -6,10 +6,10 @@
       <div class="flex">
         <div class="flex items-center flex-shrink-0">
           <a href="/">
-            <!-- <img class="block w-auto h-8 lg:hidden" src="~/assets/images/logo.png" alt="Rasul Kireev" /> -->
+            <img class="block w-auto h-8 lg:hidden" src="../assets/images/logo.png" alt="Rasul Kireev" />
           </a>
           <a href="/">
-            <!-- <img class="hidden w-auto h-12 lg:block" src="~/assets/images/logo.png" alt="Rasul Kireev" /> -->
+            <img class="hidden w-auto h-12 lg:block" src="../assets/images/logo.png" alt="Rasul Kireev" />
           </a>
         </div>
       </div>
