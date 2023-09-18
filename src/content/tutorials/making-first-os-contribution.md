@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [opensource, contribution, github, git]
 category: Open Source
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

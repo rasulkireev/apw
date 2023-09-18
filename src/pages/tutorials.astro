@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const pageTitle = "Tutorials by Rasul Kireev";
+const allTutorials = await getCollection('tutorials');
+
+allTutorials.sort((a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.valueOf());
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+{allTutorials.map(p => (
+  <div class="mb-1">
+    <a
+      href={"/" + p.slug}
+      class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200"
+      itemprop="blogPost"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <Image
+        src={p.data.icon}
+        width="50"
+        height="50"
+        alt={p.data.title}
+        class="self-start inline w-auto h-16 p-2 mr-4 align-middle"
+        itemprop="image"
+      />
+
+      <div>
+        <p class="text-sm md:text-lg">{ p.data.title }</p>
+        <p class="m-0 text-xs text-gray-600" itemprop="headline">{ p.data.description }</p>
+
+        <span id="blog-post-info" class="hidden">
+          <time class="dt-published" itemprop="datePublished" datetime={p.data.dateCreated.toString()}>{p.data.dateCreated}</time>
+          <span itemprop="author">Rasul Kireev</span>
+        </span>
+      </div>
+    </a>
+  </div>
+))}
+
+</BaseLayout>

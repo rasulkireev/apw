@@ -16,7 +16,7 @@ keywords:
   - python
   - vyper
 category: Ethereum
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1449808313533837312"
 hnLink: "https://news.ycombinator.com/item?id=28898711"
 redditLink: ""

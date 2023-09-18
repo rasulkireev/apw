@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [virtualenvironment, jupyter]
 category: Python
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

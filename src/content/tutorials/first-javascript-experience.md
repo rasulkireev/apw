@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [webapp, javascript, html]
 category: Javascript
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

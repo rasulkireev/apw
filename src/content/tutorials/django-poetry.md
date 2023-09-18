@@ -12,7 +12,7 @@ keywords:
  - Python
  - Django
 category: Django
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1322499651732385792"
 hnLink: ""
 redditLink: ""

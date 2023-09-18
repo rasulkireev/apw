@@ -5,8 +5,9 @@ import PostLayout from '../layouts/PostLayout.astro';
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
   const bookEntries = await getCollection('books');
+  const tutorialEntries = await getCollection('tutorials');
 
-  const entries = [...articleEntries, ...bookEntries];
+  const entries = [...articleEntries, ...bookEntries, ...tutorialEntries];
 
   return entries.map(entry => ({
     params: {
@@ -24,6 +25,10 @@ const { Content } = await entry.render();
 
   <!-- Parts Unique to each Post Type -->
   {entry.data.type === "article" && <p>Article!</p>}
+
+  <p class="mb-10 text-blue-700">
+    ← <a href={"/" + entry.data.type + "s"}>back to {entry.data.type}s</a>
+  </p>
 
   <!-- Render Markdown -->
   <article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article">

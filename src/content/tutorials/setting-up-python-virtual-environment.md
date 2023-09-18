@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [virtualenvironment, python, django, project, venv]
 category: Python
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

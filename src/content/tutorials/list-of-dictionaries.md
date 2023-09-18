@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [webscraping, dictionaries, python, webscraping]
 category: Python
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1228083171092238337"
 hnLink: ""
 redditLink: ""

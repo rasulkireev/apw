@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [opensource, plotly, pandas]
 category: Data Visualization
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [django, context, tutorial]
 category: Django
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1230974745644060678"
 hnLink: ""
 redditLink: ""

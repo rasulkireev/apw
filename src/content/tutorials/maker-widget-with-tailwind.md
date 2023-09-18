@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [builtwithdjango, tailwindcss, html, css, design]
 category: Design
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

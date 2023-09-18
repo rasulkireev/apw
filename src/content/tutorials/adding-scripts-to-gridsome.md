@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [scripts, gridsome, vue]
 category: Javascript
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

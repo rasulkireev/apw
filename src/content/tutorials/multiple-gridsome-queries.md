@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [gridsome, graphql, html]
 category: Gridsome
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1286433227960463360"
 hnLink: ""
 redditLink: ""

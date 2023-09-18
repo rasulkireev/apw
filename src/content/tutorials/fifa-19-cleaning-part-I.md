@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [jupyter, pandas, numpy]
 category: Data Analysis
-type: Tutorial
+type: tutorial
 twitterLink: ""
 hnLink: ""
 redditLink: ""

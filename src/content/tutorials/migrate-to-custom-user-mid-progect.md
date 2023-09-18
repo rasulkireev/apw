@@ -15,7 +15,7 @@ keywords:
     - authentication
     - migration
 category: Django
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1329393168840871936"
 hnLink: ""
 redditLink: ""

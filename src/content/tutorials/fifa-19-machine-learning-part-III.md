@@ -10,7 +10,7 @@ aiImage:
 aiPrompt:
 keywords: [datascience, machinelearning, fifa, numpy, pandas, python, scikitlearn]
 category: Data Science
-type: Tutorial
+type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1292631350584004608"
 hnLink: ""
 redditLink: ""
