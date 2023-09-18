@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const pageTitle = "About Rasul Kireev";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="flex flex-col mx-auto mb-10 space-y-6 text-xl prose">
+      <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">About Me</h1>
+
+      <p>My name is Rasul, I'm currently a Software Engineer at Guy Carpenter where I help with</p>
+
+      <ul>
+        <li>designing and deploying modern data lake and related tooling on Azure</li>
+        <li>developing Django/React applications with K8S deployment</li>
+        <li>modeling datasets for easy consumption by the rest of the organization via BI tools</li>
+      </ul>
+
+      <p>
+        In my free time, I love to do more web dev. More specifically, I like to develop small and fun projects that help
+        me learn new technologies. You can see a list of my projects <a href="https://rasulkireev/projects">here</a>.
+      </p>
+
+      <p>
+        As a programmer, I learned to love writing. I try to write regularly, be it <a href="/tutorials/">
+        tech tutorials</a> or about <a href="/articles/">any other topic</a>. An extension of written
+        tech tutorials was to start making videos. For that, you can check
+        <a href="https://www.youtube.com/channel/UC-r4_CjDp4n4O-36rnUe8gg">my Youtube channel</a>.
+      </p>
+
+      <p>
+        I like to experiment a lot. Trying something new is a passion of mine. Some of my recent successes were with
+        brewing Kombucha, fermenting different foods, and baking bread. On the failure side of things, I can't keep
+        a plant alive for more than a week.
+      </p>
+
+      <SocialLinks />
+  </div>
+</BaseLayout>

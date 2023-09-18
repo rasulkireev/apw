@@ -1,13 +1,12 @@
 ---
 title: On the Golden Balance in Life
-author: Rasul
 dateCreated: 2023-09-08
 dateUpdated: 2023-09-08
 published: true
 slug: golden-balance
-# icon: ./icons/balance.png
+icon: ./icons/balance.png
 unsplashImageID: 902vnYeoWS4
-# aiImage: ./images/golden-balance.png
+aiImage: ./images/golden-balance.png
 aiPrompt: a cratoon image of a boy doing tightrope walking on a golden rope between to scyscrapers overlooking a street with many angry people view from above --v 5.2 --ar 2:1
 keywords: [Balance, Spectrum, Life, Personal Growth, Focus]
 category: Personal
