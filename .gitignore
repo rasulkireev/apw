@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+.vercel/
+.idea/
 
 # dependencies
 node_modules/
