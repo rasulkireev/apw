@@ -1,0 +1,487 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.png"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.0.11"><title></title><script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"><link rel="stylesheet" href="/_astro/_...slug_.d31f937d.css" /></head><body><footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(a,s,i)=>s in a?b(a,s,{enumerable:!0,configurable:!0,writable:!0,value:i}):a[s]=i;var d=(a,s,i)=>(f(a,typeof s!="symbol"?s+"":s,i),i);var u;{let a={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},s=t=>{let[e,r]=t;return e in a?a[e](r):void 0},i=t=>t.map(s),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,s(r)]));customElements.get("astro-island")||customElements.define("astro-island",(u=class extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var l;if(!this.hydrator||!this.isConnected)return;let e=(l=this.parentElement)==null?void 0:l.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),c={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("name")||"default"]=n.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let o=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(o+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${o}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,p,c,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,r)=>{r.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let c=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),c?import(c):()=>()=>{}]),l=this.getAttribute("component-export")||"default";if(!l.includes("."))this.Component=h[l];else{this.Component=h;for(let n of l.split("."))this.Component=this.Component[n]}return this.hydrator=p,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d(u,"observedAttributes",["props"]),u))}})();</script><astro-island uid="lWppq" component-url="/_astro/Navbar.e6e8da12.js" component-export="default" renderer-url="/_astro/client.1070f979.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:true}" await-children=""><nav class="z-50 bg-white"><div class="px-4 mx-auto max-w-7xl"><div class="flex justify-between h-20"><div class="flex"><div class="flex items-center flex-shrink-0"><a href="/"><img class="block w-auto h-8 lg:hidden" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a><a href="/"><img class="hidden w-auto h-12 lg:block" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a></div></div><div class="flex items-center"><div class="hidden sm:ml-6 sm:flex sm:space-x-8"><a href="/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Home </a><a href="/about/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> About </a><a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Projects </a><div class="relative inline-block text-left"><div><button type="button" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700" id="options-menu" aria-haspopup="true" aria-expanded="true"> Writings <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div><div style="display:none;" class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"><div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu"><a href="/articles/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Articles</a><a href="/tutorials/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tutorials</a><a href="/book-notes/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Book Notes</a><a href="/newsletter/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a><a href="/now/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Now</a></div></div></div></div><div class="flex items-center -mr-2 sm:hidden"><button class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div class="hidden"><div class="pt-2 pb-3 space-y-1"><a href="/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Home</a><a href="/about/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">About</a><a href="/articles/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Articles</a><a href="/book-notes/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Book Notes</a><a href="/tutorials/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Tutorials</a><a href="/newsletter/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Newsletter</a><a href="/now/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Now</a></div></div></nav></astro-island><p class="mb-10 text-blue-700">
+← <a href="/books">back to books</a></p><article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article"><h1>The Millionaire Fastlane</h1><h2 id="my-thoughts">My Thoughts</h2>
+<p>Overall, “The Millionaire Fastlane” is more of a motivational then practical guide to achieving financial freedom through entrepreneurship and smart money management. That is not a bad thing. The first time I “read” this book, was actually by reading it on Audible. It was an awesome experience.</p>
+<p>I recommend to listen to this book while doing chores, or activities that don’t require listening. I, for example, listened to it in a few days when walking with my son (he is an infant and slept the whole walk). MJ DeMarco (the author) does an awesome job narrating this book. I had no trouble understanding and following when listening on 2x.</p>
+<p>The second time, I actually read it to take more notes. Another awesome thing about this book (besides being greatly narrated by the author) is that MJ does a stellar job summarizing each chapter, which is why you almost don’t need to make any notes yourself. Below you can see those highlights.</p>
+<p>If you are thinking of becoming an entrepreneur or are thinking to change something about your life, then this is a fantastic book to do that! Not only will you get very motivated to improve your life, but you will also get a ton advice on how to do this efficiently.</p>
+<h2 id="summary">Summary</h2>
+<p>The main idea described in “The Millionaire Fastlane” is that the traditional paths to wealth, such as saving, investing in the stock market, or climbing the corporate ladder, are slow and unreliable. Instead, he suggests that the “fastlane” to wealth is through entrepreneurship and creating value for others. MJ DeMarco outlines a set of principles and strategies for building a successful business and creating passive income streams that can lead to financial independence.</p>
+<p>Here are some of the main principals that DeMarco preaches:</p>
+<ul>
+<li>Entrepreneurship is key: Entrepreneurship offers the fastest and most reliable path to wealth. Starting a successful business is the best way to create passive income streams.</li>
+<li>Focus on creating value: To build wealth, you need to provide value to others. Focus on creating products or services that solve problems or fulfill needs.</li>
+<li>Avoid the “slowlane” mindset: The traditional path to wealth (saving, investing in the stock market, etc.) is slow and unreliable. Instead, adopt a “fastlane” mindset and focus on creating value and building businesses.</li>
+<li>Take calculated risks: Building wealth requires taking risks, but they should be calculated risks based on a solid understanding of the market and the potential rewards.</li>
+<li>Be persistent and determined: Building wealth is not easy, and setbacks are inevitable. Persistence and determination are key to overcoming obstacles and achieving success.</li>
+<li>Focus on your strengths: Identify your strengths and focus on developing them. Outsource tasks that are not your strengths to others who are better equipped to handle them.</li>
+<li>Build a strong personal brand: Your personal brand is critical to building a successful business. Develop a reputation for excellence and deliver on your promises.</li>
+<li>Seek mentorship and guidance: Learning from those who have already achieved success can be invaluable. Seek out mentors and coaches who can guide you and offer advice.</li>
+</ul>
+<h2 id="highlights">Highlights</h2>
+<h3 id="chapter-1-the-great-deception">CHAPTER 1: THE GREAT DECEPTION</h3>
+<ul>
+<li>“Get Rich Slow” demands a long life of gainful employment.</li>
+<li>“Get Rich Slow” is a losing game because it is codependent on Wall Street an anchored by your time.</li>
+<li>The real golden years of life are when you’re young, sentient, and vibrant.</li>
+</ul>
+<h3 id="chapter-2-how-i-screwed-get-rich-slow">CHAPTER 2: HOW I SCREWED “GET RICH SLOW”</h3>
+<ul>
+<li>Fame or physical talent is not a prerequisite to wealth.</li>
+<li>Fast wealth is created exponentially, not linearly.</li>
+<li>Change can happen in an instant.</li>
+</ul>
+<h3 id="chapter-3-the-road-trip-to-wealth">CHAPTER 3: THE ROAD TRIP TO WEALTH</h3>
+<ul>
+<li>Wealth is a formula, not an ingredient.</li>
+<li>Process makes millionaires. Events are by-products of process.</li>
+<li>To seek a “wealth chauffeur” is to seek a surrogate for process. Process cannot be outsourced, because process dawns wisdom, personal growth, strength, and events.</li>
+</ul>
+<h3 id="chapter-4-the-roadmaps-to-wealth">CHAPTER 4: THE ROADMAPS TO WEALTH</h3>
+<ul>
+<li>To force change, change must come from your beliefs, and your roadmap outlines those beliefs.</li>
+<li>Each roadmap is governed by a wealth equation and predisposed to a financial destination-Sidewalk to poorness, Slowlane to mediocrity, and the Fastlane to wealth.</li>
+</ul>
+<h3 id="chapter-5-the-sidewalk-roadmap">CHAPTER 5: THE SIDEWALK ROADMAP</h3>
+<ul>
+<li>A first-class ticket to the Sidewalk is to have no financial plan.</li>
+<li>The Sidewalk’s natural gravitational pull is poorness, both in time and money.</li>
+<li>You cannot solve poor financial management with more money.</li>
+<li>You can be income rich and still ride the Sidewalk dirty.</li>
+<li>If wealth is defined by income and debt, wealth is an illusion, because it is vulnerable to potholes, detours, and “bumps in the road.” When the income disappears, so does the illusion of wealth.</li>
+<li>Poor financial management is like gambling; the house eventually wins.</li>
+</ul>
+<h3 id="chapter-6-has-your-wealth-been-toxified">CHAPTER 6: HAS YOUR WEALTH BEEN TOXIFIED?</h3>
+<ul>
+<li>Wealth is authored by strong familial relationships, fitness and health, and freedom-not by material possessions.</li>
+<li>Unaffordable material possessions are destructive to the wealth trinity.</li>
+</ul>
+<h3 id="chapter-7-misuse-money-and-money-will-misuse-you">CHAPTER 7: MISUSE MONEY AND MONEY WILL MISUSE YOU</h3>
+<ul>
+<li>Money doesn’t buy happiness because money is used for consumer pursuits destructive to freedom. Anything destructive to freedom is destructive to the wealth trinity.</li>
+<li>Money, properly used, can buy freedom, which can lead to happiness.</li>
+<li>Happiness stems from good health, freedom, and strong interpersonal relationships, not necessarily money.</li>
+<li>Lifestyle Servitude steals freedom, and what steals freedom, steals wealth.</li>
+<li>If you think you can afford it, you can’t.</li>
+<li>The consequence of instant gratification is the destruction of freedom, health, and choice.</li>
+</ul>
+<h3 id="chapter-8-lucky-bastards-play-the-game">CHAPTER 8: LUCKY BASTARDS PLAY THE GAME</h3>
+<ul>
+<li>Like wealth, luck is created by process, not by event.</li>
+<li>Luck is created by increased probabilities that are improved with the process of action.</li>
+<li>If you find yourself playing the odds of “big hits,” you are event-driven, not process-driven. This mindset is conducive to the Sidewalk, not the Fastlane.</li>
+<li>“Get Rich Quick” infomercial marketing is a Fastlane because savvy marketers know that Sidewalkers place faith in events over process.</li>
+<li>Moneymaking “systems” are rarely as profitable as the act of selling them to Sidewalkers.</li>
+</ul>
+<h3 id="chapter-9-wealth-demands-accountability">CHAPTER 9: WEALTH DEMANDS ACCOUNTABILITY</h3>
+<ul>
+<li>Hitchhikers assign control over their financial plans to others effectively introducing probabilities to victimhood.</li>
+<li>The Law of Victims: You can’t be a victim if you don’t relinquish power to someone capable of making you a victim.</li>
+<li>Responsibility owns your choices.</li>
+<li>Taking responsibility is the first step to taking the driver’s seat of your life. Accountability is the final.</li>
+</ul>
+<h3 id="chapter-10-the-lie-youve-been-sold-the-slowlane">CHAPTER 10: THE LIE YOU’VE BEEN SOLD: THE SLOWLANE</h3>
+<ul>
+<li>The Slowlane is a natural course-correction from the Sidewalk evolving from taking responsibility and accountability.</li>
+<li>Wealth is best experienced when you’re young, vibrant, and able, not in the twilight of your life.</li>
+<li>The Slowlane is a plan that takes decades to succeed, often requiring masterful political prowess in a corporate environment. For the Slowlaner, Saturday and Sunday is the paycheck for Monday through Friday.</li>
+<li>The default return on your time in the Slowlane is negative 60%-5-for-2.</li>
+<li>The 5-for-2 trade inherit in the Slowlane is generally fixed and cannot be manipulated, because job standards are five days a week.</li>
+<li>The predisposed destination of the Slowlane is mediocrity. Life isn’t great, but it isn’t so bad either.</li>
+</ul>
+<h3 id="chapter-11-the-criminal-trade-your-job">CHAPTER 11: THE CRIMINAL TRADE: YOUR JOB</h3>
+<ul>
+<li>In a job, you sell your freedom (in the form of time) for freedom (in the form of money).</li>
+<li>Experience is gained in action. The environment of that action is irrelevant.</li>
+<li>Wealth accumulation is thwarted when you don’t control your primary income source.</li>
+</ul>
+<h3 id="chapter-12-the-slowlane-why-you-arent-rich">CHAPTER 12: THE SLOWLANE— WHY YOU AREN’T RICH</h3>
+<ul>
+<li>Slowlane wealth is improbable due to Uncontrollable Limited Leverage (ULL).</li>
+<li>The first variable in the Slowlane wealth equation evolves from a job that factors to intrinsic value that equates to your nominal value for each unit of your life traded.</li>
+<li>Intrinsic value is the value of your time set by the marketplace and is measured in units of time, either hourly or yearly.</li>
+<li>In the Slowlane, intrinsic value (regardless of its time measurement) is numerically inhibited because there are only 24 hours in the day (for the hourly worker),and the average lifespan is 74 years (for the salaried worker).</li>
+<li>Like the Slowlaner’s primary income source (a job), the Slowlaner’s wealth acceleration vehicle (compound interest) is also pegged to time.</li>
+<li>Like a job, compound interest is mathematically futile and cannot be manipulated. You cannot force-feed the market (or the economy) to give you phenomenal returns, year after year.</li>
+<li>Wealth cannot be accelerated when pegged to mathematics based on time.</li>
+<li>Time is your primordial fuel and it should not be traded for money.</li>
+<li>Your time should not be an expendable resource for wealth because wealth itself is composed of time.</li>
+<li>Your mortality makes time mathematically retarded for wealth creation.</li>
+<li>If you don’t control the variables inherent in your wealth universe, you don’t control your financial plan.</li>
+</ul>
+<h3 id="chapter-13-the-futile-fight-education">CHAPTER 13: THE FUTILE FIGHT: EDUCATION</h3>
+<ul>
+<li>Slowlaners attempt to manipulate intrinsic value by education.</li>
+<li>Indentured time is time you spend earning a living. It is the opposite of free time.</li>
+<li>Parasitic debt is debt that creates indentured time and forces work.</li>
+</ul>
+<h3 id="chapter-14-the-hypocrisy-of-the-gurus">CHAPTER 14: THE HYPOCRISY OF THE GURUS</h3>
+<ul>
+<li>Take advice from people with a proven, successful track record of their espoused discipline.</li>
+<li>Many money gurus often suffer from a Paradox of Practice; they teach one wealth equation while getting rich in another. They’re not rich from their own teachings.</li>
+</ul>
+<h3 id="chapter-15-slowlane-victory-a-gamble-of-hope">CHAPTER 15: SLOWLANE VICTORY… A GAMBLE OF HOPE</h3>
+<ul>
+<li>The Slowlane has seven dangers, five of which cannot be controlled.</li>
+<li>The risk of “lifestyle” is the one risk Slowlaners will try to control.</li>
+<li>The Slowlane is predisposed to mediocrity because its mathematical universe is mediocre.</li>
+<li>Slowlaners manipulate the “expense” variable because it is the one thing they can control.</li>
+<li>Exponential income growth and expense management creates wealth-not just by curtailing expenses.</li>
+<li>You can break the Slowlane equation by exploding your intrinsic value via fame or insider corporate management.</li>
+<li>Successful Slowlaners not famous or in corporate management end in the middle … middle class and middle age.</li>
+<li>Slowlane millionaires are stuck in the middle class.</li>
+<li>$5 million is the new $1 million.</li>
+<li>A millionaire cannot live a millionaire lifestyle without financial discipline.</li>
+<li>Lottery winners fall into the millionaire trap and go broke because they attempt to live a “millionaire” lifestyle, not understanding that a few million doesn’t go very far.</li>
+</ul>
+<h3 id="chapter-16-wealths-shortcut-the-fastlane">CHAPTER 16: WEALTH’S SHORTCUT: THE FASTLANE</h3>
+<ul>
+<li>The risk profile of a Fastlane strategy isn’t much different from the Slowlane, but the rewards are far greater.</li>
+<li>The Fastlane Roadmap is an alternative financial strategy predicated on Controllable Unlimited Leverage.</li>
+<li>The Fastlane roadmap is predisposed to wealth.</li>
+<li>The Fastlane Roadmap is capable of generating “Get Rich Quick” results, not to be confused with “Get Rich Easy.”</li>
+</ul>
+<h3 id="chapter-17-switch-teams-and-playbooks">CHAPTER 17: SWITCH TEAMS AND PLAYBOOKS</h3>
+<ul>
+<li>Producers are indigenous to the Fastlane roadmap.</li>
+<li>Producers are the minority as are the rich, while consumers are the majority as are the poor.</li>
+<li>When you succeed as a producer, you can consume anything you want.</li>
+<li>Fastlaners are producers, entrepreneurs, innovators, visionaries, and creators.</li>
+<li>A business does not make a Fastlane-some businesses are jobs in disguise.</li>
+<li>The Fastlane wealth equation is not bound by time and its variables are unlimited and controllable.</li>
+</ul>
+<h3 id="chapter-18-how-the-rich-really-get-rich">CHAPTER 18: HOW THE RICH REALLY GET RICH</h3>
+<ul>
+<li>The key to the Fastlane wealth equation is to have a high speed limit, or an unlimited range of values for units sold. This creates leverage. The market for your product or service determines your upper limit.</li>
+<li>The higher your speed limit, the higher your income potential.</li>
+<li>The primary wealth accelerant for the rich is asset value, defined as appreciable assets created, founded, or bought.</li>
+<li>Wealth creation via asset value is accelerated by each industry’s average multiplier. For every dollar in net income realized, the asset value multiplies by a factor of the multiple.</li>
+<li>Your industry of specialization will determine the average multiple that determines your wealth accelerant factor. If the multiple is 3, your WAF is 300%.</li>
+<li>Liquidation events transform appreciated assets (“paper” net worth) into money (“real” net worth) that can be transformed into another passive income stream: a money system.</li>
+</ul>
+<h3 id="chapter-19-divorce-wealth-from-time">CHAPTER 19: DIVORCE WEALTH FROM TIME</h3>
+<ul>
+<li>To divorce yourself from the Slowlane’s transactional relationship of “time for money,” you need to become a producer, specifically, a business owner.</li>
+<li>Business systems break the bond between “your time for money” because they act like surrogate operatives for your time trade.</li>
+<li>If you have a passive income that exceeds all your needs and lifestyle expenses including taxes, you’re retired.</li>
+<li>Retirement can happen at any age.</li>
+<li>The fruit from a money tree is passive income.</li>
+<li>A Fastlane objective is to create a business system that survives time, exclusive of your time.</li>
+<li>The 5 money-tree seedlings are rental systems, computer systems, content systems, distribution systems, and human-resource systems.</li>
+<li>Real estate, licenses, and patents are examples of rental systems.</li>
+<li>Internet and software businesses are examples of computer systems.</li>
+<li>Authoring books, blogging, and magazines are forms of content systems.</li>
+<li>Franchising, chaining, network marketing, and television marketing are examples of distribution systems.</li>
+<li>Human resource systems can add or subtract to passivity.</li>
+<li>Human resource systems are the most expensive to manage and implement.</li>
+</ul>
+<h3 id="chapter-20-recruit-your-army-of-freedom-fighters">CHAPTER 20: RECRUIT YOUR ARMY OF FREEDOM FIGHTERS</h3>
+<ul>
+<li>One saved dollar is the seed to a money tree.</li>
+<li>A mere 5% interest on $10 million dollars is $40,000 a month in passive income.</li>
+<li>A saved dollar is the best passive income instrument.</li>
+<li>Fastlaners (the rich) don’t use compound interest or the markets to get wealthy but to create income and preserve liquidity.</li>
+<li>A saved dollar is a freedom fighter added to your army.</li>
+<li>The rich leverage compound interest at its crest, applied against large sums of money.</li>
+<li>Fastlaners eventually become net lenders.</li>
+</ul>
+<h3 id="chapter-21-the-real-law-of-wealth">CHAPTER 21: THE REAL LAW OF WEALTH</h3>
+<ul>
+<li>The Law of Effection states that the more lives you affect or breach, both in scale or magnitude, the richer you will be.</li>
+<li>Scale translates to “units sold” of our profit variable within our Fastlane wealth equation. Magnitude translates to “unit profit” of our profit variable within our Fastlane wealth equation.</li>
+<li>The Law of Attraction is not a law, but a theory. The Law of Effection is absolute and operates exclusive of a roadmap.</li>
+<li>All lineages of self-made wealth trace back to the Law of Effection.</li>
+<li>The Law of Effection’s absoluteness comes from direct access and control (you are the athlete) versus indirect access (you are the athlete’s agent).</li>
+<li>To make millions you must serve millions in scale or a few in magnitude.</li>
+</ul>
+<h3 id="chapter-22-own-yourself-first">CHAPTER 22: OWN YOURSELF FIRST</h3>
+<ul>
+<li>“Pay yourself first” is fundamentally impossible in a job.</li>
+<li>To own your vehicle (you), start a corporation that formally divorces you from the act of business. Your corporation is the body of your surrogate.</li>
+<li>The recommended Fastlane business entity is a C corp, an S corp, or an LLC.</li>
+</ul>
+<h3 id="chapter-23-lifes-steering-wheel">CHAPTER 23: LIFE’S STEERING WHEEL</h3>
+<ul>
+<li>The leading cause of poorness is poor choices.</li>
+<li>The steering wheel of your life is your choices.</li>
+<li>You are exactly where you chose to be.</li>
+<li>Success is hundreds of choices that form process. Process forms lifestyle.</li>
+<li>Choice is the most powerful control you have in your life.</li>
+<li>Treasonous choices forever impact your life negatively.</li>
+<li>Your choices have significant horsepower, or trajectory into the future.</li>
+<li>The younger you are, the more potent your choices are and the more horsepower you possess.</li>
+<li>Over time, horsepower erodes as the consequences of old choices are thick and hard to bend.</li>
+</ul>
+<h3 id="chapter-24-wipe-your-windshield-clean">CHAPTER 24: WIPE YOUR WINDSHIELD CLEAN</h3>
+<ul>
+<li>Your choices of action manifest from your choices of perception.</li>
+<li>What you choose to perceive, or not perceive, will manifest itself to a choice of action, or inaction.</li>
+<li>You can change your choice of perception by aligning yourself with those who experience the perception as reality.</li>
+<li>Worst Case Consequence Analysis helps avoid treasonous choices.</li>
+<li>The Weighted Average Decision Matrix can help you make better big decisions by clarifying alternatives and their internal factors.</li>
+<li>The universe has no memory, only you do.</li>
+<li>Your past can be accelerative or treasonous. You choose the classification.</li>
+<li>If your eyes are transfixed to the past, you can’t become the person you need to become in the future.</li>
+</ul>
+<h3 id="chapter-25-deodorize-flatulent-headwinds">CHAPTER 25: DEODORIZE FLATULENT HEADWINDS</h3>
+<ul>
+<li>The natural gravity of society is not to be exceptional, but average.</li>
+<li>Toxic relationships drain energy and detract from your goals to be extraordinary.</li>
+<li>The people in your life are like your comrades in a battle platoon. They can save you, help you, or destroy you.</li>
+<li>Good relationships are accelerative to your process, while bad relationships are treasonous.</li>
+</ul>
+<h3 id="chapter-26-your-primordial-fuel-time">CHAPTER 26: YOUR PRIMORDIAL FUEL: TIME</h3>
+<ul>
+<li>Fastlaners regard time as the king of all assets.</li>
+<li>Time is deathly scarce, while money is richly abundant.</li>
+<li>Indentured time is time you spend to earn money. Free time is spent as you please.</li>
+<li>Your lifespan is made up of both free time and indentured time.</li>
+<li>Free time is bought and paid for by indentured time.</li>
+<li>Fastlaners seek to transform indentured time into free time.</li>
+<li>Parasitic debt eats free time and excretes it as indentured time.</li>
+<li>Lifestyle extravagances have two costs: the cost itself and the cost to free time.</li>
+<li>Parasitic debt has to be stopped at the source: instant gratification.</li>
+</ul>
+<h3 id="chapter-27-change-that-dirty-stale-oil">CHAPTER 27: CHANGE THAT DIRTY, STALE OIL</h3>
+<ul>
+<li>Fastlaners start their education at graduation, if not before.</li>
+<li>A Fastlaner’s education serves to advance their business system and their money tree, not to raise intrinsic value.</li>
+<li>Fastlaner’s aren’t interested in being a cog in the wheel. They want to be the wheel.</li>
+<li>I don’t know how” is an excuse dismantled by discipline.</li>
+<li>Infinite knowledge is everywhere and it’s free. What’s missing is discipline to assimilate it.</li>
+<li>You can become an expert in any discipline not requiring physical skills.</li>
+<li>Educational recharges can occur within time blocks already allocated for other objectives.</li>
+<li>Organizers of expensive seminars take advantage of Sidewalkers and disenfranchised Slowlaners by marketing empty promises as “events.”</li>
+</ul>
+<h3 id="chapter-28-hit-the-redline">CHAPTER 28: HIT THE REDLINE</h3>
+<ul>
+<li>Interest is first gear. Commitment is the Redline.</li>
+<li>Hard work and commitment separates the winners from the losers.</li>
+<li>Some choose short-term mediocre comfort over long-term meteoric comfort.</li>
+<li>To live unlike everyone else, you have to do what everyone else won’t.</li>
+<li>Arm your expectations to hard work, sacrifice, and other bumps in the road. These are the land mines where the weak are removed from the road and sent back to the land of “most people.”</li>
+<li>Failure is natural to success. Expect it and learn from it.</li>
+<li>One home run could set you financially secure for your life, perhaps generations.</li>
+<li>Home runs can’t be hit in the dug out.</li>
+<li>Moronic risks have unlimited downside (long term) and limited upside (short term).</li>
+<li>Intelligent risks have unlimited upside (long term) and limited downside (short term.)</li>
+<li>There is never perfect timing and waiting for “someday” just wastes time.</li>
+</ul>
+<h3 id="chapter-29-the-right-road-routes-to-wealth">CHAPTER 29: THE RIGHT ROAD ROUTES TO WEALTH</h3>
+<ul>
+<li>Not all businesses are the right road. Few roads move at, through, or near the Law of Effection.</li>
+<li>The best roads and the purest Fastlanes satisfy the Five Fastlane Commandments: Need, Entry, Control, Scale, and Time.</li>
+</ul>
+<h3 id="chapter-30-the-commandment-of-need">CHAPTER 30: THE COMMANDMENT OF NEED</h3>
+<ul>
+<li>The Commandment of Need states that businesses that solve needs win. Needs can be pain points, service gaps, unsolved problems, or emotional disconnects.</li>
+<li>Ninety percent of all new businesses fail because they are based on selfish internal needs, not external market needs.</li>
+<li>No one cares about your selfish desires for dreams or money; people only want to know what your business can do for them.</li>
+<li>Money chasers haven’t broken free from selfishness, and their businesses often follow their own selfish needs.</li>
+<li>People vote for your business with their money.</li>
+<li>Chase money and it will elude you. However, if you ignore it and focus on what attracts money, you will draw it to yourself.</li>
+<li>Help one million people and you will be a millionaire.</li>
+<li>For money to follow “Do what you love,” your love must solve a need and you must be exceptional at it.</li>
+<li>“Do what you love” sets the stage for crowded marketplaces with depressed margins.</li>
+<li>When you have the financial resources, you can “do what you love” and not get paid for it, nor do you have to be good at it.</li>
+<li>Slowlaners feed “do what you love” with “do what you hate.” Five days of hate for two days of love.</li>
+<li>“Doing what you love” for money can endanger your love.</li>
+<li>Passion for an end goal, a why, drives Fastlane success.</li>
+<li>Having a passionate “why” can transform work into joy.</li>
+<li>“Doing what you love” usually leads to the violation of the Commandment of Need.</li>
+<li>The right road for you is one that will converge with your dreams.</li>
+</ul>
+<h3 id="chapter-31-the-commandment-of-entry">CHAPTER 31: THE COMMANDMENT OF ENTRY</h3>
+<ul>
+<li>The Commandment of Entry states that as entry barriers fall, competition rises and the road weakens.</li>
+<li>Easy access roads carry more traffic. More traffic generates higher competition, and higher competition creates lower margins for the participants.</li>
+<li>Businesses with weak entry often lack control and operate in saturated marketplaces.</li>
+<li>Exceptionalism is required to overcome weak entry barriers.</li>
+<li>Access to a business road should be a process with a toll, not an event.</li>
+<li>“Everyone” consists of the general populous and is served by the mainstream media.</li>
+<li>If everyone were wealthy, “everybody is doing it” would work. And if everyone is wealthy, then no one is wealthy.</li>
+<li>“Everyone is doing it” is a signal to overbought conditions and the entrance of “dumb money.”</li>
+</ul>
+<h3 id="chapter-32-the-commandment-of-control">CHAPTER 32: THE COMMANDMENT OF CONTROL</h3>
+<ul>
+<li>Hitchhikers relinquish control of their business to a Fastlaner.</li>
+<li>There is a difference between “good” money and “big” money. Hitchhikers can make good money while Fastlaners make big money. Sometimes legendary money.</li>
+<li>In a driver/hitchhiker relationship, the driver always retains control and the hitchhiker is at the mercy of the driver.</li>
+<li>Hitchhikers are party to someone else’s Fastlane plan. Make the world your habitat of play in an organization you control.</li>
+<li>Network marketing has little to do with entrepreneurship but more to do with sales, networking, training, and motivation.</li>
+<li>Network marketing fails both the Commandments of Control and Entry, and sometimes, Need.</li>
+<li>Network marketers are soldiers in a Fastlaner’s army.</li>
+<li>Network marketing is a powerful distribution system. As a Fastlaner, seek to own one, not join one.</li>
+</ul>
+<h3 id="chapter-33-the-commandment-of-scale">CHAPTER 33: THE COMMANDMENT OF SCALE</h3>
+<ul>
+<li>Your total pool of customers determines your habitat. The larger the habitat, the greater the potential for wealth.</li>
+<li>A business can be a singles or a home-run-based business. Its strength is determined by scale, which is derived by habitat.</li>
+<li>The Fastlane wealth equation is disarmed when you violate the Commandment of Scale. Scale is achieved in reach (units sold) and/or magnitude (unit profit).</li>
+<li>The Law of Effection is the primary conduit to wealth, which can be road blocked by scale, magnitude, or source.</li>
+<li>Effection consequences trickle up to owners and producers. Breaking scale or magnitude indirectly in an uncontrolled entity is not a guarantee of wealth.</li>
+<li>To gain access to Effection, you have to break the barrier of scale or magnitude in an entity you control.</li>
+<li>Scale, magnitude, or source deficiencies create governors on the speed of wealth creation.</li>
+</ul>
+<h3 id="chapter-34-the-commandment-of-time">CHAPTER 34: THE COMMANDMENT OF TIME</h3>
+<ul>
+<li>A business attached to your time is a job.</li>
+<li>Business that earns income exclusive of your time satisfies the Commandment of Time.</li>
+<li>To satisfy the Commandment of Time, start with a business that uses a money system seedling, or introduce one.</li>
+</ul>
+<h3 id="chapter-35-rapid-wealth-the-interstates">CHAPTER 35: RAPID WEALTH: THE INTERSTATES</h3>
+<ul>
+<li>The best Fastlanes satisfy all five Commandments: Control, Entry, Need, Time, and Scale.</li>
+<li>Assuming a need-based premise, the Internet is the fastest interstate, because it overwhelmingly satisfies all Commandments.</li>
+<li>Innovation can be any variety of open roads: authoring, inventing, or services.</li>
+<li>Inventing success needs coupling with distribution.</li>
+<li>A singles-based business is scaled to a home-run business by intentional iteration. With iteration, scale is conquered.</li>
+</ul>
+<h3 id="chapter-36-find-your-open-road">CHAPTER 36: FIND YOUR OPEN ROAD</h3>
+<ul>
+<li>Opportunities are rarely about inventing breakthroughs, but about performance gaps, small inconveniences, and pain points.</li>
+<li>Competition should not impede your road. Competition is everywhere, and your objective should be to “do it better.”</li>
+<li>Fastlane success resides in execution, not in the idea.</li>
+<li>The world’s most successful entrepreneurs didn’t have a blockbuster ideas; they just took existing concepts and made them better, or exposed them to more people.</li>
+<li>Opportunity is exposed in your language and your thought processes, as well as other people’s language.</li>
+<li>Failure cracks open new roads.</li>
+<li>Quitting only happens when you give up on your dream.</li>
+</ul>
+<h3 id="chapter-37-give-your-road-a-destination">CHAPTER 37: GIVE YOUR ROAD A DESTINATION</h3>
+<ul>
+<li>The Fastlane is the means to your end because dreams cost money.</li>
+<li>Conquer big goals by breaking them down to their smallest component.</li>
+<li>Daily saving reinforces your relationship with money; it is your passive system that buys freedom and another soldier added to your army.</li>
+<li>A money system isn’t used to grow wealth but to grow income. Growing wealth should be left to your Fastlane road.</li>
+<li>You will struggle to build a financial empire if you are financially illiterate.</li>
+<li>“Live below your means” is relevant at any income level.</li>
+<li>For the Fastlaner, “Live below your means” means to expand your means.</li>
+<li>A financial adviser doesn’t solve financial illiteracy and literacy is insurance.</li>
+<li>Financial illiteracy dilutes your control, especially when evaluating the advice of a financial adviser.</li>
+</ul>
+<h3 id="chapter-38-the-speed-of-success">CHAPTER 38: THE SPEED OF SUCCESS</h3>
+<ul>
+<li>Speed is the transformation of ideas to execution.</li>
+<li>Most people let powerful information expire and become worthless.</li>
+<li>Successful Fastlane businesses are run multi-dimensionally, like a game of chess. One-dimensional businesses focus on price only.</li>
+<li>Execution divides winners and losers from their ideas.</li>
+<li>In business, execution is process. Ideas are events.</li>
+<li>Ideas are potential speed. Execution is actual speed.</li>
+<li>Others share your blockbuster idea. He who thinks the idea owns nothing. He who executes the idea owns everything.</li>
+<li>Real money and momentum is created when an idea (potential speed) is matched with execution (accelerator pressure).</li>
+<li>An idea is neurological flatulence. Execution makes it smell like a rose.</li>
+</ul>
+<h3 id="chapter-39-burn-the-business-plan-ignite-execution">CHAPTER 39: BURN THE BUSINESS PLAN, IGNITE EXECUTION</h3>
+<ul>
+<li>The world gives clues to the direction you should be moving.</li>
+<li>Business plans are useless because they are ideas on steroids.</li>
+<li>As soon as the world interacts with your ideas, your business plan is invalidated.</li>
+<li>The marketplace will steer you into directions that were previously unplanned for.</li>
+<li>The best business plan in the world is a track record of execution-it legitimizes the business plan.</li>
+<li>If you have a track record of execution, suddenly people will want to see your business plan.</li>
+<li>If you want your business to get funded, take action and create something that reflects tangible execution.</li>
+<li>Investors are more likely to invest in something tangible and real; not ideas dissected ad nauseam on paper.</li>
+</ul>
+<h3 id="chapter-40-pedestrians-will-make-you-rich">CHAPTER 40: PEDESTRIANS WILL MAKE YOU RICH!</h3>
+<ul>
+<li>Complaints are valuable insights into your customers’ minds.</li>
+<li>Complaints of change are difficult to decipher and often require additional data to validate or invalidate.</li>
+<li>Complaints of expectation expose operational problems in either your business, or in your marketing strategy.</li>
+<li>Complaints of void expose unmet needs, raise the value of your product or service, and expose new revenue opportunities.</li>
+<li>Great customer service is as simple as violating your customer’s low expectation in the positive.</li>
+<li>Poor service gaps are Fastlane opportunities.</li>
+<li>Satisfied customers can be human resource systems who promote your business for free.</li>
+<li>Satisfied customers have a dual residual effect: Repeat business and new business via discipleship.</li>
+<li>Your customer and their satisfaction hold the key to everything you selfishly want.</li>
+<li>Looking big but acting small sets up customer service expectation violations in the positive.</li>
+<li>Looking big can scare away potential competitors.</li>
+</ul>
+<h3 id="chapter-41-throw-hijackers-to-the-curb">CHAPTER 41: THROW HIJACKERS TO THE CURB!</h3>
+<ul>
+<li>A business partnership is as important as a marriage.</li>
+<li>A good accountant and attorney will save you thousands, perhaps millions.</li>
+<li>Accountants and attorneys have the keys to your castle; make sure you trust them fully because they have the power to right or wrong you.</li>
+<li>Unmitigated trust exposes you to unmitigated risk.</li>
+<li>Unverified trust can lead to uncontrollable consequences.</li>
+<li>Your employees communicate the public’s perception of your company.</li>
+<li>Fanatical customer service can overcome shortcomings, but fanatical features can’t overcome poor customer service.</li>
+<li>Customer service philosophy is delivered from human interactions-not ambitious mission statements on a wall plaque in the CEO’s office.</li>
+</ul>
+<h3 id="chapter-42-be-someones-savior">CHAPTER 42: BE SOMEONE’S SAVIOR</h3>
+<ul>
+<li>Commoditization occurs when you get into business based on a false premise-“I want to own a business” or “I know how to do this, so I’ll start a business doing it.”</li>
+<li>If you are too busy copying or watching your competition, you’re not innovating.</li>
+<li>Use your competition to exploit their weaknesses.</li>
+</ul>
+<h3 id="chapter-43-build-brands-not-businesses">CHAPTER 43: BUILD BRANDS, NOT BUSINESSES</h3>
+<ul>
+<li>Marketing and branding (the queen) is the most powerful tool in your Fastlane toolbox.</li>
+<li>Businesses survive. Brands thrive.</li>
+<li>Businesses have identity crises, brands don’t. Identity crises force business owners into price commoditization.</li>
+<li>Unique Selling Propositions (USPs) are the keys to your brand and differentiate your company from the rest.</li>
+<li>People have a natural disposition to be unique and unlike everyone else.</li>
+<li>To succeed in marketing, your messages have to break above the advertising clutter, or noise.</li>
+<li>Polarization is a great above-the-noise tool if your product targets a polarized audience-usually politics, minority opinions, and even sports teams.</li>
+<li>Sex sells and always draws eyeballs.</li>
+<li>Consumers make buying decisions based on emotions before practicality.</li>
+<li>If you can arouse emotions in your audience, you will be more likely to convince them to buy.</li>
+<li>People have a natural disposition to talk about themselves. If you can incorporate interaction into your campaigns, you will have better success.</li>
+<li>To be unconventional means to first isolate and identify what is conventional, then doing the opposite, or interrupting that convention.</li>
+<li>Consumers are selfishly motivated. Always target your messages toward the predisposition of “What’s in it for me?”</li>
+<li>Features are translated to benefits when you switch positions from producer to consumer, identify the feature’s advantages, and extrapolate those advantages into a specific result.</li>
+<li>Price implicitly conveys value and worth.</li>
+<li>Don’t allow your own perception of price direct your brand to mediocrity.</li>
+</ul>
+<h3 id="chapter-44-choose-monogamy-over-polygamy">CHAPTER 44: CHOOSE MONOGAMY OVER POLYGAMY</h3>
+<ul>
+<li>Tekel Syndrome sufferers are polygamist-opportunists who opportunity hop.</li>
+<li>A weak business commitment commits you to weak assets.</li>
+<li>Weak assets do not accelerate wealth.</li>
+<li>The most successful entrepreneurs lived their business and were 100% committed to it.</li>
+<li>Successful business monogamy can lead to successful business polygamy.</li>
+</ul>
+<h3 id="chapter-45-put-it-togethersupercharge-your-wealth-plan">CHAPTER 45: PUT IT TOGETHER:SUPERCHARGE YOUR WEALTH PLAN!</h3>
+<ol>
+<li>Formula (Fastlane supercharger)
+Wealth is a Formula and a systematic process of beliefs, choices, actions, and habits that form a lifestyle. Wealth is a process, not an event.</li>
+<li>Admit (fAstlane supercharger)
+Admit that the preordained path to wealth, “Get Rich Slow,” is fundamentally flawed because of Uncontrollable Limited Leverage, weak mathematics predicated on time (Wealth = Job + Markets). Admit that “Get Rich Quick” exists. Admit that “no plan” is not a good plan. Admit that luck is the residue of engagement.</li>
+<li>Stop and Swap (faStlane supercharger)
+Stop following the wrong roadmaps. Stop doing what you’ve been doing. Stop selling your soul for a weekend. Stop thinking that 401(k)s and mutual funds will make you rich. Swap ineffective roadmaps for the Fastlane roadmap. Swap your allegiances from consumer to producer.</li>
+<li>Time (fasTlane supercharger)
+Time is the king asset of the Fastlane-specifically, free time. Invest in activities that will grant free time. Avoid time thieves, such as parasitic debt that transfigures free time into indentured time. Invest time into a business system that can transform indentured time into free time. Make decisions with time as a key decision factor.</li>
+<li>Leverage (fastLane supercharger)
+Leverage controllable and unlimited mathematics to create wealth. There is no leverage within the Slowlane wealth equation, an equation predicated on time (hourly pay, annual salary, annualized return, years invested). If you can’t control the mathematics that predetermine your wealth, nor accelerate them into large numbers, you can’t control your financial plan. Leverage is harnessed by a system that does the work for you.</li>
+<li>Assets and Income (fastlAne supercharger)
+Wealth is accelerated by exploding income and Asset value via a business that can be systemized and eventually sold in a liquidation event. Live below your means but seek to expand your means by focusing on income while simultaneously controlling expenses. Exponential growth of income and asset value, not slashing expenses, creates millionaires.</li>
+<li>Number (fastlaNe supercharger)
+What’s your Number? How much money will you need to live a lifestyle of your choosing? Determine your number, break it down by the penny, and make it real today. Start saving your loose change, open a brokerage account, and put a chart on your office wall that continually monitors your number’s progress. Make your dream lifestyle real by posting photos of that lifestyle at your workspace. For example, if you want a cabin on a mountain creek, find a picture of that vision and put it on computer so you have to see it every day. Make your visions of the future real and force them into your psyche so you’re constantly reminded. If your dream is a Ferrari, buy a die-cast Ferrari model and put it in your car or on your desk. Make those dreams real and inescapable!</li>
+<li>Effection (fastlanE supercharger)
+Grace Effection and you shall be graced with wealth. The Law of Effection states, “The more people whose lives you affect in an environment you control, the more money you will make.” Impact millions and you will make millions. When you solve needs on a massive scale, money flows into your life. Money reflects value.</li>
+<li>Steer (fastlane Supercharger)
+Life’s Steering is choice. At some point, you must commit to the Fastlane ideology, and that commitment forms your process. Wealth is not a choice of event, just like you cannot choose to lose 100 pounds and suddenly wake up 100 pounds lighter.
+How you steer determines whether the Fastlane is a lifestyle or a hobby. To enforce good decisions at the extremes, deploy WCCA and WADM. Decision horsepower is strongest in youth and bleeds with age. Examine your past choices. Why are you where you are? What has been treasonous to your life? Why are you drowning in debt? If you don’t rectify the mistakes of your past choices you will be destined to repeat them. Behavior change begins with a reflection of your past choices and modifying them for the future to reflect a Fastlane mindset. Become responsible, followed by accountable.</li>
+<li>Uncouple (fastlane sUpercharger)
+Officially Uncouple from the Slowlane wealth equation by creating your business structure in a favorable Fastlane entity: a C- or S-Corporation, or an LLC. Thereafter, your entity is the body of your surrogate business system. It “pays itself first” and the government last. It survives time separate from your time. It is your first step at creating an asset.</li>
+<li>Passion % Purpose (fastlane suPercharger)
+With a business entity and a dollar figure that outlines your dream life, you will need a Passion and a Purpose to fuel you into habitual action. Don’t confuse “passion” with “do what you love.” Passion burns your soul and drives you to do whatever it takes. Passion revs you with excitement and enrages you with discontent. Some passions are selfish (I want a Lamborghini) and other passions are selfless (I want to help orphaned children). It doesn’t matter what it is, as long as the passion burns hot enough to burn a hole in your pants and gets you embroiled into process.</li>
+<li>Educate (fastlane supErcharger)
+Education begins at graduation. Pledge to never stop learning. What you know now is not enough to become the person you need to be tomorrow. Seek Fastlane knowledge that fosters the construction and operation of business systems in an environment that you control. Get to the library and get on the Internet. Information is the oil on your financial journey. Ensure daily reading in short bursts by leveraging existing blocks of time often squandered: the train, the plane, while exercising, on lunch break, an hour in the morning before work, or while waiting at the post office.</li>
+<li>Road (fastlane supeRcharger)
+Get onto a Fastlane Road. But don’t worry if you can’t decide which road to travel; the road can pick you. Train your mind to see needs and problems. Observe your thoughts and language, because they expose unmet needs, or needs met poorly. You don’t have to find the next breakthrough; just find a problem, a pain-point, or a service gap, and solve it. Many of the best businesses in the world are based on products that already existed; the owners solved the problem better. When you focus on needs, problems, inconveniences, and issues, roads open. Yes, the road chooses you.</li>
+<li>Control (fastlane superCharger)
+Control your financial plan as this refers to the Commandment of Control. Engage in an organization that you fully control, from pricing to marketing to operations. Fastlane entrepreneurs don’t cede control over critical business functions to hierarchical control structures, because they are the control structure. Swim as a shark, not a guppy.</li>
+<li>Have (fastlane supercHarger)
+HAVE what others NEED and money will flow into your life. This reflects the Commandment of Need. You can’t explode your income by chasing money. Stop chasing money, because it eludes those who try. Instead, focus on what attracts money, and that is a business that solves needs. Money comes from providing value. Cast aside selfishness and seek to HAVE what your fellow man WANTS. When you do, money flows into your life because money is attracted to those who have what others want, desire, crave, or need.</li>
+<li>Automate (fastlane superchArger)
+Automate your business and honor the Commandment of Time. Get your time detached from your business. The best passive-income money-tree seedlings are money systems, rental systems, computer systems, content systems, distribution systems, and human resource systems. The key to automation in any business lies in these seedlings.</li>
+<li>Replicate (fastlane superchaRger)
+Replicate your system and honor the Commandment of Scale. Get on a playing field where home runs can be hit. To make millions, you must impact millions. To impact millions, you must be on a field capable of affecting millions! Can your product, service, process be replicated on a global scale to tap the Law of Effection?</li>
+<li>Grow (fastlane supercharGer)
+Grow your business by treating it multi-dimensionally, like a game of chess. Build a brand, not a business. Treat customers like your boss and reposition complaints to opportunities. Listen to the world as they offer the best directional clues. Resist commoditization. Differentiate yourself from the competition. Get above the noise. Focus on one business and one business only.</li>
+<li>Exit (fastlane superchargEr)
+Have an Exit strategy. Full passivity accomplished by a money system is one Fastlane destination. Money systems are best funded by liquidation events of massive asset values. Know when it’s time to liquidate your assets, transforming paper money into real money. Know when it’s time to get off the horse and learn to ride a new one.</li>
+<li>Retire, Reward, or Repeat (fastlane superchargeR)
+After liquidating your asset(s), Retire or Repeat. Regardless of which, Reward yourself for milestones met everywhere along the journey. Sell your first product? Celebrate! Go to dinner, buy a cigar, drink a beer. Break $100,000 in net worth? Treat yourself to something nice. Book a joint-venture deal? Celebrate with an indulgence. Go over $1 million? Take a nice vacation. Break $10 million? Buy a Lamborghini.</li>
+</ol></article><footer class="flex flex-col items-center justify-between w-full h-16 md:flex-row md:h-20 pin-b"><div class="flex flex-row"><a class="flex items-center pr-2 m-0 font-normal leading-tight text-center text-gray-600 border-0" href="/rss.xml">RSS</a></div><div class=""><a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+An IndieWeb Webring 🕸💍
+<a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a></div></footer></footer></body></html>

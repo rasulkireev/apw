@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.png"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.0.11"><title></title><script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"><link rel="stylesheet" href="/_astro/_...slug_.d31f937d.css" /></head><body><footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(a,s,i)=>s in a?b(a,s,{enumerable:!0,configurable:!0,writable:!0,value:i}):a[s]=i;var d=(a,s,i)=>(f(a,typeof s!="symbol"?s+"":s,i),i);var u;{let a={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},s=t=>{let[e,r]=t;return e in a?a[e](r):void 0},i=t=>t.map(s),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,s(r)]));customElements.get("astro-island")||customElements.define("astro-island",(u=class extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var l;if(!this.hydrator||!this.isConnected)return;let e=(l=this.parentElement)==null?void 0:l.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),c={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("name")||"default"]=n.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let o=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(o+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${o}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,p,c,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,r)=>{r.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let c=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),c?import(c):()=>()=>{}]),l=this.getAttribute("component-export")||"default";if(!l.includes("."))this.Component=h[l];else{this.Component=h;for(let n of l.split("."))this.Component=this.Component[n]}return this.hydrator=p,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d(u,"observedAttributes",["props"]),u))}})();</script><astro-island uid="lWppq" component-url="/_astro/Navbar.e6e8da12.js" component-export="default" renderer-url="/_astro/client.1070f979.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:true}" await-children=""><nav class="z-50 bg-white"><div class="px-4 mx-auto max-w-7xl"><div class="flex justify-between h-20"><div class="flex"><div class="flex items-center flex-shrink-0"><a href="/"><img class="block w-auto h-8 lg:hidden" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a><a href="/"><img class="hidden w-auto h-12 lg:block" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a></div></div><div class="flex items-center"><div class="hidden sm:ml-6 sm:flex sm:space-x-8"><a href="/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Home </a><a href="/about/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> About </a><a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Projects </a><div class="relative inline-block text-left"><div><button type="button" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700" id="options-menu" aria-haspopup="true" aria-expanded="true"> Writings <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div><div style="display:none;" class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"><div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu"><a href="/articles/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Articles</a><a href="/tutorials/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tutorials</a><a href="/book-notes/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Book Notes</a><a href="/newsletter/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a><a href="/now/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Now</a></div></div></div></div><div class="flex items-center -mr-2 sm:hidden"><button class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div class="hidden"><div class="pt-2 pb-3 space-y-1"><a href="/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Home</a><a href="/about/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">About</a><a href="/articles/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Articles</a><a href="/book-notes/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Book Notes</a><a href="/tutorials/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Tutorials</a><a href="/newsletter/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Newsletter</a><a href="/now/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Now</a></div></div></nav></astro-island><p class="mb-10 text-blue-700">
+← <a href="/articles">back to articles</a></p><article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article"><h1>How to Sell Info Products</h1><p>MicroConf founder Rob Walling recently made an announcement. All previous MicroConf talks are now in public access. This is incredible. You can access all talks on their <a href="https://www.youtube.com/channel/UCHoBKQDRkJcOY2BO47q5Ruw">Youtube Channel</a>.</p>
+<blockquote>
+<p>It seems very weird to me that there are only 2.6k subscribers as of 4/22/2020.</p>
+</blockquote>
+<p>There is a ton of incredible content to go through.</p>
+<p>One of the first videos that I have noticed was Adam Wathan’s presentation on selling info products. I am a huge fan of Adam and his work. He had been producing incredible content for a long time. He has made more than $2.5 million from selling his products, so you might want to listen to this guy.</p>
+<p>This talk is no exception. It is packed with useful advice. I urge you to watch the talk. It is only 40 minutes long. In case you don’t have the time, I hope you will find the notes I made useful.</p>
+<p>I couldn’t resist making these notes. I will be leveraging them heavily going forward. I am thinking about creating a book about Gridsome. To be more specific on how to create a personal website with it. Thanks to Adam, I have a clear roadmap on how to make sure my future product is successful.</p>
+<p>Please enjoy!</p>
+<hr>
+<h2 id="why-info-products-books-courses">Why Info Products (books, courses)?</h2>
+<ul>
+<li>One-time purchase is easier to sell.</li>
+<li>Much easier to finish. There is an end in mind.</li>
+<li>The payout is the opposite of SaaS (starting low and getting higher). You will sell a lot and then go down.</li>
+</ul>
+<h2 id="step-1-build-an-audience">Step 1. Build an Audience</h2>
+<ul>
+<li>This is the most crucial step for any future success.</li>
+<li>One of the advantages is that audience makes up for any deficiency in your marketing.</li>
+</ul>
+<p><strong>How do I build an audience?</strong></p>
+<ul>
+<li><strong>Be helpful on the internet</strong>.</li>
+<li>Help people where they are (in a Twitter timeline, for instance.)</li>
+</ul>
+<h2 id="step-2-come-up-with-an-idea">Step 2. Come up with an Idea</h2>
+<p><strong>How to come up with an idea?</strong></p>
+<p>Ideas will come to you! Post useful stuff, people will engage, and ideas will come. No need to sit and brainstorm.</p>
+<blockquote>
+<p>Make sure to record ideas when they come to you.</p>
+</blockquote>
+<p>Tips on coming up with ideas for an info product:</p>
+<ul>
+<li>What are people liking from what you post?</li>
+<li>What are <strong>you</strong> excite about, that other people might be excited about.</li>
+<li>What did you have to figure out yourself but was helpful to learn?
+<ul>
+<li>Can you make it easier for others to learn this?</li>
+</ul>
+</li>
+</ul>
+<h2 id="step-3-test-your-idea">Step 3. Test your Idea</h2>
+<ol>
+<li>Do “tip tweets” for the subject you plan to produce.</li>
+<li>If this gets traction, do something more in-depth like a blog post.</li>
+</ol>
+<p>Tip: Catalog any useful feedback you get about your content. Twitter replies, blog post comments, etc. Not only will this direct you, but it will also be reused later.</p>
+<h2 id="step-4-create-a-landing-page">Step 4. Create a Landing Page</h2>
+<p><img alt="Advanced Vue Components Landing Page"  src="/_astro/landing-page-example.fbaa1597_1FxrHg.webp" width="439" height="393" loading="lazy" decoding="async"></p>
+<p>These are the things you need on your Landing page:</p>
+<ol>
+<li>Headline</li>
+<li>Short Description</li>
+<li>Call to Action: Signup to Email Newsletter
+<ul>
+<li>Tip: make sure to provide an incentive: e.g., free screencasts, discount on launch.</li>
+</ul>
+</li>
+<li>Proof that you know some of this stuff. Link to a blog post, for example.</li>
+<li>Social Proof: Testimonials, use the Tweet you saved earlier.</li>
+<li>Outline what you are going to include. No need to go too in-depth.</li>
+<li>Another signup form on the bottom.</li>
+</ol>
+<p><img alt="Advanced Vue Components Landing Page - Continued"  src="/_astro/landing-page-example-cont.2a9ef2f3_Z22Id0o.webp" width="464" height="400" loading="lazy" decoding="async"></p>
+<ol start="8">
+<li>“Who am I” section.</li>
+</ol>
+<p><a href="https://adamwathan.me/advanced-vue-component-design/">Adam’s Advanced Vue Course - Example</a></p>
+<h2 id="step-5-build-an-email-list">Step 5. Build an Email List</h2>
+<ol>
+<li>
+<p>Tell your audience about your launch.</p>
+<ul>
+<li>Tell them you have a landing page where they can sign up.</li>
+<li>Announce that you are about to announce your landing page.
+<img alt="Announcement you announcement tweet"  src="/_astro/announcement-tweet.6902f37c_Z1fAMJB.webp" width="461" height="275" loading="lazy" decoding="async"></li>
+</ul>
+</li>
+<li>
+<p><strong>Share Progress</strong> with your email list.</p>
+<ul>
+<li>Every week or so, send an updateCreated to your audience. Include a free video or a link to a live stream.</li>
+<li>Every week or so, send an updateCreated to your audience. Include a free video or a link to a live stream.</li>
+<li>Share before sending an email. Tweet to your audience that if they want to receive some free stuff to go ahead and signup.
+<img alt="Free screencast Tweet"  src="/_astro/free-screencast-tweet.792e55b1_24jPUw.webp" width="472" height="427" loading="lazy" decoding="async"></li>
+</ul>
+</li>
+<li>
+<p>Repurpose Content.</p>
+<ul>
+<li>Taking a chapter from the book and massaging it into a blog post.</li>
+<li>Add a signup form to that post.</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-6-getting-it-finished">Step 6. Getting it finished</h2>
+<ol>
+<li>Make <strong>public promises</strong> to your audience.</li>
+<li><strong>Email on Schedule</strong>. Once a week is good.</li>
+<li><strong>Reduce Scope</strong>, if you can’t finish, but have produced good material already.</li>
+</ol>
+<h2 id="step-7-figure-out-pricing">Step 7. Figure out Pricing</h2>
+<h3 id="1-tiered-pricing">1. Tiered Pricing</h3>
+<p><strong>Single Tier</strong></p>
+<ul>
+<li>Can be fine if you charge enough</li>
+<li>Often necessary if pre-selling</li>
+<li>Nice if you can’t figure out a way to add extra tiers that actually feel valuable</li>
+</ul>
+<p><strong>Two Tiers</strong> - Wes Bos Example
+Real product id the “upper” tier. “Lower” tier is like a crippled version of the “upper” tier. The real goal of that “lower” tier is to “push” people towards the upper tier. 2 products are $10 apart, but the second one has twice as much content.</p>
+<p>Works well with video courses.</p>
+<p><strong>Three Tiers</strong></p>
+<ul>
+<li>great for books if you can come up with bonus content.</li>
+<li>Makes it easier to evaluate as its own product instead of comparing to Amazon book prices</li>
+<li>Prices are usually 1, ~2, ~5x.</li>
+<li>This will make you a lot more money from a book than selling the book on its own.</li>
+</ul>
+<h3 id="2-launch-discounts">2. Launch Discounts</h3>
+<ul>
+<li>Discount it by enough to be appealing, at least 30%</li>
+<li>Use stepped discounts. Lower discounts on cheaper tiers and better discount on higher tiers</li>
+<li>Reverse engineer non-discounted price from your planned discounted price
+<ul>
+<li>i.e., If you want to charge $100 for your course and want to create a 30%, don’t apply that discount to $100. Rather price your product at $143 (100 / 0.7), which will turn into $100.</li>
+<li>We all have a tendency to undervalue our own work.</li>
+</ul>
+</li>
+</ul>
+<h2 id="step-8-nailing-the-launch">Step 8. Nailing the Launch</h2>
+<p><strong>1. Build a Sales Page.</strong></p>
+<ul>
+<li>Don’t try to sell too hard, since most of the visitors will come from an email.</li>
+<li>Still include a signup form that sends preview content for new traffic, i.e., “Signup to get 4 free preview lessons.”</li>
+<li>Testimonials and Social proof are important; use feedback from preview content to start.</li>
+<li>Sort tiers from highest to lowest price, use visuals to communicate to higher tiers.
+<img alt="Pricing Example"  src="/_astro/pricing-example.b2f7b189_18q2Bn.webp" width="478" height="446" loading="lazy" decoding="async"></li>
+</ul>
+<p><strong>2. Announce the Launch Details</strong></p>
+<ul>
+<li>Send an email notifying people you include the following:
+<ul>
+<li>Include al package and pricing details</li>
+<li>Complete TOC or content list</li>
+<li>Final free content if possible</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. Launch it</strong></p>
+<ul>
+<li>Send a super-simple email, saying it’s done and a link.
+<ul>
+<li>Sending on Tuesdays seem good day to send to Adam, not stats.</li>
+<li>Morning EST works well for Adam.</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Leverage Early Feedback</strong></p>
+<ul>
+<li>Collect the feedback.</li>
+<li>Use it in a follow-up email to people who did not buy the course.</li>
+</ul>
+<p><strong>5. Closing the Launch</strong></p>
+<ul>
+<li>Email to notify people that this is the last email where you can buy this at this price. LAST CHANCE!</li>
+<li>Don’t specify a closing dateCreated in advance.</li>
+<li>Don’t specify a closing dateCreated in advance.</li>
+</ul>
+<hr>
+<h2 id="other-tips">Other tips:</h2>
+<h3 id="books-vs-video-courses">Books vs. Video Courses</h3>
+<ul>
+<li>Plan small; it will end up bigger than you think
+<ul>
+<li>Short books are still books</li>
+<li>3 hours is plenty for a video course</li>
+</ul>
+</li>
+<li>Books are a lot easier to work on, especially if you only have short blocks of time.</li>
+<li>Courses are easier to sell at a higher price but a lot harder to produce on nights and weekends.</li>
+</ul>
+<h3 id="should-i-pre-sell">Should I pre-sell?</h3>
+<p><strong>Advantages</strong>:</p>
+<ul>
+<li>best form of product validation</li>
+<li>you’ll make more money since you can talk about your product more often. With every updateCreated, for instance.</li>
+<li>you’ll make more money since you can talk about your product more often. With every updateCreated, for instance.</li>
+<li>more motivation to finish</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>Selling multiple tiers is trickier</li>
+<li>Can’t easily change the scope</li>
+<li>Can be extremely stressful</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=ajrDxZRpP9M">Nailing Your First Launch - MicroConf Presentation</a></li>
+<li><a href="https://adamwathan.me/the-book-launch-that-let-me-quit-my-job/">The Book Launch that let me quit my job - Adam’s Post</a></li>
+<li><a href="https://gist.github.com/adamwathan/30dc4230ac575cfa3425b39ca11ea859">Tools for selling your product online - Adam’s List</a></li>
+</ul></article><footer class="flex flex-col items-center justify-between w-full h-16 md:flex-row md:h-20 pin-b"><div class="flex flex-row"><a class="flex items-center pr-2 m-0 font-normal leading-tight text-center text-gray-600 border-0" href="/rss.xml">RSS</a></div><div class=""><a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+An IndieWeb Webring 🕸💍
+<a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a></div></footer></footer></body></html>

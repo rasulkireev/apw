@@ -1,0 +1,282 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.png"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.0.11"><title></title><script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"><link rel="stylesheet" href="/_astro/_...slug_.d31f937d.css" /></head><body><footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(a,s,i)=>s in a?b(a,s,{enumerable:!0,configurable:!0,writable:!0,value:i}):a[s]=i;var d=(a,s,i)=>(f(a,typeof s!="symbol"?s+"":s,i),i);var u;{let a={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},s=t=>{let[e,r]=t;return e in a?a[e](r):void 0},i=t=>t.map(s),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,s(r)]));customElements.get("astro-island")||customElements.define("astro-island",(u=class extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var l;if(!this.hydrator||!this.isConnected)return;let e=(l=this.parentElement)==null?void 0:l.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),c={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("name")||"default"]=n.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let o=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(o+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${o}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,p,c,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,r)=>{r.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let c=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),c?import(c):()=>()=>{}]),l=this.getAttribute("component-export")||"default";if(!l.includes("."))this.Component=h[l];else{this.Component=h;for(let n of l.split("."))this.Component=this.Component[n]}return this.hydrator=p,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d(u,"observedAttributes",["props"]),u))}})();</script><astro-island uid="lWppq" component-url="/_astro/Navbar.e6e8da12.js" component-export="default" renderer-url="/_astro/client.1070f979.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:true}" await-children=""><nav class="z-50 bg-white"><div class="px-4 mx-auto max-w-7xl"><div class="flex justify-between h-20"><div class="flex"><div class="flex items-center flex-shrink-0"><a href="/"><img class="block w-auto h-8 lg:hidden" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a><a href="/"><img class="hidden w-auto h-12 lg:block" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a></div></div><div class="flex items-center"><div class="hidden sm:ml-6 sm:flex sm:space-x-8"><a href="/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Home </a><a href="/about/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> About </a><a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Projects </a><div class="relative inline-block text-left"><div><button type="button" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700" id="options-menu" aria-haspopup="true" aria-expanded="true"> Writings <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div><div style="display:none;" class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"><div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu"><a href="/articles/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Articles</a><a href="/tutorials/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tutorials</a><a href="/book-notes/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Book Notes</a><a href="/newsletter/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a><a href="/now/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Now</a></div></div></div></div><div class="flex items-center -mr-2 sm:hidden"><button class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div class="hidden"><div class="pt-2 pb-3 space-y-1"><a href="/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Home</a><a href="/about/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">About</a><a href="/articles/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Articles</a><a href="/book-notes/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Book Notes</a><a href="/tutorials/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Tutorials</a><a href="/newsletter/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Newsletter</a><a href="/now/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Now</a></div></div></nav></astro-island><p class="mb-10 text-blue-700">
+← <a href="/books">back to books</a></p><article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article"><h1>How to Take Smart Notes</h1><h2 id="my-thoughts">My Thoughts</h2>
+<p>If you’ve heard the term ‘Zettelkasten’ flying around recently, then you might be wondering what is all the rage. Well, this book pretty much started this trend. <a href="https://takesmartnotes.com">Sönke Ahrens</a> (author of this book) describes in great detail the note-taking process through which Niklas Luhmann was able to achieve phenomenal productivity in writing academic papers. The good news is that you can use this method too. I strongly recommend this book to most people.</p>
+<h2 id="summary">Summary</h2>
+<h3 id="the-zettelkasten-system-can-help-you-become-very-productive-when-it-comes-to-publishing-written-work">The Zettelkasten system can help you become very productive when it comes to publishing written work.</h3>
+<p>The protagonist of this book is <a href="https://en.wikipedia.org/wiki/Niklas_Luhmann">Niklas Luhmann</a> a German Sociologist. He is considered one of the most important social theorists of the 20th century. The reason he is the main hero in this book is his note-taking (Zettelkasten) system. This system helped Niklas <a href="https://zettelkasten.de/introduction/#luhmann-s-zettelkasten">publish 50 books and over 600 articles</a>.</p>
+<h3 id="this-is-a-rough-outline-of-a-zettelkasten-process">This is a rough outline of a Zettelkasten process</h3>
+<ol>
+<li>Make fleeting notes (ideas that pop into your mind as you go through your day <a href="https://betterhumans.pub/zettelkastens-3-note-taking-levels-help-you-harvest-your-thoughts-58326840f969">[1]</a>).</li>
+<li>Make literature notes (anything you capture from the content you are consuming).</li>
+<li>Make permanent notes (result of going through the literary and fleeting notes and massaing them into your permanent storage tobe used for your work).</li>
+<li>Now add your new permanent notes to the slip-box (for example <a href="https://obsidian.md">Obsidian</a>).</li>
+<li>Develop your topics, questions and research projects bottom up from within the system. Do not brainstorm for a topic. Look into the slip-box instead to see where chains of notes have developed and ideas have been built up to clusters.</li>
+<li>After a while, you will have developed ideas far enough to decide on a topic to write about.</li>
+<li>Turn your notes into a rough draft.</li>
+<li>Edit and proofread your manuscript.</li>
+</ol>
+<h3 id="zettelkasten-system-will-help-you-avoid-the-blank-page-syndrom">Zettelkasten system will help you avoid the blank page syndrom.</h3>
+<blockquote>
+<p>To get a good paper written, you only have to rewrite a good draft; to get a good draft written, you only have to turn a series of notes into a continuous text. And as a series of notes is just the rearrangement of notes you already have in your slip-box, all you really have to do is have a pen in your hand when you read (<a href="#101--read-with-a-pen-in-hand">Chapter 10</a>)</p>
+</blockquote>
+<h2 id="highlights">Highlights</h2>
+<h3 id="introduction">INTRODUCTION</h3>
+<h4 id="1-everything-you-need-to-know">1  Everything You Need to Know</h4>
+<ul>
+<li>A good structure is something you can trust. It relieves you from the burden of remembering and keeping track of everything.</li>
+<li>Having read more does not automatically mean having more ideas. Especially in the beginning, it means having fewer ideas to work with, because you know that others have already thought of most of them.</li>
+<li>In fact, poor students often feel more successful (until they are tested), because they don’t experience much self-doubt. In psychology, this is known as the Dunning-Kruger effect (Kruger and Dunning, 1999).</li>
+<li>This is why high achievers who have had a taste of the vast amount of knowledge out there are likely to suffer from what psychologists call imposter syndrome, the feeling that you are not really up to the job, even though, of all people, they are (Clance and Imes 1978; Brems et al. 1994).</li>
+</ul>
+<h5 id="11--good-solutions-are-simple--and-unexpected">1.1      Good Solutions are Simple – and Unexpected</h5>
+<ul>
+<li>The simplicity of the structure allows complexity to build up where we want it: on the content level. There is quite extensive empirical and logical research on this phenomenon (for an overview: cf. Sull and Eisenhardt, 2015).</li>
+<li>Routines require simple, repeatable tasks that can become automatic and fit together seamlessly (cf. Mata, Todd, and Lippke, 2010).</li>
+</ul>
+<h5 id="12--the-slip-box">1.2      The Slip-box</h5>
+<ul>
+<li>In Germany, a professor traditionally starts with a public lecture presenting his or her projects, and Luhmann, too, was asked what his main research project will be. His answer would become famous. He laconically stated: “My project: theory of society. Duration: 30 years. Costs: zero” (Luhmann, 1997, 11). In sociology, a “theory of society” is the mother of all projects. When he finished the final chapter, almost exactly 29 and a half years later, as a two-volume book with the title “The Society of Society” (1997), it stirred up the scientific community.</li>
+<li>When he was asked if he missed anything in his life, he famously answered: “If I want something, it’s more time. The only thing that really is a nuisance is the lack of time.”</li>
+<li>From as early as 1985, his standard answer to the question of how anyone could be so productive was: “I, of course, do not think everything by myself. It happens mainly within the slip-box”</li>
+<li>He not only stressed that he never forced himself to do something he didn’t feel like, he even said: “I only do what is easy. I only write when I immediately know how to do it. If I falter for a moment, I put the matter aside and do something else.”</li>
+<li>Studies on highly successful people have proven again and again that success is not the result of strong willpower and the ability to overcome resistance, but rather the result of smart working environments that avoid resistance in the first place.</li>
+<li>It is about having the right tools and knowing how to use them – and very few understand that you need both.</li>
+</ul>
+<h4 id="2-everything-you-need-to-do">2  Everything You Need to Do</h4>
+<ul>
+<li>“Notes on paper, or on a computer screen […] do not make contemporary physics or other kinds of intellectual endeavour easier, they make it possible”  function.</li>
+<li>This is a rough outline of a Zettelkasten process:
+<ol>
+<li>Make fleeting notes.</li>
+<li>Make literature notes.</li>
+<li>Make permanent notes.</li>
+<li>Now add your new permanent notes to the slip-box</li>
+<li>Develop your topics, questions and research projects bottom up from within the system. Do not brainstorm for a topic. Look into the slip-box instead to see where chains of notes have developed and ideas have been built up to clusters.</li>
+<li>After a while, you will have developed ideas far enough to decide on a topic to write about.</li>
+<li>Turn your notes into a rough draft.</li>
+<li>Edit and proofread your manuscript.</li>
+</ol>
+</li>
+</ul>
+<h4 id="3-everything-you-need-to-have">3  Everything You Need to Have</h4>
+<h5 id="31--the-tool-box">3.1      The Tool Box</h5>
+<ul>
+<li>The reference system has two purposes: To collect the references (duh) and the notes you take during your reading.</li>
+</ul>
+<h3 id="the-four-underlying-principles">THE FOUR UNDERLYING PRINCIPLES</h3>
+<h4 id="5-writing-is-the-only-thing-that-matters">5  Writing Is the Only Thing That Matters</h4>
+<ul>
+<li>Deliberate practice is the only serious way of becoming better at what we are doing (cf. Anders Ericsson, 2008).</li>
+</ul>
+<h4 id="6-simplicity-is-paramount">6  Simplicity Is Paramount</h4>
+<ul>
+<li>To achieve a critical mass, it is crucial to distinguish clearly between three types of notes: 1.   Fleeting notes, which are only reminders of information, can be written in any kind of way and will end up in the trash within a day or two. 2.    Permanent notes, which will never be thrown away and contain the necessary information in themselves in a permanently understandable way. They are always stored in the same way in the same place, either in the reference system or, written as if for print, in the slip-box. 3.    Project notes, which are only relevant to one particular project. They are kept within a project-specific folder and can be discarded or archived after the project is finished. Only if the notes of these three categories are kept separated it will be possible to build a critical mass of ideas within the slip-box.</li>
+<li>The second typical mistake is to collect notes only related to specific projects.</li>
+<li>most importantly, without a permanent reservoir of ideas, you will not be able to develop any major ideas over a longer period of time because you are restricting yourself either to the length of a single project or the capacity of your memory. Exceptional ideas need much more than that.</li>
+<li>It is important to reflect on the purpose of these different types of notes. Fleeting notes are there for capturing ideas quickly while you are busy doing something else.</li>
+<li>Fleeting notes are only useful if you review them within a day or so and turn them into proper notes you can use later.</li>
+</ul>
+<h3 id="the-six-steps-to-successful-writing">THE SIX STEPS TO SUCCESSFUL WRITING</h3>
+<h4 id="9-separate-and-interlocking-tasks">9  Separate and Interlocking Tasks</h4>
+<h5 id="92--multitasking-is-not-a-good-idea">9.2      Multitasking is not a good idea</h5>
+<ul>
+<li>Psychologists who interviewed the multitaskers did test them instead of just asking. They gave them different tasks to accomplish and compared their results with another group that was instructed to do only one thing at a time. The outcome is unambiguous: While those who multitasked felt more productive, their productivity actually decreased – a lot.</li>
+</ul>
+<h5 id="93--give-each-task-the-right-kind-of-attention">9.3      Give Each Task the Right Kind of Attention</h5>
+<ul>
+<li>It is not a sign of professionalism to master one technique and stick to it no matter what, but to be flexible and adjust one’s reading to whatever speed or approach a text requires.</li>
+</ul>
+<h5 id="94--become-an-expert-instead-of-a-planner">9.4      Become an Expert Instead of a Planner</h5>
+<ul>
+<li>intimate knowledge of concrete cases in the form of good examples is a prerequisite for true expertise.” (Flyvbjerg 2001, 15)</li>
+<li>Teachers tend to mistake the ability to follow (their) rules with the ability to make the right choices in real situations.</li>
+<li>Here, gut feeling is not a mysterious force, but an incorporated history of experience. It is the sedimentation of deeply learned practice through numerous feedback loops on success or failure.</li>
+</ul>
+<h5 id="95--get-closure">9.5      Get Closure</h5>
+<ul>
+<li>Zeigarnik effect: Open tasks tend to occupy our short-term memory – until they are done. That is why we get so easily distracted by thoughts of unfinished tasks, regardless of their importance.</li>
+<li>we don’t actually have to finish tasks to convince our brains to stop thinking about them. All we have to do is to write them down in a way that convinces us that it will be taken care of.</li>
+</ul>
+<h5 id="96--reduce-the-number-of-decisions">9.6      Reduce the Number of Decisions</h5>
+<ul>
+<li>It is well known that decision-making is one of the most tiring and wearying tasks, which is why people like Barack Obama or Bill Gates only wear two suit colours: dark blue or dark grey. This means they have one less decision to make in the morning, leaving more resources for the decisions that really matter.</li>
+<li>By always using the same notebook for making quick notes, always extracting the main ideas from a text in the same way and always turning them into the same kind of permanent notes, which are always dealt with in the same manner, the number of decisions during a work session can be greatly reduced. That leaves us with much more mental energy that we can direct towards more useful tasks, like trying to solve the problems in question.</li>
+<li>Breaks are much more than just opportunities to recover. They are crucial for learning. They allow the brain to process information, move it into long-term memory and prepare it for new information (Doyle and Zakrajsek 2013, 69).</li>
+</ul>
+<h4 id="10--read-for-understanding">10   Read for Understanding</h4>
+<h5 id="101--read-with-a-pen-in-hand">10.1   Read With a Pen in Hand</h5>
+<ul>
+<li>To get a good paper written, you only have to rewrite a good draft; to get a good draft written, you only have to turn a series of notes into a continuous text. And as a series of notes is just the rearrangement of notes you already have in your slip-box, all you really have to do is have a pen in your hand when you read.
+<ul>
+<li>Note: With a good system in place some tasks become easy or even take care of themselves.</li>
+</ul>
+</li>
+<li>If you understand what you read and translate it into the different context of your own thinking, materialised in the slip-box, you cannot help but transform the findings and thoughts of others into something that is new and your own.</li>
+<li>Sometimes it is necessary to slowly work our way through a difficult text and sometimes it is enough to reduce a whole book to a single sentence.</li>
+<li>(Mueller and Oppenheimer 2014). They were not able to find any difference in terms of the number of facts the students were able to remember. But in terms of understanding the content of the lecture, the students who took their notes by hand came out much, much better. After a week, this difference in understanding was still clearly measurable.</li>
+</ul>
+<h5 id="102--keep-an-open-mind">10.2   Keep an Open Mind</h5>
+<ul>
+<li>With a good system, the mere necessities of the workflow will force us to act more virtuously without actually having to become more virtuous.</li>
+<li>And as soon we focus on the content of the slip-box, dis-confirming data becomes suddenly very attractive, because it opens up more possible connections and discussions within the slip-box, while mere confirming data does not.</li>
+</ul>
+<h5 id="103--get-the-gist">10.3   Get the Gist</h5>
+<ul>
+<li>Extracting the gist of a text or an idea and giving an account in writing is for academics what daily practice on the piano is for pianists: The more often we do it and the more focused we are, the more virtuous we become.</li>
+</ul>
+<h5 id="104--learn-to-read">10.4   Learn to Read</h5>
+<ul>
+<li>Physicist and Nobel Prize winner Richard Feynman once said that he could only determine whether he understood something if he could give an introductory lecture on it. Reading with a pen in your hand is the small-scale equivalent of a lecture. Permanent notes, too, are directed towards an audience ignorant of the thoughts behind the text and unaware of the original context, only equipped with a general knowledge of the field. The only difference is that the audience here consists of our future selves, which will very soon have reached the same state of ignorance as someone who never had access to what we have written about.</li>
+<li>The most important advantage of writing is that it helps us to confront ourselves when we do not understand something as well as we would like to believe. “The principle is that you must not fool yourself, and you are the easiest person to fool,” Feynman stressed in a speech to young scientists (Feynman 1985, 342).</li>
+</ul>
+<h5 id="105--learn-by-reading">10.5   Learn by Reading</h5>
+<ul>
+<li>When we try to answer a question before we know how to, we will later remember the answer better, even if our attempt failed (Arnold and McDermott 2013).</li>
+<li>If we put effort into the attempt of retrieving information, we are much more likely to remember it in the long run, even if we fail to retrieve it without help in the end (Roediger and Karpicke 2006).</li>
+<li>The slip-box takes care of storing facts and information. Thinking and understanding is what it can’t take off your shoulders, which is why it makes sense to focus on this part of the work.</li>
+</ul>
+<h4 id="11--take-smart-notes">11   Take Smart Notes</h4>
+<ul>
+<li>Experienced academic readers usually read a text with questions in mind and try to relate it to other possible approaches, while inexperienced readers tend to adopt the question of a text and the frames of the argument and take it as a given. What good readers can do is spot the limitations of a particular approach and see what is not mentioned in the text.</li>
+<li>It is not surprising, therefore, that Lonka recommends what Luhmann recommends: Writing brief accounts on the main ideas of a text instead of collecting quotes. And she also stresses that it is no less important to do something with these ideas – to think hard about how they connect with other ideas from different contexts and could inform questions that are not already the questions of the author of the respective text.</li>
+</ul>
+<h5 id="112--think-outside-the-brain">11.2   Think Outside the Brain</h5>
+<ul>
+<li>Taking permanent notes of our own thoughts is a form of self-testing as well: do they still make sense in writing? Are we even able to get the thought on paper?</li>
+<li>The brain, as Kahneman writes, is “a machine for jumping to conclusions” (Kahneman, 2013, 79).</li>
+<li>Philosophers, neuroscientists, educators and psychologists like to disagree in many different aspects on how the brain works. But they no longer disagree when it comes to the need for external scaffolding. Almost all agree nowadays that real thinking requires some kind of externalization, especially in the form of writing. “Notes on paper, or on a computer screen […] do not make contemporary physics or other kinds of intellectual endeavour easier, they make it possible” is one of the key takeaways in a contemporary handbook of neuroscientists (Levy 2011, 290) Concluding the discussions in this book, Levy writes: “In any case, no matter how internal processes are implemented, insofar as thinkers are genuinely concerned with what enables human beings to perform the spectacular intellectual feats exhibited in science and other areas of systematic enquiry, as well as in the arts, they need to understand the extent to which the mind is reliant upon external scaffolding.” (Ibid.) In</li>
+<li>I took some literature notes collecting reasons how and why humans act so very differently when they experience scarcity. This was step one, done with an eye towards the argument of the book. I had questions in mind like: Is this convincing? What methods do they use? Which of the references are familiar? But the first question I asked myself when it came to writing the first permanent note for the slip-box was: What does this all mean for my own research and the questions I think about in my slip-box? This is just another way of asking: Why did the aspects I wrote down catch my interest?
+<ul>
+<li>Note: Stages of reading and taking literature notes.</li>
+</ul>
+</li>
+<li>If I were a psychologist, this book would interest me for completely different reasons than if I were a politician or a debt adviser, or if I had bought it out of personal interest. As someone with a sociological perspective on political questions and an interest in the project of a theory of society, my first note reads plainly: “Any comprehensive analysis of social inequality must include the cognitive effects of scarcity. Cf. Mullainathan and Shafir 2013.” This immediately triggers further questions, which I can discuss on following notes, starting with: “Why?”</li>
+</ul>
+<h5 id="113--learn-by-not-trying">11.3   Learn by not Trying</h5>
+<ul>
+<li>To be able to remember everything and not having to resort to any external memory sounds great initially. But you might think differently if you are familiar with the story of a man who was really able to remember almost everything. The reporter Solomon Shereshevsky (Lurija 1987) is one of the most famous figures in the history of psychology.</li>
+<li>Forgetting, then, would not be the loss of a memory, but the erection of a mental barrier between the conscious mind and our long-term memory. Psychologists call this mechanism active inhibition (cf. MacLeod, 2007).</li>
+<li>Just by looking at the physical capacity of our brains, we can see that we could indeed probably store a lifetime and a bit of detailed experiences in it (Carey 2014, 42).</li>
+<li>This is not so different from when elaboration is recommended as a “learning method.” As a method, it has been proven to be more successful than any other approach (McDaniel and Donnelly 1996).</li>
+<li>Learned right, which means understanding, which means connecting in a meaningful way to previous knowledge, information almost cannot be forgotten anymore and will be reliably retrieved if triggered by the right cues.</li>
+<li>The slip-box is forcing us to do the exact opposite: To elaborate, to understand, to connect and therefore to learn seriously.</li>
+</ul>
+<h5 id="114--adding-permanent-notes-to-the-slip-box">11.4   Adding Permanent Notes to the Slip-Box</h5>
+<ul>
+<li>Make sure it can be found from the index; add an entry in the index if necessary or refer to it from a note that is connected to the index.</li>
+</ul>
+<h4 id="12--develop-ideas">12   Develop Ideas</h4>
+<ul>
+<li>Ideally, new notes are written with explicit reference to already existing notes.</li>
+</ul>
+<h5 id="121--develop-topics">12.1   Develop Topics</h5>
+<ul>
+<li>Luhmann would add the number of one or two (rarely more) notes next to a keyword in the index (Schmidt 2013, 171). The reason he was so economical with notes per keyword and why we too should be very selective lies in the way the slip-box is used. Because it should not be used as an archive, where we just take out what we put in, but as a system to think with, the references between the notes are much more important than the references from the index to a single note. Focusing exclusively on the index would basically mean that we always know upfront what we are looking for – we would have to have a fully developed plan in our heads. But liberating our brains from the task of organizing the notes is the main reason we use the slip-box in the first place.</li>
+<li>The way people choose their keywords shows clearly if they think like an archivist or a writer. Do they wonder where to store a note or how to retrieve it? The archivist asks: Which keyword is the most fitting? A writer asks: In which circumstances will I want to stumble upon this note, even if I forget about it? It is a crucial difference.</li>
+<li>As writers, we approach the question of keywords differently. We look at our slip-box for already existing lines of thought and think about the questions and problems already on our minds to which a new note might contribute.</li>
+<li>Keywords should always be assigned with an eye towards the topics you are working on or interested in, never by looking at the note in isolation.</li>
+<li>Assigning keywords is much more than just a bureaucratic act. It is a crucial part of the thinking process, which often leads to a deeper elaboration of the note itself and the connection to other notes.</li>
+</ul>
+<h5 id="122--make-smart-connections">12.2   Make Smart Connections</h5>
+<ul>
+<li>Even though the Zettelkasten makes suggestions here, too, for example based on joint literature references, making good cross-references is a matter of serious thinking and a crucial part of the development of thoughts.
+<ul>
+<li>Note: The magic of Zettelkasten, besides structure, is that you are actually required to think. It SHOULD take time.</li>
+</ul>
+</li>
+<li>The search for meaningful connections is a crucial part of the thinking process towards the finished manuscript.</li>
+</ul>
+<h5 id="123--compare-correct-and-differentiate">12.3   Compare, Correct and Differentiate</h5>
+<ul>
+<li>If you use the slip-box for a while, you will inevitably make a sobering discovery: The great new idea you are about to add to the slip-box turns out to be already in there. Even worse, chances are this idea wasn’t even yours, but someone else’s. Having the same thought twice or mistaking another person’s idea with our own is far from unusual. Unfortunately, most people never notice this humbling fact because they have no system that confronts them with already thought thoughts. If we forget about an idea and have it again, our brains get as excited as if we are having it the first time. Therefore, working with the slip-box is disillusioning, but at the same time it increases the chance that we actually move forward in our thinking towards uncharted territory, instead of just feeling like we are moving forward.</li>
+<li>Comparing notes also helps us to detect contradictions, paradoxes or oppositions – important facilitators for insight. When we realise that we used to accept two contradicting ideas as equally true, we know that we have a problem – and problems are good because we now have something to solve. A paradox can be a sign that we haven’t thought thoroughly enough about a problem or, conversely, that we exhausted the possibilities of a certain paradigm.</li>
+<li>Finally, oppositions help to shape ideas by providing contrast. Albert Rothenberg suggests that the construction of oppositions is the most reliable way of generating new ideas (Rothenberg 1971; 1996; 2015).</li>
+<li>The slip-box not only confronts us with dis-confirming information, but also helps with what is known as the feature-positive effect (Allison and Messick 1988; Newman, Wolff, and Hearst 1980; Sainsbury 1971). This is the phenomenon in which we tend to overstate the importance of information that is (mentally) easily available to us and tilts our thinking towards the most recently acquired facts, not necessarily the most relevant ones. Without external help, we would not only take exclusively into account what we know, but what is on top of our heads.</li>
+</ul>
+<h5 id="124--assemble-a-toolbox-for-thinking">12.4   Assemble a Toolbox for Thinking</h5>
+<ul>
+<li>But even though flashcards are much more effective than cramming or reviewing information within the context of a textbook, they also have a downside: The information on flashcards is neither elaborated on nor embedded in some form of context. Each flashcard stays isolated instead of being connected with the network of theoretical frames, our experiences or our latticework of mental models. This not only makes it much more difficult to learn, but also difficult to understand the implications and the meaning of information (cf. Birnbaum et al., 2013).</li>
+<li>A scientific term or concept only becomes meaningful within the context of a theory – otherwise it would just be a word.
+<ul>
+<li>Note: Downside of flashcards is the lack of context which is crucial for learning, especially in science</li>
+</ul>
+</li>
+</ul>
+<h5 id="125--use-the-slip-box-as-a-creativity-machine">12.5   Use the Slip-Box as a Creativity Machine</h5>
+<ul>
+<li>Even sudden breakthroughs are usually preceded by a long, intense process of preparation.</li>
+<li>Being experienced with a problem and intimately familiar with the tools and devices we work with, ideally to the point of virtuosity, is the precondition for discovering their inherent possibilities, writes Ludwik Fleck, a historian of science (Fleck 2012, 126).</li>
+<li>Most often, innovation is not the result of a sudden moment of realization, anyway, but incremental steps toward improvement.</li>
+<li>The neurobiologist James Zull points out that comparing is our natural form of perception, where our cognitive interpretation is in lockstep with our actual eye movements. Therefore, comparing should be understood quite literally.</li>
+<li>12.6   Think Inside the Box “[C]reative people are better at recognizing relationships, making associations and connections and seeing things in an original way—seeing things that others cannot see“ (Andreasen 2014).</li>
+<li>Abstraction should indeed not be the final goal of thinking, but it is a necessary in-between step to make heterogeneous ideas compatible. If Darwin had never abstracted from his concrete observations of sparrows, he would never have found an abstract, a general principle of evolution across different species, and he would never have been able to see how evolution works in other species as well.
+<ul>
+<li>Note: Abstracting your thokughts is necessary to apply the thought in various contexts.</li>
+</ul>
+</li>
+<li>Abstraction is also not for theoretical-academic processes of insight only. We need to abstract from concrete situations every day. Only by abstraction and re-specification can we apply ideas in the singular and always different situations in reality (Loewenstein, 2010).</li>
+<li>Abstraction is also the key to analyse and compare concepts, to make analogies and to combine ideas; this is especially true when it comes to interdisciplinary work (Goldstone and Wilensky 2008).</li>
+<li>Our brains just love routines. Before new information prompts our brains to think differently about something, they make the new information fit into the known or let it disappear completely from our perception. Usually, we don’t even notice when our brains modify our surroundings to make it fit its expectations. We need therefore a bit of a ruse to break the power of thinking routines. In their book with the showy title “The 5 Elements of Effective Thinking”, the mathematicians Edward B. Burger and Michael Starbird collected different strategies to do that (2012).</li>
+<li>Sometimes the breakthrough in a scientific process is the discovery of a simple principle behind a seemingly very complicated process.</li>
+</ul>
+<h5 id="127--facilitate-creativity-through-restrictions">12.7   Facilitate Creativity through Restrictions</h5>
+<ul>
+<li>In his book “The Paradox of Choice,” Barry Schwartz used numerous examples, from shopping to career options to romance, to show that less choice can not only increase our productivity, but also our freedom and make it easier to be in the moment and enjoy it (Schwartz, 2007).</li>
+</ul>
+<h4 id="13--share-your-insight">13   Share Your Insight</h4>
+<h5 id="132--from-top-down-to-bottom-up">13.2   From Top Down to Bottom Up</h5>
+<ul>
+<li>Jacob Warren Getzels and Mihaly Csikszentmihalyi showed that this is also true in art: New, groundbreaking work is rarely created on a whim by some accidental artist who believes himself to be amazingly innovative. On the contrary: The more time an artist devotes to learning about an aesthetic “problem,” the more unexpected and creative his solution will be regarded later by art experts (Getzels and Csikszentmihalyi 1976).
+<ul>
+<li>Note: Masterpieces are never creared on a whim, they are a result of years of work.
+People need examples to change their mind. In this case what art can i refer to?</li>
+</ul>
+</li>
+</ul>
+<h5 id="133--getting-things-done-by-following-your-interests">13.3   Getting Things Done by Following Your Interests</h5>
+<ul>
+<li>It is not surprising that motivation is shown to be one of the most important indicators for successful students – next to the feeling of being in control of one’s own learning course. When even highly intelligent students fail in their studies, it’s most often because they cease to see the meaning in what they were supposed to learn (cf. Balduf 2009), are unable to make a connection to their personal goals (Glynn et al. 2009) or lack the ability to control their own studies autonomously and on their own terms (Reeve and Jan, 2006; Reeve, 2009).</li>
+<li>Nothing motivates us more than seeing a project we can identify with moving forward, and nothing is more demotivating than being stuck with a project that doesn’t seem to be worth doing.</li>
+<li>The risk of losing interest in what we do is high when we decide upfront on a long-term project without much clue about what to expect. We can mitigate this risk considerably by applying a flexible organisation scheme that allows us to change course whenever necessary.
+<ul>
+<li>Note: Hence the success of the agile method.</li>
+</ul>
+</li>
+<li>It would be quite sad if we did not change our interests during research. The ability to change the direction of our work opportunistically is a form of control that is completely different from the attempt to control the circumstances by clinging to a plan.</li>
+<li>The beginning of the research project that led to the discovery of DNA’s structure was the application for a grant. The grant was not to discover DNA’s structure, but find a treatment for cancer. If the scientists had stuck to their promises, not only would they probably not have found a cure for cancer, but they definitely would not have discovered the structure of DNA.
+<ul>
+<li>Note: Example of successful project goal calibration.</li>
+</ul>
+</li>
+<li>Organizing the work so we can steer our projects in the most promising direction not only allows us to stay focused for longer, but also to have more fun – and that is a fact (Gilbert 2006).</li>
+</ul>
+<h5 id="134--finishing-and-review">13.4   Finishing and Review</h5>
+<ul>
+<li>A key point: Structure the text and keep it flexible.</li>
+<li>Another key point: Try working on different manuscripts at the same time.</li>
+</ul>
+<h5 id="135--becoming-an-expert-by-giving-up-planning">13.5   Becoming an Expert by Giving up Planning</h5>
+<ul>
+<li>Even the people who study this phenomenon, which is called the overconfidence bias, admit that they too fall for it (Kahneman 2013, 245ff).</li>
+<li>The lesson to draw is to be generally sceptical about planning, especially if it is merely focused on the outcome, not on the actual work and the steps required to achieve a goal. While it doesn’t help to imagine oneself the great author of a successful and timely finished paper, it does make a difference if we have a realistic idea about what needs to be done to get there in our minds.
+<ul>
+<li>Note: When i see a clear path to the end goal, i am indeed more motivated.</li>
+</ul>
+</li>
+<li>we can only learn from our experiences if feedback follows shortly afterwards – and maybe more than once in a while.</li>
+</ul>
+<h4 id="14--make-it-a-habit">14   Make It a Habit</h4>
+<ul>
+<li>The precise opposite is the case. Civilization advances by extending the number of important operations which we can perform without thinking about them.” (Whitehead)
+<ul>
+<li>Note: Analogous to computers and # of microchips</li>
+</ul>
+</li>
+<li>The trick is not to try to break with old habits and also not to use willpower to force oneself to do something else, but to strategically build up new habits that have a chance to replace the old ones.</li>
+</ul>
+<h3 id="afterword">AFTERWORD</h3>
+<ul>
+<li>And that is the very good news at the end. The slip-box is as simple as it gets. Read with a pen in your hand, take smart notes and make connections between them. Ideas will come by themselves and your writing will develop from there. There is no need to start from scratch. Keep doing what you would do anyway: Read, think, write. Just take smart notes along the way.</li>
+</ul></article><footer class="flex flex-col items-center justify-between w-full h-16 md:flex-row md:h-20 pin-b"><div class="flex flex-row"><a class="flex items-center pr-2 m-0 font-normal leading-tight text-center text-gray-600 border-0" href="/rss.xml">RSS</a></div><div class=""><a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+An IndieWeb Webring 🕸💍
+<a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a></div></footer></footer></body></html>

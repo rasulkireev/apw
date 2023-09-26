@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.png"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.0.11"><title></title><script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"><link rel="stylesheet" href="/_astro/_...slug_.d31f937d.css" /></head><body><footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(a,s,i)=>s in a?b(a,s,{enumerable:!0,configurable:!0,writable:!0,value:i}):a[s]=i;var d=(a,s,i)=>(f(a,typeof s!="symbol"?s+"":s,i),i);var u;{let a={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},s=t=>{let[e,r]=t;return e in a?a[e](r):void 0},i=t=>t.map(s),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,s(r)]));customElements.get("astro-island")||customElements.define("astro-island",(u=class extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var l;if(!this.hydrator||!this.isConnected)return;let e=(l=this.parentElement)==null?void 0:l.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),c={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("name")||"default"]=n.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let o=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(o+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${o}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,p,c,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,r)=>{r.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let c=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),c?import(c):()=>()=>{}]),l=this.getAttribute("component-export")||"default";if(!l.includes("."))this.Component=h[l];else{this.Component=h;for(let n of l.split("."))this.Component=this.Component[n]}return this.hydrator=p,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d(u,"observedAttributes",["props"]),u))}})();</script><astro-island uid="lWppq" component-url="/_astro/Navbar.e6e8da12.js" component-export="default" renderer-url="/_astro/client.1070f979.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:true}" await-children=""><nav class="z-50 bg-white"><div class="px-4 mx-auto max-w-7xl"><div class="flex justify-between h-20"><div class="flex"><div class="flex items-center flex-shrink-0"><a href="/"><img class="block w-auto h-8 lg:hidden" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a><a href="/"><img class="hidden w-auto h-12 lg:block" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a></div></div><div class="flex items-center"><div class="hidden sm:ml-6 sm:flex sm:space-x-8"><a href="/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Home </a><a href="/about/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> About </a><a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Projects </a><div class="relative inline-block text-left"><div><button type="button" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700" id="options-menu" aria-haspopup="true" aria-expanded="true"> Writings <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div><div style="display:none;" class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"><div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu"><a href="/articles/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Articles</a><a href="/tutorials/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tutorials</a><a href="/book-notes/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Book Notes</a><a href="/newsletter/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a><a href="/now/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Now</a></div></div></div></div><div class="flex items-center -mr-2 sm:hidden"><button class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div class="hidden"><div class="pt-2 pb-3 space-y-1"><a href="/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Home</a><a href="/about/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">About</a><a href="/articles/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Articles</a><a href="/book-notes/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Book Notes</a><a href="/tutorials/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Tutorials</a><a href="/newsletter/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Newsletter</a><a href="/now/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Now</a></div></div></nav></astro-island><p class="mb-10 text-blue-700">
+← <a href="/books">back to books</a></p><article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article"><h1>Apology</h1><h2 id="summary">Summary</h2>
+<p>The Apology is Plato’s record of the speech given by Socrates in court as he tries to defend himself in 399BCE against the accusations of “corrupting the young, and by not believing in the gods in whom the city believes”.</p>
+<p>There are three parts to this work (Spoiler Alert).</p>
+<ol>
+<li>Socrates defends himself against accusations.</li>
+<li>Socrates argues for various punishments after the jury finds Socrates guilty.</li>
+<li>Socrates’ last words after the jury condemns Socrates to death.</li>
+</ol>
+<h2 id="my-thoughts">My Thoughts</h2>
+<p>These are 3 very different “scenes”. And we get to see Socrates in each one of them. It is fascinating to see what arguments Socrates comes up with and how he presents them to the public. It is very inspiring to see how a man handles himself when sentenced to death.</p>
+<p>For me, this work has the highest ratio of notes to words (ie. how many notes I took compared with the size of the work).</p>
+<p>Here are some life lessons that I have picked up from this work:</p>
+<ul>
+<li>You should always show humility by assuming that you don’t know something. If you always assume that you know everything, you can’t really learn anything new.</li>
+<li>We only fear death because we know nothing about it. In fact, death is the ultimate test to “we fear what we don’t know” since it is likely we will never find out what happens after death.</li>
+<li>Start by trying to improve yourself, not others.</li>
+<li>“Good men” don’t spend much time thinking about how to avoid death, but rather they think about doing good deeds. That’s all that matters.</li>
+</ul>
+<p>Some interesting stats:
+<img alt="Top Words Used in Apology by Plato"  src="/_astro/apology-top-words.037e080d_1qDXbA.webp" width="736" height="510" loading="lazy" decoding="async">
+<img alt="Top 2 Word Phrases Used in Apology by Plato"  src="/_astro/apology-top-2-word-phrases.f647c1eb_LpeKP.webp" width="728" height="512" loading="lazy" decoding="async"></p>
+<h2 id="highlights">Highlights</h2>
+<p>If you <a href="https://via.hypothes.is/http://classics.mit.edu/Plato/apology.html">read this online</a>, you can see all the notes I made with <a href="https://web.hypothes.is/">Hypothes.is</a>. And if you make an account for yourself we can enter a discussion there.</p>
+<hr>
+<p>So I left him, saying to myself, as I went away: Well, although I do
+not suppose that either of us knows anything really beautiful and good,
+I am better off than he is - for he knows nothing, and thinks that he knows.
+I neither know nor think that I know. In this latter particular, then,
+I seem to have slightly the advantage of him.</p>
+<hr>
+<p>I must say that there is hardly a person present who would not have talked
+better about their poetry than they did themselves. That showed me in an
+instant that not by wisdom do poets write poetry, but by a sort of genius
+and inspiration; they are like diviners or soothsayers who also say many
+fine things, but do not understand the meaning of them.</p>
+<p><strong>Note:</strong> Interesting view on how poets write poetry.</p>
+<hr>
+<p>and if
+he is not wise, then in vindication of the oracle I show him that he is
+not wise;</p>
+<p><strong>Note:</strong> Probably not very smart to tell someone why they are not smart.</p>
+<hr>
+<p>Come hither, Meletus, and let me ask a question of you. You thinka great deal about the improvement of youth?</p>
+<p>Yes, I do.</p>
+<p>Tell the judges, then, who is their improver; for you must know,
+as you have taken the pains to discover their corrupter, and are citing
+and accusing me before them. Speak, then, and tell the judges who their
+improver is. Observe, Meletus, that you are silent, and have nothing to
+say. But is not this rather disgraceful, and a very considerable proof
+of what I was saying, that you have no interest in the matter? Speak up,
+friend, and tell us who their improver is.</p>
+<p>The laws.</p>
+<p>But that, my good sir, is not my meaning. I want to know who the
+person is, who, in the first place, knows the laws.</p>
+<p>The judges, Socrates, who are present in court.</p>
+<p>What do you mean to say, Meletus, that they are able to instruct
+and improve youth?</p>
+<p>Certainly they are.</p>
+<p>What, all of them, or some only and not others?</p>
+<p>All of them.</p>
+<p>By the goddess Here, that is good news! There are plenty of improvers,
+then. And what do you say of the audience, - do they improve
+them?</p>
+<p>Yes, they do.</p>
+<p>And the senators?</p>
+<p>Yes, the senators improve them.</p>
+<p>But perhaps the members of the citizen assembly corrupt them? -
+or do they too improve them?</p>
+<p>They improve them.</p>
+<p>Then every Athenian improves and elevates them; all with the exception
+of myself; and I alone am their corrupter? Is that what you
+affirm?</p>
+<p>That is what I stoutly affirm.</p>
+<p><strong>Note:</strong> I found this very funny from Socrates.</p>
+<hr>
+<p>a man who is good for anything ought not
+to calculate the chance of living or dying; he ought only to consider whether
+in doing anything he is doing right or wrong - acting the part of a good
+man or of a bad.</p>
+<hr>
+<p>For this fear of death is indeed the pretence of wisdom,
+and not real wisdom, being the appearance of knowing the unknown; since
+no one knows whether death, which they in their fear apprehend to be the
+greatest evil, may not be the greatest good.</p>
+<hr>
+<p>he who will really fight for
+the right, if he would live even for a little while, must have a private
+station and not a public one.
+I can give you as proofs of this, not words only, but deeds, which
+you value more than words. Let me tell you a passage of my own life, which
+will prove to you that I should never have yielded to injustice from any
+fear of death, and that if I had not yielded I should have died at once.
+I will tell you a story - tasteless, perhaps, and commonplace, but nevertheless
+true. The only office of state which I ever held, O men of Athens, was
+that of senator; the tribe Antiochis, which is my tribe, had the presidency
+at the trial of the generals who had not taken up the bodies of the slain
+after the battle of Arginusae; and you proposed to try them all together,
+which was illegal, as you all thought afterwards; but at the time I was
+the only one of the Prytanes who was opposed to the illegality, and I gave
+my vote against you; and when the orators threatened to impeach and arrest
+me, and have me taken away, and you called and shouted, I made up my mind
+that I would run the risk, having law and justice with me, rather than
+take part in your injustice because I feared imprisonment and death. This
+happened in the days of the democracy. But when the oligarchy of the Thirty
+was in power, they sent for me and four others into the rotunda, and bade
+us bring Leon the Salaminian from Salamis, as they wanted to execute him.
+This was a specimen of the sort of commands which they were always giving
+with the view of implicating as many as possible in their crimes; and then
+I showed, not in words only, but in deed, that, if I may be allowed to
+use such an expression, I cared not a straw for death, and that my only
+fear was the fear of doing an unrighteous or unholy thing. For the strong
+arm of that oppressive power did not frighten me into doing wrong; and
+when we came out of the rotunda the other four went to Salamis and fetched
+Leon, but I went quietly home. For which I might have lost my life, had
+not the power of the Thirty shortly afterwards come to an end. And to this
+many will witness.
+Now do you really imagine that I could have survived all these
+years, if I had led a public life, supposing that like a good man I had
+always supported the right and had made justice, as I ought, the first
+thing? No, indeed, men of Athens, neither I nor any other.</p>
+<p><strong>Note:</strong> All of this is about fighting for ideals in private vs. public. And Socrates argues for doing that in private for safety and maximum reach.</p>
+<p>This kind of goes with my thinking. As much as I would change certain things back at home, I don’t want to expose myself by going into politics. I would much rather try to improve my nearest surrounding “in private”.</p>
+<hr>
+<p>Socrates, but cannot you hold your tongue,
+and then you may go into a foreign city, and no one will interfere with
+you? Now I have great difficulty in making you understand my answer to
+this. For if I tell you that this would be a disobedience to a divine command,
+and therefore that I cannot hold my tongue, you will not believe that I
+am serious; and if I say again that the greatest good of man is daily to
+converse about virtue, and all that concerning which you hear me examining
+myself and others, and that the life which is unexamined is not worth living - that you are still less likely to believe.</p>
+<p><strong>Note:</strong> Socrates is not willing to go against his nature and principles and shut up just to avoid death. He feels that his obligation to gods is to spread the “truth” and his ideals.</p>
+<hr>
+<p>For often in battle there is no doubt that if a man will throw away his
+arms, and fall on his knees before his pursuers, he may escape death; and
+in other dangers there are other ways of escaping death, if a man is willing
+to say and do anything. The difficulty, my friends, is not in avoiding
+death, but in avoiding unrighteousness; for that runs faster than death.</p>
+<hr>
+<p>For if you think that by killing men you can avoid
+the accuser censuring your lives, you are mistaken; that is not a way of
+escape which is either possible or honorable; the easiest and noblest way
+is not to be crushing others, but to be improving yourselves.</p>
+<hr>
+<p>Let us reflect in another way, and we shall see that there is great
+reason to hope that death is a good, for one of two things: - either death
+is a state of nothingness and utter unconsciousness, or, as men say, there
+is a change and migration of the soul from this world to another.</p>
+<p><strong>Note:</strong> Socrates remains calm &#x26; positive about his death sentence.</p>
+<hr>
+<p>Wherefore, O judges, be of good cheer about death, and know this
+of a truth - <strong>that no evil can happen to a good man</strong>, either in life or after
+death.</p></article><footer class="flex flex-col items-center justify-between w-full h-16 md:flex-row md:h-20 pin-b"><div class="flex flex-row"><a class="flex items-center pr-2 m-0 font-normal leading-tight text-center text-gray-600 border-0" href="/rss.xml">RSS</a></div><div class=""><a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+An IndieWeb Webring 🕸💍
+<a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a></div></footer></footer></body></html>

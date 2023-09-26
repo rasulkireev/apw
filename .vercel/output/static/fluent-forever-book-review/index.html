@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/favicon.png"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v3.0.11"><title></title><script async defer data-domain="rasulkireev.com" src="https://stats.rasulkireev.com/js/index.js"></script><link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"><link rel="stylesheet" href="/_astro/_...slug_.d31f937d.css" /></head><body><footer class="flex flex-col max-w-4xl min-h-screen px-6 mx-auto leading-relaxed bg-white light-mode"><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var b=Object.defineProperty;var f=(a,s,i)=>s in a?b(a,s,{enumerable:!0,configurable:!0,writable:!0,value:i}):a[s]=i;var d=(a,s,i)=>(f(a,typeof s!="symbol"?s+"":s,i),i);var u;{let a={0:t=>m(t),1:t=>i(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(i(t)),5:t=>new Set(i(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t)},s=t=>{let[e,r]=t;return e in a?a[e](r):void 0},i=t=>t.map(s),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([e,r])=>[e,s(r)]));customElements.get("astro-island")||customElements.define("astro-island",(u=class extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var l;if(!this.hydrator||!this.isConnected)return;let e=(l=this.parentElement)==null?void 0:l.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let r=this.querySelectorAll("astro-slot"),c={},h=this.querySelectorAll("template[data-astro-template]");for(let n of h){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("data-astro-template")||"default"]=n.innerHTML,n.remove())}for(let n of r){let o=n.closest(this.tagName);o!=null&&o.isSameNode(this)&&(c[n.getAttribute("name")||"default"]=n.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(n){let o=this.getAttribute("component-url")||"<unknown>",y=this.getAttribute("component-export");throw y&&(o+=` (export ${y})`),console.error(`[hydrate] Error parsing props for component ${o}`,this.getAttribute("props"),n),n}await this.hydrator(this)(this.Component,p,c,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((e,r)=>{r.disconnect(),setTimeout(()=>this.childrenConnectedCallback(),0)}).observe(this,{childList:!0})}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}start(){let e=JSON.parse(this.getAttribute("opts")),r=this.getAttribute("client");if(Astro[r]===void 0){window.addEventListener(`astro:${r}`,()=>this.start(),{once:!0});return}Astro[r](async()=>{let c=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),c?import(c):()=>()=>{}]),l=this.getAttribute("component-export")||"default";if(!l.includes("."))this.Component=h[l];else{this.Component=h;for(let n of l.split("."))this.Component=this.Component[n]}return this.hydrator=p,this.hydrate},e,this)}attributeChangedCallback(){this.hydrate()}},d(u,"observedAttributes",["props"]),u))}})();</script><astro-island uid="lWppq" component-url="/_astro/Navbar.e6e8da12.js" component-export="default" renderer-url="/_astro/client.1070f979.js" props="{}" ssr="" client="load" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:true}" await-children=""><nav class="z-50 bg-white"><div class="px-4 mx-auto max-w-7xl"><div class="flex justify-between h-20"><div class="flex"><div class="flex items-center flex-shrink-0"><a href="/"><img class="block w-auto h-8 lg:hidden" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a><a href="/"><img class="hidden w-auto h-12 lg:block" src="/src/assets/images/logo.png" alt="Rasul Kireev"></a></div></div><div class="flex items-center"><div class="hidden sm:ml-6 sm:flex sm:space-x-8"><a href="/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Home </a><a href="/about/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> About </a><a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700"> Projects </a><div class="relative inline-block text-left"><div><button type="button" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700" id="options-menu" aria-haspopup="true" aria-expanded="true"> Writings <svg class="w-5 h-5 ml-2 -mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></div><div style="display:none;" class="absolute right-0 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5"><div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu"><a href="/articles/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Articles</a><a href="/tutorials/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Tutorials</a><a href="/book-notes/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Book Notes</a><a href="/newsletter/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Newsletter</a><a href="/now/" class="block px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 hover:text-gray-900">Now</a></div></div></div></div><div class="flex items-center -mr-2 sm:hidden"><button class="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false"><span class="sr-only">Open main menu</span><svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg><svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></div></div></div></div><div class="hidden"><div class="pt-2 pb-3 space-y-1"><a href="/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Home</a><a href="/about/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">About</a><a href="/articles/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Articles</a><a href="/book-notes/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Book Notes</a><a href="/tutorials/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Tutorials</a><a href="/newsletter/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Newsletter</a><a href="/now/" class="block py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-50 hover:border-gray-300">Now</a></div></div></nav></astro-island><p class="mb-10 text-blue-700">
+← <a href="/books">back to books</a></p><article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article"><h1>Fluent Forever</h1><h2 id="my-thoughts">My Thoughts</h2>
+<p>I think this is a great book. It re-introduced me to the concept of the SRS and Anki. I have encountered those before, but haven’t used them much. Admittedly, I’m not very active about using those now either, but this is more of a discipline problem. The ideas laid out in this book are simple and effective. You just got to want to learn a language enough to actually follow through.</p>
+<p>Learning a language is hard, don’t let anyone tell you otherwise, but once you are equipped with tools from this book you are much more likely to succeed in your endeavors.</p>
+<h2 id="summary">Summary</h2>
+<p>Below are the most important points from the book, IMHO. For more, check out the highlights below, especially the Key Points paragraphs.</p>
+<ol>
+<li>THE THREE KEYS TO LANGUAGE LEARNING:</li>
+</ol>
+<ul>
+<li>Learn pronunciation first.</li>
+<li>Don’t translate.</li>
+<li>Use spaced repetition systems.</li>
+</ul>
+<ol start="2">
+<li>We recall images much better than words because we automatically think conceptually when we see an image. Image-recall studies have repeatedly demonstrated that our visual memory is phenomenal. So <strong>when learning new words you need to bind them to images</strong>.</li>
+<li>Rote repetition is boring, and it doesn’t work for long-term memorization. Take the lazy route instead: <strong>study a concept until you can repeat it once without looking and then stop</strong>. After all, lazy is just another word for “efficient.”</li>
+<li>To maximize efficiency, spend most of your time recalling rather than reviewing. Use <a href="https://apps.ankiweb.net/">Anki</a> for that.</li>
+<li>Memory tests are most effective when they’re challenging. The closer you get to forget a word, the more ingrained it will become when you finally remember it. If you can consistently test yourself right before you forget, you’ll double the effectiveness of every test. Again, <a href="https://apps.ankiweb.net/">Anki</a> will help with that.</li>
+<li>This is painful, but a necessary one. Do flashcards yourself. Only you will have an emotional connection with images and words.</li>
+<li>Use writing to test out your knowledge and find your weak points. Use the example sentences in your grammar book as models, and write about your interests. Submit your writing to an online exchange community. Turn every correction you receive into a flashcard. In this way, you’ll find and fill in whatever grammar and vocabulary you’re missing.</li>
+</ol>
+<h2 id="highlights">Highlights</h2>
+<h3 id="chapter-1-introduction-stab-stab-stab">CHAPTER 1 Introduction: Stab. Stab, Stab</h3>
+<p>THE THREE KEYS TO LANGUAGE LEARNING:</p>
+<ol>
+<li>Learn pronunciation first.</li>
+<li>Don’t translate.</li>
+<li>Use spaced repetition systems.</li>
+</ol>
+<h3 id="chapter-2-upload-five-principles-to-end-forgetting">CHAPTER 2 Upload: Five Principles to End Forgetting</h3>
+<h4 id="principle-1-make-memories-more-memorable">PRINCIPLE 1: MAKE MEMORIES MORE MEMORABLE</h4>
+<p>These are the four levels of processing. They were identified in the 1970s by psychologists who created a curious questionnaire with four types of questions and gave it to college students:</p>
+<p>Structure: How many capital letters are in the word BEAR?
+Sound: Does APPLE rhyme with Snapple?
+Concept: Is TOOL another word for “instrument”?
+Personal Connection: Do you like PIZZA?
+<strong>Note:</strong> Using four of these will help you remember words better.</p>
+<p>Given this phenomenon, how do we make a strange, foreign word like mjöður memorable? The word itself is not the problem. We are not bad at remembering words when they are tied to concrete, multisensory experiences. If I tell you that my email password is mjöður, you probably (hopefully?) won’t remember it, because you’re processing it on a sound and structural level. But if we’re in a bar together, and I you, hand you a flaming drink with a dead snake in it, and tell “Thismjöður! You-drink!” you won’t have any trouble remembering that word.</p>
+<p>We’ll get better results if we skip the English word and use an image instead.</p>
+<p>We recall images much better than words, because we automatically think conceptually when we see an image. Image-recall studies have repeatedly demonstrated that our visual memory is phenomenal.
+<strong>Note:</strong> Study example is attached.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Your brain is a sophisticated filter, which makes irrelevant information forgettable and meaningful information memorable. Foreign words tend to fall into the “forgettable” category, because they sound odd, they don’t seem particularly meaningful, and they don’t have any connection to your own life experiences.</li>
+<li>You can get around this filter and make foreign words memorable by doing three things:
+<ul>
+<li>Learn the sound system of your language</li>
+<li>Bind those sounds to images</li>
+<li>Bind those images to your past experiences</li>
+</ul>
+</li>
+</ul>
+<h4 id="principle-2-maximize-laziness">PRINCIPLE 2: MAXIMIZE LAZINESS</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Rote repetition is boring, and it doesn’t work for long-term memorization.</li>
+<li>Take the lazy route instead: study a concept until you can repeat it once without looking and then stop. After all, lazy is just another word for “efficient.”</li>
+</ul>
+<h4 id="principle-3-dont-review-recall">PRINCIPLE 3: DON’T REVIEW. RECALL.</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Acts of recall set off an intricate chemical dance in your brain that boosts memory retention.</li>
+<li>To maximize efficiency, spend most of your time recalling rather than reviewing.</li>
+<li>You’ll accomplish this goal by creating flash cards that test your ability to recall a given word, pronunciation, or grammatical construction. Coupled with images and personal connections, these cards will form the foundation of a powerful memorization system.</li>
+</ul>
+<h4 id="principle-4-wait-wait-dont-tell-me">PRINCIPLE 4: WAIT, WAIT! DON’T TELL ME!</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Memory tests are most effective when they’re challenging. The closer you get to forgetting a word, the more ingrained it will become when you finally remember it.</li>
+<li>If you can consistently test yourself right before you forget, you’ll double the effectiveness of every test.</li>
+</ul>
+<h4 id="principle-5-rewrite-the-past">PRINCIPLE 5: REWRITE THE PAST</h4>
+<p>When we remember, we don’t just access our memories; we rewrite them. Prompted by the popcorn advertisement, these college students remembered movie nights at home, the smell of corn and butter, the crunch in their mouths, and the salt on their lips. In the midst of reliving these experiences, they saw images of other people enjoying popcorn in bags marked “Orville Redenbacher’s Gourmet  Fresh,” and their memories changed. The network of neurons from past movie nights activated at the same time as they saw the brand’s logo. Because neurons that fire together wire together, their brains stored these new connections as if they had always been there.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Every time you successfully recall a memory, you revisit and rewrite earlier experiences, adding bits and pieces of your present self to your past memories.</li>
+<li>You’ll make the best use of your time when practicing recall if your earlier experiences are as memorable as possible. You can accomplish this by connecting sounds, images, and personal connections to every word you learn.</li>
+<li>When you do forget, use immediate feedback to bring back your forgotten memories.</li>
+</ul>
+<h4 id="timing-is-everything-the-end-of-forgetting">TIMING IS EVERYTHING: THE END OF FORGETTING</h4>
+<p>If you read someone else’s gato flash card, you probably won’t spontaneously think of your childhood cat or of the numerous Shrek: Puss in Boots (Gato con Botas) images that show up on a Google Images search for the word. There’s no movie, no sound, and no story. Under these circumstances, you’ll be hard-pressed to form a deep, multisensory memory while you’re busily studying on the way to work. This isn’t the SRS’s fault; it’s in the nature of the language game.
+<strong>Note:</strong> Do flashcards yourself. Only you will have the emotional connection with images and words.</p>
+<p>This last point is the deadly one. As soon as your daily reviews become frustrating, it gets harder and harder to sit down and do them.</p>
+<p>You may be able to force yourself to stick with it for a few weeks, but no.</p>
+<p>you need longer than that to see major results. This becomes a vicious cycle, because frustration impedes your ability to remember, which puts the frustrating cards in front of you more often, which eventually causes you to throw your smartphone out of the nearest window.
+<strong>Note:</strong> With things that take time to learn you need to make sure that you enjoy them, otherwise you won’t be able to push through. You need to have fun.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Spaced repetition systems (SRSs) are flash cards on steroids. They supercharge memorization by automatically monitoring your progress and using that information to design a daily, customized to-do list of new words to learn and old words to review.</li>
+</ul>
+<h4 id="do-this-now-learn-to-use-a-spaced-repetition-system-srs">Do THIS NoW: LEARN TO USE A SPACED REPETITION SYSTEM (SRS)</h4>
+<p>Third, the process of finding images for computerized flash cards is one of the most powerful learning experiences you could ever hope for. Again, your brain sucks in images like a sponge. Just a few seconds browsing through twenty dog images will create a powerful, lasting memory. Even if you’re using physical flash cards, don’t pass up the opportunity to learn your words through Google Images.
+<strong>Note:</strong> While you are looking for images, words get engraved in your brain.</p>
+<h3 id="chapter-3-sound-play">CHAPTER 3 Sound Play</h3>
+<h4 id="train-your-ears-rewire-your-brain">TRAIN YOUR EARS, REWIRE YOUR BRAIN</h4>
+<blockquote>
+<p>At the edge of the North Sea, a German coastguard officer waits at his radio.
+”<em>Kshht</em> Mayday! Mayday! Hello, can you hear us? We are sinking!”
+“Ja, hallo! Zis is ze German coastguard!”
+“We are sinking! We are sinking!”
+“OK. Vat are you sinkink about?”
+-Berlitz advertisement</p>
+</blockquote>
+<p>The world’s languages contain roughly 800 phonemes (six hundred consonants and two hundred vowels). Most languages choose around 4,0 of these to form their words, although the range is quite broadthere’s a neat language called Rotokas in Papua New Guinea with only 11 phonemes, and Taa, spoken in Botswana, uses up to 112 (plus four tones!).</p>
+<p>The best data we have on this process come from studies of Americans and the Japanese. By using brain scans, researchers can see whether an individual can hear the difference between any two sounds. An American adult listening to a monotonous “rock. . .rock…rock…rock…lock” will show a sudden spike in brain activity when “lock” breaks the monotony, but a Japanese adult won’t show any change whatsoever. A Japanese baby, however, has no trouble whatsoever recognizing the two sounds, an ability that gradually vanishes between six and twelve months of age.</p>
+<p>When you use minimal pair testing at the beginning of your language journey, you’ll learn much faster in the long run. You’ll have an easier time remembering new words, because they no longer sound foreign.</p>
+<p>You’ll also understand native speakers better, because your ears are in sync with their speech. Instead of wasting your time correcting bad pronunciation habits, you’ll be able to spend your time consuming language at breakneck speed.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Your brain is hardwired to ignore the differences between foreign sounds. To rewire it, listen to minimal pairs in your target language similar sounding words like niece and knees-and test yourself until brain adapts to hear these new sounds.</li>
+<li>By practicing in this way, you’ll be better equipped to recognize words when they’re spoken, and you’ll have an easier time memorizing them on your own</li>
+</ul>
+<h4 id="train-your-mouth-get-the-girl">TRAIN YOUR MOUTH, GET THE GIRL</h4>
+<p>An accurate accent is powerful because it is the ultimate gesture of empathy. It connects you to another person’s culture in a way that words never can, because you have bent your body as well as your mind to match that person’s culture. Anyone can learn “bawn-JURE” in a few seconds. To learn how bonjour fits into your companion’s mouth and tongue; to learn how to manipulate the muscles, the folds, and even the texture of your throat and lips to match your companion’sthis is an unmistakable, undeniable, and irresistible gesture of care.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Impressions matter, and your accent makes your first impression in any language. A good accent can make the difference between a conversation that starts in French and ends in English, and a full conversation in French.</li>
+<li>Improve your accent by learning the raw ingredients-the tongue, lip, and vocal cord positions-of every new sound you need. You can find that information in the International Phonetic Alphabet (IPA).</li>
+<li>If you run into difficult combinations of sounds, back-chain them together until your tongue performs automatically.</li>
+</ul>
+<h4 id="train-your-eyes-see-the-patterns">TRAIN YOUR EYES, SEE THE PATTERNS</h4>
+<p>As long as I could connect every new thing I learned to this universe, I had an easy time with math. And I noticed that classmates who had problems with math weren’t struggling with math; they were struggling with connections. They were trying to memorize equations, but no one had successfully shown them how those equations connect with everything they had already learned.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Every language contains a pattern of connections between its spelling and its sounds. If you can internalize that pattern and make it automatic, you’ll save yourself a great deal of work.</li>
+<li>The easiest way to internalize those patterns is to use your SRS. Create flash cards to memorize every spelling pattern you need.</li>
+<li>In the process, approach foreign sounds and complex patterns from as many angles as you can-from their spellings to their sounds, even down to the individual mouth positions used for each sound. You’re taking advantage of one of the stranger quirks of learning: the more bits and pieces you learn, the less work it takes to learn them.</li>
+</ul>
+<h3 id="chapter-4-word-play-and-the-symphony-of-a-word">CHAPTER 4 Word Play and the Symphony of a Word</h3>
+<p>With only a thousand words, you’ll recognize nearly 75 percent of what you read. With two thousand, you’ll hit 80 percent. As you might expect, you’ll run into diminishing returns after a while, but these frequency lists provide an incredible foundation for your language.</p>
+<p>The most frequent words aren’t the same in every language: you won’t need Republican to learn Russian, and collective Soviet farming community doesn’t show up in Spanish very often. Each language has its own frequency list (the best frequency dictionaries are published by Routledge), and they are fascinating, both because of the words they include and the words they don’t.</p>
+<h4 id="games-with-words">GAMES WITH WORDS</h4>
+<p>So take a moment to have fun: it’s much more efficient.</p>
+<p>To create a deep, multisensory memory for a word, you’ll need to combine several ingredients: spelling, sound, meaning, and personal connection.</p>
+<p>When you research a word using Google Images, you’re playing the Spot the Differences game; you’re looking for the difference between what you expect to see, and you actually see. The internet is a lot of fun: the Internet is full of weird, funny pictures in all sorts of languages.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>
+<p>You can make your words more ‘memorable in two ways:</p>
+<ul>
+<li>By investigating the stories they tell</li>
+<li>By connecting those stories to your own life</li>
+</ul>
+</li>
+<li>
+<p>When you create flash cards, use the best storytelling tool ever invented: Google Images.</p>
+</li>
+<li>
+<p>Then spend a moment to find a link between each word and your own experiences.</p>
+</li>
+</ul>
+<h4 id="the-gender-of-a-turnip">THE GENDER OF A TURNIP</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Many languages assign a nonsensical grammatical gender to each of their nouns, which is a standard source of trouble for language learners.</li>
+<li>If your language has grammatical gender, you can memorize it easily if you assign each gender a particularly vivid action and then imagine each of your nouns performing that action.</li>
+</ul>
+<h4 id="do-this-now-learn-your-first-625-words-music-and-all">Do THIS Now: LEARN YOUR FIRST 625 WORDS, MUSIC AND ALL</h4>
+<p>Alternatively, if you’re studying a relatively common language, you can probably find a professional translation of the 625 words on my website. Go to Fluent-Forever.com/Appendix5.</p>
+<h3 id="chapter-5-sentence-play">CHAPTER 5 Sentence Play</h3>
+<h4 id="the-power-of-input-your-language-machine">THE POWER OF INPUT: YOUR LANGUAGE MACHINE</h4>
+<p>There are two sorts of grammar that we encounter in our lives: the spoken grammar we acquire as kids, and the written grammar we learn in school. Most people think of the latter when they hear the word grammar: school days devoted to the proper use of the comma, the removal of prepositions from the ends of our sentences, or the roles of your and you’re and which and that. Many of these rules can be frustrating because they’re based upon a great deal of academic nonsense. Our ban on prepositions at the end of sentences, for example, is a recent import from Latin, of all places. The ban snuck into our language when a group of London publishers released a series of competing style manuals and somehow convinced the populace that those rules had always been features of “proper” English. The written language is, in fact, our first foreign language-a dialect of our native tongue that each of us learns with varying degrees of success.</p>
+<p>Kids don’t learn their language from just any kind of language input. The only input that seems to matter is  input that kids can understand. In linguistic circles, this is known as comprehensible input. The basic idea is this: kids need to understand he gist of what they hear in order to learn a language from it.</p>
+<p>While the developmental stages look different from language to language, every language has a particular developmental order, which children and second language learners alike will inevitably follow on their way to fluency.</p>
+<p>Kids seem to succeed at language learning where adults fail, but that’s only because they get much more input than we do. In a kid’s first six years of life, they’re exposed to tens of thousands of hours of language. In our few years of language classes in school, we’re lucky to hear more than a few hundred hours, and many of those hours are spent talking about a language rather than talking in a language. It’s no wonder our language machines don’t seem to work; they’re starving for input.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>You’ll learn fastest if you take advantage of your language machinethe pattern-crunching tool that taught you the grammar of your native language. This machine runs off of comprehensible input-sentences that you understand-so you’ll need to find a good source of simple, clear sentences with translations and explanations.</li>
+<li>Take your first sentences out of your grammar book. That way, your sentences can do double duty, teaching you every grammar rule consciously while your language machine works in the background, piecing together an automatic, intuitive understanding of grammar that will rapidly bring you to fluency.</li>
+</ul>
+<h4 id="simplify-simplify-turning-mountains-into-molehills">SIMPLIFY, SIMPLIFY: TURNING MOUNTAINS INTO MOLEHILLS</h4>
+<p>Grammar is amazing in its complexity, but it is utterly awe inspiring in its simplicity. All of grammar’s infinite possibilities are the product of three basic operations: we add words (You like it → Do you like it?), we change their forms (I eat→I ate), and we change their order (This is nice → Is this nice?). That’s it. And it’s not just English. Every language’s grammar depends upon these three operations to turn their words into stories.</p>
+<p>These might not be the only ways to use these words. What, for instance, shows up in all sorts of contexts: What did you do today?</p>
+<p>and I’ll eat what he’s having! But you can learn any surprising, new examples of a word by turning them into additional flash cards. In the process, you’ll pick up a solid, intuitive feel for these words in a wide variety of contexts, which is a thousand times more useful than a clunky dictionary definition or a giant pile of translations</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Use your grammar book as a source of simple example sentences and dialogues.</li>
+<li>Pick and choose your favorite examples of each grammar rule. Then break those examples down into new words, word forms, and word orders. You’ll end up with a pile of effective, easy-to-learn flash cards.</li>
+</ul>
+<h4 id="story-time-making-patterns-memorable">STORY TIME: MAKING PATTERNS MEMORABLE</h4>
+<h4 id="on-arnold-schwarzenegger-and-exploding-dogs-mnemonics-for-grammar">ON ARNOLD SCHWARZENEGGER AND EXPLODING DOGS: MNEMONICS FOR GRAMMAR</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Languages often have groups of “irregular” words that follow similar patterns. While you can learn each of these patterns easily with the help of illustrated stories, you may still need some way to remember which words follow which patterns.</li>
+<li>Any time you run into a tricky pattern, choose a person, action, or object to help you remember. For verb patterns, pick a mnemonic person or an object. For noun patterns, use a person or an action. Adjectives fit well with objects, and adverbs fit well with actions.</li>
+</ul>
+<h4 id="the-power-of-output-your-custom-language-class">THE POWER OF OUTPUT: YOUR CUSTOM LANGUAGE CLASS</h4>
+<p>Self-directed writing is the ultimate personalized language class. The moment you try to write about your upcoming vacation without the word for “vacation” or the future tense, you learn precisely what bits of language you’re missing. Writing also trains you to take the patterns you’ve memorized and actually use them. This is where you learn to take raw information and turn it into language.</p>
+<p>Some of these exchange communities are tremendously helpful; I usually get a detailed correction from the Russians on Lang-8.com within an hour, and after a few hours, I often have five Russians commenting on my little paragraph. Insanity.</p>
+<p>Put every correction you receive into your flash cards. That way, you’ll never forget a correction. This is one of the best features of SRSS; they give you the ability to remember everything.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Use writing to test out your knowledge and find your weak points. Use the example sentences in your grammar book as models, and write about your interests.</li>
+<li>Submit your writing to an online exchange community. Turn every correction you receive into a flash card. In this way, you’ll find and fill in whatever grammar and vocabulary you’re missing.</li>
+</ul>
+<h4 id="do-this-now-learn-your-first-sentences">Do THIS NOW: LEARN YOUR FIRST SENTENCES</h4>
+<p>Use your grammar book. It’s there to make your life easier. You’ll find a collection of easy-to-understand example sentences and dialogues, detailed explanations, and our favorite part of all, giant declension charts.</p>
+<p>A note about writing: if you’re trying to refresh a language you’ve forgotten, writing is one of the best ways to reactivate those old memories. Write as much as you possibly can, and turn all of the corrections you receive into flash cards. There’s no better review for grammar and vocabulary.</p>
+<h3 id="chapter-6-the-language-game">CHAPTER 6 The Language Game</h3>
+<p>By learning the sounds of your language, you gain access to words. By learning words, you gain access to grammar. And with just a little bit of grammar, you gain access to the rest of your language.</p>
+<h4 id="setting-goals-your-custom-vocabulary">SETTING GOALS: YOUR CUSTOM VOCABULARY</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>To learn vocabulary efficiently, begin by learning the top thousand words in your target language.</li>
+<li>If you’re aiming for a high degree of fluency, then keep going until you know the top fifteen hundred to two thousand words.</li>
+<li>Once you’re done building a foundation, choose additional words based upon your individual needs. You can find these words by skimming through a thematic vocabulary book and finding key words for every context you need-travel, music, business, and so on.</li>
+</ul>
+<h4 id="words-about-words">WORDS ABOUT WORDS</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Use Google Images to find quality example sentences and pictures for your words. It’s fast, it provides clear examples, and the combination of images and sentences is easy to memorize.</li>
+<li>If you run into problems or you’re away from your computer, write out your own example sentences and definitions for new words. Get them corrected and use those corrections to learn both grammar and vocabulary.</li>
+<li>Once you have enough vocabulary under your belt, add a monolingual dictionary to your toolbox. When you do, you’ll gain the ability to learn every word in your target language, and as a bonus, your passive vocabulary will grow every time you research and memorize a new term.</li>
+</ul>
+<h4 id="reading-for-pleasure-and-profit">READING FOR PLEASURE AND PROFIT</h4>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Reading without a dictionary is the simplest, easiest way to grow your passive vocabulary. On average, a single book will teach you three hundred to five hundred words from context alone. By reading just one book in your target language, you’ll make all future books and texts of any kind much easier to read.</li>
+<li>By reading in conjunction with an audiobook, you’ll have a much easier time moving through a long text, and you’ll pick up invaluable exposure to the rhythms of your language in action. This will improve your pronunciation, your listening comprehension, your vocabulary, your grammar; in short, it will provide a huge boost to every aspect of your language.</li>
+</ul>
+<h4 id="listening-comprehension-for-couch-potatoes">LISTENING COMPREHENSION FOR COUCH POTATOES</h4>
+<p>DVDS of movies and TV shows often come with subtitles in English or your target language. Don’t use them. The problem with subtitles is that reading is easier than listening. We learn with our eyes more than our ears, and so when subtitles are present, we don’t improve at listening.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>Listening is a fast-paced skill that can sometimes feel overwhelming. Take baby steps, and gradually ramp up the challenge until you can handle the fastest and hardest of listening challenges (radio, podcasts, ridiculous garbled train station announcements).</li>
+<li>Start with an interesting foreign TV or dubbed American TV series without subtitles. You can dial down the difficulty by reading episode summaries ahead of time, in order to prepare yourself for the vocabulary and plot twists of each episode.</li>
+<li>As your comfort level grows, wean yourself off of summaries and begin watching and listening to more challenging media.</li>
+</ul>
+<h4 id="speech-and-the-game-of-taboo">SPEECH AND THE GAME OF TABOO</h4>
+<p>Fluency, after all, isn’t the ability to know every word and grammatical patterm in a language; it’s the ability to communicate your thoughts without stopping every time you run into a problem. If you can successfully tell your friend about that baseball game-We were watching the Dodgers-then you’ve just practiced fluency.</p>
+<p><strong>Key Points</strong></p>
+<ul>
+<li>With the advent of ubiquitous, high-speed Internet connections, you can get quality speech practice anywhere.</li>
+<li>Whenever and wherever you practice, follow the golden rule of Language Taboo: no English allowed. By practicing in this way, you’ll develop comfortable fluency with the words and grammar you know.</li>
+</ul>
+<h4 id="do-this-now-explore-your-language">Do THIS NOW: EXPLORE YOUR LANGUAGE</h4>
+<p>Over the previous three chapters, I’ve suggested the following:</p>
+<ol>
+<li>Sound Play: Learn how to hear and produce the sounds of your target language and how spelling and sound interrelate.</li>
+<li>Word Play: Learn 625 frequent, concrete words by playing Spot the Differences in Google Images, finding personal connections, and if needed, adding mnemonic imagery for grammatical gender.</li>
+<li>Sentence Play: Begin turning the sentences in your grammar book into flash cards for new words, word forms, and word order. Use written output to fill in the gaps missing from your textbook.</li>
+</ol>
+<p>Here’s what I suggest you do next:</p>
+<ol>
+<li>If you haven’t already done so, learn the first half of your grammar book. Make flash cards for everything you find interesting.</li>
+<li>Learn the top thousand words in your target language. Write out definitions and examples whenever you’re not entirely sure what a word means. About halfway through, you’ll find that you can understand a monolingual dictionary. Use it to help you learn the rest of your words.</li>
+<li>Go back to your grammar book, skim through it, and grab any remaining bits of information you’d like.</li>
+<li>Read your first book while listening to an audiobook.</li>
+<li>Watch a full season of a dubbed TV show, reading episode summaries in your target language ahead of time.</li>
+<li>Get a ton of speech practice. Get as much as you possibly can, either through an immersion program, a language holiday abroad, or through teachers on italki.com. If you get a private teacher, talk about the next thousand words from your frequency list and add specialized words for your particular interests. Together with your teacher, create example sentences and enter them into your SRS.
+Then rinse and repeat as desired.</li>
+</ol>
+<h3 id="the-gallery-a-guide-to-the-flash-cards-that-will-teach-you-your-language">THE GALLERY: A GUIDE TO THE FLASH CARDS THAT WILL TEACH YOU YOUR LANGUAGE</h3>
+<p>At the end of Chapter 3, we investigated the “more is less” paradox-that learning more information about a topic can help you learn in less time.</p>
+<p>We’ll add two basic design principles to these ideas:</p>
+<ul>
+<li>Many simple cards are better than a few complex cards.</li>
+<li>Always ask for one correct answer at a time.</li>
+</ul>
+<blockquote>
+<p><strong>Strategies for Chinese and Japanese</strong></p>
+</blockquote>
+<blockquote>
+<p>Chinese and Japanese (and, to a much lesser extent, Korean) use a set of characters known as logograms. In contrast with alphabets, logograms correspond to words or chunks of words rather than sounds. These can be tricky to learn. If you’re learning either of these languages (or if you really want to learn something wacky like ancient Egyptian hieroglyphs), then go to Fluent-Forever.com/logograms for a handful of supplementary flash card designs and strategies to make them easier.</p>
+</blockquote></article><footer class="flex flex-col items-center justify-between w-full h-16 md:flex-row md:h-20 pin-b"><div class="flex flex-row"><a class="flex items-center pr-2 m-0 font-normal leading-tight text-center text-gray-600 border-0" href="/rss.xml">RSS</a></div><div class=""><a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/previous">←</a>
+An IndieWeb Webring 🕸💍
+<a class="font-normal text-blue-700 border-0" href="https://xn--sr8hvo.ws/%E2%9E%B0%F0%9F%8D%8A%E2%8F%AD/next">→</a></div></footer></footer></body></html>
