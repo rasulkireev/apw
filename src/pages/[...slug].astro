@@ -1,6 +1,8 @@
 ---
 import { getCollection, getEntryBySlug } from 'astro:content';
 import PostLayout from '../layouts/PostLayout.astro';
+import BookHeader from '../components/BookHeader.vue';
+import PostHeader from '../components/PostHeader.vue';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
@@ -28,16 +30,22 @@ const { Content, headings } = await entry.render();
 <PostLayout>
 
   <!-- Parts Unique to each Post Type -->
-  <!-- {entry.data.type === "article" && <p>Article!</p>} -->
+
+
 
   <p class="mb-10 text-blue-700">
     ← <a href={"/" + entry.data.type + "s"}>back to {entry.data.type}s</a>
   </p>
 
-  <!-- Render Markdown -->
-  <article class="mb-6 prose lg:prose-xl h-entry" itemscope itemtype="http://schema.org/Article">
-    <h1>{entry.data.title}</h1>
-    <Content />
+
+  <article class="mb-6 h-entry" itemscope itemtype="http://schema.org/Article">
+
+    {entry.data.type === "book" && <BookHeader data={entry.data} />}
+    {entry.data.type === "article" && <PostHeader data={entry.data} />}
+
+    <div class="prose lg:prose-xl">
+      <Content />
+    </div>
   </article>
 
 </PostLayout>
