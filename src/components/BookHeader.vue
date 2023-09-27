@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-center md:flex-row md:items-start md:space-x-6">
-    <img class="w-32 mb-10" :src=getImageUrl(data.cover) />
+    <img class="w-32" :src=getImageUrl(data.cover) />
     <div class="flex flex-col space-y-2">
       <h1 class="h-full text-2xl font-extrabold leading-10 text-center text-gray-900 md:text-left md:text-5xl">
         {{ data.title }} by {{ data.author }}

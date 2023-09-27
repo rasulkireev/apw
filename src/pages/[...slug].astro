@@ -38,9 +38,9 @@ const { Content } = await entry.render();
   <article class="mb-6 h-entry" itemscope itemtype="http://schema.org/Article">
 
     {entry.data.type === "book" && <BookHeader data={entry.data} />}
-    {entry.data.type === "article" && <PostHeader data={entry.data} />}
+    {(entry.data.type === "article" || entry.data.type === "tutorial") && <PostHeader data={entry.data} />}
 
-    <div class="prose lg:prose-xl">
+    <div class="my-4 md:my-10 prose lg:prose-xl">
       <Content />
     </div>
   </article>
