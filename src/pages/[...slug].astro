@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content';
+import { getCollection } from 'astro:content';
 import PostLayout from '../layouts/PostLayout.astro';
 import BookHeader from '../components/BookHeader.vue';
 import PostHeader from '../components/PostHeader.vue';
@@ -12,7 +12,8 @@ export async function getStaticPaths() {
   const entries = [
     ...articleEntries,
     ...bookEntries,
-    ...tutorialEntries];
+    ...tutorialEntries
+  ];
 
   return entries.map(entry => ({
     params: {
@@ -22,21 +23,17 @@ export async function getStaticPaths() {
   }));
 }
 
+
 const { entry } = Astro.props;
-const { Content, headings } = await entry.render();
+const { Content } = await entry.render();
 
 ---
 
 <PostLayout>
 
-  <!-- Parts Unique to each Post Type -->
-
-
-
   <p class="mb-10 text-blue-700">
     ← <a href={"/" + entry.data.type + "s"}>back to {entry.data.type}s</a>
   </p>
-
 
   <article class="mb-6 h-entry" itemscope itemtype="http://schema.org/Article">
 

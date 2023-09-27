@@ -21,7 +21,11 @@ export default {
   props: ['data'],
   methods: {
     getImageUrl(imagePath) {
-      return imagePath.replace(/^\.\//, "../src/content/books/");
+      try {
+        return imagePath.src.replace(/^\.\//, "../src/content/books/");
+      } catch (error) {
+        console.log(imagePath);
+      }
     }
   },
   computed: {
