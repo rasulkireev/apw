@@ -1,5 +1,4 @@
 <template>
-<!-- This example requires Tailwind CSS v2.0+ -->
 <nav class="z-50 bg-white">
   <div class="px-4 mx-auto max-w-7xl">
     <div class="flex justify-between h-20">
@@ -24,7 +23,6 @@
             <a href="/projects/" class="inline-flex items-center px-1 pt-1 text-lg font-medium text-gray-500 hover:text-gray-700">
                 Projects
             </a>
-            <!-- This example requires Tailwind CSS v2.0+ -->
             <div class="relative inline-block text-left">
               <div>
                   <button
