@@ -36,6 +36,8 @@ const bookCollection = defineCollection({
     cover: image(),
     type: z.string(),
     rating: z.number(),
+    notAffiliateLink: z.string().optional(),
+    affiliateLink: z.string().optional(),
   }),
 });
 

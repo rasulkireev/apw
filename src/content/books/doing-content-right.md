@@ -16,7 +16,6 @@ hnLink: "https://news.ycombinator.com/item?id=29511537"
 redditLink: "https://www.reddit.com/r/BettermentBookClub/comments/rdbxpb/top_lessons_and_thoughts_from_doing_content_right/"
 indiehackersLink: "https://www.indiehackers.com/post/top-lessons-and-thoughts-from-doing-content-right-0f30479e63"
 notAffiliateLink: https://stephsmithio.gumroad.com/l/doing-content-right
-affiliateLink:
 hasSummaries: n
 unsplashImageID: NDLLFxTELrU
 aiImage:
