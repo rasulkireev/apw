@@ -3,7 +3,7 @@ title: "How to Take Smart Notes"
 author: "Sönke Ahrens"
 rating: 9
 slug: "how-to-take-smart-notes"
-intro: "If you've heard the term 'Zettelkasten' flying around recently, then you might be wondering what is all the rage. Well, this book pretty much started this trend. Sönke Ahrens describes in great detail the note-taking process through which Niklas Luhmann was able to achieve phenomenal productivity in writing academic papers. Good news is that you can use this method too."
+description: "If you've heard the term 'Zettelkasten' flying around recently, then you might be wondering what is all the rage. Well, this book pretty much started this trend. Sönke Ahrens describes in great detail the note-taking process through which Niklas Luhmann was able to achieve phenomenal productivity in writing academic papers. Good news is that you can use this method too."
 cover: "./images/how-to-take-smart-notes.jpg"
 dateRead: 2020-12-12
 dateCreated: 2021-11-13
@@ -12,8 +12,6 @@ category: "Writing"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1459952137849430022"
 hnLink: "https://news.ycombinator.com/item?id=29219286"
-redditLink: ""
-indiehackersLink: ""
 notAffiliateLink: https://www.indiebound.org/book/9781542866507
 affiliateLink: https://amzn.to/30ipIZq
 hasSummaries: n

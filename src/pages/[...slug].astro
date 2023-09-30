@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import PostLayout from '../layouts/PostLayout.astro';
 import BookHeader from '../components/BookHeader.vue';
 import PostHeader from '../components/PostHeader.vue';
+import DiscussOn from '../components/DiscussOn.vue';
+import SocialShareButtons from '../components/SocialShareButtons.vue';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
@@ -44,5 +46,19 @@ const { Content } = await entry.render();
       <Content />
     </div>
   </article>
+
+  <SocialShareButtons
+    title={entry.data.title}
+    url={Astro.url}
+    text={entry.data.description}
+    class="lg:top-1/3 lg:left-0 lg:m-0 lg:fixed"
+  />
+
+  <DiscussOn
+    twitterLink={entry.data.twitterLink}
+    hnLink={entry.data.hnLink}
+    redditLink={entry.data.redditLink}
+    indiehackersLink={entry.data.indiehackersLink}
+  />
 
 </PostLayout>

@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [personalspace, website, blog]
 category: "Personal"
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: My Own Personal Space. So Cool.
 ---
 

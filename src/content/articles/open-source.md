@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [opensource]
 category: Open Source
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: My thoughts on the Open Source community and the culture behind it.
 ---
 

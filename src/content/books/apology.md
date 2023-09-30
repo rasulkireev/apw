@@ -4,7 +4,7 @@ subtitle:
 author: Plato
 rating: 8
 slug: apology-plato
-intro: "The Apology is Plato's record of the speech given by Socrates in court as he tries to defend himself in 399BCE against the accusations of 'corrupting the young, and by not believing in the gods in whom the city believes'."
+description: "The Apology is Plato's record of the speech given by Socrates in court as he tries to defend himself in 399BCE against the accusations of 'corrupting the young, and by not believing in the gods in whom the city believes'."
 cover: "./images/plato-apology.jpg"
 dateRead: 2022-01-24
 dateCreated: 2022-01-25

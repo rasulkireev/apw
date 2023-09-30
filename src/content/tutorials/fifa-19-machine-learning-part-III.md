@@ -12,9 +12,6 @@ keywords: [datascience, machinelearning, fifa, numpy, pandas, python, scikitlear
 category: Data Science
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1292631350584004608"
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: In this post we are going to apply some basic machine learning on our clean dataset. We are going to focus on using Scikit Learn
 ---
 

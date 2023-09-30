@@ -4,7 +4,7 @@ subtitle: A Proven Method to Organize Your Digital Life and Unlock Your Creative
 author: Tiago Forte
 rating: 5
 slug: building-a-second-brain
-intro: "Building a Second Brain is a great PKM approach created by Tiago Forte. He has been teaching that course for a while now and has been publishing for many years at Forte Labs. This books is a collection of methods, techniques and ideas that he has formulated over those years. This book is perfect for someone who hasn't yet started collecting thoughts and ideas in a Second Brain."
+description: "Building a Second Brain is a great PKM approach created by Tiago Forte. He has been teaching that course for a while now and has been publishing for many years at Forte Labs. This books is a collection of methods, techniques and ideas that he has formulated over those years. This book is perfect for someone who hasn't yet started collecting thoughts and ideas in a Second Brain."
 cover: "./images/building-a-second-brain.jpeg"
 dateRead: 2022-07-17
 dateCreated: 2022-08-16

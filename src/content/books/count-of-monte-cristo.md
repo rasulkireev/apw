@@ -4,17 +4,13 @@ subtitle:
 author: Alexandre Dumas
 rating: 7
 slug: count-of-monte-cristo
-intro: "This is a beautiful and engaing story of wrongful imprisonment and a desire for a revenge. At times a little slow, but exciting enough in other parts to fully compensate."
+description: "This is a beautiful and engaing story of wrongful imprisonment and a desire for a revenge. At times a little slow, but exciting enough in other parts to fully compensate."
 cover: "./images/count-of-monte-cristo.jpg"
 dateRead: 2023-06-25
 dateCreated: 2023-07-07
 dateUpdated: 2023-07-07
 category: "Fiction"
 type: book
-twitterLink:
-hnLink:
-redditLink:
-indiehackersLink:
 notAffiliateLink: https://bookshop.org/p/books/the-count-of-monte-cristo-alexandre-dumas/17968494?ean=9781607107316
 affiliateLink: https://amzn.to/44WbIRk
 hasSummaries: n

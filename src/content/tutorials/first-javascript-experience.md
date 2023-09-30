@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [webapp, javascript, html]
 category: Javascript
 type: tutorial
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: Sharing my first epxerience with Javascript. Had to add some action to my new web app.
 ---
 

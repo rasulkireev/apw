@@ -3,7 +3,7 @@ title: "Economical Writing"
 author: "Deirdre N. McCloskey"
 rating: 9
 slug: "economical-writing"
-intro: "Even though this book is titled and marketed as a book for economists, in reality, it can help anyone to improve their writing (especially, nonfiction writers)."
+description: "Even though this book is titled and marketed as a book for economists, in reality, it can help anyone to improve their writing (especially, nonfiction writers)."
 cover: "./images/economical-writing.jpg"
 dateRead: 2020-12-25
 dateCreated: 2021-05-18
@@ -12,8 +12,6 @@ category: "Writing"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1398244265948495872"
 hnLink: "https://news.ycombinator.com/item?id=27314205"
-redditLink: ""
-indiehackersLink: ""
 notAffiliateLink: https://www.indiebound.org/book/9780226448077
 affiliateLink: https://amzn.to/3v3NliT
 hasSummaries: n

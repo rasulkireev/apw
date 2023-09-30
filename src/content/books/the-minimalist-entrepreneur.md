@@ -4,7 +4,7 @@ subtitle: How Great Founders Do More with Less
 author: Sahil Lavingia
 rating: 9
 slug: minimalist-entrepreneur
-intro: "This is my favorite book on the topic of entrepreneurhip. It doesn't matter what stage you are at, whether just trying to find an idea to work on, or already have a profitable company, you will surely learn something new from Sahil."
+description: "This is my favorite book on the topic of entrepreneurhip. It doesn't matter what stage you are at, whether just trying to find an idea to work on, or already have a profitable company, you will surely learn something new from Sahil."
 cover: "./images/minimalist-entrepreneur.jpeg"
 dateRead: 2021-05-08
 dateCreated: 2022-06-18

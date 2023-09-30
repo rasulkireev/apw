@@ -29,7 +29,7 @@ allBooks.sort((a, b) => b.data.rating.valueOf() - a.data.rating.valueOf());
             <p class="text-sm text-gray-600">Rating: { p.data.rating }/10</p>
             <p class="text-sm text-gray-600">Date Read: {p.data.dateRead.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <p class="m-0 text-base text-gray-800">
-              { p.data.intro }
+              { p.data.description }
             </p>
           </div>
         </div>

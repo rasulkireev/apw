@@ -19,8 +19,6 @@ category: Ethereum
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1449808313533837312"
 hnLink: "https://news.ycombinator.com/item?id=28898711"
-redditLink: ""
-indiehackersLink: ""
 description: This tutorial teaches you how to create/develop your own Ethereum token (ERC20) with Python on Polygon Network.
 ---
 

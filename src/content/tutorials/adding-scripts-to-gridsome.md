@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [scripts, gridsome, vue]
 category: Javascript
 type: tutorial
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: How do I add script tag to specific pages only? In this post I show how I integrated hypothes.is only on my article pages.
 ---
 

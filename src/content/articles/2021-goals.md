@@ -17,8 +17,6 @@ category: Personal
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1362785148387917824"
 hnLink: "https://news.ycombinator.com/item?id=26194039"
-redditLink: ""
-indiehackersLink: ""
 description: In this post I want to publicly list all my 2021 goals. This will help keep me accountable.
 ---
 

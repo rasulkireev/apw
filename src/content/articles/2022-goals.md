@@ -15,10 +15,6 @@ keywords:
 - review
 category: Personal
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: In this post, I want to publicly list all my 2022 goals. This will help keep me accountable.
 ---
 

@@ -4,7 +4,7 @@ subtitle:
 author: David Deida
 rating: 8
 slug: way-of-superior-man
-intro: "David Deida explores the most important issues in men's lives—from career and family to women and intimacy to love and spirituality and relationships—to offer a practical guidebook for living a masculine life of integrity, authenticity, and freedom."
+description: "David Deida explores the most important issues in men's lives—from career and family to women and intimacy to love and spirituality and relationships—to offer a practical guidebook for living a masculine life of integrity, authenticity, and freedom."
 cover: "./images/the-way-of-superior-man.jpeg"
 dateRead: 2021-03-07
 dateCreated: 2022-06-04

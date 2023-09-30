@@ -12,9 +12,6 @@ keywords: [joplin, productivity]
 category: "Productivity"
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1241842478564749314"
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: "I wanted to discuss how I use Pocket and how it integrates into the BASB flow."
 ---
 

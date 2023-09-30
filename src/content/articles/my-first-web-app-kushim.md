@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [webapp, django, saas]
 category: Projects
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: Finally launched my first Web App. Kushim is my first Django project which was built from scratch.
 ---
 

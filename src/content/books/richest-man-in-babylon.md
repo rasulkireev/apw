@@ -3,7 +3,7 @@ title: "The Richest Man In Babylon"
 author: "George S. Clason"
 rating: 8
 slug: "richest-man-in-babylon"
-intro: "'The Richest Man In Babylon' is a collection of short and educational stories. These stories tell you about people living in ancient Babylon. Each story teaches you a small lesson on how to make progress towards financial stability."
+description: "'The Richest Man In Babylon' is a collection of short and educational stories. These stories tell you about people living in ancient Babylon. Each story teaches you a small lesson on how to make progress towards financial stability."
 cover: "./images/richest-man-in-babylon.jpg"
 dateRead: 2021-04-05
 dateCreated: 2021-05-11
@@ -12,8 +12,6 @@ category: "Wealth"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1392876920686227464"
 hnLink: "https://news.ycombinator.com/item?id=27143913"
-redditLink: ""
-indiehackersLink: ""
 notAffiliateLink: https://www.indiebound.org/book/9780451205360
 affiliateLink: https://amzn.to/3hl9eWW
 hasSummaries: n

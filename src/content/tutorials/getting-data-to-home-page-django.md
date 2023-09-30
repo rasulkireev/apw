@@ -12,9 +12,6 @@ keywords: [django, context, tutorial]
 category: Django
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1230974745644060678"
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: In this post I show how to use get_context_data(). You might need it to display 'latest posts' on your 'home page'.
 ---
 

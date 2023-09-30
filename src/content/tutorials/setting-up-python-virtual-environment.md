@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [virtualenvironment, python, django, project, venv]
 category: Python
 type: tutorial
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: How to set up a virtual environment for your Django Project, or any other Python project, for that matter.
 ---
 

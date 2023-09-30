@@ -4,7 +4,7 @@ subtitle: An Inner Journey to Optimal Performance
 author: Josh Waitzkin
 rating: 9
 slug: the-art-of-learning-book-review
-intro: "In this book the reader is taken on a journey of learning, improving, and personal growth. Josh is an incredible human, who achieved great success in different fields all thanks to his ability to learn. In this book, we get to see stories from his life as he tells them and see what is it that makes a great learner."
+description: "In this book the reader is taken on a journey of learning, improving, and personal growth. Josh is an incredible human, who achieved great success in different fields all thanks to his ability to learn. In this book, we get to see stories from his life as he tells them and see what is it that makes a great learner."
 cover: "./images/the-art-of-learning.jpg"
 dateRead: 2021-09-15
 dateCreated: 2021-10-22
@@ -13,7 +13,6 @@ category: "Learning"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1451565242140536838"
 hnLink: "https://news.ycombinator.com/item?id=28959445"
-redditLink: ""
 indiehackersLink: "https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-art-of-learning-97312da72e"
 notAffiliateLink: https://www.indiebound.org/book/9780743277464
 affiliateLink: https://amzn.to/3GcKREH

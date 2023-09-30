@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [anime, naruto]
 category: Personal
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: A few thoughts about my favorite anime and pieces of artwork in general. Mainly, how it impacted my life.
 ---
 

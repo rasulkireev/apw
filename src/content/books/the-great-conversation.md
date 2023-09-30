@@ -4,7 +4,7 @@ subtitle: The Substance of a Liberal Education
 author: Robert Hutchins
 rating: 7
 slug: the-great-conversation
-intro: "This is an intro book to the Great Books of the Western World series. Authors do a great job of convincing you to invest your life in pursuing this series, that they refer to as Liberal Education."
+description: "This is an intro book to the Great Books of the Western World series. Authors do a great job of convincing you to invest your life in pursuing this series, that they refer to as Liberal Education."
 cover: "./images/the-great-conversation.jpeg"
 dateRead: 2021-01-17
 dateCreated: 2022-06-26

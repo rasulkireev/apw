@@ -4,7 +4,7 @@ subtitle: A Novel about IT, DevOps, and Helping Your Business Win
 author: Gene Kim
 rating: 6
 slug: phoenix-project
-intro: "Great book to listen to while doing chores. A lot of the principles have penetrated the tech industry, so you will be familiar with what this book has to offer. However, you should still give it a try, since there aren't many book like that one. A fictious story about DevOps practices. THat's pretty cool and unique."
+description: "Great book to listen to while doing chores. A lot of the principles have penetrated the tech industry, so you will be familiar with what this book has to offer. However, you should still give it a try, since there aren't many book like that one. A fictious story about DevOps practices. THat's pretty cool and unique."
 cover: "./images/phoenix-project.jpg"
 dateRead: 2023-02-01
 dateCreated: 2022-03-04

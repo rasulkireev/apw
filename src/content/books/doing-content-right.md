@@ -4,7 +4,7 @@ subtitle: Standing Out in 2022
 author: Steph Smith
 rating: 8
 slug: doing-content-right-book-review
-intro: "Steph is taking you on a journey from figuring out what you can write about all the way to earning money from it."
+description: "Steph is taking you on a journey from figuring out what you can write about all the way to earning money from it."
 cover: "./images/doing-content-right.jpg"
 dateRead: 2021-12-02
 dateCreated: 2021-12-04

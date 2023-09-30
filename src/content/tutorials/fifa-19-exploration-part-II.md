@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [opensource, plotly, pandas]
 category: Data Visualization
 type: tutorial
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: My thoughts on the Open Source community and the culture behind it.
 ---
 

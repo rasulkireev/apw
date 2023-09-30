@@ -16,8 +16,6 @@ category: Personal
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1480646685806186498"
 hnLink: "https://news.ycombinator.com/item?id=29882437"
-redditLink: ""
-indiehackersLink: ""
 description: This year I'm partly following Anthony Gustin's Annual Review process. In this post, I will share my responses to Steps 2 and 3. I will also share personal statistics that I was able to collect during the year.
 ---
 

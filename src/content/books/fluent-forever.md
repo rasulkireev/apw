@@ -4,7 +4,7 @@ subtitle: How to Learn Any Language Fast and Never Forget It
 author: Gabriel Wyner
 rating: 7
 slug: fluent-forever-book-review
-intro: "Gabriel shares his expeience and his research into the most effective ways of learning any foreign language. THe main idea of the book is to use an SRS like Anki. But there are a ton of other details that will help you excel in you journey of learning a language."
+description: "Gabriel shares his expeience and his research into the most effective ways of learning any foreign language. THe main idea of the book is to use an SRS like Anki. But there are a ton of other details that will help you excel in you journey of learning a language."
 cover: "./images/fluent-forever.jpg"
 dateRead: 2020-12-10
 dateCreated: 2021-12-14

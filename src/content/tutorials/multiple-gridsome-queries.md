@@ -12,9 +12,6 @@ keywords: [gridsome, graphql, html]
 category: Gridsome
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1286433227960463360"
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: Ever wonder how include multiple queries on the same page, when using Gridsome? Well, this is how.
 ---
 

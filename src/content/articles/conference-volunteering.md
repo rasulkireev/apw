@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [2019, journal, review]
 category: Conferences
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: This is a reflection on my first volunteering experience at PyData 2019.
 ---
 

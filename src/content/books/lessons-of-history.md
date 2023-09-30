@@ -3,7 +3,7 @@ title: "The Lessons of History"
 author: "Will and Ariel Durant"
 rating: 10
 slug: "lessons-of-history"
-intro: "The Lessons of History is a fantastic book, the best one I read in 2020. It is undervalued. While people talk about recent bestsellers this gem is waiting to be read. Any person can gain valuable insight and knowledge from this book."
+description: "The Lessons of History is a fantastic book, the best one I read in 2020. It is undervalued. While people talk about recent bestsellers this gem is waiting to be read. Any person can gain valuable insight and knowledge from this book."
 cover: "./images/lessons-of-history.jpg"
 dateRead: 2020-12-20
 dateCreated: 2021-03-15
@@ -12,8 +12,6 @@ category: "History"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1371646873723883523"
 hnLink: "https://news.ycombinator.com/item?id=26466363"
-redditLink: ""
-indiehackersLink: ""
 notAffiliateLink: https://www.indiebound.org/book/9781439149959
 affiliateLink: https://amzn.to/3eDfKaj
 hasSummaries: n

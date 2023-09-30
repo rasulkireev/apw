@@ -12,9 +12,6 @@ keywords: [webscraping, dictionaries, python, webscraping]
 category: Python
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1228083171092238337"
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: I have encountered a problem where I was not able to append a dictionary to a list. In this post, I will explore this issue and show how to bypass that.
 ---
 

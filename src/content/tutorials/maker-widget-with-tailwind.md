@@ -11,10 +11,6 @@ aiPrompt:
 keywords: [builtwithdjango, tailwindcss, html, css, design]
 category: Design
 type: tutorial
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: In this post we are making a simple Maker Widget with TailwindCSS.
 ---
 

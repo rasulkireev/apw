@@ -14,10 +14,6 @@ keywords:
 - reading
 category: Reading
 type: article
-twitterLink: ""
-hnLink: ""
-redditLink: ""
-indiehackersLink: ""
 description: "I'm sharing a couple ways to find reading material online"
 ---
 
