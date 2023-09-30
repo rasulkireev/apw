@@ -14,7 +14,7 @@
 
         <a
           v-if=hnLink
-          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-orange-600 rounded-lg hover:bg-yellow-700"
+          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-orange-600 rounded-lg hover:bg-orange-700"
           :href=hnLink
           target="_blank"
         >
