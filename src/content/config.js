@@ -27,6 +27,7 @@ const tutorialCollection = defineCollection({
     hnLink: z.string().optional(),
     redditLink: z.string().optional(),
     indiehackersLink: z.string().optional(),
+    category: z.string().optional(),
     icon: image(),
     type: z.string()
   }),
