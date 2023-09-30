@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pageTitle = "What Rasul is up to.";
+const allNows = await getCollection('now');
+
+let latestObject = allNows[0];
+for (let i = 1; i < allNows.length; i++) {
+  const currentDate = new Date(allNows[i].data.date);
+  const latestDate = new Date(latestObject.data.date);
+
+  if (currentDate > latestDate) {
+    latestObject = allNows[i];
+  }
+}
+const now = latestObject;
+
+
+let options = { year: 'numeric', month: 'long', day: 'numeric' };
+const date = new Date(now.data.date).toLocaleDateString(undefined, options);
+
+const { Content } = await now.render();
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="mb-6">
+    <div class="mb-4 border-b-2 border-gray-200">
+      <h1 class="text-2xl font-semibold p-name" itemprop="name">What I'm Up To Now</h1>
+      <p class="text-sm text-gray-600">
+        Updated on { date }</time>
+      </p>
+    </div>
+
+    <div class="my-4 md:my-10 prose lg:prose-xl">
+      <Content />
+    </div>
+
+    <p class="my-4">
+      (This is a
+      <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="https://nownownow.com/">
+        now
+      </a>
+      page, and if you have your own site,
+      <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="https://nownownow.com/about">
+        you should make one
+      </a>
+      , too.)
+    </p>
+  </section>
+</BaseLayout>

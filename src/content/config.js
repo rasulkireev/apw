@@ -54,8 +54,13 @@ const bookCollection = defineCollection({
   }),
 });
 
+const nowCollection = defineCollection({
+  type: "content"
+})
+
 export const collections = {
   "articles": articleCollection,
   "tutorials": tutorialCollection,
   "books": bookCollection,
+  "now": nowCollection
 };
