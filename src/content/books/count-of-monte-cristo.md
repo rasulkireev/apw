@@ -8,7 +8,7 @@ description: "This is a beautiful and engaing story of wrongful imprisonment and
 cover: "./images/count-of-monte-cristo.jpg"
 dateRead: 2023-06-25
 dateCreated: 2023-07-07
-dateUpdated: 2023-07-07
+dateUpdated: 2023-10-23
 category: "Fiction"
 type: book
 notAffiliateLink: https://bookshop.org/p/books/the-count-of-monte-cristo-alexandre-dumas/17968494?ean=9781607107316
@@ -27,14 +27,19 @@ tags:
 
 ## Summary
 
-There is not much to summarize. This is a story of wrongful imprisonment and a desire for a revenge.
+I'm not going to go into great detail when summarizing this book, as to not spoil anything.
+
+This is a story of wrongful imprisonment and a desire for the revenge.
 
 ## My Thoughts
 
-I don't have any learning from the book. This is something that I just enjoyed reading. At times it was a little slow, but other parts compensated with an extremely interesting plot twists and stories.
+I enjoyed reading this story. Some parts were a little slow, but other parts compensated with an extremely interesting plot twists and stories.
 
+Some questions to ponder while reading this book:
 - Is revenge a justified means of achieving justice or does it perpetuate a cycle of violence and destruction?
 - Analyze the transformations undergone by the main characters, particularly Edmond Dantès, as they navigate through their journey. How does one's understanding of self change over time? Is it possible to maintain one's true identity in the face of adversity?
+- Does wealth bring happiness or corrupt individuals? How does the pursuit of power drive the actions of the characters?
+- Can trust be regained once it is broken?
 
 
 ## Highlights
