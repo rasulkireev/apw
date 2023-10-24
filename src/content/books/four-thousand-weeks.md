@@ -16,6 +16,10 @@ affiliateLink: https://amzn.to/46JJ0UO
 hasSummaries: n
 aiImage: ./images/a_man_in_a_warehouse_holding_his_head_because_there.png
 aiPrompt: a hard working man sitting at a desk while a sand clock is just about to run out, cartoon style --ar 2:1 --v 5.2
+twitterLink: https://twitter.com/rasulkireev/status/1716871155477590442
+hnLink: https://news.ycombinator.com/item?id=38002434
+redditLink: https://www.reddit.com/r/BettermentBookClub/comments/17fiiq7/top_lessons_and_thoughts_from_four_thousand_weeks/
+indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-four-thousand-weeks-95bc0f8841
 tags:
   - Nonfiction
   - Self Help
