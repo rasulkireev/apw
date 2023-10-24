@@ -16,8 +16,6 @@ notAffiliateLink: https://www.indiebound.org/book/9781542866507
 affiliateLink: https://amzn.to/30ipIZq
 hasSummaries: n
 unsplashImageID: kt6fQoFlY4E
-aiImage:
-aiPrompt:
 tags:
     - Nonfiction
     - Productivity

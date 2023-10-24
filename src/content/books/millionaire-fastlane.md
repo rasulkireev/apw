@@ -19,8 +19,6 @@ notAffiliateLink: https://www.indiebound.org/book/9780984358106
 affiliateLink: https://amzn.to/42j1wSe
 hasSummaries: n
 unsplashImageID: aNEoZH3qbfU
-aiImage:
-aiPrompt:
 tags:
     - Education
     - Personal Finance

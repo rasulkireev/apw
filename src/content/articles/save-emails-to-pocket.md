@@ -6,8 +6,6 @@ published: true
 slug: emails-to-pocket
 icon: ./icons/email_open.svg
 unsplashImageID: 3Mhgvrk4tjM
-aiImage:
-aiPrompt:
 keywords: [email, pocket]
 category: Productivity
 type: article

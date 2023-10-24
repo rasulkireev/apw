@@ -7,12 +7,15 @@ const articleCollection = defineCollection({
     description: z.string(),
     dateCreated: z.date(),
     dateUpdated: z.date(),
+    type: z.string(),
+    icon: image(),
     twitterLink: z.string().optional(),
     hnLink: z.string().optional(),
     redditLink: z.string().optional(),
     indiehackersLink: z.string().optional(),
-    icon: image(),
-    type: z.string()
+    aiImage: image().optional(),
+    aiPrompt: z.string().optional(),
+    tags: z.array(z.string()).optional()
   }),
 });
 
@@ -23,13 +26,16 @@ const tutorialCollection = defineCollection({
     description: z.string(),
     dateCreated: z.date(),
     dateUpdated: z.date(),
+    icon: image(),
+    type: z.string(),
+    aiImage: image().optional(),
+    aiPrompt: z.string().optional(),
     twitterLink: z.string().optional(),
     hnLink: z.string().optional(),
     redditLink: z.string().optional(),
     indiehackersLink: z.string().optional(),
     category: z.string().optional(),
-    icon: image(),
-    type: z.string()
+    tags: z.array(z.string()).optional()
   }),
 });
 
@@ -41,16 +47,19 @@ const bookCollection = defineCollection({
     description: z.string(),
     dateCreated: z.date(),
     dateUpdated: z.date(),
-    twitterLink: z.string().optional(),
-    hnLink: z.string().optional(),
-    redditLink: z.string().optional(),
-    indiehackersLink: z.string().optional(),
     dateRead: z.date(),
     cover: image(),
     type: z.string(),
     rating: z.number(),
+    twitterLink: z.string().optional(),
+    hnLink: z.string().optional(),
+    redditLink: z.string().optional(),
+    indiehackersLink: z.string().optional(),
     notAffiliateLink: z.string().optional(),
     affiliateLink: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    aiImage: image().optional(),
+    aiPrompt: z.string().optional(),
   }),
 });
 

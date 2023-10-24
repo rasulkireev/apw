@@ -6,8 +6,6 @@ published: true
 slug: conference-volunteering
 icon: ./icons/global-volunteering.svg
 unsplashImageID: bzdhc5b3Bxs
-aiImage:
-aiPrompt:
 keywords: [2019, journal, review]
 category: Conferences
 type: article

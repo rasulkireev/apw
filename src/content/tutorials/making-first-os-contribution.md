@@ -6,8 +6,6 @@ published: true
 slug: open-source-contributions
 icon: ./icons/open_source.svg
 unsplashImageID: R-HXWCbCBGU
-aiImage:
-aiPrompt:
 keywords: [opensource, contribution, github, git]
 category: Open Source
 type: tutorial

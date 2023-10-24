@@ -6,8 +6,6 @@ published: true
 slug: gridsome-page-scripts
 icon: ./icons/source_code.svg
 unsplashImageID: YOqOgFI5fKI
-aiImage:
-aiPrompt:
 keywords: [scripts, gridsome, vue]
 category: Javascript
 type: tutorial

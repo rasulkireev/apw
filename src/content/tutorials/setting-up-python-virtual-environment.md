@@ -6,8 +6,6 @@ published: true
 slug: django-venv
 icon: ./icons/python.svg
 unsplashImageID: TkEPQPWr2sY
-aiImage:
-aiPrompt:
 keywords: [virtualenvironment, python, django, project, venv]
 category: Python
 type: tutorial

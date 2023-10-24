@@ -18,8 +18,6 @@ indiehackersLink: "https://www.indiehackers.com/post/top-lessons-and-thoughts-fr
 notAffiliateLink: https://stephsmithio.gumroad.com/l/doing-content-right
 hasSummaries: n
 unsplashImageID: NDLLFxTELrU
-aiImage:
-aiPrompt:
 tags:
     - Blogging
     - Writing

@@ -16,8 +16,6 @@ notAffiliateLink: https://www.indiebound.org/book/9780451205360
 affiliateLink: https://amzn.to/3hl9eWW
 hasSummaries: n
 unsplashImageID: JF08o_YLrd4
-aiImage:
-aiPrompt:
 tags:
     - Wealth
     - Finances

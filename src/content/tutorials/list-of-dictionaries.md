@@ -6,8 +6,6 @@ published: true
 slug: list-of-dicts
 icon: ./icons/python.svg
 unsplashImageID: ./images/reading-on-kindle.jpg
-aiImage:
-aiPrompt:
 keywords: [webscraping, dictionaries, python, webscraping]
 category: Python
 type: tutorial

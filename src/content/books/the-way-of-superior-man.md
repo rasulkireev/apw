@@ -19,8 +19,6 @@ notAffiliateLink: https://www.indiebound.org/book/9781622038329
 affiliateLink: https://amzn.to/3MwyeH7
 hasSummaries: n
 unsplashImageID: hHCw3V0jg_w
-aiImage:
-aiPrompt:
 tags:
     - Love
     - Romance

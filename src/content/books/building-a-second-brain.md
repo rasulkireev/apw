@@ -19,8 +19,6 @@ notAffiliateLink: https://www.indiebound.org/book/9781982167387
 affiliateLink: https://amzn.to/3QvhRNs
 hasSummaries: n
 unsplashImageID: LqKhnDzSF-8
-aiImage:
-aiPrompt:
 tags:
     - Education
     - PKM

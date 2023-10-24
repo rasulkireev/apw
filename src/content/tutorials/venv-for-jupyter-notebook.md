@@ -6,8 +6,6 @@ published: true
 slug: jupyter-venv
 icon: ./icons/jupyter.jpg
 unsplashImageID: fDV3geJ2HwM
-aiImage:
-aiPrompt:
 keywords: [virtualenvironment, jupyter]
 category: Python
 type: tutorial

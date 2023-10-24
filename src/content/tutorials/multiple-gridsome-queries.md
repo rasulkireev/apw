@@ -6,8 +6,6 @@ published: true
 slug: multiple-gridsome-queries
 icon: ./icons/unknown_status.png
 unsplashImageID: xVQ7j3G7FSU
-aiImage:
-aiPrompt:
 keywords: [gridsome, graphql, html]
 category: Gridsome
 type: tutorial

@@ -6,8 +6,6 @@ published: true
 slug: builtwithdjango
 icon: ./icons/new-red.svg
 unsplashImageID: gcsNOsPEXfs
-aiImage:
-aiPrompt:
 keywords: [webapp, ryankulp, microacquisitions, django]
 category: Projects
 type: article

@@ -19,8 +19,6 @@ notAffiliateLink: https://www.indiebound.org/book/9781942788294
 affiliateLink: https://amzn.to/3yiHBF3
 hasSummaries: n
 unsplashImageID: uZIaeo2cfio
-aiImage:
-aiPrompt:
 tags:
     - IT operations
     - DevOps

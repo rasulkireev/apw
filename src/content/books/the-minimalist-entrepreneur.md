@@ -19,8 +19,6 @@ notAffiliateLink: https://www.indiebound.org/book/9780593192399
 affiliateLink: https://amzn.to/3beq60F
 hasSummaries: n
 unsplashImageID: XHW7j8-jXww
-aiImage:
-aiPrompt:
 tags:
     - Business
     - Entrepreneirship

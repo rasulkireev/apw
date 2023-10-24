@@ -19,8 +19,6 @@ notAffiliateLink: https://fluent-forever.com/book/
 affiliateLink: https://amzn.to/3GFI1rt
 hasSummaries: y
 unsplashImageID: wpi3sDUrSEk
-aiImage:
-aiPrompt:
 tags:
     - Language
     - Learning

@@ -25,19 +25,29 @@ export async function getStaticPaths() {
   }));
 }
 
-
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
+const postTitle = entry.data.type == "book" ? entry.data.title + " | Book Review" : entry.data.title;
+const postImage = entry.data.aiImage ? entry.data.aiImage.src : "logo.png";
+const backUrl = entry.data.type == "book" ? "book-notes" : entry.data.type + "s";
 ---
 
-<PostLayout>
+<PostLayout
+  postTitle={postTitle}
+  postDescription={entry.data.description}
+  postTags={entry.data.tags}
+  postSlug={entry.slug}
+  postImage={postImage}
+  dateCreated={entry.data.dateCreated}
+  dateUpdated={entry.data.dateUpdated}
+>
 
   <p class="mb-10 text-blue-700">
-    ← <a href={"/" + entry.data.type + "s"}>back to {entry.data.type}s</a>
+    ← <a href={"/" + backUrl}>back to {entry.data.type}s</a>
   </p>
 
-  <article class="mb-6 h-entry" itemscope itemtype="http://schema.org/Article">
+  <article class="mb-6">
 
     {entry.data.type === "book" && <BookHeader data={entry.data} />}
     {(entry.data.type === "article" || entry.data.type === "tutorial") && <PostHeader data={entry.data} />}

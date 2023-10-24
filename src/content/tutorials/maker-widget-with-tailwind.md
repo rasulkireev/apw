@@ -6,8 +6,6 @@ published: true
 slug: tailwindcss-maker-widget
 icon: ./icons/tailwindcss.jpg
 unsplashImageID: U-Z4P2H3KFE
-aiImage:
-aiPrompt:
 keywords: [builtwithdjango, tailwindcss, html, css, design]
 category: Design
 type: tutorial

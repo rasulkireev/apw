@@ -6,8 +6,6 @@ published: true
 slug: managing-Django-with-poetry
 icon: ./icons/broken_link.png
 unsplashImageID: PDxYfXVlK2M
-aiImage:
-aiPrompt:
 keywords:
  - Python
  - Django

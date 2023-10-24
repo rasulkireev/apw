@@ -16,8 +16,6 @@ notAffiliateLink: https://www.indiebound.org/book/9781439149959
 affiliateLink: https://amzn.to/3eDfKaj
 hasSummaries: n
 unsplashImageID: jKU2NneZAbI
-aiImage:
-aiPrompt:
 tags:
     - History
 ---

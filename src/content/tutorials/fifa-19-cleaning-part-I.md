@@ -6,8 +6,6 @@ published: true
 slug: fifa-data-cleaning
 icon: ./icons/football.svg
 unsplashImageID: eCktzGjC-iU
-aiImage:
-aiPrompt:
 keywords: [jupyter, pandas, numpy]
 category: Data Analysis
 type: tutorial
