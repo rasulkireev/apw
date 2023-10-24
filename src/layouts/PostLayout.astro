@@ -1,13 +1,12 @@
 ---
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.astro";
-import { Schema } from "astro-seo-schema";
 const {
   postTitle,
   postDescription,
   postTags,
   postSlug,
-  postImage,
+  socialImageUrl,
   dateCreated,
   dateUpdated,
 } = Astro.props;
@@ -37,10 +36,9 @@ const schema = {
     "description": postDescription,
     "image": {
         "@type": "ImageObject",
-        "url": "https://rasulkireev.com/" + postImage
+        "url": socialImageUrl
     }
 };
-
 ---
 
 <html lang="en">
@@ -62,7 +60,7 @@ const schema = {
     <link rel="canonical" href={"https://rasulkireev.com/" + postSlug}>
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:image" content={"https://rasulkireev.com/" + postImage}>
+    <meta property="og:image" content={socialImageUrl}>
 
     <!-- X -->
     <meta name="twitter:card" content="summary_large_image">
@@ -70,7 +68,7 @@ const schema = {
     <meta name="twitter:creator" content="@rasulkireev">
     <meta name="twitter:title" content={postTitle}>
     <meta name="twitter:description" content={postDescription}>
-    <meta name="twitter:image" content={"https://rasulkireev.com/" + postImage}>
+    <meta name="twitter:image" content={socialImageUrl}>
 
     <!-- Schema.org -->
     <!-- https://frodeflaten.com/posts/adding-structured-data-to-blog-posts-using-astro/ -->
