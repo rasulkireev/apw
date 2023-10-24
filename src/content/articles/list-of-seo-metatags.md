@@ -1,5 +1,5 @@
 ---
-title: List of SEO Meta Tags
+title: List of SEO Meta Tags I Use
 dateCreated: 2023-10-24
 dateUpdated: 2023-10-24
 published: true
