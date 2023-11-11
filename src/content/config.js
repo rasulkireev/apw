@@ -67,9 +67,14 @@ const nowCollection = defineCollection({
   type: "content"
 })
 
+const recipeCollection = defineCollection({
+  type: "content"
+})
+
 export const collections = {
   "articles": articleCollection,
   "tutorials": tutorialCollection,
   "books": bookCollection,
-  "now": nowCollection
+  "now": nowCollection,
+  "recipes": recipeCollection
 };
