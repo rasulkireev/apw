@@ -16,6 +16,9 @@ affiliateLink: https://amzn.to/3QICXZT
 hasSummaries: n
 aiImage: ./images/a_baby_sleeping_in_the_crib_with_a_big_smile.png
 aiPrompt: a baby sleeping in the crib with a big smile, new yorker cartoon style --v 5.1 --ar 2:1
+twitterLink: https://twitter.com/rasulkireev/status/1725890626279936260
+hnLink: https://news.ycombinator.com/item?id=38320289
+redditLink: https://www.reddit.com/r/beyondthebump/comments/17y84ff/top_lessons_and_thoughts_from_the_happy_sleeper/
 tags:
     - Parenting
     - Sleep
@@ -27,21 +30,22 @@ tags:
 - Consistency and creating patterns are important for babies and children to relax and sleep well.
 - Well-rested babies and children are emotionally balanced, healthier, more creative, and have better cognitive abilities.
 
-These are the arguments laid out to convince you to follow their method. Below I will describe the method they provide for kids 6 months and older. They do also have a chapter for younger kids, but I skipped it, since it was irrelevant to me.
+These are the arguments laid out to convince you to follow their method. Below I will describe the method they provide for kids 6 months and older. They do also have a chapter for younger kids, but I skipped it since it was irrelevant to me.
 
-**The Sleep Wave method** is going to be your weapon of choise. Here is how it works:
-- Establish a night time ritual. Here are some examples from the book
+**The Sleep Wave method** is going to be your weapon of choice.
+
+First, you need to establish a nighttime ritual. Here are some examples from the book:
 
 ![Night Time Ritual Examples](./images/night-time-ritual.png)
 
-My wife and I tried to do a full 6 month one, but then reduced it down a little. Here is what we do:
+My wife and I tried to do a full 6 month one but then reduced it down a little. Here is what we do:
 
 1. Dinner (solid foods) at ~6pm
 2. Bath until about ~7pm
 3. Pajamas
 4. A little Breast Milk
 5. "Songs and Lullabies" if my wife putting him to sleep, and saying good night to objects if I'm putting him to sleep.
-6. Key Phrase: "Mom and Dad loves you very much. We are right here, next door. Have some rest and when you wake up we will play". This can be anything that you want.
+6. Key Phrase: "Mom and Dad love you very much. We are right here, next door. Have some rest and when you wake up we will play". This can be anything that you want.
 
 This is the first portion. Next things can go 2 ways. Your baby sleeps (great!) or your baby screams. If the former, nothing for you to do, just enjoy life. If the latter, here is what you do:
 
@@ -49,12 +53,12 @@ This is the first portion. Next things can go 2 ways. Your baby sleeps (great!) 
 2. Say the key phrase that you came up with earlier.
 3. Exit.
 
-That's it. With this method, your baby will be a pro sleeper in no time. There are some phsycological difficulties for parents to let their baby cry. Authors cover this too. However these arguments didn't really help my wife. In the "My Thoughts" section I will share what helped her. But here is what authors have to say about this:
+That's it. With this method, your baby will be a pro sleeper in no time. There are some psychological difficulties for parents to let their baby cry. Authors cover this too. However, these arguments didn't really help my wife. In the "My Thoughts" section I will share what helped her. But here is what the authors have to say about this:
 
 - The Sleep Wave method requires consistency and may take time for the baby to adjust and develop their sleep abilities.
-- Follow this path religisouly and don't cave in to your babies screams.
+- Follow this path religiously and don't cave in to your baby's screams.
 
-Here are some Nap Schedule Example:
+Here are some Nap Schedule Examples:
 ![Nap Schedule Example](./images/nap-schedule-example.png)
 
 ## My Thoughts
@@ -62,11 +66,11 @@ Here are some Nap Schedule Example:
 This book is great. In reality, this could be described in a blog post or even a tweet, but that doesn't matter. If you have a baby that is at least 4 months old, you should give it a read. I read it in 4-5 days, even though I'm generally a slow reader.
 
 **Dealing with Screams**
-I personally didn't have an issue with my son screaming his lungs out (yes, sounds horrible, but hear me out). I just knew how much we love him and how happy his life must be during the day. We do everything for him. I concluded that those screams and cries are not from pain or suffering, they are just tears of change. People don't like to change, but they must.
+I personally didn't have an issue with my son screaming his lungs out (yes, sounds horrible, but hear me out). I just knew how much we loved him and how happy his life must be during the day. We do everything for him. I concluded that those screams and cries are not from pain or suffering, they are just tears of change. People don't like to change, but they must.
 
-My wife, was crying her eyes out every time she had to wait those 5 minutes of screaming. And nothing that I said calmed her down. Here is what helped her.
+My wife was crying her eyes out every time she had to wait those 5 minutes of screaming. And nothing that I said calmed her down. Here is what helped her.
 
-One morning she decided to stay with our son while he was "falling asleep". He was in his crib and she was right nex to him. He did not care. He was just looking at the door and screaming hoping that someone would pick him up. If you do this, make sure not to touch or pick up your baby, just be near and try to calm him with your voice.
+One morning she decided to stay with our son while he was "falling asleep". He was in his crib and she was right next to him. He did not care. He was just looking at the door and screaming hoping that someone would pick him up. If you do this, make sure not to touch or pick up your baby, just be near and try to calm him with your voice.
 
 ## Highlights
 
