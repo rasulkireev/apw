@@ -1,24 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import newsletter from '../assets/data/newsletters.json';
+import FullWidthNewsletter from '../components/FullWidthNewsletter.astro';
 
 const pageTitle = "Newsletter Issues";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-<div class="mb-4">
-  <h1 class="text-4xl">Past Newsletter Issues</h1>
-</div>
+  <FullWidthNewsletter
+    title="Tuesday Letter"
+    description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+  />
 
-<section id="letters">
-  <ul class="list-outside">
-    {newsletter.map(letter => (
-      <li class="mb-2 text-lg">
-          <a class="text-blue-700 border-b-2 hover:text-blue-500 hover:border-blue-500" href={letter.url} target="_blank">
-              { letter.title }
-          </a>
-      </li>
-    ))}
-  </ul>
-</section>
+  <div class="mb-4">
+    <h1 class="text-4xl">Past Newsletter Issues</h1>
+  </div>
+
+  <section id="letters">
+    <ul class="list-outside">
+      {newsletter.map(letter => (
+        <li class="mb-2 text-lg">
+            <a class="text-blue-700 border-b-2 hover:text-blue-500 hover:border-blue-500" href={letter.url} target="_blank">
+                { letter.title }
+            </a>
+        </li>
+      ))}
+    </ul>
+  </section>
 </BaseLayout>
