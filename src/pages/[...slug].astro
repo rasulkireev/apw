@@ -5,7 +5,7 @@ import BookHeader from '../components/BookHeader.vue';
 import PostHeader from '../components/PostHeader.vue';
 import DiscussOn from '../components/DiscussOn.vue';
 import SocialShareButtons from '../components/SocialShareButtons.vue';
-import FullWidthNewsletter from '../components/FullWidthNewsletter.astro';
+import FullWidthNewsletter from '../components/FullWidthNewsletter';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
@@ -68,9 +68,11 @@ const socialImageUrl = `https://ogi.sh/article?title=${postTitle}&logo=https://r
     class="lg:top-1/3 lg:left-0 lg:m-0 lg:fixed"
   />
 
-  <FullWidthNewsletter
+  <FullWidthNewsletter client:load
     title="Tuesday Letter"
-    description="If you enjoyed this, consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+    description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+    tag={entry.data.type}
+    source={entry.slug}
   />
 
   <DiscussOn

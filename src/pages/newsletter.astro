@@ -1,15 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import newsletter from '../assets/data/newsletters.json';
-import FullWidthNewsletter from '../components/FullWidthNewsletter.astro';
+import FullWidthNewsletter from '../components/FullWidthNewsletter';
 
 const pageTitle = "Newsletter Issues";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <FullWidthNewsletter
+  <FullWidthNewsletter client:load
     title="Tuesday Letter"
     description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+    tag="newsletter"
   />
 
   <div class="mb-4">

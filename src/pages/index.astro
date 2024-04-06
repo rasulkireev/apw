@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
-import FullWidthNewsletter from '../components/FullWidthNewsletter.astro';
+import FullWidthNewsletter from '../components/FullWidthNewsletter';
+import Test from '../components/Test';
 
 const pageTitle = "Home Page";
 ---
@@ -43,9 +44,10 @@ const pageTitle = "Home Page";
       <SocialLinks />
     </div>
 
-    <FullWidthNewsletter
+    <FullWidthNewsletter client:load
       title="Tuesday Letter"
       description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+      tag="home"
     />
 
   </div>
