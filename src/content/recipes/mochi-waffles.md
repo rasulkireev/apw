@@ -3,7 +3,7 @@ title: "Mochi Waffles"
 slug: "mochi-waffles"
 description: "This is my wife's favorite breakfast."
 dateCreated: 2023-11-11
-dateUpdated: 2023-11-11
+dateUpdated: 2024-06-11
 category: Breakfast
 type: recipe
 tags:
@@ -11,16 +11,16 @@ tags:
     - Sweet
 ---
 
-My Wife's Favorite Breakfast. 99% the credit goes to [Joshua Weissman](https://www.joshuaweissman.com), since I basically use [his recipe](https://www.joshuaweissman.com/post/perfect-homemade-waffles). I make just a couple adjustments.
+My Wife's Favorite Breakfast. 99% the credit goes to [Joshua Weissman](https://www.joshuaweissman.com), since I basically use [his recipe](https://www.joshuaweissman.com/post/perfect-homemade-waffles). I make just a couple adjustments, most notable: sugar redaction.
 
 
 Ingredients:
 - 225g mochiko flour
 - 1.5 teaspoons baking powder
-- {} grams of milk
+- 180 grams of milk
 - 1 egg
 - 30g sugar
-- pinch salt
+- pinch of salt
 - 2 tablespoons (28g) melted unsalted butter
 
 Steps:
