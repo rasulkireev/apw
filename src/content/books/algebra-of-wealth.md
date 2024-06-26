@@ -4,7 +4,7 @@ subtitle: A Simple Formula for Financial Security
 author: Scott Galloway
 rating: 8
 slug: algebra-of-wealth
-description: "a"
+description: Great guide to building financial security in our modern, tech-driven world. Cuts through the bullshit and just speaks plain facts.
 cover: "./images/algebra-of-wealth.jpg"
 dateRead: 2024-06-26
 dateCreated: 2024-06-26
