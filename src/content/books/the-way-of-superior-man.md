@@ -1,6 +1,5 @@
 ---
 title: The Way of Superior Man
-subtitle:
 author: David Deida
 rating: 8
 slug: way-of-superior-man
@@ -17,7 +16,7 @@ redditLink: "https://www.reddit.com/r/BettermentBookClub/comments/v53i3n/top_les
 indiehackersLink: "https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-superior-man-8b14ab672b"
 notAffiliateLink: https://www.indiebound.org/book/9781622038329
 affiliateLink: https://amzn.to/3MwyeH7
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: hHCw3V0jg_w
 tags:
     - Love

@@ -14,7 +14,7 @@ twitterLink: "https://twitter.com/rasulkireev/status/1430357928809275394"
 hnLink: "https://news.ycombinator.com/item?id=28297460"
 notAffiliateLink: https://www.indiebound.org/book/9781439195468
 affiliateLink: https://amzn.to/3DcrRoE
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: xE0b_dSVf7A
 tags:
   - "Buddhism"

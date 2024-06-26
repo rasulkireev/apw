@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/vlwc4e/top_less
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-great-conversation-0a69c65857
 notAffiliateLink: https://www.indiebound.org/book/9781014363824
 affiliateLink: https://amzn.to/3HS0tPn
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: 96DW4Pow3qI
 tags:
     - Education

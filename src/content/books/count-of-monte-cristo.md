@@ -1,6 +1,5 @@
 ---
 title: Count of Monte Cristo
-subtitle:
 author: Alexandre Dumas
 rating: 7
 slug: count-of-monte-cristo
@@ -13,7 +12,7 @@ category: "Fiction"
 type: book
 notAffiliateLink: https://bookshop.org/p/books/the-count-of-monte-cristo-alexandre-dumas/17968494?ean=9781607107316
 affiliateLink: https://amzn.to/44WbIRk
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: jqjKGU8o1Os
 aiImage: ./images/count_monte_cristo_is_seating_in_the_parisian_theatre.png
 aiPrompt: count monte cristo is seating in the parisian theatre in the balcony, show from behind with a far view of the stage--v 5 --ar 2:1

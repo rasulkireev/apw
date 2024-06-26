@@ -13,7 +13,7 @@ category: "Productivity"
 type: book
 notAffiliateLink: https://bookshop.org/p/books/four-thousand-weeks-time-management-for-mortals-oliver-burkeman/18140090?ean=9780374159122
 affiliateLink: https://amzn.to/46JJ0UO
-hasSummaries: n
+hasSummaries: false
 aiImage: ./images/a_man_in_a_warehouse_holding_his_head_because_there.png
 aiPrompt: a hard working man sitting at a desk while a sand clock is just about to run out, cartoon style --ar 2:1 --v 5.2
 twitterLink: https://twitter.com/rasulkireev/status/1716871155477590442

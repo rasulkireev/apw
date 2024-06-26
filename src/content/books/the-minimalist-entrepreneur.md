@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/vg9c6b/top_less
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-minimalist-entrepreneur-946f342e22
 notAffiliateLink: https://www.indiebound.org/book/9780593192399
 affiliateLink: https://amzn.to/3beq60F
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: XHW7j8-jXww
 tags:
     - Business

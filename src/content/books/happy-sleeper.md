@@ -13,7 +13,7 @@ category: Parenting
 type: book
 notAffiliateLink: https://bookshop.org/p/books/the-happy-sleeper-the-science-backed-guide-to-helping-your-baby-get-a-good-night-s-sleep-newborn-to-school-age-julie-wright/11297770?ean=9780399166020
 affiliateLink: https://amzn.to/3QICXZT
-hasSummaries: n
+hasSummaries: false
 aiImage: ./images/a_baby_sleeping_in_the_crib_with_a_big_smile.png
 aiPrompt: a baby sleeping in the crib with a big smile, new yorker cartoon style --v 5.1 --ar 2:1
 twitterLink: https://twitter.com/rasulkireev/status/1725890626279936260

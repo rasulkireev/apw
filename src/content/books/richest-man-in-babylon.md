@@ -14,7 +14,7 @@ twitterLink: "https://twitter.com/rasulkireev/status/1392876920686227464"
 hnLink: "https://news.ycombinator.com/item?id=27143913"
 notAffiliateLink: https://www.indiebound.org/book/9780451205360
 affiliateLink: https://amzn.to/3hl9eWW
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: JF08o_YLrd4
 tags:
     - Wealth

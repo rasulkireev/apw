@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/rgebb8/top_less
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-fluent-forever-4e5f419c85
 notAffiliateLink: https://fluent-forever.com/book/
 affiliateLink: https://amzn.to/3GFI1rt
-hasSummaries: y
+hasSummaries: true
 unsplashImageID: wpi3sDUrSEk
 tags:
     - Language

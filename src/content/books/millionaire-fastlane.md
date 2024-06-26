@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/11u9ez4/top_les
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-millionaire-fastlane-43abc2ad8d
 notAffiliateLink: https://www.indiebound.org/book/9780984358106
 affiliateLink: https://amzn.to/42j1wSe
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: aNEoZH3qbfU
 tags:
     - Education

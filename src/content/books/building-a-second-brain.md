@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/yieiqa/top_less
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-building-a-second-brain-bb1b6eb08f
 notAffiliateLink: https://www.indiebound.org/book/9781982167387
 affiliateLink: https://amzn.to/3QvhRNs
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: LqKhnDzSF-8
 tags:
     - Education

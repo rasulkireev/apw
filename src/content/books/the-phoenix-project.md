@@ -17,7 +17,7 @@ redditLink: https://www.reddit.com/r/BettermentBookClub/comments/11i96iv/top_les
 indiehackersLink: https://www.indiehackers.com/post/top-lessons-and-thoughts-from-the-phoenix-project-aca493bd15
 notAffiliateLink: https://www.indiebound.org/book/9781942788294
 affiliateLink: https://amzn.to/3yiHBF3
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: uZIaeo2cfio
 tags:
     - IT operations

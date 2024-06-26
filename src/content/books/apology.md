@@ -1,6 +1,5 @@
 ---
 title: Apology
-subtitle:
 author: Plato
 rating: 8
 slug: apology-plato
@@ -17,7 +16,7 @@ redditLink: "https://www.reddit.com/r/BettermentBookClub/comments/scm2ue/top_les
 indiehackersLink: "https://www.indiehackers.com/post/top-lessons-and-thoughts-from-platos-apology-46a3dc56d8"
 notAffiliateLink: http://classics.mit.edu/Plato/apology.html
 affiliateLink: https://amzn.to/3qYYdii
-hasSummaries: n
+hasSummaries: false
 unsplashImageID: nSpj-Z12lX0
 tags:
     - Philosophy
