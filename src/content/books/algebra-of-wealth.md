@@ -14,6 +14,9 @@ type: book
 hasSummaries: true
 notAffiliateLink: https://bookshop.org/p/books/the-algebra-of-wealth-strategies-for-economic-security-scott-galloway/20065620?ean=9780593714027
 affiliateLink: https://amzn.to/45Ldjem
+twitterLink: https://x.com/rasulkireev/status/1806308178017042466
+hnLink: https://news.ycombinator.com/item?id=40809867
+redditLink: https://www.reddit.com/r/BettermentBookClub/comments/1dpqfc8/top_lessons_and_thoughts_from_the_algebra_of/
 unsplashImageID: joqWSI9u_XM
 tags:
   - Personal Finance
