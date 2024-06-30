@@ -13,20 +13,12 @@ type: book
 hasSummaries: true
 notAffiliateLink: https://bookshop.org/p/books/oh-crap-i-have-a-toddler-2-tackling-these-crazy-awesome-years-no-time-outs-needed-jamie-glowacki/6693227?ean=9781982109738
 affiliateLink: https://amzn.to/3L70Mbm
+redditLink: https://www.reddit.com/r/Parenting/comments/1drwg5j/top_lessons_and_thoughts_from_oh_crap_i_have_a/
+twitterLink: https://x.com/rasulkireev/status/1807323119314739366
 unsplashImageID: oZn9nTbECnc
 tags:
-  - Toddler Parenting
-  - Child Development
-  - Positive Discipline
-  - Parent-Child Connection
-  - Early Childhood Education
-  - Parental Self-Care
-  - Emotional Intelligence
-  - Toddler Behavior
-  - Play-Based Learning
-  - Effective Communication
-
-
+  - Parenting
+  - Toddlers
 ---
 
 ## Summary
