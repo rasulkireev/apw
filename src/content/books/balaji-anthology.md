@@ -13,7 +13,9 @@ type: book
 hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/the-anthology-of-balaji-a-guide-to-technology-truth-and-building-the-future-eric-jorgenson/20689941?ean=9781544542911
 affiliateLink: https://amzn.to/45OnHSp
-unsplashImageID: joqWSI9u_XM
+hnLink: https://news.ycombinator.com/item?id=40856949
+twitterLink: https://x.com/rasulkireev/status/1807695602240631271
+unsplashImageID: hX342ZSGhEA
 tags:
   - Technology
 ---

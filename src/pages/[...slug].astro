@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const postTitle = entry.data.type == "book" ? entry.data.title + " | Book Review" : entry.data.title;
+const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title;
 const postImage = entry.data.aiImage ? entry.data.aiImage.src : "white.png";
 const backUrl = entry.data.type == "book" ? "book-notes" : entry.data.type + "s";
 const socialImageUrl = `https://ogi.sh/article?title=${postTitle}&logo=https://rasulkireev.com/bg-logo.png&imageUrl=https://rasulkireev.com/${postImage}`;
