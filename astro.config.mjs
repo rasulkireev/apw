@@ -12,5 +12,9 @@ export default defineConfig({
   site: "https://rasulkireev.com",
   integrations: [tailwind(), vue(), mdx(), react(), sitemap()],
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel(),
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "ru"],
+  }
 });
