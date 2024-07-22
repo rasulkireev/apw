@@ -11,21 +11,21 @@ tags:
     - Сладкий
 ---
 
-This is pretty much Bon Appetit's Buttermilk Pancakes recipe, but with a few tweaks, mainly reduction of sugar.
+По сути, это [рецепт блинов с пахтой от Bon Appetit](https://www.bonappetit.com/recipe/bas-best-buttermilk-pancakes), но с некоторыми изменениями, в основном с уменьшением количества сахара.
 
-Ingredients:
-- 1.3 cups all-purpose flour
-- 1.5 tablespoons sugar
-- 1 teaspoon baking powder
-- 1 teaspoon baking soda
-- 1 teaspoon kosher salt
-- 2 large eggs
-- 1.25 cups buttermilk (can be replaced with Kefir or any other sour milky liquid)
-- 2 tablespoons unsalted butter, melted
+Ингредиенты:
+— 1,3 стакана муки.
+- 1,5 столовые ложки сахара
+- 1 чайная ложка разрыхлителя
+- 1 чайная ложка пищевой соды
+- 1 чайная ложка (кошерной) соли
+- 2 больших яйца
+- 1,25 стакана кефира.
+- 2 столовые ложки несоленого сливочного масла, растопленного
 
-Steps:
-1. Mix flour, baking soda and baking powder in a bowl.
-2. Mix eggs, buttermilk, sugar, salt in a separate bowl (doesn't have to be large) until sugar dissolves.
-3. Pour the liquid into the bowl with flour and mix (don't over do it, lump are ok).
-4. Melt and add the butter to the mix. __Tip: cover with something to avoid butter being everywhere__.
-5. Fry with a bit of oil in a pan. Turn, when the top part is no longer liquidy and is covered with bubbles.
+Шаги:
+1. Смешайте в миске муку, соду и разрыхлитель.
+2. В отдельной миске (не обязательно большой) смешать яйца, кефир, сахар, соль до растворения сахара.
+3. Выливаем жидкость в миску с мукой и перемешиваем (не переусердствуйте, комочки в порядке).
+4. Растопите и добавьте в смесь сливочное масло. __Совет: накройте чем-нибудь, чтобы масло не оказалось повсюду__.
+5. Обжарьте на сковороде с небольшим количеством масла. Переверните, когда верхняя часть перестанет быть жидкой и покроется пузырьками.
