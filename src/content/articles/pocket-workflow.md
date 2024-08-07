@@ -29,7 +29,7 @@ It is actually pretty simple. After I finish the article, I assign it a tag, "re
 
 I then transfer all the notes and summarizations to Joplin.
 
-> Joplin is very simple to Evernote, but with a few differences. Most importantly, it is open-source, which means it is free and is being developed and improved by a lot of people. I go into more detail on Joplin in [my post](https://rasulkireev.com/writings/joplin).
+> Joplin is very simple to Evernote, but with a few differences. Most importantly, it is open-source, which means it is free and is being developed and improved by a lot of people. I go into more detail on Joplin in [my post](https://rasulkireev.com/joplin).
 
 After I am done transferring highlights, I assign that post a "Joplined" tag (totally made-up word).
 

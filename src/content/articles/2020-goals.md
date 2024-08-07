@@ -12,7 +12,7 @@ type: article
 description: It is important to set some goals for the future year too. This is my attmept to capture my goals.
 ---
 
-I just finished writing the "[2019 in Review](https://rasulkireev.com/writings/2019-in-review) " post, where I went over the things that I made happen in 2019. It felt great, I recommend everyone do it.
+I just finished writing the "[2019 in Review](https://rasulkireev.com/2019-in-review) " post, where I went over the things that I made happen in 2019. It felt great, I recommend everyone do it.
 
 While writing the post, I kept thinking, "ok, I need to do this in 2020". I think it is a good idea to write down some goals for 2020. Not to always look at them to make sure you accomplish them. Instead, to give you some point of comparison at the end of next year. When I'm writing 2020 in Review, I will be able to see what was important to me at the end of 2019 and what changed during the next year.
 
