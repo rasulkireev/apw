@@ -7,7 +7,7 @@ slug: list-of-seo-metatags
 icon: ./icons/developer.svg
 keywords: [HTML, SEO, Metatags]
 category: Web Dev
-type: tutotial
+type: tutorial
 description: SEO Metatags I use in my articles... Done for my personal future references, since there are no such posts available online that are not overSEOed.
 ---
 

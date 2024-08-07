@@ -3,7 +3,7 @@ title: Managing a Django Project with Poetry
 dateCreated: 2020-10-31
 dateUpdated: 2022-02-22
 published: true
-slug: managing-Django-with-poetry
+slug: managing-django-with-poetry
 icon: ./icons/broken_link.png
 unsplashImageID: PDxYfXVlK2M
 keywords:
