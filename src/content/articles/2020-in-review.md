@@ -22,9 +22,9 @@ I have been postponing publishing this post for a long time now. I have finished
 
 I am procrastinating out of fear, probably, but it feels that I can't start doing anything meaningful before I publish this review. So here it goes...
 
-The goal of this post is to compare the [goals I had for 2020](https://rasulkireev.com/2020-goals/) with the actual results.
+The goal of this post is to compare the [goals I had for 2020](https://www.rasulkireev.com/2020-goals/) with the actual results.
 
-If you enjoy this post you may look at my [Annual Review for 2019](https://rasulkireev.com/2019-in-review/)
+If you enjoy this post you may look at my [Annual Review for 2019](https://www.rasulkireev.com/2019-in-review/)
 
 ## Become a better Data Analyst - Great
 
@@ -42,7 +42,7 @@ On the web dev side, I have rebuilt my site with Gridsome, and am very happy wit
 
 This was a complete miss, unfortunately.
 
-At the start of the year I had a [mild depression](https://rasulkireev.com/dealing-with-mild-depression/).
+At the start of the year I had a [mild depression](https://www.rasulkireev.com/dealing-with-mild-depression/).
 
 At the end of the year, I have gained a lot of weight. My diet consisted of sweets and other junk food. This will be a big goal for 2021.
 
@@ -61,10 +61,10 @@ This year I was active on Twitter. I found a few cool people and even managed to
 This is hard to quantifн, but I can say that in general my wife and I had a good year. We had some ups and downs, but the general direction is good.
 
 ## Write more often - OK
-I had a goal of writing 50 posts. The goal was too ambitious. However I did manage to write a couple of posts that resonated with people a bit. [How to Save Emails to Pocket](https://rasulkireev.com/emails-to-pocket/) and [Managing a Django Project with Poetry
-](https://rasulkireev.com/managing-django-with-poetry/) are the first that come to mind.
+I had a goal of writing 50 posts. The goal was too ambitious. However I did manage to write a couple of posts that resonated with people a bit. [How to Save Emails to Pocket](https://www.rasulkireev.com/emails-to-pocket/) and [Managing a Django Project with Poetry
+](https://www.rasulkireev.com/managing-django-with-poetry/) are the first that come to mind.
 
-Additionally, if you consider [a newsletter issue](https://rasulkireev.com/newsletter/) as a post then I might be very close to 50.
+Additionally, if you consider [a newsletter issue](https://www.rasulkireev.com/newsletter/) as a post then I might be very close to 50.
 
 I wish to continue this trend further. I am much more comfortable with putting my thoughts out there.
 

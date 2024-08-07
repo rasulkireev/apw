@@ -19,7 +19,7 @@ description: This year I'm partly following Anthony Gustin's Annual Review proce
 
 This year I'm partly following [Anthony Gustin](https://dranthonygustin.com/)'s [Annual Review process](https://docs.google.com/document/d/1K2P_yL1Ah976P7MLicb55wgY2DY-39jP3Lvp810H6HQ/edit#). In this post, I will share my responses to Steps 2 (Reflect on 2021) and 3 (Review 2021 Outcomes). I will also share personal statistics that I was able to collect during the year.
 
-> Note: My last two articles on this blog have been "[2020 in Review](https://rasulkireev.com/2020/)" and "[2021 Goals](https://rasulkireev.com/2021-goals/)", which is not a good start.
+> Note: My last two articles on this blog have been "[2020 in Review](https://www.rasulkireev.com/2020/)" and "[2021 Goals](https://www.rasulkireev.com/2021-goals/)", which is not a good start.
 
 ### Table of Contents:
 - [Stats](#stats-and-graphs)
@@ -99,7 +99,7 @@ I have also played on lichess, but I think the chess.com rating system is a litt
 
 ## Goal Review
 
-In this part I'll be looking at goals I have set for myself [last year](https://rasulkireev.com/2021-goals/).
+In this part I'll be looking at goals I have set for myself [last year](https://www.rasulkireev.com/2021-goals/).
 
 I've split my goals into 6 categories as per Doist's [suggestion](https://blog.doist.com/annual-review/):
 - Work
@@ -124,9 +124,9 @@ I haven't been looking at my 2021 goals for most of the year, but luckily I was 
 #### Productivity (0/3) - D
 - Can't claim that I have written something down every day, or even most of the days for that matter.
 	- I have picked up the [Readwise](https://readwise.io/) / [Obsidian](https://obsidian.md/) habit closer to the end of the year, which I hope to continue throughout the year.
-	- Failed to consistently send a [personal newsletter](https://rasulkireev.com/newsletter/).
+	- Failed to consistently send a [personal newsletter](https://www.rasulkireev.com/newsletter/).
 	- [Twitter](https://twitter.com/rasulkireev) not too consistent.
-	- No new articles this year, however, published a couple of [book reviews](https://rasulkireev.com/book-notes/) and a [good Python/Ethereum tutorial](https://rasulkireev.com/creating-ethereum-token-with-python/).
+	- No new articles this year, however, published a couple of [book reviews](https://www.rasulkireev.com/book-notes/) and a [good Python/Ethereum tutorial](https://www.rasulkireev.com/creating-ethereum-token-with-python/).
 - Didn't end up using Todoist for my tasks. The systems that I have tried seemed too cumbersome and unsustainable.
 - Totally failed to use Anki for Language Learning.
 
@@ -279,12 +279,12 @@ As mentioned above, large gatherings (ala networking) are certainly draining me 
 
 ### 8. What books did I read? Which ones were most impactful and why? What were the main takeaways?
 Below is the list of books I read in 2021 (and made a note in Goodreads)
-- [Doing Content Right](https://rasulkireev.com/doing-content-right-book-review/)
-- [The Art of Learning](https://rasulkireev.com/the-art-of-learning-book-review/)
-- [The Richest Man in Babylon](https://rasulkireev.com/richest-man-in-babylon/)
+- [Doing Content Right](https://www.rasulkireev.com/doing-content-right-book-review/)
+- [The Art of Learning](https://www.rasulkireev.com/the-art-of-learning-book-review/)
+- [The Richest Man in Babylon](https://www.rasulkireev.com/richest-man-in-babylon/)
 - [The Way of the Superior Man](https://amzn.to/3HVkBz1)
 - [Atomic Habits](https://amzn.to/3r3SlDn)
-- [How to Take Smart Notes](https://rasulkireev.com/how-to-take-smart-notes/)
+- [How to Take Smart Notes](https://www.rasulkireev.com/how-to-take-smart-notes/)
 
 All those books were influential in some way. I haven't implemented learning from these books as much as I would have liked.
 

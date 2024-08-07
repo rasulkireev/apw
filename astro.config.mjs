@@ -9,7 +9,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rasulkireev.com",
+  site: "https://www.rasulkireev.com",
   integrations: [tailwind(), vue(), mdx(), react(), sitemap()],
   output: "hybrid",
   adapter: vercel(),

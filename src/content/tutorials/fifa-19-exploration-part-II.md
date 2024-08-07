@@ -14,7 +14,7 @@ description: My thoughts on the Open Source community and the culture behind it.
 
 You can find all the code to this project [here](https://github.com/rasulkireev/fifa19-data-analysis). You can review the code in this post in [2.0-plotting-and-exploration.ipynb](https://github.com/rasulkireev/fifa19-data-analysis/blob/master/2.0-plotting-and-exploration.ipynb).
 
-In this post I will go through the process of data exploration. In [part 1](https://rasulkireev.com/fifa-data-cleaning) we already did some "exploration and are now much more familiar with the dataset. In this part I will mostly focus on visualizations. To be more specific, I will focus on visalizing our data set with a python library - ["Plotly"](https://plot.ly/python/).
+In this post I will go through the process of data exploration. In [part 1](https://www.rasulkireev.com/fifa-data-cleaning) we already did some "exploration and are now much more familiar with the dataset. In this part I will mostly focus on visualizations. To be more specific, I will focus on visalizing our data set with a python library - ["Plotly"](https://plot.ly/python/).
 
 Before we continue I just wanted to quickly explain why I will be using Plotly, instead of matplotlib or seaborn.
 

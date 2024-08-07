@@ -42,11 +42,11 @@ So the following is the exercise of me going through my 2021 goals and categoriz
 ## Productivity
 - spend some time each day writing. This could be:
   - sharing progress on [Twitter](https://twitter.com/rasulkireev)
-  - writing thoughts in a journal or for a [blog post](https://rasulkireev.com/articles/)
-  - [tech tutorials](https://rasulkireev.com/tutorials/)
-  - [book reviews](https://rasulkireev.com/book-notes/)
+  - writing thoughts in a journal or for a [blog post](https://www.rasulkireev.com/articles/)
+  - [tech tutorials](https://www.rasulkireev.com/tutorials/)
+  - [book reviews](https://www.rasulkireev.com/book-notes/)
   - zettelkasten
-- Use [Todoist](https://rasulkireev.com/book-notes/) to track tasks. Consult it often.
+- Use [Todoist](https://www.rasulkireev.com/book-notes/) to track tasks. Consult it often.
 - use [Anki](https://ankiweb.net/about) regularly.
 
 ## Health

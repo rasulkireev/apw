@@ -16,7 +16,7 @@ type: article
 description: In this post, I want to publicly list all my 2022 goals. This will help keep me accountable.
 ---
 
-As with my [2021 in Review post](https://rasulkireev.com/2021-in-review/), I am following [Anthony Gustin](https://dranthonygustin.com/)'s [Extensive Review Process](https://docs.google.com/document/d/1K2P_yL1Ah976P7MLicb55wgY2DY-39jP3Lvp810H6HQ/edit#).
+As with my [2021 in Review post](https://www.rasulkireev.com/2021-in-review/), I am following [Anthony Gustin](https://dranthonygustin.com/)'s [Extensive Review Process](https://docs.google.com/document/d/1K2P_yL1Ah976P7MLicb55wgY2DY-39jP3Lvp810H6HQ/edit#).
 
 ### What Do You Want?
 
@@ -71,12 +71,12 @@ I mean, these are pretty regular themes :) We all want the same things I think.
 
 **Personal Website (Blog, Audience)**
 - start a new podcast (either like the [Built with Django Podcast](https://builtwithdjango.com/podcast/) or like [Made you Think Podcast](https://madeyouthinkpodcast.com/))
-- Write at least one [tutorial](https://rasulkireev.com/tutorials/) this year
-- Write at least one [blog post](https://rasulkireev.com/articles/) with the help of Obisidian
+- Write at least one [tutorial](https://www.rasulkireev.com/tutorials/) this year
+- Write at least one [blog post](https://www.rasulkireev.com/articles/) with the help of Obisidian
 - Get to 1000 [Twitter Followers](https://twitter.com/rasulkireev)
-- Get to 500 [Newsletter subscribers](https://rasulkireev.com/newsletter/)
+- Get to 500 [Newsletter subscribers](https://www.rasulkireev.com/newsletter/)
 - Publish a newsletter every week
-- Publish Notes on [12 books](https://rasulkireev.com/book-notes/)
+- Publish Notes on [12 books](https://www.rasulkireev.com/book-notes/)
 
 **Built with Django (Site and Podcast)**
 - Publish [12 podcast episodes](https://builtwithdjango.com/podcast/)
