@@ -64,7 +64,7 @@ This is hard to quantifн, but I can say that in general my wife and I had a goo
 I had a goal of writing 50 posts. The goal was too ambitious. However I did manage to write a couple of posts that resonated with people a bit. [How to Save Emails to Pocket](https://www.rasulkireev.com/emails-to-pocket/) and [Managing a Django Project with Poetry
 ](https://www.rasulkireev.com/managing-django-with-poetry/) are the first that come to mind.
 
-Additionally, if you consider [a newsletter issue](https://www.rasulkireev.com/newsletter/) as a post then I might be very close to 50.
+Additionally, if you consider [a newsletter issue](https://www.rasulkireev.com/newsletter) as a post then I might be very close to 50.
 
 I wish to continue this trend further. I am much more comfortable with putting my thoughts out there.
 

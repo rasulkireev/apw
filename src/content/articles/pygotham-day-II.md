@@ -14,7 +14,7 @@ description: Second Day of my first conference ever. I tried to make good notes 
 
 Day 2 of the PyGotham conference was on Saturday. I expected there to be way more people, but surprisingly, the opposite has happened. Day 2 count was twice as small, or at least that is how it felt. Below are the note from Day 2.
 
-You can see Day 1 notes [here](pygotham-2019-day-1)
+You can see Day 1 notes [here](pygotham-2019-day-one)
 
 _Please note: I took some pictures, but am not able to upload that as of this second. As soon as I can, I will updateCreated the post._
 _Please note: I took some pictures, but am not able to upload that as of this second. As soon as I can, I will updateCreated the post._

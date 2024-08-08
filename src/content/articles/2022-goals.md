@@ -74,7 +74,7 @@ I mean, these are pretty regular themes :) We all want the same things I think.
 - Write at least one [tutorial](https://www.rasulkireev.com/tutorials/) this year
 - Write at least one [blog post](https://www.rasulkireev.com/articles/) with the help of Obisidian
 - Get to 1000 [Twitter Followers](https://twitter.com/rasulkireev)
-- Get to 500 [Newsletter subscribers](https://www.rasulkireev.com/newsletter/)
+- Get to 500 [Newsletter subscribers](https://www.rasulkireev.com/newsletter)
 - Publish a newsletter every week
 - Publish Notes on [12 books](https://www.rasulkireev.com/book-notes/)
 

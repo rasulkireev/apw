@@ -124,7 +124,7 @@ I haven't been looking at my 2021 goals for most of the year, but luckily I was 
 #### Productivity (0/3) - D
 - Can't claim that I have written something down every day, or even most of the days for that matter.
 	- I have picked up the [Readwise](https://readwise.io/) / [Obsidian](https://obsidian.md/) habit closer to the end of the year, which I hope to continue throughout the year.
-	- Failed to consistently send a [personal newsletter](https://www.rasulkireev.com/newsletter/).
+	- Failed to consistently send a [personal newsletter](https://www.rasulkireev.com/newsletter).
 	- [Twitter](https://twitter.com/rasulkireev) not too consistent.
 	- No new articles this year, however, published a couple of [book reviews](https://www.rasulkireev.com/book-notes/) and a [good Python/Ethereum tutorial](https://www.rasulkireev.com/creating-ethereum-token-with-python/).
 - Didn't end up using Todoist for my tasks. The systems that I have tried seemed too cumbersome and unsustainable.
