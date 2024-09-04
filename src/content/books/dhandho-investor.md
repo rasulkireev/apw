@@ -14,6 +14,9 @@ type: book
 hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/the-dhandho-investor-the-low-risk-value-method-to-high-returns-mohnish-pabrai/16658420?ean=9780470043899
 affiliateLink: https://amzn.to/3MpSXhH
+twitterLink: "https://x.com/rasulkireev/status/1831392398074900882"
+redditLink: "https://www.reddit.com/r/BettermentBookClub/comments/1f901zx/top_lessons_and_thoughts_from_the_dhandho_investor/"
+hnLink: "https://news.ycombinator.com/item?id=41448565"
 unsplashImageID: bf6nB5yiLIQ
 aiImage: ./images/dhandho-investor-ai-cover.jpg
 aiPrompt: a boy in a suit sitting at a desk relaxed with legs on the table and hands behind his head, in the style of coco by disney
