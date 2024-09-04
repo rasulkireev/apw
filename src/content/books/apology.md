@@ -30,7 +30,7 @@ tags:
 
 ## Summary
 
-The Apology is Plato's record of the speech given by Socrates in court as he tries to defend himself in 399BCE against the accusations of "corrupting the young, and by not believing in the gods in whom the city believes".
+The Apology is Plato's record of the speech given by [Socrates](/socrates-is-kind-of-a-dick) in court as he tries to defend himself in 399BCE against the accusations of "corrupting the young, and by not believing in the gods in whom the city believes".
 
 There are three parts to this work (Spoiler Alert).
 

@@ -20,7 +20,7 @@ description: In this post I share how I save email to my 'Pocket' so that I can 
 It allows you to save articles you encounter during the day for later. That way, you are not distracted from whatever it is you are doing at the moment.
 
 ### Superpower #2
-You can make highlights in your Pocket Article. Then later review those highlights and add them to your [Second Brain](https://www.buildingasecondbrain.com/), if you have one.
+You can make highlights in your Pocket Article. Then later review those highlights and add them to your [Second Brain](/building-a-second-brain), if you have one.
 
 ### So, what's the problem?
 Now, let's say that you have signed up for a particularly useful email course, like [Ryan Kulp](https://www.ryanckulp.com/)'s [How to Validate an Idea](https://gohighbrow.com/portfolio/how-to-validate-an-idea/) or a particularly insightful newsletter like [Nat Eliason](https://www.nateliason.com/)'s [Monday Medley](https://www.nateliason.com/join) or [Arvid Kahl](https://www.arvidkahl.de/)'s [Bootstrapped Founder](https://thebootstrappedfounder.com/newsletter/). How can you save it for later if you are a little busy right now? Well, that is not a problem, since that is what Email Inbox is for.

@@ -43,7 +43,7 @@ The book shows the potential of emerging technologies like cryptocurrency, AI, r
 
 Furthermore, Balaji discusses the alignment of media with truth, advocating for tools that track and verify the accuracy of [tech journalism](https://kk.org/thetechnium/investigative-journalism-by-am/), and he foresees a significant shift in the way we perceive and interact with the physical world through advancements in VR and robotics.
 
-Throughout the anthology, there is a strong focus on the philosophy of building over arguing, encouraging entrepreneurs to create alternatives rather than getting entangled in debates. By leveraging a deep understanding of history and a strategic view of the future, Balaji calls for a new era of builders and innovators who can think beyond the constraints of current systems to shape the future of technology and society.
+Throughout the anthology, there is a strong focus on the philosophy of building over arguing, [encouraging entrepreneurs to create alternatives](/minimalist-entrepreneur) rather than getting entangled in debates. By leveraging a deep understanding of history and a strategic view of the future, Balaji calls for a new era of builders and innovators who can think beyond the constraints of current systems to shape the future of technology and society.
 
 This book is a call to action for tech enthusiasts, entrepreneurs, and thinkers to leverage technology not just for incremental improvements but for monumental shifts in how we live and work.
 
@@ -51,7 +51,7 @@ This book is a call to action for tech enthusiasts, entrepreneurs, and thinkers 
 
 - Embrace New Ventures Over Reform: Rather than trying to reform outdated systems, consider starting new initiatives. For example, instead of fixing old regulations, launch new technologies like Bitcoin or start new cities.
 
-- Identify and Address Your Weaknesses: Self-awareness is crucial for personal and professional growth. Regularly assess your weaknesses and actively work on turning them into strengths.
+- Identify and Address Your Weaknesses: Self-awareness is crucial for personal and [professional growth](/you-are-the-problem). Regularly assess your weaknesses and actively work on turning them into strengths.
 
 - Leverage Technology for Scalability: If you're in a field like academia or research, think about how starting a business might provide you with more resources and a broader impact than traditional grant-dependent paths.
 
@@ -306,7 +306,7 @@ To influence the direction of tech, pick up a keyboard or put capital at risk. Y
 - Since human nature is constant across space and time, other countries and past cultures are worthy of study. You can see how what worked elsewhere might also work here in our coun- try and culture. Entrepreneurs who know the history of their industries understand which assumptions will be invalidated with new technology.
 
 
-- History is the closest thing we have to a physics of humanity. It provides many accounts of how human actors collide and interact with each other. The right course of historical study encodes, in compressed form, the results of innumerable social experiments. You can learn from human experience rather than re-deriving societal law from scratch. Learn some history so as not to repeat it.
+- History is the closest thing we have to a physics of humanity. It provides many accounts of how human actors collide and interact with each other. The right course of [historical study](/lessons-of-history) encodes, in compressed form, the results of innumerable social experiments. You can learn from human experience rather than re-deriving societal law from scratch. Learn some history so as not to repeat it.
 
 
 - It is very hard to Twitter or TechCrunch your way to real inno- vation. To innovate, you have to tune out a lot of what the Valley is thinking.

@@ -11,7 +11,7 @@ dateCreated: 2024-08-30
 dateUpdated: 2024-08-30
 category: "Investing"
 type: book
-hasSummaries: true
+hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/the-dhandho-investor-the-low-risk-value-method-to-high-returns-mohnish-pabrai/16658420?ean=9780470043899
 affiliateLink: https://amzn.to/3MpSXhH
 unsplashImageID: bf6nB5yiLIQ
@@ -49,7 +49,7 @@ It's all about making investment bets with basic principles in mind that will he
   - Seek low-risk, high-uncertainty businesses
   - Invest in copycats rather than innovators
 
-- When invesing, simplicity is they key. If you can write down the business thesis in a one short paragraph it is a good sign. If, on the other hand, you need to fire up Excel for some financial modelling, that's a red flag.
+- When invesing, simplicity is they key. If you can [write down the business thesis in a one short paragraph](/economical-writing) it is a good sign. If, on the other hand, you need to fire up Excel for some financial modelling, that's a red flag.
 
 - Here are some ways to find distressed businesses:
   - If you read the business headlines on a daily basis, you’ll find plenty of stories about publicly traded businesses. Many of these news clips reflect negative news about a certain business or industry.
@@ -121,7 +121,7 @@ When humans buy or sell whole businesses, both sides have a good sense of what t
 
 ### Chapter 7 Dhandho 102: Invest in Simple Businesses
 
-Simplicity is a very powerful construct. Henry Thoreau recognized this when he said, “Our life is frittered away by detail ... simplify, simplify.” Einstein also recognized the power of simplicity, and it was the key to his breakthroughs in physics. He noted that the five ascending levels of intellect were, “Smart, Intelligent, Brilliant, Genius, Simple.” For Einstein, simplicity was simply the highest level of intellect. Everything about Warren Buffett’s investment style is simple. It is the thinkers like Einstein and Buffett, who fixate on simplicity, who triumph. The genius behind E=mc2 is its simplicity and elegance. Everything about Dhandho is simple, and therein lies its power. As we see in Chapter 15, the psychological warfare with our brains really gets heated after we buy a stock. The most potent weapon in your arsenal to fight these powerful forces is to buy painfully simple businesses with painfully simple theses for why you’re likely to make a great deal of money and unlikely to lose much. I always write the thesis down. If it takes more than a short paragraph, there is a fundamental problem. If it requires me to fire up Excel, it is a big red flag that strongly suggests that I ought to take a pass.
+Simplicity is a very powerful construct. Henry Thoreau recognized this when he said, “Our life is frittered away by detail ... simplify, simplify.” Einstein also recognized the power of simplicity, and it was the key to his breakthroughs in physics. He noted that the five ascending levels of intellect were, “Smart, Intelligent, Brilliant, Genius, Simple.” For Einstein, simplicity was simply the highest level of intellect. Everything about Warren Buffett’s investment style is simple. It is the thinkers like Einstein and Buffett, who fixate on simplicity, who triumph. The genius behind E=mc2 is its simplicity and elegance. Everything about Dhandho is simple, and therein lies its power. As we see in Chapter 15, the psychological warfare with our brains really gets heated after we buy a stock. The most potent weapon in your arsenal to fight these powerful forces is to buy [painfully simple businesses](/minimalist-entrepreneur) with painfully simple theses for why you’re likely to make a great deal of money and unlikely to lose much. I always write the thesis down. If it takes more than a short paragraph, there is a fundamental problem. If it requires me to fire up Excel, it is a big red flag that strongly suggests that I ought to take a pass.
 
 
 ### Chapter 8 Dhandho 201: Invest in Distressed Businesses in Distressed Industries

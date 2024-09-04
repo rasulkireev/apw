@@ -23,7 +23,7 @@ tags:
 
 ## My Thoughts
 
-A Harvard Economics Professor recommended this book to me 5 years ago. I got it immediately. Unfortunately, it did not stick at the time. I was not a voracious reader, back then. I regret not reading it, as it would have helped my writing in college a lot. Well, you can't change that now. But, I can improve my writing now, and this book does give you a lot of great ways to do that.
+A Harvard Economics Professor recommended this book to me 5 years ago. I got it immediately. Unfortunately, it did not stick at the time. I was not a [voracious reader](/reading-is-good), back then. I regret not reading it, as it would have helped my writing in college a lot. Well, you can't change that now. But, I can improve my writing now, and this book does give you a lot of great ways to do that.
 
 I have no idea if it is working yet (is my writing any good :D), but I'd like to believe it is.
 
@@ -33,9 +33,9 @@ Even though this book is titled and marketed as a book for economists, in realit
 
 ## Summary
 
-* Learn to take criticism.
-* The style of writing matters at least as much as the content.
-* Try to be clear as possible. If any of your readers don't understand something, it is most likely your fault. You need to rewrite the sentence.
+* Learn to take [criticism](https://blog.glyph.im/2008/07/constructive-criticism.html).
+* The [style of writing](https://m.signalvnoise.com/writing-style/) matters at least as much as the content.
+* [Try to be clear as possible](https://signalvnoise.com/posts/3144-what-clarity-is-all-about). If any of your readers don't understand something, it is most likely your fault. You need to rewrite the sentence.
 * In matters of taste the only standard is the practice of good people.
 * As you improve, your previous work might seem rubbish. There is not much you can do, apart from fighting this feeling. You will keep improving, you have to accept that.
 * Don't wait until the research is done to begin writing because writing, to repeat, is a way of thinking. Research is writing.
@@ -199,7 +199,7 @@ As usual, Hemingway had it right: “The writer needs a built-in, shockproof bul
 
 No one, though, knows everything just because she's an English-speaking citizen. The ear is trained by exercise.
 
-Read the best old books (only when books are old do we know whether they are the best: the bestsellers of today are mostly rubbish). Take pleasure in the language of literature.
+Read the [best old books](/10-years-of-great-books) (only when books are old do we know whether they are the best: the bestsellers of today are mostly rubbish). Take pleasure in the language of literature.
 
 Read poetry out loud, lots of it, the best. Memorize some of it (you know the lyrics of scores of rock songs: that's poetry; you might as well learn some of the real stuff, too). If you stop reading good writing when you leave school you will stop improving your ear. Even an economist's ear should ring with our English literature.
 

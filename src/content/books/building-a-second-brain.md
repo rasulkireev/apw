@@ -124,7 +124,7 @@ The most important factor in whether your notes can survive that journey into th
 
 The biggest mistake people make when they start to distill their notes is that they highlight way too much.
 
-Highlighting Without a Purpose in Mind The most common question I hear about Progressive Summarization is “When should I be doing this highlighting?” The answer is that you should do it when you’re getting ready to create something. Unlike Capture and Organize, which take mere seconds, it takes time and effort to distill your notes. If you try to do it with every note up front, you’ll quickly be mired in hours of meticulous highlighting with no clear purpose in mind. You can’t afford such a giant investment of time without knowing whether it will pay off. Instead, wait
+Highlighting Without a Purpose in Mind The most common question I hear about Progressive Summarization is “When should I be doing this highlighting?” The answer is that you should do it when you’re getting ready to create something. Unlike Capture and Organize, which take mere seconds, it takes time and effort to [distill your notes](/how-to-take-smart-notes). If you try to do it with every note up front, you’ll quickly be mired in hours of meticulous highlighting with no clear purpose in mind. You can’t afford such a giant investment of time without knowing whether it will pay off. Instead, wait
 
 “When should I be doing this highlighting?” The answer is that you should do it when you’re getting ready to create something.
 
@@ -145,7 +145,7 @@ you’ll be able to make progress in any span of time. Instead of waiting until 
 
 best of all, eventually you’ll have so many IPs at your disposal that you can execute entire projects just by assembling previously created IPs. This is a magical experience that will completely change how you view productivity.
 
-Screenshots of conference websites you admire are the best possible starting point for designing your own.
+Screenshots of conference websites you admire are the best possible starting point for [designing your own](/designing-first-site).
 
 Our creativity thrives on examples. When we have a template to fill in, our ideas are channeled into useful forms instead of splattered around haphazardly.
 

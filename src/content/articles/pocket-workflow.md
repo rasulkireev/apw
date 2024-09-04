@@ -13,7 +13,7 @@ twitterLink: "https://twitter.com/rasulkireev/status/1241842478564749314"
 description: "I wanted to discuss how I use Pocket and how it integrates into the BASB flow."
 ---
 
-I have been slowly implementing "[Building a Second Brain](https://www.buildingasecondbrain.com/)" (BASB) technique into my personal life. I'm doing this slowly, step-by-step. For me, any past attempts to make my life more productive, with Evernote, Pocket, or other tools, have been a failure because they have been too overwhelming. More than that, I did not have a great starting point, I had to design my flow from scratch.
+I have been slowly implementing "[Building a Second Brain](/building-a-second-brain)" (BASB) technique into my personal life. I'm doing this slowly, step-by-step. For me, any past attempts to make my life more productive, with Evernote, Pocket, or other tools, have been a failure because they have been too overwhelming. More than that, I did not have a great starting point, I had to design my flow from scratch.
 
 This time around, I have [Tiago Forte](https://fortelabs.co/) and [David Perell](https://www.perell.com/), their learnings and writings have been an enormous inspiration. They both have courses that seem great and totally worth it. For me, the price point is a little out of my range (for know). Luckily, they have been putting a lot of content out there. That content is so valuable, it makes me wonder what do they offer during their course. I am preparing a consolidateCreatedd list of links, articles, videos, and other types of resources that those two have put out there. Stay tuned.
 This time around, I have [Tiago Forte](https://fortelabs.co/) and [David Perell](https://www.perell.com/), their learnings and writings have been an enormous inspiration. They both have courses that seem great and totally worth it. For me, the price point is a little out of my range (for know). Luckily, they have been putting a lot of content out there. That content is so valuable, it makes me wonder what do they offer during their course. I am preparing a consolidateCreatedd list of links, articles, videos, and other types of resources that those two have put out there. Stay tuned.
@@ -29,7 +29,7 @@ It is actually pretty simple. After I finish the article, I assign it a tag, "re
 
 I then transfer all the notes and summarizations to Joplin.
 
-> Joplin is very simple to Evernote, but with a few differences. Most importantly, it is open-source, which means it is free and is being developed and improved by a lot of people. I go into more detail on Joplin in [my post](https://www.rasulkireev.com/joplin).
+> [Joplin](/joplin) is very simple to Evernote, but with a few differences. Most importantly, it is [open-source](/open-source), which means it is free and is being developed and improved by a lot of people. I go into more detail on Joplin in [my post](/joplin).
 
 After I am done transferring highlights, I assign that post a "Joplined" tag (totally made-up word).
 

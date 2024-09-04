@@ -51,7 +51,7 @@ I don't think it makes too much sense to read this book in a vacuum, but only if
 
 Apart from convincing you to approach the series they will do a great job of telling you how to approach it (there are multiple approaches). The approach I have decided to follow is a 10 Year Reading Plan, which slowly gets you into the minds of the Greatest People in our history. Conveniently, they have sorted these works by the level of difficulty, and so as you follow along you will get more and more accustomed to authors and topics. And by the end of this series you will be able to tackle any works that your heart and brain desire.
 
-By reading these books you can take part in the Great Conversation between those authors. While reading you will find them referring to each other and being influenced by each other. Their thoughts and opinions are built on top of their predecessors. Standing on the shoulders of giants.
+By reading these books you can take part in the [Great Conversation](/10-years-of-great-books) between those authors. While reading you will find them referring to each other and being influenced by each other. Their thoughts and opinions are built on top of their predecessors. Standing on the shoulders of giants.
 
 ## Highlights
 

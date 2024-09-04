@@ -19,7 +19,8 @@ This is not a post about this course, though. I will write a short review of the
 The reason I mentioned How to Buy, Grow, and Sell Small Companies is that it helped me to get the idea. In one of the videos, Ryan said that at [Fork Equity](https://www.forkequity.com/)(Ryan's Investment firm), they care about the tech stack that the company uses. They have experience with [Ruby on Rails](https://rubyonrails.org/) and will be able to navigate in the projects once they acquire it quickly. I am a big fan of [Django](https://www.djangoproject.com/) and its [community](https://www.djangoproject.com/community/). If I am ever going to buy a business, I do not want to spend a ton of time learning the tech stack behind it. So I thought it would be cool to have a collection of websites built with Django. Hence my project "[Built with Django](https://builtwithdjango.com/)."
 
 This seemed like an excellent idea for several reasons:
-1. I get to practice and improve my Django & Design skills
+
+1. I get to practice and improve my [Django](/managing-django-with-poetry) & Design skills
 2. I get to create a community of like-minded people. More specifically, people who like to create things and like to create them with Django.
 3. I have a list of great projects that I could potentially help with or even take under my wing and improve upon.
 4. Highlight the brightest mind in the community that I love.
