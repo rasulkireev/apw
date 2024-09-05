@@ -15,6 +15,9 @@ hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/the-code-book-the-science-of-secrecy-from-ancient-egypt-to-quantum-cryptography-simon-singh/8657127?ean=9780385495325
 affiliateLink: https://amzn.to/3Xadrjn
 unsplashImageID: bf6nB5yiLIQ
+twitterLink: "https://x.com/rasulkireev/status/1831774382731227538"
+redditLink: "https://www.reddit.com/r/cryptography/comments/1f9uzb3/what_do_you_guys_think_about_the_code_book_here/"
+hnLink: "https://news.ycombinator.com/item?id=41459683"
 aiImage: ./images/code-book-ai-image-cover.jpg
 aiPrompt: a boy in an indiana jones attire desiphering a text on an ancient wall with plant over it, in the style of coco by disney
 tags:
