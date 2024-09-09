@@ -15,6 +15,9 @@ hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/never-enough-why-you-don-t-want-to-be-a-billionaire-andrew-wilkinson/20687582?ean=9781637744765
 affiliateLink: https://amzn.to/4cX4EYe
 unsplashImageID: BcnjcRmtQRI
+twitterLink: https://x.com/rasulkireev/status/1833054630395232476
+redditLink: https://www.reddit.com/r/EntrepreneurRideAlong/comments/1fck8wq/top_lessons_and_thoughts_from_never_enough_by/
+hnLink: https://news.ycombinator.com/item?id=41486409
 aiImage: ./images/boy-standing-in-front-of-a-whiteboard.jpg
 aiPrompt: a boy in a casual attire stands in front of a whiteboard with various business logos
 tags:
@@ -39,14 +42,13 @@ tags:
 
 Fantastic story.
 
-I have admired [Andrew](https://www.neverenough.com/about) for a long time. The frist time I heard him speak was on the My First Million Podcast. He is one of the most popular guests on that show and for a good reason. His story is fascianting and a lot to look up to. I have listened to  a few of his interviews where he talked about various stories from his life, but getting this raw story in a book format is great.\
+I have admired [Andrew](https://www.neverenough.com/about) for a long time. The frist time I heard him speak was on the My First Million Podcast. He is one of the most popular guests on that show and for a good reason. His story is fascianting and a lot to look up to. I have listened to  a few of his interviews where he talked about various stories from his life, but getting this raw story in a book format is great.
 
-Initially, I though about this book as a collection of lessons he learned along the way (which it sort of is), which is why I first read it with the intention of maknig a lot of notes. Then, about half way thrpuigh the book I just started reading for the story and stopped making notes. Reads very easily and very captivating at the same time.
+Initially, I though about this book as a collection of lessons he learned along the way (which it sort of is), which is why I first read it with the intention of making a lot of notes. Then, about half way thrpuigh the book I just started reading for the story and stopped making notes. Reads very easily and very captivating at the same time.
 
-One thing is for sure, his story is not finished. Yes, the book has an ending, but there is no way it ends here. I'm sure we will here more intreresting stories in the future.
+One thing is for sure, his story is not finished. Yes, the book has an ending, but there is no way it ends here. I'm sure we will here more interesting stories in the future.
 
 I definitely recommend it to anyone interested in building a business.
-
 
 ## Learnings
 
