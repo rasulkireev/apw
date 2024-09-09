@@ -4,7 +4,7 @@ subtitle: From Barista to Billionaire
 author: Andrew Wilkinson
 rating: 9
 slug: never-enough
-description:
+description: Andrew Wilkinson's autobiography on his path to become an accidental billionaire. Captivating and full of little golden nuggets to pick up by aspiring entrepreneurs.
 cover: "./images/never-enough.jpeg"
 dateRead: 2024-09-05
 dateCreated: 2024-09-09
@@ -42,6 +42,8 @@ Fantastic story.
 I have admired [Andrew](https://www.neverenough.com/about) for a long time. The frist time I heard him speak was on the My First Million Podcast. He is one of the most popular guests on that show and for a good reason. His story is fascianting and a lot to look up to. I have listened to  a few of his interviews where he talked about various stories from his life, but getting this raw story in a book format is great.\
 
 Initially, I though about this book as a collection of lessons he learned along the way (which it sort of is), which is why I first read it with the intention of maknig a lot of notes. Then, about half way thrpuigh the book I just started reading for the story and stopped making notes. Reads very easily and very captivating at the same time.
+
+One thing is for sure, his story is not finished. Yes, the book has an ending, but there is no way it ends here. I'm sure we will here more intreresting stories in the future.
 
 I definitely recommend it to anyone interested in building a business.
 
