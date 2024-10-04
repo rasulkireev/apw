@@ -33,9 +33,10 @@ const { Content } = await entry.render();
 
 const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title;
 const socialImageTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author : entry.data.title;
+const socialImageEyebrow = entry.data.type == "book" ? "Book Review" : entry.data.type;
 const postImage = entry.data.aiImage ? entry.data.aiImage.src : "white.png";
 const backUrl = entry.data.type == "book" ? "book-notes" : entry.data.type + "s";
-const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&title=${socialImageTitle}&subtitle=${entry.data.description}&eyebrow=${entry.data.type}&image_url=https://rasulkireev.com/${postImage}`
+const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&title=${socialImageTitle}&subtitle=${entry.data.description}&eyebrow=${socialImageEyebrow}&image_url=https://rasulkireev.com/${postImage}`
 ---
 
 <PostLayout
