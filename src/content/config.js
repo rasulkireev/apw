@@ -4,6 +4,7 @@ const articleCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     title: z.string(),
+    canonical: z.string().optional(),
     description: z.string(),
     dateCreated: z.date(),
     dateUpdated: z.date(),
@@ -23,6 +24,7 @@ const tutorialCollection = defineCollection({
   type: 'content',
   schema: ({ image }) => z.object({
     title: z.string(),
+    canonical: z.string().optional(),
     description: z.string(),
     dateCreated: z.date(),
     dateUpdated: z.date(),
@@ -44,6 +46,7 @@ const bookCollection = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     subtitle: z.string().optional(),
+    canonical: z.string().optional(),
     author: z.string(),
     rating: z.number(),
     description: z.string(),

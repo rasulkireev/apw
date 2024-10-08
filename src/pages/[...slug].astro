@@ -37,6 +37,7 @@ const socialImageEyebrow = entry.data.type == "book" ? "Book Review" : entry.dat
 const postImage = entry.data.aiImage ? entry.data.aiImage.src : "white.png";
 const backUrl = entry.data.type == "book" ? "book-notes" : entry.data.type + "s";
 const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&title=${socialImageTitle}&subtitle=${entry.data.description}&eyebrow=${socialImageEyebrow}&image_url=https://rasulkireev.com/${postImage}`
+const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entry.slug}`;
 ---
 
 <PostLayout
@@ -47,6 +48,7 @@ const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&tit
   socialImageUrl={socialImageUrl}
   dateCreated={entry.data.dateCreated}
   dateUpdated={entry.data.dateUpdated}
+  canonical={canonicalUrl}
 >
 
   <p class="mb-10 text-blue-700">

@@ -9,6 +9,7 @@ const {
   socialImageUrl,
   dateCreated,
   dateUpdated,
+  canonical,
 } = Astro.props;
 
 const schema = {
@@ -56,10 +57,11 @@ const schema = {
     <!-- OG -->
     <meta property="og:title" content={postTitle}>
     <meta property="og:description" content={postDescription}>
-    <link rel="canonical" href={"https://www.rasulkireev.com/" + postSlug}>
+    <link rel="canonical" href={canonical}>
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={socialImageUrl}>
+    <meta property="og:url" content={canonical}>
 
     <!-- X -->
     <meta name="twitter:card" content="summary_large_image">
