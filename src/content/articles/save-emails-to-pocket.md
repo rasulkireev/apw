@@ -6,7 +6,7 @@ published: true
 slug: emails-to-pocket
 icon: ./icons/email_open.svg
 unsplashImageID: 3Mhgvrk4tjM
-keywords: [email, pocket]
+tags: [email, pocket]
 category: Productivity
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1268912329263022082"

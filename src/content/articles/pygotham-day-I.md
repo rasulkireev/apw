@@ -6,7 +6,7 @@ published: true
 slug: pygotham-day-one
 icon: ./icons/pygotham.png
 unsplashImageID: uf2nnANWa8Q
-keywords: [conference, networking, pygotham, talks]
+tags: [conference, networking, pygotham, talks]
 category: Conferences
 type: article
 description: First Day of my first conference. I tried to make good notes during the talks I attended.

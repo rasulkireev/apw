@@ -6,7 +6,7 @@ published: true
 slug: django-venv
 icon: ./icons/python.svg
 unsplashImageID: TkEPQPWr2sY
-keywords: [virtualenvironment, python, django, project, venv]
+tags: [virtualenvironment, python, django, project, venv]
 category: Python
 type: tutorial
 description: How to set up a virtual environment for your Django Project, or any other Python project, for that matter.

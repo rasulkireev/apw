@@ -6,7 +6,7 @@ published: true
 slug: 2021-goals
 icon: ./icons/goal.png
 unsplashImageID: 6M_Wiwi1LQQ
-keywords:
+tags:
 - 2021
 - goals
 - habits

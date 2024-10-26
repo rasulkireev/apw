@@ -8,7 +8,7 @@ icon: ./icons/version-control.png
 canonical: https://builtwithdjango.com/blog/django-version-control
 aiImage: ./images/django-version-control.png
 aiPrompt: a smiling boy from Pixar's Coco is trying to manage and adjust git branches which are real and 3d, cartoon style
-keywords:
+tags:
  - Python
  - Django
  - Git

@@ -6,7 +6,7 @@ published: true
 slug: selling-info-products
 icon: ./icons/workspace.svg
 unsplashImageID: Hb6uWq0i4MI
-keywords: [microconf, talk, infoproduct, course, book]
+tags: [microconf, talk, infoproduct, course, book]
 category: Entrepreneurship
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1253306975762472961"

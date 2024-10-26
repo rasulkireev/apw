@@ -6,7 +6,7 @@ published: true
 slug: first-web-app
 icon: ./icons/kushim.png
 unsplashImageID: woWf_VJ7dNs
-keywords: [webapp, django, saas]
+tags: [webapp, django, saas]
 category: Projects
 type: article
 description: Finally launched my first Web App. Kushim is my first Django project which was built from scratch.

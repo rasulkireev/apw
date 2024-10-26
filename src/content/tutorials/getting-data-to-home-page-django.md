@@ -6,7 +6,7 @@ published: true
 slug: django-get-context-data
 icon: ./icons/dj.png
 unsplashImageID: Q1p7bh3SHj8
-keywords: [django, context, tutorial]
+tags: [django, context, tutorial]
 category: Django
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1230974745644060678"

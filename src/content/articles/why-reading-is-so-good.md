@@ -6,7 +6,7 @@ published: true
 slug: reading-is-good
 icon: ./icons/reading.svg
 unsplashImageID: XqXJJhK-c08
-keywords: [reading]
+tags: [reading]
 category: Reading
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1295236499357794305"

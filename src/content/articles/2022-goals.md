@@ -6,7 +6,7 @@ published: true
 slug: 2022-goals
 icon: ./icons/soccer_goal.png
 unsplashImageID: YtLAiN5YJ-8
-keywords:
+tags:
 - 2022
 - goals
 - habits

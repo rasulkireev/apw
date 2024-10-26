@@ -5,7 +5,7 @@ dateUpdated: 2023-10-24
 published: true
 slug: list-of-seo-metatags
 icon: ./icons/developer.svg
-keywords: [HTML, SEO, Metatags]
+tags: [HTML, SEO, Metatags]
 category: Web Dev
 type: tutorial
 description: SEO Metatags I use in my articles... Done for my personal future references, since there are no such posts available online that are not overSEOed.
@@ -20,7 +20,7 @@ I just couldn't find a simple list of SEO metatags to use. Only over-SEOed artic
 
   <title>Sample Webpage</title>
   <meta name="description" content="This is a sample webpage description.">
-  <meta name="keywords" content="sample, webpage, meta tags, SEO">
+  <meta name="tags" content="sample, webpage, meta tags, SEO">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://example.com/sample-webpage">
 

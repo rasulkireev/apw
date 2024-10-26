@@ -8,7 +8,7 @@ icon: ./icons/balance.png
 unsplashImageID: 902vnYeoWS4
 aiImage: ./images/golden-balance.png
 aiPrompt: a cratoon image of a boy doing tightrope walking on a golden rope between to scyscrapers overlooking a street with many angry people view from above --v 5.2 --ar 2:1
-keywords: [Balance, Spectrum, Life, Personal Growth, Focus]
+tags: [Balance, Spectrum, Life, Personal Growth, Focus]
 category: Personal
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1700146715771224255"

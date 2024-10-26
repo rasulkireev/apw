@@ -6,7 +6,7 @@ published: true
 slug: builtwithdjango
 icon: ./icons/new-red.svg
 unsplashImageID: gcsNOsPEXfs
-keywords: [webapp, ryankulp, microacquisitions, django]
+tags: [webapp, ryankulp, microacquisitions, django]
 category: Projects
 type: article
 description: Launching a new hobby project. I am making a curated list of products built with Django.

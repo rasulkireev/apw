@@ -6,7 +6,7 @@ published: true
 slug: get-what-you-want-nicely
 icon: ./icons/helping_hand.png
 unsplashImageID: 9VpI3gQ1iUo
-keywords:
+tags:
   - life
   - success
   - tutorial

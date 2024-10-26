@@ -6,7 +6,7 @@ published: true
 slug: custom-user-model-mid-project-django
 icon: ./icons/bird.png
 unsplashImageID: FiMvNM44-IE
-keywords:
+tags:
     - django
     - python
     - database

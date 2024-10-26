@@ -6,7 +6,7 @@ published: true
 slug: most-advice-is-wrong
 icon: ./icons/commercial.png
 unsplashImageID: WPrTKRw8KRQ
-keywords:
+tags:
   - "self-improvement"
   - "advice"
 category: Self-Improvement

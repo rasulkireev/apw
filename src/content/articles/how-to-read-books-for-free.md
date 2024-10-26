@@ -6,7 +6,7 @@ published: true
 slug: how-to-read-books-for-free
 icon: ./icons/book.svg
 unsplashImageID: ./images/reading-on-kindle.jpg
-keywords:
+tags:
 - books
 - free
 - reading

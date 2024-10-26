@@ -6,7 +6,7 @@ published: true
 slug: joplin
 icon: ./icons/joplin.jpg
 unsplashImageID: gVtJgTyi2iI
-keywords: [joplin, notetaking, opensource, productivity]
+tags: [joplin, notetaking, opensource, productivity]
 category: Productivity
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1225152107487137792"

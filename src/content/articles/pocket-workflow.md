@@ -6,7 +6,7 @@ published: true
 slug: "my-pocket-workflow"
 icon: "./icons/pocket.svg"
 unsplashImageID: "zMRLZh40kms"
-keywords: [joplin, productivity]
+tags: [joplin, productivity]
 category: "Productivity"
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1241842478564749314"

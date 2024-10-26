@@ -6,7 +6,7 @@ published: true
 slug: first-javascript-experience
 icon: ./icons/js.png
 unsplashImageID: O99bWwDMBa8
-keywords: [webapp, javascript, html]
+tags: [webapp, javascript, html]
 category: Javascript
 type: tutorial
 description: Sharing my first epxerience with Javascript. Had to add some action to my new web app.

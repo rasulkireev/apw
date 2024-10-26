@@ -6,7 +6,7 @@ published: true
 slug: fifa-machine-learning
 icon: ./icons/ai_ml.svg
 unsplashImageID: n6B49lTx7NM
-keywords: [datascience, machinelearning, fifa, numpy, pandas, python, scikitlearn]
+tags: [datascience, machinelearning, fifa, numpy, pandas, python, scikitlearn]
 category: Data Science
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1292631350584004608"

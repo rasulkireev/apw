@@ -8,7 +8,7 @@ icon: ./icons/high_priority.png
 unsplashImageID: vm2cwMEiUFA
 aiImage: ./images/you_are_the_problem.png
 aiPrompt: you are the problem --v 5.2 --ar 2:1
-keywords: ["Self-Reflection", "Psychology"]
+tags: ["Self-Reflection", "Psychology"]
 category: Self-Reflection
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1706627716546470313"

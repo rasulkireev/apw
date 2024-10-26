@@ -6,7 +6,7 @@ published: true
 slug: sponsorware
 icon: ./icons/crowdfunding.png
 unsplashImageID: 8I423fRMwjM
-keywords: [open-source, code, earning, bootstrapping]
+tags: [open-source, code, earning, bootstrapping]
 category: Open-Source
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1295740529012092929"

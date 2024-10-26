@@ -6,7 +6,7 @@ published: true
 slug: multiple-gridsome-queries
 icon: ./icons/unknown_status.png
 unsplashImageID: xVQ7j3G7FSU
-keywords: [gridsome, graphql, html]
+tags: [gridsome, graphql, html]
 category: Gridsome
 type: tutorial
 twitterLink: "https://twitter.com/rasulkireev/status/1286433227960463360"

@@ -6,7 +6,7 @@ published: true
 slug: 2019-in-review
 icon: ./icons/2019_year.svg
 unsplashImageID: BFBAmGePnpU
-keywords: [2019, journal, review]
+tags: [2019, journal, review]
 category: Personal
 type: article
 description: This is my attempt to review everything that I made happen, and that happened to me in 2019. It is crucial to remind yourself of the things you regularly did. Writing this post was very gratifying.

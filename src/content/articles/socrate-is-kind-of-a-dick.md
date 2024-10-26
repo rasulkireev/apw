@@ -6,7 +6,7 @@ published: true
 slug: socrates-is-kind-of-a-dick
 icon: ./icons/socrates.png
 unsplashImageID: EvMearrxas4
-keywords:
+tags:
 - Republic
 - Socrates
 - Philosophy

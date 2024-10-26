@@ -6,7 +6,7 @@ published: true
 slug: fear-and-blogging
 icon: ./icons/scream.svg
 unsplashImageID: Pe4gh8a8mBY
-keywords: [blogging, fear]
+tags: [blogging, fear]
 category: Personal
 type: article
 description: Few thoughts on fears of sharing.

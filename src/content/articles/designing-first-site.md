@@ -6,7 +6,7 @@ published: true
 slug: designing-first-site
 icon: ./icons/web_design.svg
 unsplashImageID: DtDlVpy-vvQ
-keywords: [personalwebsite, webdesign, css, html]
+tags: [personalwebsite, webdesign, css, html]
 category: Design
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1240339394319527936"

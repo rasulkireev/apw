@@ -6,7 +6,7 @@ published: true
 slug: fifa-data-exploration
 icon: ./icons/plotly.png
 unsplashImageID: mcSDtbWXUZU
-keywords: [opensource, plotly, pandas]
+tags: [opensource, plotly, pandas]
 category: Data Visualization
 type: tutorial
 description: My thoughts on the Open Source community and the culture behind it.

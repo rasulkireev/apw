@@ -200,7 +200,7 @@ I think that forming relationships with newsletter curators is one of the most u
 
 Make sure that you are spending time with communities that are highly engaged.
 
-You can use SimilarWeb to keep a pulse on where other publishers are getting their traffic. For example, if we take a look at NerdWallet on SimilarWeb, it tells us a bunch of valuable information, including which keywords they’re ranking for and which social channels are driving their traffic, but also which publishers are directing traffic to NerdWallet and other websites that NerdWallet users tend to visit.
+You can use SimilarWeb to keep a pulse on where other publishers are getting their traffic. For example, if we take a look at NerdWallet on SimilarWeb, it tells us a bunch of valuable information, including which tags they’re ranking for and which social channels are driving their traffic, but also which publishers are directing traffic to NerdWallet and other websites that NerdWallet users tend to visit.
 
 
 #### 12 More Quick Wins
