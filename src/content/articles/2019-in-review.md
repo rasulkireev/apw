@@ -6,7 +6,7 @@ published: true
 slug: 2019-in-review
 icon: ./icons/2019_year.svg
 unsplashImageID: BFBAmGePnpU
-tags: [2019, journal, review]
+tags: ["2019", journal, review]
 category: Personal
 type: article
 description: This is my attempt to review everything that I made happen, and that happened to me in 2019. It is crucial to remind yourself of the things you regularly did. Writing this post was very gratifying.
@@ -20,19 +20,20 @@ I am now excited to write this post to remind myself that I have been doing good
 
 ## Table of Contents {#start}
 
-* [Highlights](#highlights)
-* [Early 2019](#early-2019)
-* [Starting the hustle](#hustling)
-* [Learning Web Dev](#learning-web-dev)
-* [Networking](#networking)
-* [Career Switch](#career-switch)
-* [Starting to Data Science](#data-science)
-* [Indiehackers](#indiehackers)
-* [Web Development / SaaS](#building-saas)
-* [Open Source Community](#open-source)
-* [Family](#family)
-* [Stoicism](#stoicism)
-* [Overall](#overall)
+- [Table of Contents {#start}](#table-of-contents-start)
+- [Highlights {#highlights}](#highlights-highlights)
+- [## Early 2019  \[↑\] {#early-2019}](#-early-2019---early-2019)
+- [## Starting the hustle \[↑\] {#hustling}](#-starting-the-hustle--hustling)
+- [## Learning Web Dev \[↑\] {#learning-web-dev}](#-learning-web-dev--learning-web-dev)
+- [## Networking \[↑\] {#networking}](#-networking--networking)
+- [## Career Switch \[↑\] {#career-switch}](#-career-switch--career-switch)
+- [## Starting to Data Science \[↑\] {#data-science}](#-starting-to-data-science--data-science)
+- [## Indiehackers \[↑\] {#indiehackers}](#-indiehackers--indiehackers)
+- [## Web Development / SaaS \[↑\] {#building-saas}](#-web-development--saas--building-saas)
+- [## Open Source Community \[↑\] {#open-source}](#-open-source-community--open-source)
+- [## Family \[↑\] {#family}](#-family--family)
+- [## Stoicism \[↑\] {#stoicism}](#-stoicism--stoicism)
+- [## Overall \[↑\] {#overall}](#-overall--overall)
 
 ## Highlights {#highlights}
 

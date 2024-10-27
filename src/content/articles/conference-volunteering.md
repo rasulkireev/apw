@@ -6,7 +6,7 @@ published: true
 slug: conference-volunteering
 icon: ./icons/global-volunteering.svg
 unsplashImageID: bzdhc5b3Bxs
-tags: [2019, journal, review]
+tags: ["2019", journal, review]
 category: Conferences
 type: article
 description: This is a reflection on my first volunteering experience at PyData 2019.
