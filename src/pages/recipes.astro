@@ -6,25 +6,64 @@ import { Image } from 'astro:assets';
 const pageTitle = "Recipes by Rasul Kireev";
 const allRecipes = await getCollection('recipes');
 
+// Sort recipes by date
 allRecipes.sort((a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.valueOf());
+
+// Get language from file path
+const getLanguage = (recipe) => {
+  const pathParts = recipe.id.split('/');
+  return pathParts[0] === 'ru' ? 'russian' : 'english';
+};
+
+// Get unique languages
+const languages = [...new Set(allRecipes.map(getLanguage))];
+const defaultLanguage = "english";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-
-{allRecipes.map(p => (
-  <div class="mb-1">
-    <a href={"/" + p.slug} class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200">
-      <div>
-        <p class="text-sm md:text-lg">{ p.data.title }</p>
-        <p class="m-0 text-xs text-gray-600" itemprop="headline">{ p.data.description }</p>
-
-        <span id="blog-post-info" class="hidden">
-          <time class="dt-published" itemprop="datePublished" datetime={p.data.dateCreated.toString()}>{p.data.dateCreated}</time>
-          <span itemprop="author">Rasul Kireev</span>
-        </span>
-      </div>
-    </a>
+  <div class="mb-4">
+    <select id="languageFilter" class="p-2 border rounded-lg">
+      {languages.map(lang => (
+        <option value={lang.toLowerCase()} selected={lang.toLowerCase() === defaultLanguage}>
+          {lang.charAt(0).toUpperCase() + lang.slice(1)}
+        </option>
+      ))}
+    </select>
   </div>
-))}
 
+  {allRecipes.map(recipe => (
+    <div class="mb-1 recipe-item" data-language={getLanguage(recipe)}>
+      <a href={"/" + recipe.slug} class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200">
+        <div>
+          <p class="text-sm md:text-lg">{ recipe.data.title }</p>
+          <p class="m-0 text-xs text-gray-600" itemprop="headline">{ recipe.data.description }</p>
+
+          <span id="blog-post-info" class="hidden">
+            <time class="dt-published" itemprop="datePublished" datetime={recipe.data.dateCreated.toString()}>{recipe.data.dateCreated}</time>
+            <span itemprop="author">Rasul Kireev</span>
+          </span>
+        </div>
+      </a>
+    </div>
+  ))}
 </BaseLayout>
+
+<script>
+  const languageFilter = document.getElementById("languageFilter");
+  const recipeItems = document.querySelectorAll(".recipe-item");
+
+  function filterRecipes() {
+    const selectedLanguage = languageFilter.value.toLowerCase();
+
+    recipeItems.forEach(item => {
+      const itemLanguage = item.getAttribute("data-language").toLowerCase();
+      item.style.display = itemLanguage === selectedLanguage ? "block" : "none";
+    });
+  }
+
+  // Initial filter
+  filterRecipes();
+
+  // Filter on change
+  languageFilter.addEventListener("change", filterRecipes);
+</script>

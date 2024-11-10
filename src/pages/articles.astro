@@ -6,40 +6,127 @@ import { Image } from 'astro:assets';
 const pageTitle = "Articles by Rasul Kireev";
 const allArticles = await getCollection('articles');
 
+// Sort articles by date
 allArticles.sort((a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.valueOf());
+
+// Get unique tags from all articles
+const allTags = [...new Set(allArticles.flatMap(article => article.data.tags || []))].sort();
+
+// Get the selected tags from URL params
+const selectedTags = Astro.url.searchParams.get('tags')?.split(',').filter(Boolean) || [];
+
+// Filter articles if tags are selected
+const filteredArticles = selectedTags.length > 0
+  ? allArticles.filter(article =>
+      article.data.tags?.some(tag => selectedTags.includes(tag))
+    )
+  : allArticles;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-
-{allArticles.map(p => (
-  <div class="mb-1">
-    <a
-      href={"/" + p.slug}
-      class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200"
-      itemprop="blogPost"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
+  <div class="mb-4">
+    <button
+      id="toggleTags"
+      class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
     >
-      <Image
-        src={p.data.icon}
-        width="50"
-        height="50"
-        alt={p.data.title}
-        class="self-start inline w-auto h-16 p-2 mr-4 align-middle"
-        itemprop="image"
-      />
+      Filter by tags
+    </button>
 
-      <div>
-        <p class="text-sm md:text-lg">{ p.data.title }</p>
-        <p class="m-0 text-xs text-gray-600" itemprop="headline">{ p.data.description }</p>
-
-        <span id="blog-post-info" class="hidden">
-          <time class="dt-published" itemprop="datePublished" datetime={p.data.dateCreated.toString()}>{p.data.dateCreated}</time>
-          <span itemprop="author">Rasul Kireev</span>
-        </span>
+    <div id="tagContainer" class="hidden mt-4 space-y-2">
+      <div class="flex flex-wrap gap-2">
+        {allTags.map(tag => (
+          <button
+            class="px-3 py-1 text-sm text-gray-700 bg-white rounded-full hover:bg-gray-50 tag-pill"
+            data-tag={tag}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
-    </a>
+    </div>
   </div>
-))}
 
+  {filteredArticles.map(p => (
+    <div class="mb-1 article-item" data-tags={p.data.tags?.join(',')}>
+      <a
+        href={"/" + p.slug}
+        class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200"
+        itemprop="blogPost"
+        itemscope
+        itemtype="http://schema.org/BlogPosting"
+      >
+        <Image
+          src={p.data.icon}
+          width="50"
+          height="50"
+          alt={p.data.title}
+          class="self-start inline w-auto h-16 p-2 mr-4 align-middle"
+          itemprop="image"
+        />
+
+        <div>
+          <p class="text-sm md:text-lg">{ p.data.title }</p>
+          <p class="m-0 text-xs text-gray-600" itemprop="headline">{ p.data.description }</p>
+        </div>
+      </a>
+    </div>
+  ))}
 </BaseLayout>
+
+<script>
+  const toggleButton = document.getElementById('toggleTags');
+  const tagContainer = document.getElementById('tagContainer');
+  const tagPills = document.querySelectorAll('.tag-pill');
+  const articleItems = document.querySelectorAll('.article-item');
+
+  // Toggle tag container visibility
+  toggleButton?.addEventListener('click', () => {
+    tagContainer?.classList.toggle('hidden');
+  });
+
+  // Handle tag selection
+  tagPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pill.classList.toggle('selected');
+      pill.classList.toggle('bg-gray-100');
+      pill.classList.toggle('border');
+      pill.classList.toggle('border-blue-500');
+
+      // Get all selected tags
+      const selectedTags = Array.from(document.querySelectorAll('.tag-pill.selected'))
+        .map(el => el.getAttribute('data-tag'))
+        .filter(Boolean);
+
+      // Update URL without page reload
+      const newUrl = new URL(window.location.href);
+      if (selectedTags.length > 0) {
+        newUrl.searchParams.set('tags', selectedTags.join(','));
+      } else {
+        newUrl.searchParams.delete('tags');
+      }
+      window.history.pushState({}, '', newUrl);
+
+      // Filter articles client-side
+      filterArticles(selectedTags);
+    });
+
+    // Set initial selected state based on URL params
+    const currentTags = new URLSearchParams(window.location.search).get('tags')?.split(',') || [];
+    if (currentTags.includes(pill.getAttribute('data-tag'))) {
+      pill.classList.add('selected', 'bg-gray-100', 'border', 'border-blue-500');
+    }
+  });
+
+  function filterArticles(selectedTags) {
+    document.querySelectorAll('.article-item').forEach(article => {
+      const articleTags = article.getAttribute('data-tags')?.split(',') || [];
+      const shouldShow = selectedTags.length === 0 ||
+        selectedTags.some(tag => articleTags.includes(tag));
+      article.style.display = shouldShow ? 'block' : 'none';
+    });
+  }
+
+  // Initial filter on page load
+  const initialTags = new URLSearchParams(window.location.search).get('tags')?.split(',').filter(Boolean) || [];
+  filterArticles(initialTags);
+</script>
