@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow access to .well-known directory
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+</IfModule>
+
+# Set correct content type for atproto-did file
+<Files "atproto-did">
+    ForceType text/plain
+</Files>
