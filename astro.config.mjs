@@ -16,5 +16,12 @@ export default defineConfig({
   i18n: {
     defaultLocale: "en",
     locales: ["en", "ru"],
+  },
+  server: {
+    headers: {
+      '/.well-known/atproto-did': {
+        'Content-Type': 'text/plain'
+      }
+    }
   }
 });
