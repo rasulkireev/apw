@@ -17,11 +17,4 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "ru"],
   },
-  server: {
-    headers: {
-      '/.well-known/atproto-did': {
-        'Content-Type': 'text/plain'
-      }
-    }
-  }
 });
