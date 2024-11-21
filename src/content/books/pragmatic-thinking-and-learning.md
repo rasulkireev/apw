@@ -3,21 +3,39 @@ title: Pragmatic Thinking and Learning
 author: Andy Hunt
 rating: 8
 slug: pragmatic-thinking-and-learning
-description: Something
-cover: "./images/never-enough.jpeg"
+description: This books is an amazing resource for upping you mental game. It's super dense, so you might not finish it in one sitting, nor should you. If you implement at least 5% of the advice in this book you will drastically improve as a human being.
+cover: "./images/pragmatic-thinking-and-learning.jpg"
 dateRead: 2023-09-25
 dateCreated: 2024-10-10
 dateUpdated: 2024-10-10
-category: "Thinking" # TODO: Update the category
+category: "Self-help"
 type: book
-hasSummaries: false
-notAffiliateLink: https://bookshop.org
-affiliateLink: https://amzn.to
-twitterLink: https://x.com/rasulkireev/status/1833054630395232476
-redditLink: https://www.reddit.com/r/EntrepreneurRideAlong/comments/1fck8wq/top_lessons_and_thoughts_from_never_enough_by/
-hnLink: https://news.ycombinator.com/item?id=41486409
-aiImage: ./images/boy-standing-in-front-of-a-whiteboard.jpg
-aiPrompt: a boy in a casual attire stands in front of a whiteboard with various business logos
+hasSummaries: true
+notAffiliateLink: https://bookshop.org/p/books/pragmatic-thinking-and-learning-refactor-your-wetware-andy-hunt/7011802?ean=9781934356050
+affiliateLink: https://amzn.to/3Z64hXk
+aiImage: ./images/a_programmer_boy_in_a_casual_attire_is_reading_a_book_cartoon_style.webp
+aiPrompt: a programmer boy in a casual attire is reading a book, cartoon style
+tags:
+  - Learning
+  - Personal Development
+  - Cognitive Science
+  - Brain Science
+  - Skill Acquisition
+  - Expertise Development
+  - Mind Management
+  - Productivity
+  - Focus
+  - Self Improvement
+  - Knowledge Management
+  - Problem Solving
+  - Critical Thinking
+  - Habit Formation
+  - Mental Models
+  - Mindfulness
+  - Professional Development
+  - Deliberate Practice
+  - Time Management
+  - Neuroscience
 ---
 
 ## My Thoughts
@@ -44,7 +62,9 @@ If you apply learning form this book, you can get ahead of your competition quic
   - Stage 4: Profcient
   - Stage 5: Expert
     - Statistically, there aren’t very many experts—probably something on the order of 1 to 5 percent of the population
-
+- when you are a novice you should follow rules, and as you move up the ladder you should start listening to intuition more.
+- the best way to learn is to watch and imitate
+- once you are and expert, you can't just stop. you will have to keep practicing to remain up there at the top.
 - Expand on the idea of learning with your R-mode and then following with the L-mode.
   - The reason that metaphors help people in the learning process is that it activates the R-mode in your brain.
   - Create creative problems for yourself to help in the learning process. For example, try taking 2 seemingly unrelated terms and finding a connection between them like the author did here:
@@ -82,6 +102,19 @@ If you apply learning form this book, you can get ahead of your competition quic
   - use SQ3R for written material
   - use Spaced Repitition (Anki) to test yourself often. Testing is one of the best ways to make sure you retain previously gained knowledge.
   - try to explain the idea you learned to someone else, personally or through a blog post/video tutorial.
+- your brain evolved to consume information through experience more than anything else. Sitting and consuming is not going to do much. You have to get out there an get experience learning the skill you want to achieve:
+  - learning a language? go and talk to someone
+  - learning a programming language? go and build a project with it
+  - learning brazilan jiu jutsu? go and train
+  - learning to play the guitar? go and play it
+  - learning to draw? go and draw
+  - learning to cook? go and cook
+- another thing that can improve the odds of you sticking to your learning plan is to make it playful. make it fun.
+- Give yourself permission to fail; it’s the path to success.
+- give yourself some time during the day to think. no phones, no projects, no learning, just thinking. wonderful things happen when you mind is let wild without being distracted.
+- Store your ideas in a notebook or a [wiki](/how-to-take-smart-notes), so that you can come back to it any time. Human do have a tendency to forget.
+- Switching context is an underrated way to distract yourself. Try to avoid it as much as possible.
+
 
 ## Highlights
 
