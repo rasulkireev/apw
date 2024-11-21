@@ -4,7 +4,7 @@ subtitle: How to Beat the Game of Capturing and Keeping Attention
 author: Nicolas Cole
 rating: 9
 slug: the-art-and-business-of-online-writing
-description: Something
+description: Wonderful book about writing content that people will resonate. Very simple approach, but that is not to say it is not easy. It will take work to implement, but I have no doubt it will work.
 cover: "./images/the-art-and-business-of-online-writing.jpg"
 dateRead: 2024-09-25
 dateCreated: 2024-10-10
@@ -20,12 +20,78 @@ aiPrompt: a boy in a casual attire is writing a top performing blog post
 
 ## My Thoughts
 
+I had a lot of fun reading this book. It was easy to read and easy to understand. Now, the only thing left is to actually start implementing the learnings.
+
+One thing that surprised me is the recommendation agianst publishing on one own's site. But it definintely makes sense if you main goal is reach. I will try a form of this. I will start writing and if I'm proud of the written piece I will publish it on my own site and then federate. If not, I will post it elsewhere and federate everywhere.
+
+Nicolas's life story was very interesting and motivating. In fact, it seems that in the books I have been reading lately, the parts with personal stories were the most engaging. That just goes to show that people like to hear stories and AI won't take over good writing.
+
 
 ## Learnings
 
+### Core Writing Strategy
+- Don't start a blog - focus on writing where audiences already exist (social platforms)
+- Writing on your own platform hoping for audience is "Blogging", bringing voice to existing audience is "Online Writing"
+- Focus on writing first, SEO/marketing later
+- Consistency beats talent - successful writers are the most consistent ones
+- Aim to publish at least every other week (2x per month minimum)
+- The internet favors what's fast - optimize for speed and skimmability
+
+### Content Structure
+- Every post should follow: Introduction → Main Points → Conclusion
+- First sentence should be short, clear, and capture the point in 10 words or less
+- Use 1/3/1 or 1/5/1 paragraph structure (one opener, three/five supporting sentences, one conclusion)
+- Break up text into small, digestible chunks
+- Remove anything that isn't absolutely necessary
+- Optimize for "Rate of Revelation" - how quickly you deliver value
+
+### Headlines
+- Must answer 3 questions:
+  1. What is this about?
+  2. Who is this for?
+  3. What's the promise/outcome?
+- Start with numbers when possible (creates clear expectation)
+- Make promises specific and emotional
+- Remove unnecessary connecting words
+- First 2-3 words are most important
+
+### Content Categories
+- Define your 3 main "content buckets":
+  1. General Audience (universal topics)
+  2. Niche Audience (your expertise)
+  3. Company/Industry Audience
+- Focus on timeless content over timely content
+- Use 5 main content forms:
+  1. Actionable Guide
+  2. Opinion
+  3. Curated List
+  4. Story
+  5. Credible Talking Head
+
+### Growth Strategy
+- Gather data for first 6 months to see what resonates
+- Study top performers in your category
+- Repurpose successful content into longer "Pillar Pieces"
+- Syndicate content across multiple platforms
+- Build email list with specific, valuable offers
+- Focus on building a large library of content
+- Use collaboration and cross-promotion with similar-sized creators
+
+### Monetization
+- Give away 99% of content for free
+- Monetize through:
+  - Premium content
+  - Courses/workshops
+  - Consulting/services
+  - Books/products
+  - Speaking/teaching
+- Think like an entrepreneur, not just a writer
+- Focus on building loyal audience over quick views
+
+The most important takeaway is that success requires consistent execution and implementation of these principles over time. Just knowing them isn't enough - you have to actually do the work consistently.
+
 
 ## Highlights
-
 
 ### The Game Of Online Writing
 
