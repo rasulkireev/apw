@@ -12,12 +12,14 @@ export async function getStaticPaths() {
   const bookEntries = await getCollection('books');
   const tutorialEntries = await getCollection('tutorials');
   const recipeEntries = await getCollection('recipes');
+  const reviewEntries = await getCollection('reviews');
 
   const entries = [
     ...articleEntries,
     ...bookEntries,
     ...tutorialEntries,
-    ...recipeEntries
+    ...recipeEntries,
+    ...reviewEntries,
   ];
 
   return entries.map(entry => ({
