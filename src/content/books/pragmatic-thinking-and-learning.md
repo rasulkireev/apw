@@ -15,6 +15,8 @@ notAffiliateLink: https://bookshop.org/p/books/pragmatic-thinking-and-learning-r
 affiliateLink: https://amzn.to/3Z64hXk
 aiImage: ./images/a_programmer_boy_in_a_casual_attire_is_reading_a_book_cartoon_style.webp
 aiPrompt: a programmer boy in a casual attire is reading a book, cartoon style
+twitterLink: https://x.com/rasulkireev/status/1859522051779756438
+hnLink: https://news.ycombinator.com/item?id=42202421
 tags:
   - Learning
   - Personal Development
