@@ -78,10 +78,30 @@ const recipeCollection = defineCollection({
   type: "content"
 })
 
+const reviewCollection = defineCollection({
+  type: "content"
+})
+
+const promptCollection = defineCollection({
+  type: 'content',
+  schema: ({ image }) => z.object({
+    title: z.string(),
+    description: z.string(),
+    dateCreated: z.date(),
+    dateUpdated: z.date(),
+    type: z.string(),
+    icon: image(),
+    aiImage: image().optional(),
+    tags: z.array(z.string()).optional()
+  }),
+});
+
 export const collections = {
   "articles": articleCollection,
   "tutorials": tutorialCollection,
   "books": bookCollection,
   "now": nowCollection,
-  "recipes": recipeCollection
+  "recipes": recipeCollection,
+  "reviews": reviewCollection,
+  "prompts": promptCollection
 };

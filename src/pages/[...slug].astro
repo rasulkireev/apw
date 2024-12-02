@@ -6,18 +6,22 @@ import PostHeader from '../components/PostHeader.vue';
 import DiscussOn from '../components/DiscussOn.vue';
 import SocialShareButtons from '../components/SocialShareButtons.vue';
 import FullWidthNewsletter from '../components/FullWidthNewsletter';
+import type { Code } from 'astro:components';
+import { capitalize } from 'vue';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
   const bookEntries = await getCollection('books');
   const tutorialEntries = await getCollection('tutorials');
   const recipeEntries = await getCollection('recipes');
+  const promptEntries = await getCollection('prompts');
 
   const entries = [
     ...articleEntries,
     ...bookEntries,
     ...tutorialEntries,
-    ...recipeEntries
+    ...recipeEntries,
+    ...promptEntries,
   ];
 
   return entries.map(entry => ({
@@ -31,7 +35,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title;
+const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title + " | " + capitalize(entry.data.type) + " ";
 const socialImageTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author : entry.data.title;
 const socialImageEyebrow = entry.data.type == "book" ? "Book Review" : entry.data.type;
 const postImage = entry.data.aiImage ? entry.data.aiImage.src : "white.png";
