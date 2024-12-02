@@ -2,22 +2,75 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import favouritePodcasts from '../assets/data/favouritePodcasts.json';
 
-const pageTitle = "Favourites";
+const pageTitle = "Rasul's Favourites";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-<div class="mb-4">
-  <h1 class="text-4xl">Favourites</h1>
-  <p>This is a list of my favourite things. Currently, the list includes podcast episodes only. I am working to add more things very soon.</p>
-  <ul class="inline-block p-2 mt-4 list-outside bg-gray-200 rounded">
-      <h3 class="mb-2 text-gray-700 border-b border-gray-400">Table of Contents</h3>
-      <li><a class="text-blue-700" href="#podcast-episodes">Podcast Episodes</a></li>
-  </ul>
-</div>
+<div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
 
-<section id="podcast-episodes">
-  <h2 class="mb-4 text-2xl border-b border-gray-200">Podcasts Episodes</h2>
+  <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Favourites</h1>
+  <p>This is a list of my favourites.</p>
+
+  <h2 id="books" class="mb-4 text-2xl border-b border-gray-200">Books</h2>
+  <p>
+    You can see most of the books I've read, rated and reviewed <a href="/book-notes">here</a>.
+    Some of the memorable options that I haven't reviewed (yet), are:
+  </p>
+  <ul>
+    <li>The Da Vinci Code</li>
+    <li>The Lost Symbol</li>
+    <li>Angels & Demons</li>
+    <li>Inferno</li>
+    <li>The Harry Potter Series</li>
+  </ul>
+
+  <h2 id="games" class="mb-4 text-2xl border-b border-gray-200">Games</h2>
+  <p>
+    I haven't been playing games much lately. Between raising a toddler, work, side projects, and
+    <a href="/10-years-of-great-books">reading Great Books</a>, there is not much time left. This makes me a little sad, since I love games.
+    Anyway, here are some games I have loved the most in the last decade:
+  </p>
+  <ul>
+    <li><b>FIFA 02-18</b><br/>This was pretty much the only game I played when i was a kid.</li>
+    <li><b>Command & Conquer Generals Series</b><br/>Probably game number 2 after FIFA that I played as a kid.</li>
+    <li><b>Age of Empires 2</b>, which I also played as a kid on my PS2.<br/>I probably did poorly, but I had fun.<br/>Fun fact: I played in English without knowing it.</li>
+    <li><b>Terra Invicta</b>
+      <br/><a href="https://x.com/patio11/status/1576157669437501440">Recommended</a> by <a href="https://www.kalzumeus.com/">Patio11</a> and I loved it.
+      <br/>I definitely only brushed the surface, due to time constraints, but the settings and the mechanics were cool.
+    </li>
+    <li><b>Europa Universalis IV</b>
+      <br/>I definitely did not play as intended... I started properly as an Ottoman Empire and at some point got tires and started using cheatcodes.
+      <br/>It was relaxing capturing enemy territory after work easily.
+    </li>
+    <li><b>God of War: Ragnarok</b> - PS5</li>
+    <li><b>Spider-Man</b> - PS5</li>
+  </ul>
+
+
+  <h2 id="movies" class="mb-4 text-2xl border-b border-gray-200">Movies</h2>
+  <p>
+    Same as with games, I haven't been watching movies much lately.
+    Here are some movies I have loved the most in the last decade:
+  </p>
+  <ul>
+    <li>The Da Vinci Code</li>
+    <li>The Harry Potter Series</li>
+    <li>National Treasure</li>
+    <li>National Treasure 2</li>
+    <li>The Intern with Anne Hathaway and Robert De Niro</li>
+    <li>Man from UNCLE</li>
+    <li>Gentlemen with Matthew McConaughey</li>
+    <li>Kingsman</li>
+    <li>RED with Bruce Willis</li>
+  </ul>
+
+  <h2 id="podcast-episodes" class="mb-4 text-2xl border-b border-gray-200">Podcasts Episodes</h2>
+  <p>
+    This list hasn't been updated for a while (2-3 years ago?).
+    I have listened to quite a few episodes, since last update.
+    Although at the same time I haven't been listening much in the last 6 months, so muught just leave it as is.
+  </p>
   <ul v-for="episode in episodes" :key="episode.id" class="list-outside">
       {favouritePodcasts.map(episode => (
         <li class="mb-2">
@@ -25,5 +78,7 @@ const pageTitle = "Favourites";
         </li>
       ))}
   </ul>
-</section>
+
+</div>
+
 </BaseLayout>
