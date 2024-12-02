@@ -1,0 +1,76 @@
+name: Meilisearch Indexing
+
+on:
+  push:
+    paths:
+      - 'src/content/**/*.md'
+      - 'src/content/**/*.mdx'
+
+jobs:
+  index-content:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install @meilisearch/client gray-matter
+
+      - name: Create indexing script
+        run: |
+          cat > index-content.js << 'EOF'
+          const { MeiliSearch } = require('meilisearch');
+          const fs = require('fs');
+          const path = require('path');
+          const matter = require('gray-matter');
+
+          const client = new MeiliSearch({
+            host: process.env.MEILISEARCH_HOST,
+            apiKey: process.env.MEILISEARCH_API_KEY
+          });
+
+          const contentDir = path.join(process.cwd(), 'src/content');
+          const contentTypes = ['articles', 'books', 'tutorials'];
+
+          async function indexContent() {
+            for (const type of contentTypes) {
+              const typeDir = path.join(contentDir, type);
+              const files = fs.readdirSync(typeDir)
+                .filter(file => file.endsWith('.md') || file.endsWith('.mdx'));
+
+              const documents = files.map(file => {
+                const content = fs.readFileSync(path.join(typeDir, file), 'utf-8');
+                const { data, content: markdown } = matter(content);
+
+                return {
+                  id: `${type}-${data.slug || path.parse(file).name}`,
+                  type: type,
+                  content: markdown,
+                  ...data,
+                  path: `/${type}/${data.slug || path.parse(file).name}`
+                };
+              });
+
+              if (documents.length > 0) {
+                const index = await client.index(type);
+                await index.addDocuments(documents);
+                console.log(`Indexed ${documents.length} ${type} documents`);
+              }
+            }
+          }
+
+          indexContent().catch(console.error);
+          EOF
+
+      - name: Run indexing script
+        run: node index-content.js
+        env:
+          MEILISEARCH_HOST: ${{ secrets.MEILISEARCH_HOST }}
+          MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_ADMIN_KEY }}
