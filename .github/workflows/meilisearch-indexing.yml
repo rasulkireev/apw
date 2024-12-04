@@ -28,4 +28,4 @@ jobs:
       - name: Upload to Meilisearch
         env:
           MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
-        run: python upload_to_meilisearch.py
+        run: python scripts/upload_to_meilisearch.py
