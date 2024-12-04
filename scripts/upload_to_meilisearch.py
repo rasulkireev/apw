@@ -10,7 +10,7 @@ import json
 MEILISEARCH_HOST = "https://meilisearch.cr.lvtd.dev"
 MEILISEARCH_API_KEY = os.environ.get("MEILISEARCH_API_KEY")
 INDEX_NAME = "content"
-CACHE_FILE = "src/content/meilisearch_content_hash.json"
+CACHE_FILE = "src/assets/data/meilisearch_content_hash.json"
 
 def calculate_file_hash(file_path):
     """Calculate MD5 hash of a file."""
