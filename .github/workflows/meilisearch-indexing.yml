@@ -1,0 +1,30 @@
+name: Upload Content to Meilisearch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/content/**/*.md'
+      - 'src/content/**/*.mdx'
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install python-frontmatter requests
+
+      - name: Upload to Meilisearch
+        env:
+          MEILISEARCH_API_KEY: ${{ secrets.MEILISEARCH_API_KEY }}
+        run: python upload_to_meilisearch.py
