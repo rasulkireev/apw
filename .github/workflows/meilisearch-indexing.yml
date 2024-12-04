@@ -2,12 +2,12 @@ name: Upload Content to Meilisearch
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
 
-    paths:
-      - 'src/content/**/*.md'
-      - 'src/content/**/*.mdx'
+    # paths:
+    #   - 'src/content/**/*.md'
+    #   - 'src/content/**/*.mdx'
 
 jobs:
   upload:
