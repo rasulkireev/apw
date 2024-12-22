@@ -9,7 +9,7 @@ cover: "./images/doing-content-right.jpg"
 dateRead: 2021-12-02
 dateCreated: 2021-12-04
 dateUpdated: 2021-12-04
-category: "Content"
+category: "Writing"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1469338945213419533"
 hnLink: "https://news.ycombinator.com/item?id=29511537"

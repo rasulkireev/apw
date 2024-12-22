@@ -8,7 +8,7 @@ cover: "./images/pragmatic-thinking-and-learning.jpg"
 dateRead: 2023-09-25
 dateCreated: 2024-10-10
 dateUpdated: 2024-10-10
-category: "Self-help"
+category: "Learning"
 type: book
 hasSummaries: true
 notAffiliateLink: https://bookshop.org/p/books/pragmatic-thinking-and-learning-refactor-your-wetware-andy-hunt/7011802?ean=9781934356050
