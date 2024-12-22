@@ -14,6 +14,7 @@ hasSummaries: false
 notAffiliateLink: https://bookshop.org/p/books/how-to-read-a-book-revised-and-updated-mortimer-j-adler/1408400?ean=9780671212094
 affiliateLink: https://bookshop.org/a/106638/9780671212094
 aiImage: ./images/htrab-og.jpg
+hnLink: https://news.ycombinator.com/item?id=42486143
 ---
 
 ## My Thoughts
