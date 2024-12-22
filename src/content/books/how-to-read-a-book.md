@@ -3,7 +3,7 @@ title: How to Read a Book
 author: Mortimer Adler
 rating: 9
 slug: how-to-read-a-book
-description: Awesome book
+description: This book is a must read for anyone who wants to read better. It's not easy to read, but it's worth it.
 cover: "./images/htrab.jpg"
 dateRead: 2024-12-11
 dateCreated: 2024-12-12
