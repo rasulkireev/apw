@@ -31,6 +31,7 @@ I don't want to offload my thinking to AI, but I do want to use it to augment my
 
 - [Nature of the Book](nature-of-the-book)
 - [Unity of the Book](unity-of-the-book)
+- [Book Structure Analysis](analyze-book-structure)
 
 The potential is limitless. I'm planning to write more prompt to help me read better.
 

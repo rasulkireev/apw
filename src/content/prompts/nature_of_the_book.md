@@ -18,7 +18,7 @@ I use it in [Readwise Reader](https://readwise.io/i/rasul) project, to help me i
 
 
 ```
-{#- BACKGROUND: This prompt helps identify the kind of book you are about to read, which is essential for analytical reading according to Mortimer Adler's "How to Read a Book". The goal is to classify the book according to its kind and subject matter as early as possible, ideally before beginning to read it. -#}
+{#- BACKGROUND: This prompt helps identify basic classification of the book. -#}
 
 Analyze the following book and help me identify what kind of book it is:
 
@@ -33,9 +33,7 @@ Domain: {{ document.domain }}
 {{ document.content }}
 {% endif %}
 
-Please analyze the following aspects to help classify this book:
-
-1. BASIC CLASSIFICATION
+Please answer the following questions to help classify this book:
 - Is this a theoretical or practical book?
 - What general category does it fall under? (e.g., fiction/non-fiction, science, philosophy, history, etc.)
 - What specific subject matter does it address?
