@@ -8,6 +8,7 @@ import SocialShareButtons from '../components/SocialShareButtons.vue';
 import FullWidthNewsletter from '../components/FullWidthNewsletter';
 import type { Code } from 'astro:components';
 import { capitalize } from 'vue';
+import TableOfContents from '../components/TableOfContents';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
@@ -60,13 +61,15 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
   </p>
 
   <article class="mb-6">
-
     {entry.data.type === "book" && <BookHeader data={entry.data} />}
     {(entry.data.type !== "book") && <PostHeader data={entry.data} />}
+
+    <TableOfContents client:load />
 
     <div class="my-4 md:my-10 prose lg:prose-xl">
       <Content />
     </div>
+
   </article>
 
   <SocialShareButtons
