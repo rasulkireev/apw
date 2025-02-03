@@ -88,5 +88,44 @@ const schema = {
       </div>
       <Footer />
     </div>
+
+    <script>
+      function createCopyButton(codeBlock) {
+        const button = document.createElement("button");
+        button.className = "copy-button absolute top-2 right-2 p-2 bg-gray-700 rounded text-white text-sm hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500";
+        button.innerHTML = "Copy";
+
+        button.addEventListener("click", async () => {
+          const code = codeBlock.querySelector("code").innerText;
+
+          try {
+            await navigator.clipboard.writeText(code);
+            button.innerHTML = "Copied!";
+
+            setTimeout(() => {
+              button.innerHTML = "Copy";
+            }, 2000);
+          } catch (err) {
+            console.error("Failed to copy:", err);
+            button.innerHTML = "Failed";
+          }
+        });
+
+        return button;
+      }
+
+      // Find all pre elements containing code blocks
+      const codeBlocks = document.querySelectorAll("pre");
+
+      codeBlocks.forEach((codeBlock) => {
+        // Make the pre element relative for absolute positioning of the button
+        codeBlock.style.position = "relative";
+
+        // Create and append the copy button
+        const copyButton = createCopyButton(codeBlock);
+        codeBlock.appendChild(copyButton);
+      });
+    </script>
+
   </body>
 </html>
