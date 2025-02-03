@@ -19,6 +19,7 @@ type: tutorial
 description: Learn how to automate Git commit messages using AI and Bash scripting. This tutorial shows you how to create meaningful, consistent commits with minimal effort.
 hnLink: https://news.ycombinator.com/item?id=42916404
 redditLink: https://www.reddit.com/r/programming/comments/1igldwg/create_smarter_better_and_faster_git_commits_with/
+twitterLink: https://x.com/rasulkireev/status/1886349039643357598
 ---
 
 How many times have you stared at your terminal, trying to craft the perfect git commit message? Probably not much.
