@@ -17,6 +17,7 @@ tags:
 category: DevOps
 type: tutorial
 description: Learn how to automate Git commit messages using AI and Bash scripting. This tutorial shows you how to create meaningful, consistent commits with minimal effort.
+hnLink: https://news.ycombinator.com/item?id=42916404
 ---
 
 How many times have you stared at your terminal, trying to craft the perfect git commit message? Probably not much.
