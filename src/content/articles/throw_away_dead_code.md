@@ -1,7 +1,7 @@
 ---
-title: Throw Away Dead Code
+title: Throw Away Your Code
 dateCreated: 2025-02-18
-dateUpdated: 2025-02-18
+dateUpdated: 2025-02-19
 published: true
 slug: throw-away-dead-code
 icon: ./icons/thriller.png
@@ -17,22 +17,19 @@ type: article
 description: Discover why removing dead code is essential for maintainable software, better debugging, and team productivity. Learn practical strategies for identifying and eliminating unused code.
 ---
 
-TL;DR: As developers, we often form emotional attachments to our code. Every function, every class represents hours of thought and effort. But sometimes, the best thing we can do for our codebase - and our growth as developers - is to let go of code that no longer serves a purpose.
+> Source code is read many, many more times than it's written, so it's usually worth some effort to help make the code more human-readable.
 
----
+This quote from [Pragmatic Thinking and Learning](/pragmatic-thinking-and-learning) resonated with me during a recent experience at Readwise.
 
-Last week, I found myself diving deep into our Twitter integration code at Readwise. As a relatively new engineer on the team, I was investigating user reports about tweet saving issues. What I discovered was a perfect example of why we need to be more proactive about removing dead code.
+Last week, while investigating user reports about tweet saving issues, I stumbled upon two functions: pull_tweet_v1 and pull_tweet_v2 (simplified for brevity). As a new engineer, I naturally gravitated toward v2, assuming newer meant better. After some time, I learned from a colleague that v2 was actually deprecated - Twitter's API changes had forced us back to v1, but the obsolete code remained, silently misleading anyone who encountered it.
 
-There they were: pull_tweet_v1 and pull_tweet_v2, sitting side by side in the codebase. My initial instinct was to focus on v2 - newer must be better, right? After spinning my wheels for a while, I learned from a colleague that v2 was actually deprecated. Twitter's API changes had forced us back to v1, but the obsolete code remained, silently misleading anyone who came across it. I couldn't help but wonder how many other engineers had wandered down this same dead end.
+This experience highlighted a common challenge in software development: we form [emotional attachments to our code](https://www.codereadability.com/emotional-attachment-to-code/). Every function represents hours of effort, making it surprisingly difficult to hit that delete key. We keep code around "just in case" or because "[we spent so much time on it](https://www.nateliason.com/blog/option-not-obligation)." But this attachment comes at a cost.
 
-This experience reminded me of a fundamental truth in software development: we form emotional attachments to our code. Every function and class represents hours of thought and effort, making it surprisingly difficult to hit that delete key. I get it - I've been there myself, keeping code around "just in case" or because "I spent so much time on this." But this attachment comes at a cost.
+As 37 Signals notes in Getting Real:
+> You'd think that twice as much code would make your software only twice as complex. But actually, each time you increase the amount of code, your software grows exponentially more complicated. Each minor addition, each change, each interdependency, and each preference has a cascading effect.
 
-Dead code isn't just harmless digital clutter - it's a silent productivity killer. When debugging, every line of code is a potential suspect, and dead code creates false leads that waste precious time. New team members must wade through unnecessary complexity, trying to understand relationships between components that no longer matter. Even experienced developers find themselves second-guessing: "Is this still used somewhere? What would break if I changed this?"
+Dead code isn't just harmless [digital clutter](https://paulstamatiou.com/digital-clutter) - it's a silent productivity killer. When debugging, every line is a potential suspect, and dead code creates false leads that waste precious time. New team members must wade through [unnecessary complexity](https://michaeljennings.blogspot.com/2011/08/unnecessary-complexity.html), trying to understand relationships between components that no longer matter.
 
-The justifications we use to keep dead code around are often rooted in the sunk cost fallacy. "We might need it later" is a common refrain, but let's be honest - how often do we actually go back to that commented-out block from six months ago? The time spent writing that code is gone, and keeping it around won't bring it back. If anything, it's creating new costs in terms of maintenance and cognitive load.
-
-I've learned that the best approach is to be systematic about removal. When you find dead code, document what you're removing and why in your commit message. If there's valuable logic worth preserving, capture it in documentation. Remember, Git history is always there if you need to reference something later. Tools like code coverage reports and linters can help identify unused paths, but sometimes the best tool is simply good communication with your team about what's actually in use.
-
-The benefits of maintaining a clean codebase are immense. New team members can onboard faster, maintenance becomes more straightforward, and everyone can work with greater confidence during refactoring. In my case, if the previous engineer had removed the v2 code when it became obsolete, I would have saved hours of investigation and confusion.
+The solution? As [Getting Real](https://basecamp.com/gettingreal) suggests: "The way you fight this complexity is with less software. Less software means less features, less code, less waste." When you find dead code, document what you're removing and why. If there's valuable logic worth preserving, capture it in documentation. Remember, Git history is always there if you need to reference something later.
 
 Making this a regular practice isn't easy - it requires overcoming our natural instincts to hold onto things we've created. But like cleaning out an old closet, the result is always worth it. The only real price is a small hit to our ego, and that's a price worth paying for the sake of those who'll work with our code in the future - including our future selves.
