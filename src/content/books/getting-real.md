@@ -14,6 +14,7 @@ type: book
 hasSummaries: false
 notAffiliateLink: https://basecamp.com/gettingreal
 affiliateLink: https://amzn.to/3XazhEk
+hnLink: https://news.ycombinator.com/item?id=43148814
 tags:
   - Software Development
   - Entrepreneurship
