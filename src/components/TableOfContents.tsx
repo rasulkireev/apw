@@ -15,6 +15,7 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
   const [headings, setHeadings] = useState<HeadingItem[]>([]);
   const [activeId, setActiveId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [isDesktopOpen, setIsDesktopOpen] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -108,9 +109,11 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       </div>
 
       {/* Desktop TOC - Left Sidebar */}
-      <div className="hidden lg:block fixed left-[max(0px,calc(50%-45rem))] top-[12rem] px-4 py-6 border border-gray-100 rounded-lg shadow w-64 overflow-y-auto">
+      <div className="hidden lg:block fixed left-[max(0px,calc(50%-45rem))] top-[1rem] px-4 py-6 border border-gray-100 rounded-lg shadow w-64 max-h-[calc(100vh-2rem)] overflow-y-auto">
         <nav className="table-of-contents">
-          <p className="font-bold mb-4 text-gray-900 border-b border-gray-200">Table of Contents</p>
+          <div className="mb-4 border-b border-gray-200">
+            <p className="font-bold text-gray-900">Table of Contents</p>
+          </div>
           <TableOfContentsList
             headings={headings}
             activeId={activeId}
@@ -122,8 +125,6 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
   );
 }
 
-
-// TableOfContentsList component remains the same
 function TableOfContentsList({
   headings,
   activeId,
@@ -133,29 +134,92 @@ function TableOfContentsList({
   activeId: string;
   setIsOpen: (isOpen: boolean) => void;
 }) {
+  const [collapsedSections, setCollapsedSections] = useState<{[key: string]: boolean}>({});
+
+  // Group headings by their parent H2
+  const groupedHeadings = headings.reduce((acc, heading) => {
+    if (heading.level === 2) {
+      acc[heading.id] = {
+        parent: heading,
+        children: []
+      };
+    } else if (heading.level === 3) {
+      // Find the last H2 that appeared before this H3
+      const parentH2 = [...headings]
+        .slice(0, heading.index)
+        .reverse()
+        .find(h => h.level === 2);
+
+      if (parentH2) {
+        acc[parentH2.id].children.push(heading);
+      }
+    }
+    return acc;
+  }, {} as { [key: string]: { parent: HeadingItem; children: HeadingItem[] } });
+
+  const toggleSection = (id: string) => {
+    setCollapsedSections(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
   return (
     <ul className="space-y-2">
-      {headings.map((heading) => (
-        <li
-          key={`${heading.id}-${heading.index}`}
-          className={`
-            ${heading.level === 3 ? "ml-4" : ""}
-            ${activeId === heading.id ? "text-blue-600" : "text-gray-600"}
-          `}
-        >
-          <a
-            href={`#${heading.id}`}
-            className="hover:text-blue-800 transition-colors"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector(`#${heading.id}`)?.scrollIntoView({
-                behavior: "smooth"
-              });
-              setIsOpen(false);
-            }}
-          >
-            {heading.text}
-          </a>
+      {Object.entries(groupedHeadings).map(([id, { parent, children }]) => (
+        <li key={id}>
+          <div className="flex items-center justify-between">
+            <a
+              href={`#${parent.id}`}
+              onClick={() => setIsOpen(false)}
+              className={`block py-1 hover:text-blue-600 ${
+                activeId === parent.id ? "text-blue-600 font-medium" : "text-gray-600"
+              }`}
+            >
+              {parent.text}
+            </a>
+            {children.length > 0 && (
+              <button
+                onClick={() => toggleSection(id)}
+                className="p-1 hover:bg-gray-100 rounded-full"
+                aria-label={`Toggle section ${parent.text}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    collapsedSections[id] ? "" : "rotate-180"
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+            )}
+          </div>
+          {children.length > 0 && !collapsedSections[id] && (
+            <ul className="ml-2 mt-2 space-y-2">
+              {children.map(child => (
+                <li key={child.id}>
+                  <a
+                    href={`#${child.id}`}
+                    onClick={() => setIsOpen(false)}
+                    className={`block py-1 pl-4 hover:text-blue-600 ${
+                      activeId === child.id ? "text-blue-600 font-medium" : "text-gray-600"
+                    }`}
+                  >
+                    {child.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
       ))}
     </ul>
