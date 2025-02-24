@@ -15,6 +15,7 @@ hasSummaries: false
 notAffiliateLink: https://basecamp.com/gettingreal
 affiliateLink: https://amzn.to/3XazhEk
 hnLink: https://news.ycombinator.com/item?id=43148814
+twitterLink: https://x.com/rasulkireev/status/1893994417402294418
 tags:
   - Software Development
   - Entrepreneurship
