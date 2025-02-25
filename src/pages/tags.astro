@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const pageTitle = "All Tags";
+
+// Get all collections that might have tags
+const allArticles = await getCollection('articles');
+const allTutorials = await getCollection('tutorials');
+const allBooks = await getCollection('books');
+const allPrompts = await getCollection('prompts');
+
+// Combine all content
+const allContent = [...allArticles, ...allTutorials, ...allBooks, ...allPrompts];
+
+// Extract all tags with their counts
+function extractAllTagsWithCounts(content) {
+  const tagMap = new Map();
+
+  for (const item of content) {
+    const tags = item.data.tags || [];
+    for (const tag of tags) {
+      tagMap.set(tag, (tagMap.get(tag) || 0) + 1);
+    }
+  }
+
+  return Array.from(tagMap.entries())
+    .map(([tag, count]) => ({ tag, count }));
+}
+
+// Get all tags with their counts
+const allTags = extractAllTagsWithCounts(allContent);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold text-gray-900">Browse by Tags</h1>
+
+      <!-- Sort options with client-side buttons -->
+      <div class="flex space-x-2">
+        <button
+          id="sort-alpha"
+          class="px-3 py-1 text-sm font-medium rounded-full bg-blue-600 text-white"
+        >
+          A-Z
+        </button>
+        <button
+          id="sort-count"
+          class="px-3 py-1 text-sm font-medium rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200"
+        >
+          By Count
+        </button>
+      </div>
+    </div>
+
+    <!-- All tags in a single flowing list -->
+    <div id="tags-container" class="flex flex-wrap gap-2 mb-8">
+      {allTags.map(({ tag, count }) => (
+        <a
+          href={`/tag/${tag}`}
+          class="tag-item px-3 py-1 text-sm bg-gray-100 rounded-lg hover:bg-gray-200"
+          data-tag={tag}
+          data-count={count}
+        >
+          {tag} <span class="text-gray-500">({count})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Client-side sorting functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const tagsContainer = document.getElementById('tags-container');
+    const sortAlphaBtn = document.getElementById('sort-alpha');
+    const sortCountBtn = document.getElementById('sort-count');
+
+    if (!tagsContainer || !sortAlphaBtn || !sortCountBtn) return;
+
+    // Get all tag elements
+    const tagElements = Array.from(tagsContainer.querySelectorAll('.tag-item'));
+
+    // Function to sort tags alphabetically
+    function sortAlphabetically() {
+      tagElements.sort((a, b) => {
+        return a.getAttribute('data-tag').localeCompare(b.getAttribute('data-tag'));
+      });
+
+      // Update active button state
+      sortAlphaBtn.classList.add('bg-blue-600', 'text-white');
+      sortAlphaBtn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+
+      sortCountBtn.classList.remove('bg-blue-600', 'text-white');
+      sortCountBtn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+
+      // Reorder elements in the DOM
+      tagElements.forEach(el => tagsContainer.appendChild(el));
+    }
+
+    // Function to sort tags by count (descending)
+    function sortByCount() {
+      tagElements.sort((a, b) => {
+        return parseInt(b.getAttribute('data-count')) - parseInt(a.getAttribute('data-count'));
+      });
+
+      // Update active button state
+      sortCountBtn.classList.add('bg-blue-600', 'text-white');
+      sortCountBtn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+
+      sortAlphaBtn.classList.remove('bg-blue-600', 'text-white');
+      sortAlphaBtn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+
+      // Reorder elements in the DOM
+      tagElements.forEach(el => tagsContainer.appendChild(el));
+    }
+
+    // Add event listeners to buttons
+    sortAlphaBtn.addEventListener('click', sortAlphabetically);
+    sortCountBtn.addEventListener('click', sortByCount);
+
+    // Sort alphabetically by default (matches initial state)
+    sortAlphabetically();
+  });
+</script>
