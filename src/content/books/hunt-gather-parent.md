@@ -4,7 +4,7 @@ subtitle: What Ancient Cultures Can Teach Us About the Lost Art of Raising Happy
 author: Michaeleen Doucleff
 rating: 9
 slug: hunt-gather-parent
-description: OMG.
+description: I am a huge fan of this book. This is **the** book I'm recommending to all parents. I believe that this book can make the whole world a better place just by helping parents figure out how to have fun with their kids and not be all tires and depressed.
 cover: "./images/hunt-gather-parent.jpg"
 dateRead: 2025-03-01
 dateCreated: 2025-03-07
