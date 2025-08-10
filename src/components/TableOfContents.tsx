@@ -18,17 +18,25 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
   const [isDesktopOpen, setIsDesktopOpen] = useState(true);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
+  const updateHeadings = () => {
     const elements = document.querySelectorAll("article h2, article h3");
 
     if (elements.length > 0) {
-      const items: HeadingItem[] = Array.from(elements).map((element, index) => ({
-        id: element.id || `heading-${index}`,
-        text: element.textContent || "",
-        level: Number(element.tagName.charAt(1)),
-        index
-      }));
+      const items: HeadingItem[] = Array.from(elements)
+        .filter((element) => {
+          // Filter out highlights section and its subsections if they're hidden
+          const highlightsSection = document.querySelector('div[style*="display: none"]');
+          if (highlightsSection && highlightsSection.contains(element)) {
+            return false;
+          }
+          return true;
+        })
+        .map((element, index) => ({
+          id: element.id || `heading-${index}`,
+          text: element.textContent || "",
+          level: Number(element.tagName.charAt(1)),
+          index
+        }));
 
       elements.forEach((element, index) => {
         if (!element.id) {
@@ -37,7 +45,15 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       });
 
       setHeadings(items);
+    }
+  };
 
+  useEffect(() => {
+    setMounted(true);
+    updateHeadings();
+
+    const elements = document.querySelectorAll("article h2, article h3");
+    if (elements.length > 0) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -58,10 +74,18 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
         }
       };
 
+      // Listen for highlights loaded event
+      const handleHighlightsLoaded = () => {
+        setTimeout(updateHeadings, 100); // Small delay to ensure DOM is updated
+      };
+
       document.addEventListener("click", handleClickOutside);
+      document.addEventListener("highlightsLoaded", handleHighlightsLoaded);
+      
       return () => {
         observer.disconnect();
         document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener("highlightsLoaded", handleHighlightsLoaded);
       };
     }
   }, [isOpen]);
