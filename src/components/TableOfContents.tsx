@@ -18,17 +18,48 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
   const [isDesktopOpen, setIsDesktopOpen] = useState(true);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
+  const updateHeadings = () => {
     const elements = document.querySelectorAll("article h2, article h3");
 
     if (elements.length > 0) {
-      const items: HeadingItem[] = Array.from(elements).map((element, index) => ({
-        id: element.id || `heading-${index}`,
-        text: element.textContent || "",
-        level: Number(element.tagName.charAt(1)),
-        index
-      }));
+      const items: HeadingItem[] = Array.from(elements)
+        .filter((element) => {
+          // Check if this is a "Highlights" heading or if it's contained within a hidden highlights section
+          const textContent = element.textContent?.trim() || "";
+          
+          // First, check if this is the "Highlights" heading itself
+          if (textContent === "Highlights") {
+            // Check if highlights are loaded by looking for a visible highlights section
+            const highlightsSection = element.parentElement;
+            if (highlightsSection && 
+                (highlightsSection.style.display === "none" || 
+                 getComputedStyle(highlightsSection).display === "none")) {
+              return false;
+            }
+          }
+          
+          // Then check if this element is contained within any hidden highlights section
+          let currentElement = element.parentElement;
+          while (currentElement) {
+            if (currentElement.style.display === "none" || 
+                getComputedStyle(currentElement).display === "none") {
+              // Check if this hidden section contains highlights content
+              const hasHighlightsHeading = currentElement.querySelector('h2')?.textContent?.trim() === "Highlights";
+              if (hasHighlightsHeading) {
+                return false;
+              }
+            }
+            currentElement = currentElement.parentElement;
+          }
+          
+          return true;
+        })
+        .map((element, index) => ({
+          id: element.id || `heading-${index}`,
+          text: element.textContent || "",
+          level: Number(element.tagName.charAt(1)),
+          index
+        }));
 
       elements.forEach((element, index) => {
         if (!element.id) {
@@ -37,7 +68,25 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       });
 
       setHeadings(items);
+    }
+  };
 
+  useEffect(() => {
+    setMounted(true);
+    
+    // Add a small delay to ensure BookContent component has time to hide highlights
+    const timer = setTimeout(() => {
+      updateHeadings();
+    }, 100);
+
+    // Cleanup timer if component unmounts
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+
+    const elements = document.querySelectorAll("article h2, article h3");
+    if (elements.length > 0) {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -58,10 +107,18 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
         }
       };
 
+      // Listen for highlights loaded event
+      const handleHighlightsLoaded = () => {
+        setTimeout(updateHeadings, 100); // Small delay to ensure DOM is updated
+      };
+
       document.addEventListener("click", handleClickOutside);
+      document.addEventListener("highlightsLoaded", handleHighlightsLoaded);
+      
       return () => {
         observer.disconnect();
         document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener("highlightsLoaded", handleHighlightsLoaded);
       };
     }
   }, [isOpen]);

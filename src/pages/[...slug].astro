@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import PostLayout from '../layouts/PostLayout.astro';
 import BookHeader from '../components/BookHeader.vue';
+import BookContent from '../components/BookContent.vue';
 import PostHeader from '../components/PostHeader.vue';
 import DiscussOn from '../components/DiscussOn.vue';
 import SocialShareButtons from '../components/SocialShareButtons.vue';
@@ -67,7 +68,13 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
     <TableOfContents client:load />
 
     <div class="my-4 md:my-10 prose lg:prose-xl">
-      <Content />
+      {entry.data.type === 'book' ? (
+        <BookContent client:load>
+          <Content />
+        </BookContent>
+      ) : (
+        <Content />
+      )}
     </div>
 
   </article>
