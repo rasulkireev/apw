@@ -10,6 +10,7 @@ dateCreated: 2025-08-10
 dateUpdated: 2025-08-10
 category: "Business"
 type: book
+notAffiliateLink: https://bookshop.org/a/106638/9781738426225
 hasSummaries: true
 tags:
   - Growth
@@ -44,7 +45,7 @@ Lerner’s system has four parts: understand the customer journey (Struggle → 
 - Outcomes over effort; do fewer, bigger things that move the needle.
 - Early stage: discovery for step-changes beats optimization for marginal gains.
 - Map the journey (Struggle → Search → Selection) and match tactics to stage.
-- Use JTBD interviews with recent buyers/substitutes to uncover triggers and anxieties.
+- Use "Jobs to be Done" interviews with recent buyers/substitutes to uncover triggers and anxieties.
 - Anchor on a simple, absolute North Star Metric that rises with delivered customer value and revenue.
 - Define key drivers as outcome metrics across the funnel; avoid counting activities.
 - Turn drivers into levers with outcome targets; track via a simple, shared dashboard.
@@ -59,124 +60,219 @@ Lerner’s system has four parts: understand the customer journey (Struggle → 
 
 ### Key Sentences
 
-1. > The best designers and the best programmers aren't the ones with the best skills, or the nimblest fingers, or the ones who can rock and roll with Photoshop or their environment of choice, they are the ones that can determine what just doesn't matter.
+1) "If you look back at the early days of any great startup, you’ll see that 90% of their growth came from 10% of the stuff they tried."
+   - **Why it’s crucial**: States the power-law nature of startup growth—few levers drive most results.
+   - **Proposition**: Focus resources on identifying and doubling down on the small set of tactics that produce outsized impact.
 
-This sentence encapsulates the book's core philosophy that success comes from strategic elimination rather than addition. It proposes that the key skill in software development is the ability to identify and focus only on what's truly essential.
+2) "Therefore, to succeed, an early-stage startup needs to become an instrument of discovery."
+   - **Why it’s crucial**: Core prescription of the book: learning speed and quality determine success.
+   - **Proposition**: Structure teams, processes, and metrics to maximize validated learning, not output or effort.
 
-2. > Each time you increase the amount of code, your software grows exponentially more complicated. Each minor addition, each change, each interdependency, and each preference has a cascading effect.
+3) "But discovery isn’t about getting marginally better; it’s about becoming categorically different."
+   - **Why it’s crucial**: Distinguishes discovery from optimization and reframes goals as step-changes, not tweaks.
+   - **Proposition**: Seek binary, model-shifting insights (new segments, channels, propositions) over incremental improvements.
 
-This sentence explains the fundamental reason behind the book's "less is more" approach. It proposes that complexity in software grows exponentially, not linearly, making simplicity not just desirable but necessary for success.
+4) "A growth model is a flow chart that maps out how your business finds, acquires, and delights new customers."
+   - **Why it’s crucial**: Introduces the central tool that aligns teams and reveals leverage mathematically.
+   - **Proposition**: Use an "North Star Metric" with key drivers and metrics to direct investment toward the highest-impact constraints.
 
-3. > The difference between you and everyone else will be how well you execute. Success is all about great execution.
-
-This concluding statement reveals the book's ultimate proposition: that success in software development isn't about having unique ideas or perfect plans, but about superior execution of the fundamentals.
-
-4. > Solve the simple problems and leave the hairy, difficult, nasty problems to everyone else.
-
-This sentence presents the book's contrarian strategy for market success. It proposes that focusing on simple, well-executed solutions is more valuable than tackling complex problems, challenging the common assumption that more complex equals better.
+5) "To do that, you’ll study the data and find your rate-limiting step: a bottleneck that constrains the overall growth rate of your business."
+   - **Why it’s crucial**: Provides a focusing mechanism for action.
+   - **Proposition**: Identify and remove the RLS first (if doubling it doubles the business), then repeat as the bottleneck moves.
 
 
 ### Unity of the Book
 
-The fundamental unity of "Getting Real" is: Build successful web applications by embracing constraints, staying lean, and focusing on execution over planning - which means building less software, making opinionated choices, launching quickly, and iterating based on real-world feedback rather than getting bogged down in specifications, features, and perfection.
+Startup success depends on becoming an instrument of discovery that rapidly identifies and exploits a few outsized growth levers—by deeply understanding customer struggle and decision paths, modeling the business to reveal bottlenecks, and running bold, learning-driven experiments—so scarce resources produce step-change outcomes rather than incremental gains.
 
-This central theme unifies all the book's advice about funding, features, design, coding, promotion, and support - it's all about stripping away the unnecessary to focus on what truly matters for shipping and succeeding with web applications in the real world.
 
 ### Author's Problems
 
 #### Main Problem
-How can small teams build successful web applications in a world dominated by large companies and complex software?
+How can early-stage startups reliably achieve step-change growth with scarce resources by discovering and exploiting a few outsized levers, instead of wasting effort on incremental optimization and complexity?
 
 #### Supporting Problems
+1. How to model the business to reveal leverage and bottlenecks (define a North Star Metric, key drivers, levers, and the rate-limiting step).
+2. How to understand the customer journey (Struggle → Search → Selection) to surface real triggers, channels, objections, and switching costs.
+3. How to generate, prioritize, and test growth ideas quickly (growth sprints, KIE scoring, rigorous hypotheses, and learning loops).
+4. How to obtain high-quality qualitative insight ("Jobs to be Done" interviews with recent buyers/substitutes) to inform hypotheses and uncover non-obvious channels.
+5. How to align teams and metrics around outcomes rather than activities (simple dashboards, outcome targets, avoid the “complexity tax”).
+6. How to choose and stress-test a North Star Metric that aligns customer value with revenue and covers the full funnel.
+7. How to build and sustain a discovery mindset (embrace uncertainty, reduce confirmation bias, run toward surprises, accept non-linear progress).
+8. How to re-sequence focus as constraints move (shift attention when a key driver improves and the bottleneck changes).
 
-1. How can small teams compete effectively against larger, better-resourced competitors? This is foundational as it shapes the entire approach to development and business strategy
-2. How can developers determine what features and functionality are truly essential? This problem must be solved to achieve the lean, focused approach the book advocates
-3. How can teams maintain speed and agility while building quality software? This addresses the practical execution challenges once the strategic direction is set
-4. How can small teams effectively launch and market their products without big budgets? This problem deals with getting traction once the product is built
-5. How can teams maintain and grow their product without falling into the complexity trap? This addresses the long-term sustainability of the approach
-6. How can teams make decisions quickly and confidently without extensive research and planning? This underlies the ability to execute on all other aspects
+#### Problem Hierarchy
+First, adopt a discovery mindset to enable bold, evidence-seeking work. Next, understand customers via "Jobs to be Done" and the Struggle → Search → Selection journey to ground hypotheses. Then map the growth model ("North Star Metric", key drivers) and identify the rate-limiting step to focus resources. With focus established, run growth sprints to test high-upside ideas rapidly, using outcome metrics and a shared dashboard to align the team. Finally, iterate as bottlenecks move and persist through non-linear progress.
 
-The order is significant because each problem builds on the previous ones:
-
-- First, you need to understand how to compete (1)
-- Then you need to know what to build (2)
-- Then how to build it effectively (3)
-- Then how to get it to market (4)
-- Then how to maintain and grow it (5)
-- Throughout, you need to make good decisions quickly (6)
 
 ### Book's Structure
 
-#### Overview of Major Parts
-1. Foundation (The Starting Line, Stay Lean) establishes core philosophy of constraints and simplicity. It also sets up the mindset needed for the approach.
-2. Strategic Decision Making (Priorities, Feature Selection) builds on foundation by showing how to make choices. It also provides framework for deciding what matters.
-3. Execution (Process, Interface Design, Code) shows how to implement the strategic decisions and provides practical application of the core principles
-4. Market Engagement (Promotion, Support, Post-Launch) demonstrates how to take the product to market and how to maintain the approach long-term
+1) Overview of Major Parts/Sections
+- No Prizes for Effort: Frames the core problem—early growth follows a power law, so activity and complexity don’t matter; discovery and leverage do.
+- The Solution: Discovery Mode (overview): Introduces the 4-step system—Customer Journey, Growth Model, Growth Sprints, Mindset Shift.
+- Understanding the Customer Journey: Deep dive into Struggle → Search → Selection; how to match tactics to stage.
+- Jobs To Be Done Interviews: Method to extract real triggers, anxieties, and decision context that power the journey.
+- Mapping Your Growth Model: How to define NSM, key drivers, levers, and find the rate-limiting step; align work via dashboards.
+- Running Growth Sprints: Process for prioritizing, experimenting, learning; hypothesis discipline and scoring ideas.
+- Shifting the Mindset: Cultural changes required to sustain discovery—intellectual honesty, boldness, embracing failure.
+- When Nothing Is Working: Normalizes non-linear progress and reinforces persistence in discovery.
 
-#### How Parts Work Together
-The structure follows a natural progression from mindset → decisions → execution → market engagement. Each section builds upon the previous:
+2) How the Parts Work Together
+- The book moves from problem framing (why discovery) to a compact operating system (what to do), then into toolkits for each pillar (how to do it), and finally into culture and persistence (who you must be and how to endure). Each later section depends on the clarity and inputs generated by earlier ones (e.g., JTBD insights feed the growth model and experiments), creating a closed learning loop.
 
-1. The foundation sections establish WHY you should embrace constraints and simplicity
-2. The strategic sections show WHAT to focus on given those constraints
-3. The execution sections detail HOW to build within these parameters
-4. The market sections explain how to SUSTAIN this approach
+3) Hierarchical Outline
+- I. Problem Framing
+  - A. No Prizes for Effort (power law, complexity tax, discovery vs optimization)
+- II. Solution Overview: Discovery Mode
+  - A. Step 1: Understand Customer Journey (Struggle → Search → Selection)
+  - B. Step 2: Map Growth Model (NSM, key drivers, levers, RLS)
+  - C. Step 3: Run Growth Sprints (hypothesis-driven testing)
+  - D. Step 4: Shift Mindset (discovery culture)
+- III. Deep Dives and Methods
+  - A. Customer Journey
+    - 1. Struggle, Search, Selection stages
+    - 2. Matching tactics to stage
+  - B. JTBD Interviews
+    - 1. Recent buyers/substitutes
+    - 2. Extract triggers, anxieties, switching costs; channel insights
+  - C. Growth Model
+    - 1. NSM criteria and examples
+    - 2. Key drivers (outcomes vs activities)
+    - 3. Sketching the model; dashboards
+    - 4. Levers with outcome metrics
+    - 5. Rate-Limiting Step (RLS) test
+  - D. Growth Sprints
+    - 1. Inputs → Ideation/Scoring (Key driver, Impact, Effort) → Selection
+    - 2. Experiment design; falsifiable hypotheses; negative framing
+    - 3. Learn, document, iterate; bottleneck shifts
+- IV. Culture and Persistence
+  - A. Shifting the Mindset (openness, boldness, run toward surprises)
+  - B. When Nothing Is Working (expect “nothing…bang” curve; keep learning)
 
+4) How This Structure Serves the Main Purpose
+- The structure operationalizes the central thesis—win by discovery and leverage—by sequencing the reader through why (motivation), what (framework), how (methods and metrics), and who/how long (mindset and persistence). Each part produces inputs for the next (JTBD → model → experiments → new insights), forming a self-reinforcing loop that consistently exposes and exploits the few levers that drive step-change growth.
 
-## Prompt Ideas
+## Prompt / Agent Ideas
 
-### Product Development & Decision Making
-1. "I'm considering adding [feature] to my app. Using the principles from 'Getting Real', analyze if this feature is truly essential by considering: (1) How many users will benefit (2) Hidden costs of implementation (3) Maintenance burden (4) Alternative simpler solutions"
+- Struggle Signal Miner (forums)
+  Prompt: “Scan Reddit, X, Hacker News, and product forums for complaints/questions about {{job-to-be-done}} among {{segment}}. Cluster by theme; extract triggers, failed alternatives, anxieties, and urgency signals. Output CSV: theme, trigger, quote, link, frequency, severity (1–5), opportunity hypothesis.”
 
-2. "Help me strip down this complex feature idea into its simplest possible implementation that solves 80% of the problem with 20% of the effort. Current idea: [describe feature]"
+- JTBD Interview Kit Generator
+  Prompt: “Create a JTBD interview guide for recent buyers of {{product/substitute}}. Include screener questions, consent intro, timeline walkthrough, forces (push, pull, anxieties, habits), switching costs, and wrap-up. Add a one-page note-taker template.”
 
-3. "Review my product's current feature set and identify potential areas of bloat using 37 Signals' principles. Here are my features: [list features]"
+- JTBD Transcript Analyzer
+  Prompt: “Given these interview transcripts, reconstruct the decision documentary: timeline (first thought → passive look → active look → choice → first use), jobs, triggers, anxieties, hiring/firing criteria, alternatives tried, non-obvious channels. Output: job stories and a forces diagram per interview.”
 
-### Interface & Copy Writing
-4. "Rewrite this technical error message to be more human and match my product's personality, which is [describe personality]. Error message: [paste message]"
+- Customer Journey Map (Struggle → Search → Selection)
+  Prompt: “For {{segment}} considering {{product}}, map the journey by stage: core questions, tipping points, channels visited, proof required, objections, switching costs, and ‘moments that matter’. Recommend stage-specific messages and assets.”
 
-5. "Review these three interface states for my [feature/screen]: Regular state, Blank state, and Error state. Suggest improvements based on defensive design principles: [describe states]"
+- Message Map by Stage
+  Prompt: “Draft messaging for Struggle (pain-pokes), Search (comparison/SEO topics), and Selection (risk-reversals). Provide 3 ad variants, 3 email subjects, landing page hero copy, and proof assets per stage.”
 
-6. "Help me write clear, human interface copy for these UI elements following 37 Signals' principles: [list UI elements needing copy]"
+- Growth Model Builder
+  Prompt: “Propose a North Star Metric for {{product}} and 3–4 key drivers that causally move it. Sketch a funnel model with absolute counts and conversion rates. List 8–12 levers under each driver with associated outcome metrics.”
 
-### Marketing & Promotion
-7. "Create a Hollywood-style launch plan (Teaser → Preview → Launch) for my new [product], including specific content ideas for each phase"
+- NSM Stress Test
+  Prompt: “Evaluate this NSM: {{NSM description}} against criteria: aligned incentives, full-funnel, absolute, simple/memorable. Suggest better alternatives and explain trade-offs.”
 
-8. "Generate ideas for blog posts that would be valuable to my target audience while subtly promoting my [product], following 37 Signals' blog promotion strategy"
+- Rate-Limiting Step Finder
+  Prompt: “Given these metrics (visitors, signup rate, activation rate, 8-week retention, referral rate, ARPU), run a ‘doubling test.’ If each driver doubled, how would {{NSM}} change? Identify the bottleneck, explain why, and recommend top 5 levers to attack it.”
 
-9. "Help me craft a product manifesto that explains the philosophy and ideas behind my [product], similar to how 37 Signals did with Backpack"
+- Lever Ideation Sprint (by driver)
+  Prompt: “Generate 30 lever ideas for improving {{driver}} for {{segment}}. Tag each with hypothesis, expected impact, evidence source, dependencies, estimated effort (S/M/L), risk level, and learning value.”
 
-### Project Management
-10. "Analyze this feature request using the 'It's a Problem When It's a Problem' principle. Help me decide if we should implement it now or wait: [describe feature request]"
+- Backlog Scoring (KIE/ICE)
+  Prompt: “Score these ideas on Key driver fit, Impact (1–5), Effort (1–5), and Learning value (1–5). Return ranked list with ‘why’ notes and a shortlist for this sprint.”
 
-11. "Help me create a 'scope down' version of this project that maintains its core value but can be shipped faster: [describe project]"
+- Hypothesis Writer (negative framing)
+  Prompt: “Transform this idea into a rigorous hypothesis: Risky assumption (negative form), Experiment design, Primary metric with predicted delta and direction, Guardrail metrics, Stopping rule, and Business decision if confirmed/invalidated.”
 
-12. "Review these user complaints about [feature/change] and help me determine if they're knee-jerk reactions I should wait out or legitimate issues needing immediate attention"
+- Experiment Design & Tracking Plan
+  Prompt: “Design a valid test for {{idea}}: allocation, minimal detectable effect, sample size and duration, success criteria, confound controls, and event tracking schema (names, props). Provide SQL/pseudo-SQL for primary KPI.”
 
-### Support & Communication
-13. "Help me write a transparent and honest announcement about this recent service issue, following 37 Signals' principles of crisis communication: [describe issue]"
+- Quick-Win Filter (“Just do it”)
+  Prompt: “From this backlog, identify items that are low-cost, low-risk, and reversible. Provide the smallest shippable version and expected time-to-impact.”
 
-14. "Create a template for saying 'no' to feature requests in a way that's firm but respectful, explaining our product vision and philosophy"
+- Post-Experiment Learning Synthesizer
+  Prompt: “Given experiment results (metrics/notes), explain what happened, why, what we learned about users, what to scale/stop, follow-up tests, and any KPI definition changes. Create a one-paragraph ‘decision memo’ and a changelog entry.”
 
-15. "Help me write a blog post for our one-month tuneup announcement that shows momentum and addresses user feedback: [list recent changes/updates]"
+- Dashboard Spec (Metric Tree)
+  Prompt: “Create a dashboard spec with {{NSM}} at top, then key drivers, then nuance metrics. Define each metric, owner, update cadence, alert thresholds, and SQL/dbt model stubs.”
 
-### Product Strategy
-16. "Analyze my competitor's product and help me identify opportunities to 'solve the simple problems' they're leaving behind while pursuing complexity: [describe competitor's product]"
+- Cohort & Activation Analysis
+  Prompt: “Analyze retention cohorts (by signup week/segment). Identify behaviors within first 7 days that correlate with 8-week retention. Propose an activation event definition and 5 onboarding changes to increase that behavior.”
 
-17. "Help me define my product's personality and voice using 37 Signals' principles. Here's my product description: [describe product]"
+- Onboarding Redesign Kit
+  Prompt: “Propose a first-session flow and 14-day lifecycle messaging for {{segment}}. Include checklist tasks, habit loops, empty-state copy, aha-moment timing, and 5 in-app nudges tied to activation predictors.”
 
-18. "Review my product's current pricing and signup process for friction points and suggest improvements based on 37 Signals' 'Easy On, Easy Off' principle"
+- Objections & Proof Asset Planner
+  Prompt: “List top Selection-stage objections and switching costs for {{segment}}. Recommend proof assets (comparison pages, ROI calculator, demo video outline, migration guide, security FAQ) and where to deploy them.”
 
-### Development Process
-19. "Help me evaluate if this bug needs immediate attention or can wait, using 37 Signals' bug prioritization framework. Bug details: [describe bug]"
+- SEO Templates at Scale
+  Prompt: “Identify {{market}} ‘Search stage’ keyword patterns (e.g., ‘{{task}} template’, ‘best {{tool}} for {{use case}}’). Produce a page template with variable slots, internal linking plan, and content brief for 10 programmatic pages.”
 
-20. "Create a checklist of questions to ask before adding any new feature, based on 37 Signals' feature selection principles"
+- Referral Loop Design
+  Prompt: “Design a referral program: moments to ask, incentive structure, eligibility, fraud prevention, copy variants, and a simple K-factor model. Include instrumentation and guardrails.”
 
-### General Business Strategy
-21. "Help me identify ways to create free tools or features that could lead users to my main product, similar to how 37 Signals used Writeboard and Ta-da List"
+- Pricing Page Optimization
+  Prompt: “Audit pricing page for clarity, risk reversals, and choice overload. Propose 5 high-variance tests (plan naming, default selection, toggles, money-back guarantees, social proof placement) with hypotheses.”
 
-22. "Analyze my current product and suggest ways to reduce its 'mass' to make it more adaptable to change: [describe current product state]"
+- Complexity Tax Audit
+  Prompt: “Inventory features/campaigns and estimate maintenance cost vs. usage/impact. Recommend deprecations, consolidations, and a simpler value prop statement. Output: ‘stop/keep/simplify’ table.”
 
-23. "Help me craft a strategy for staying lean while scaling my product's success, focusing on simplicity over feature expansion"
+- Weekly Growth Meeting Pack
+  Prompt: “Prepare an agenda: NSM and driver deltas, anomalies, RLS status, top 5 proposed experiments, decisions needed, risks, and owners. Include a one-slide summary and next-week commitments.”
+
+- Competitive Funnel Teardown
+  Prompt: “Analyze {{competitor}}’s Struggle/Search/Selection tactics: messages, channels, proof assets, onboarding. Identify gaps and counter-moves tailored to our {{segment}}.”
+
+- Non-Obvious Channel Finder (Obituary heuristic)
+  Prompt: “Using triggers uncovered in JTBD, list 10 unconventional placements where these triggers co-occur (events, newsletters, marketplaces, offline moments). Score by audience fit, CPM proxy, and expected intent.”
+
+- Sensitivity Simulator
+  Prompt: “With this baseline funnel, simulate effects of ±10–100% changes in each driver on {{NSM}} and revenue. Return a tornado chart table and a recommended focus order.”
+
+- Data Gap Mapper
+  Prompt: “List missing data and tracking that block good experiments. Produce a tracking plan (events, properties, IDs, sources), owner, and Jira tickets.”
+
+- Compliance-Friendly Growth (if regulated)
+  Prompt: “Map compliance requirements that touch the journey (KYC, consent, PCI, HIPAA). Propose low-friction designs and copy to keep activation high while meeting obligations.”
+
+- B2B Buying Committee Map
+  Prompt: “For {{B2B segment}}, map personas (economic, technical, user, legal). For each, list goals, fears, proof required, and craft a 3-email sequence to move deals through Selection.”
+
+- “Nothing…Bang” Progress Tracker
+  Prompt: “Maintain an experiment log with lead indicators of learning velocity (time-to-hypothesis, time-to-result, percent bold tests). Recommend when to pivot focus as the bottleneck moves.”
+
+- Reddit Pain Scanner (automated weekly)
+  Prompt: “Weekly, pull top new posts in r/{{sub1}}, r/{{sub2}} matching ‘can’t, broken, stuck, alternative, migrate, budget.’ Summarize emerging pains, quotes, and propose one new experiment per theme.”
+
+- RLS-to-Lever Playbook
+  Prompt: “Given the current RLS is {{driver}}, suggest 10 levers that directly address it, with expected metric movement, time-to-learn, dependencies, and first instrumented step.”
+
+- “Poke the Pain” Ad Generator
+  Prompt: “Create 5 ad concepts that intensify Struggle for {{segment}} (pain, consequences, desired end-state), each with headline, primary text, visual concept, and landing CTA aligned to the same stage.”
+
+- Comparison Page Blueprint
+  Prompt: “Draft a {{Product vs. Competitor}} page outline addressing Selection criteria: use cases, side-by-side features, proof, switching plan, price transparency, and objection handling.”
+
+- Migration Plan Generator
+  Prompt: “For users switching from {{alternative}}, produce a 5-step migration guide, checklist, timeline, and reassurance copy to lower switching costs.”
+
+- Experiment Ethics & Risk Check
+  Prompt: “Assess this experiment for ethical, brand, and legal risks. Suggest safer variants that preserve learning while protecting users and data.”
+
+- Benchmarks & Sanity Checks
+  Prompt: “Provide industry benchmarks for {{driver}} in {{market}} and company stage. Flag where we are out-of-band and suggest plausible ranges for targets.”
+
+- Event Naming & Data Contract
+  Prompt: “Create a consistent event taxonomy for our funnel. Define names, properties, types, and versioning rules. Include examples and anti-patterns.”
+
+- Scaling Decision Heuristic
+  Prompt: “Given pilot results, compute expected ROI, saturation limits, unit economics, and ops load. Recommend ‘scale/iterate/kill’ with thresholds and leading indicators to monitor.”
+
+- Founder Reality-Check
+  Prompt: “List our 5 riskiest assumptions about customers/channels/pricing. Propose bold tests that could falsify each within 2 weeks and <$2k.”
 
 
 ## Highlights
@@ -321,12 +417,12 @@ It’s a cool story. But was the information useful? Did Bob find a way to sell 
 
 After the interview, Bob suggested his company start advertising their houses in the obituary section of the local newspaper, and it worked: they increased house viewings by 38% and reduced their ad spend by 70% since nobody else wanted to advertise in the obituaries.
 
-To get results like Bob’s, you need to uncover the powerful emotional drivers of decision-making using the JTBD interview process.
+To get results like Bob’s, you need to uncover the powerful emotional drivers of decision-making using the "Jobs to be Done" interview process.
 
 **Note:** Finding true intensions of your current customers can help with finding new ones
 
 
-Your aim in running a JTBD interview is to imagine the whole customer journey playing out in your mind as if you’re watching a documentary. You’ll try to visualize your customers’ experience in enough detail that you can imagine going through that experience yourself.
+Your aim in running a "Jobs to be Done" interview is to imagine the whole customer journey playing out in your mind as if you’re watching a documentary. You’ll try to visualize your customers’ experience in enough detail that you can imagine going through that experience yourself.
 
 
 ![](https://readwise.io/reader/pcei/gAAAAABobnqLz4VFXu1ilJlRR83mKL7p5BfuQdq5BKmNkjgOFusQXlNA_M0AEeeN3ji4424LAFUFaMMkfGJ6rWj-3Pfj7FB6qDgNrs1IrrkzmbxQW-zg4iI=/image_rsrc1GA.jpg)
@@ -353,7 +449,7 @@ A growth model is a flow chart that maps out how your business finds, acquires, 
 
 You’ll map your growth model in 4 steps.
 
-1.  Find your North Star Metric (NSM): the number that ultimately tracks value delivered to customers and causes revenue. This expresses your ultimate goal tangibly.
+1.  Find your North Star Metric ("North Star Metric"): the number that ultimately tracks value delivered to customers and causes revenue. This expresses your ultimate goal tangibly.
 
 2.  Find the key drivers that increase the North Star: from when people first encounter your business to the point where they’re happy, loyal, revenue-generating customers.
 
@@ -368,7 +464,7 @@ You’ll map your growth model in 4 steps.
 ![](https://readwise.io/reader/pcei/gAAAAABobnqLDaoYRwG1Tpl1xXEjJgVk5o7JxiSIlW7MX--5vwibmXt68blvrMlL1YVkLderQSWRY5ziPt8O8vPT6l39Q7fwhIP90JKJDJtncjqD3zFJT6o=/image_rsrc1GE.jpg)
 
 
-Here are some examples of NSMs:
+Here are some examples of "North Star Metric"s:
 
 B2C: Usually a number of transactions or users or an amount of usage
 
@@ -397,7 +493,7 @@ Marketplace: Typically a transaction metric where both sides of the marketplace 
 •   Uber – Rides per week
 
 
-You can stress test your NSM with this checklist:
+You can stress test your "North Star Metric" with this checklist:
 
 1.  Aligned incentives: Does it increment when you deliver value to your customer? And if you succeed in moving it, will your company earn money and grow?
 

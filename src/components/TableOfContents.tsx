@@ -24,11 +24,34 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
     if (elements.length > 0) {
       const items: HeadingItem[] = Array.from(elements)
         .filter((element) => {
-          // Filter out highlights section and its subsections if they're hidden
-          const highlightsSection = document.querySelector('div[style*="display: none"]');
-          if (highlightsSection && highlightsSection.contains(element)) {
-            return false;
+          // Check if this is a "Highlights" heading or if it's contained within a hidden highlights section
+          const textContent = element.textContent?.trim() || "";
+          
+          // First, check if this is the "Highlights" heading itself
+          if (textContent === "Highlights") {
+            // Check if highlights are loaded by looking for a visible highlights section
+            const highlightsSection = element.parentElement;
+            if (highlightsSection && 
+                (highlightsSection.style.display === "none" || 
+                 getComputedStyle(highlightsSection).display === "none")) {
+              return false;
+            }
           }
+          
+          // Then check if this element is contained within any hidden highlights section
+          let currentElement = element.parentElement;
+          while (currentElement) {
+            if (currentElement.style.display === "none" || 
+                getComputedStyle(currentElement).display === "none") {
+              // Check if this hidden section contains highlights content
+              const hasHighlightsHeading = currentElement.querySelector('h2')?.textContent?.trim() === "Highlights";
+              if (hasHighlightsHeading) {
+                return false;
+              }
+            }
+            currentElement = currentElement.parentElement;
+          }
+          
           return true;
         })
         .map((element, index) => ({
@@ -50,7 +73,17 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
   useEffect(() => {
     setMounted(true);
-    updateHeadings();
+    
+    // Add a small delay to ensure BookContent component has time to hide highlights
+    const timer = setTimeout(() => {
+      updateHeadings();
+    }, 100);
+
+    // Cleanup timer if component unmounts
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
 
     const elements = document.querySelectorAll("article h2, article h3");
     if (elements.length > 0) {

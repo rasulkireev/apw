@@ -69,6 +69,10 @@ export default {
     }
 
     onMounted(() => {
+      // Hide highlights immediately without waiting for nextTick to minimize race conditions
+      findAndHideHighlights()
+      
+      // Also do it again after nextTick to be extra sure
       nextTick(() => {
         findAndHideHighlights()
       })
