@@ -2,7 +2,7 @@
 title: Start Small, Stay Small
 subtitle: A Developer’s Guide to Launching a Startup
 author: Rob Walling
-rating: 9
+rating: 7
 slug: start-small-stay-small
 description: A practical, market-first playbook for developers to bootstrap software startups without external funding. Walling stresses niches, marketing over features, and measurable validation (keyword research, AdWords tests). Build a high-converting sales site, grow an email list, price with tiers, and use VAs/outsourcing and documented processes to scale. Set clear goals (e.g., first $500 MRR), iterate quickly, and focus on verticals where you can be the best.
 cover: "./images/start-small-stay-small.webp"
