@@ -15,5 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.1] - 2025-08-10
 **Added**
+- Added a book review for "Start Small, Stay Small" by Rob Walling
+
+## [0.0.1] - 2025-08-10
+**Added**
 - Highlights are now not shown on page load to improve SEO.
 - Added a book review for "Growth Levers"
