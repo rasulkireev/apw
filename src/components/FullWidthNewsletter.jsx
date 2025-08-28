@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
   const [formState, setFormState] = useState({
@@ -8,6 +8,26 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
     message: '',
     isError: false,
   });
+
+  const [userIp, setUserIp] = useState('');
+
+  // Fetch user's IP address when component mounts
+  useEffect(() => {
+    const fetchIP = async () => {
+      try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        if (response.ok) {
+          const data = await response.json();
+          setUserIp(data.ip);
+        }
+      } catch (error) {
+        console.log('Could not fetch IP address:', error);
+        // Continue without IP if fetch fails
+      }
+    };
+
+    fetchIP();
+  }, []);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -26,6 +46,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
       email: formState.userEmail,
       tag: tag,
       source: source,
+      ip_address: userIp,
     };
 
     try {
