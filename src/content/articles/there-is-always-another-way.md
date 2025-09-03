@@ -8,6 +8,7 @@ icon: ./icons/lightbulb.svg
 aiImage: ./images/there_is_always_another_way.webp
 aiPrompt: abstract image for a post about creative problem solving, finding alternative paths, breaking through barriers
 tags: ["Problem-Solving", "Creativity", "Marketing", "Life-Lessons"]
+twitterLink: https://x.com/rasulkireev/status/1963164432650895558
 category: Personal Development
 type: article
 description: Rules and limitations can be overcome through creativity and finding alternative categories or approaches.
