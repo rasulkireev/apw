@@ -23,35 +23,62 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
     if (elements.length > 0) {
       const items: HeadingItem[] = Array.from(elements)
-        .filter((element) => {
-          // Check if this is a "Highlights" heading or if it's contained within a hidden highlights section
+                .filter((element) => {
+          // Check if this is a "Highlights", "Analysis", or "Prompt Ideas" heading or if it's contained within a hidden section
           const textContent = element.textContent?.trim() || "";
-          
+
           // First, check if this is the "Highlights" heading itself
           if (textContent === "Highlights") {
             // Check if highlights are loaded by looking for a visible highlights section
             const highlightsSection = element.parentElement;
-            if (highlightsSection && 
-                (highlightsSection.style.display === "none" || 
+            if (highlightsSection &&
+                (highlightsSection.style.display === "none" ||
                  getComputedStyle(highlightsSection).display === "none")) {
               return false;
             }
           }
-          
-          // Then check if this element is contained within any hidden highlights section
+
+          // Check if this is the "How to Read a Book Analysis" heading itself
+          if (textContent.includes('How to Read a Book') && textContent.includes('Analysis')) {
+            // Check if analysis is loaded by looking for a visible analysis section
+            const analysisSection = element.parentElement;
+            if (analysisSection &&
+                (analysisSection.style.display === "none" ||
+                 getComputedStyle(analysisSection).display === "none")) {
+              return false;
+            }
+          }
+
+          // Check if this is the "Prompt / Agent Ideas" heading itself
+          if (textContent.includes('Prompt') && textContent.includes('Agent') && textContent.includes('Ideas')) {
+            // Check if prompt ideas are loaded by looking for a visible prompt ideas section
+            const promptIdeasSection = element.parentElement;
+            if (promptIdeasSection &&
+                (promptIdeasSection.style.display === "none" ||
+                 getComputedStyle(promptIdeasSection).display === "none")) {
+              return false;
+            }
+          }
+
+          // Then check if this element is contained within any hidden section
           let currentElement = element.parentElement;
           while (currentElement) {
-            if (currentElement.style.display === "none" || 
+            if (currentElement.style.display === "none" ||
                 getComputedStyle(currentElement).display === "none") {
-              // Check if this hidden section contains highlights content
-              const hasHighlightsHeading = currentElement.querySelector('h2')?.textContent?.trim() === "Highlights";
-              if (hasHighlightsHeading) {
-                return false;
+              // Check if this hidden section contains highlights, analysis, or prompt ideas content
+              const h2Elements = currentElement.querySelectorAll('h2');
+              for (const h2 of h2Elements) {
+                const h2Text = h2.textContent?.trim() || "";
+                if (h2Text === "Highlights" ||
+                    (h2Text.includes('How to Read a Book') && h2Text.includes('Analysis')) ||
+                    (h2Text.includes('Prompt') && h2Text.includes('Agent') && h2Text.includes('Ideas'))) {
+                  return false;
+                }
               }
             }
             currentElement = currentElement.parentElement;
           }
-          
+
           return true;
         })
         .map((element, index) => ({
@@ -73,7 +100,7 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Add a small delay to ensure BookContent component has time to hide highlights
     const timer = setTimeout(() => {
       updateHeadings();
@@ -107,18 +134,30 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
         }
       };
 
-      // Listen for highlights loaded event
+            // Listen for highlights, analysis, and prompt ideas loaded events
       const handleHighlightsLoaded = () => {
+        setTimeout(updateHeadings, 100); // Small delay to ensure DOM is updated
+      };
+
+      const handleAnalysisLoaded = () => {
+        setTimeout(updateHeadings, 100); // Small delay to ensure DOM is updated
+      };
+
+      const handlePromptIdeasLoaded = () => {
         setTimeout(updateHeadings, 100); // Small delay to ensure DOM is updated
       };
 
       document.addEventListener("click", handleClickOutside);
       document.addEventListener("highlightsLoaded", handleHighlightsLoaded);
-      
+      document.addEventListener("analysisLoaded", handleAnalysisLoaded);
+      document.addEventListener("promptIdeasLoaded", handlePromptIdeasLoaded);
+
       return () => {
         observer.disconnect();
         document.removeEventListener("click", handleClickOutside);
         document.removeEventListener("highlightsLoaded", handleHighlightsLoaded);
+        document.removeEventListener("analysisLoaded", handleAnalysisLoaded);
+        document.removeEventListener("promptIdeasLoaded", handlePromptIdeasLoaded);
       };
     }
   }, [isOpen]);
