@@ -42,7 +42,7 @@ const socialImageTitle = entry.data.type == "book" ? entry.data.title + " by " +
 const socialImageEyebrow = entry.data.type == "book" ? "Book Review" : entry.data.type;
 const postImage = entry.data.aiImage ? entry.data.aiImage.src : "white.png";
 const backUrl = entry.data.type == "book" ? "book-notes" : entry.data.type + "s";
-const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&title=${socialImageTitle}&subtitle=${entry.data.description}&eyebrow=${socialImageEyebrow}&image_url=https://rasulkireev.com/${postImage}`
+const socialImageUrl = `https://osig.app/g?style=base&site=x&font=markerfelt&title=${socialImageTitle}&eyebrow=${socialImageEyebrow}&image_url=https://rasulkireev.com/${postImage}`
 const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entry.slug}`;
 ---
 
