@@ -12,6 +12,20 @@ const pageTitle = "Rasul's Favourites";
   <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Favourites</h1>
   <p>This is a list of my favourites.</p>
 
+  <h2 id="feeds" class="mb-4 text-2xl border-b border-gray-200">Feeds</h2>
+  <p>
+    I follow a lot of various blogs/feeds. Here are some of my favourites (meaning I read them immediately as new posts come out):
+  </p>
+  <ul>
+    <li><a href="https://www.ryanckulp.com/">Ryan Kulp</a></li>
+    <li><a href="https://ofdollarsanddata.com/">Of Dollars and Data</a> by Nick Maggiulli</li>
+    <li><a href="https://www.joanwestenberg.com/">Joan Westenberg</a></li>
+    <li><a href="https://blog.nateliason.com/">Infinite Play</a> by Nat Eliason</li>
+    <li><a href="https://flatnine.co/">FlatNine Blog</a> by Mike Rubini</li>
+    <li><a href="https://longform.asmartbear.com/">A Smart Bear</a> by Jason Cohen</li>
+    <li><a href="https://successfulsoftware.net/">Successful Software</a> by Andy Brice</li>
+  </ul>
+
   <h2 id="books" class="mb-4 text-2xl border-b border-gray-200">Books</h2>
   <p>
     You can see most of the books I've read, rated and reviewed <a href="/book-notes">here</a>.
@@ -25,11 +39,44 @@ const pageTitle = "Rasul's Favourites";
     <li>The Harry Potter Series</li>
   </ul>
 
+  <h2 id="movies" class="mb-4 text-2xl border-b border-gray-200">Movies</h2>
+  <p>
+    Same as with games, I haven't been watching movies much lately.
+    Here are some movies I have loved the most in the last decade:
+  </p>
+  <ul>
+    <li>The Da Vinci Code</li>
+    <li>Angels and Demons</li>
+    <li>The Harry Potter Series</li>
+    <li>National Treasure 1 & 2</li>
+    <li>The Intern with Anne Hathaway and Robert De Niro</li>
+    <li>Man from UNCLE</li>
+    <li>Gentlemen with Matthew McConaughey</li>
+    <li>Kingsman</li>
+    <li>RED with Bruce Willis</li>
+    <li>Knives Out</li>
+  </ul>
+
+  <h2 id="podcast-episodes" class="mb-4 text-2xl border-b border-gray-200">Podcasts Episodes</h2>
+  <p>
+    This list hasn't been updated for a while (2-3 years ago?).
+    I have listened to quite a few episodes, since last update.
+    Although at the same time I haven't been listening much in the last 6 months, so muught just leave it as is.
+  </p>
+  <ul v-for="episode in episodes" :key="episode.id" class="list-outside">
+      {favouritePodcasts.map(episode => (
+        <li class="mb-2">
+            <a class="text-blue-700" href={episode.url}>{ episode.episode }</a> - { episode.podcast }
+        </li>
+      ))}
+  </ul>
+
   <h2 id="games" class="mb-4 text-2xl border-b border-gray-200">Games</h2>
   <p>
     I haven't been playing games much lately. Between raising a toddler, work, side projects, and
-    <a href="/10-years-of-great-books">reading Great Books</a>, there is not much time left. This makes me a little sad, since I love games.
-    Anyway, here are some games I have loved the most in the last decade:
+    <a href="/10-years-of-great-books">reading Great Books</a>, there is not much time left.
+    This makes me a little sad, since I love games.
+    Anyway, here are some games I have loved the most as a kid and a teenager:
   </p>
   <ul>
     <li><b>FIFA 02-18</b><br/>This was pretty much the only game I played when i was a kid.</li>
@@ -45,38 +92,6 @@ const pageTitle = "Rasul's Favourites";
     </li>
     <li><b>God of War: Ragnarok</b> - PS5</li>
     <li><b>Spider-Man</b> - PS5</li>
-  </ul>
-
-
-  <h2 id="movies" class="mb-4 text-2xl border-b border-gray-200">Movies</h2>
-  <p>
-    Same as with games, I haven't been watching movies much lately.
-    Here are some movies I have loved the most in the last decade:
-  </p>
-  <ul>
-    <li>The Da Vinci Code</li>
-    <li>The Harry Potter Series</li>
-    <li>National Treasure</li>
-    <li>National Treasure 2</li>
-    <li>The Intern with Anne Hathaway and Robert De Niro</li>
-    <li>Man from UNCLE</li>
-    <li>Gentlemen with Matthew McConaughey</li>
-    <li>Kingsman</li>
-    <li>RED with Bruce Willis</li>
-  </ul>
-
-  <h2 id="podcast-episodes" class="mb-4 text-2xl border-b border-gray-200">Podcasts Episodes</h2>
-  <p>
-    This list hasn't been updated for a while (2-3 years ago?).
-    I have listened to quite a few episodes, since last update.
-    Although at the same time I haven't been listening much in the last 6 months, so muught just leave it as is.
-  </p>
-  <ul v-for="episode in episodes" :key="episode.id" class="list-outside">
-      {favouritePodcasts.map(episode => (
-        <li class="mb-2">
-            <a class="text-blue-700" href={episode.url}>{ episode.episode }</a> - { episode.podcast }
-        </li>
-      ))}
   </ul>
 
 </div>

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Free Books and Courses";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+<div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
+
+  <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Ongoing Lists</h1>
+  <p>
+    I like to collect cool links and ideas from various places, and can never be bothered to make some posts out of them.
+    Instead of doing that I decided to create separate list pages that will be updated as I run into something interesting.
+  </p>
+
+  <ul>
+    <li><a href="/favourites">Favourites</a></li>
+    <li><a href="/free-books-and-courses">Free Books and Courses</a></li>
+  </ul>
+
+</div>
+
+</BaseLayout>
