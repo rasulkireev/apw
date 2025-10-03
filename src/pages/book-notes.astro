@@ -4,6 +4,9 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const pageTitle = "Book Reviews by Rasul Kireev";
+const pageDescription = "Discover my comprehensive book reviews and ratings covering business, personal development, fiction, technology, and more. Find your next great read with detailed insights and honest opinions.";
+const pageKeywords = "book reviews, book ratings, reading recommendations, business books, personal development, fiction reviews, technology books, book notes, reading list, Rasul Kireev";
+
 const allBooks = await getCollection('books');
 
 // Get the selected tags, category, and sort from URL params
@@ -47,7 +50,11 @@ const filteredBooks = sortedBooks.filter(book => {
 });
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="mb-4 space-y-4">
     <div class="flex justify-between items-center">
       <div class="flex gap-2">

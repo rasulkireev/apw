@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const pageTitle = "All Tags";
+const pageTitle = "Browse by Tags - Rasul KireevContent Categories";
+const pageDescription = "Browse all content by tags and categories. Discover articles, tutorials, books, and prompts organized by topics including programming, web development, books, and more.";
+const pageKeywords = "tags, categories, content organization, programming tags, web development, books, tutorials, articles, browse by topic";
 
 // Get all collections that might have tags
 const allArticles = await getCollection('articles');
@@ -32,7 +34,11 @@ function extractAllTagsWithCounts(content) {
 const allTags = extractAllTagsWithCounts(allContent);
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="max-w-4xl mx-auto">
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-3xl font-bold text-gray-900">Browse by Tags</h1>

@@ -4,6 +4,9 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const pageTitle = "Articles by Rasul Kireev";
+const pageDescription = "Browse through my collection of articles covering web development, programming tutorials, book reviews, personal development, and technology insights.";
+const pageKeywords = "Rasul Kireev articles, web development, programming tutorials, book reviews, technology blog, personal development, coding guides, software engineering";
+
 const allArticles = await getCollection('articles');
 
 // Sort articles by date
@@ -23,7 +26,11 @@ const filteredArticles = selectedTags.length > 0
   : allArticles;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="mb-4">
     <button
       id="toggleTags"

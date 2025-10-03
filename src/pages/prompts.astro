@@ -3,7 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-const pageTitle = "Rasul's Favorite Prompts";
+const pageTitle = "AI Prompts Collection by Rasul Kireev";
+const pageDescription = "Discover my curated collection of effective AI prompts for ChatGPT, Claude, and other language models. Browse prompts by category and find the perfect prompt for your needs.";
+const pageKeywords = "AI prompts, ChatGPT prompts, Claude prompts, prompt engineering, AI tools, language model prompts, prompt collection, Rasul Kireev";
+
 const allPrompts = await getCollection('prompts');
 
 // Sort articles by date
@@ -23,7 +26,11 @@ const filteredPrompts = selectedTags.length > 0
   : allPrompts;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="mb-4">
     <button
       id="toggleTags"

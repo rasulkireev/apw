@@ -3,9 +3,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import favouritePodcasts from '../assets/data/favouritePodcasts.json';
 
 const pageTitle = "Rasul's Favourites";
+const pageDescription = "Explore my curated list of favourite blogs, books, movies, podcast episodes, and games. Discover quality content recommendations across feeds, entertainment, and gaming from Rasul Kireev.";
+const pageKeywords = "favourites, recommendations, blogs, feeds, books, movies, podcasts, games, Ryan Kulp, Nick Maggiulli, Nat Eliason, Harry Potter, FIFA, Command & Conquer, Rasul Kireev";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
 
 <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
 

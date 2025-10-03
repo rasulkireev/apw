@@ -4,6 +4,9 @@ import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
 const pageTitle = "Recipes by Rasul Kireev";
+const pageDescription = "Explore my collection of favorite recipes in English and Russian. From traditional dishes to modern cooking experiments, find delicious recipes with detailed instructions.";
+const pageKeywords = "recipes, cooking, food, Russian recipes, English recipes, traditional dishes, cooking instructions, Rasul Kireev";
+
 const allRecipes = await getCollection('recipes');
 
 // Sort recipes by date
@@ -20,7 +23,11 @@ const languages = [...new Set(allRecipes.map(getLanguage))];
 const defaultLanguage = "english";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="mb-4">
     <select id="languageFilter" class="p-2 border rounded-lg">
       {languages.map(lang => (

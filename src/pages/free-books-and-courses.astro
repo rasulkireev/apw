@@ -2,9 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Free Books and Courses";
+const pageDescription = "Discover a curated collection of free programming books, technical courses, and educational resources. Learn Python, JavaScript, machine learning, web development, cryptography, and more at no cost.";
+const pageKeywords = "free books, free courses, programming books, Python, JavaScript, machine learning, web development, cryptography, technical education, free resources, online learning, programming tutorials";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
 
 <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
 

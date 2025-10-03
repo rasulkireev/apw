@@ -2,7 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const pageTitle = "What Rasul is up to.";
+const pageTitle = "What I'm Up To Now - Rasul Kireev";
+const pageDescription = "Discover what Rasul Kireev is currently working on, learning, and focusing on. A regularly updated 'now' page sharing current projects, interests, and life updates.";
+const pageKeywords = "now page, current projects, what I'm doing, Rasul Kireev, current focus, life updates, personal updates, now";
+
 const allNows = await getCollection('now');
 
 let latestObject = allNows[0];
@@ -23,7 +26,11 @@ const date = new Date(now.data.date).toLocaleDateString(undefined, options);
 const { Content } = await now.render();
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <section class="mb-6">
     <div class="mb-4 border-b-2 border-gray-200">
       <h1 class="text-2xl font-semibold p-name" itemprop="name">What I'm Up To Now</h1>

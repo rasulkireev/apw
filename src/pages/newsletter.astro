@@ -3,10 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import newsletter from '../assets/data/newsletters.json';
 import FullWidthNewsletter from '../components/FullWidthNewsletter';
 
-const pageTitle = "Newsletter Issues";
+const pageTitle = "Tuesday Letter - Newsletter by Rasul Kireev";
+const pageDescription = "Subscribe to Tuesday Letter, my weekly newsletter sharing the most interesting articles, resources, and insights I've discovered. Browse past issues and join the community of curious readers.";
+const pageKeywords = "Tuesday Letter, newsletter, weekly newsletter, Rasul Kireev, articles, resources, insights, subscribe, email newsletter, tech newsletter, personal newsletter";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <FullWidthNewsletter client:load
     title="Tuesday Letter"
     description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."

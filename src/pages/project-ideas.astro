@@ -1,10 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const pageTitle = "Rasul's Project Ideas";
+const pageTitle = "Project Ideas - Free Startup Ideas by Rasul Kireev";
+const pageDescription = "Browse my collection of free startup and project ideas. From AI-powered tools to developer utilities - feel free to steal these ideas and build something amazing!";
+const pageKeywords = "project ideas, startup ideas, free ideas, developer projects, AI tools, bookmarking, async book club, Know Thy Self, Rasul Kireev";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
 
     <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Project Ideas</h1>

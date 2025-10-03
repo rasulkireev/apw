@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const pageTitle = "Statistics";
+const pageTitle = "Content Statistics - Rasul Kireev";
+const pageDescription = "Explore interactive statistics and data visualizations of my content creation over time. See monthly content production trends across articles, tutorials, books, and more.";
+const pageKeywords = "content statistics, data visualization, content creation, monthly trends, articles, tutorials, books, D3.js charts, Rasul Kireev";
 
 // Get all content collections
 const articles = await getCollection('articles');
@@ -29,7 +31,11 @@ const sortedData = Object.entries(monthlyData)
   .sort((a, b) => new Date(a.date) - new Date(b.date));
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
     <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Statistics</h1>
 

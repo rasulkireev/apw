@@ -3,7 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
 
-const pageTitle = "Tutorials by Rasul Kireev";
+const pageTitle = "Programming Tutorials by Rasul Kireev";
+const pageDescription = "Learn web development, Django, Python, and more through my comprehensive programming tutorials. Step-by-step guides covering Django projects, Python development, and web technologies.";
+const pageKeywords = "programming tutorials, Django tutorials, Python tutorials, web development, coding guides, Django projects, Python development, programming education, Rasul Kireev";
+
 const allTutorials = await getCollection('tutorials');
 
 // Sort tutorials by date
@@ -23,7 +26,11 @@ const filteredTutorials = selectedTags.length > 0
   : allTutorials;
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
   <div class="mb-4">
     <button
       id="toggleTags"

@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 
 const pageTitle = "About Rasul Kireev";
+const pageDescription = "Learn about Rasul Kireev - Software Developer at Readwise, passionate about web development, writing, and experimenting with new technologies and hobbies.";
+const pageKeywords = "Rasul Kireev, about, software developer, Readwise, web development, programming, writing, tutorials, YouTube, kombucha, fermentation, bread baking";
+const pageType = "profile";
 
 // async function triggerJob() {
 //   const body = JSON.stringify({});
@@ -24,7 +27,12 @@ const pageTitle = "About Rasul Kireev";
 // console.log(data)
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+  pageType={pageType}
+>
   <div class="flex flex-col mx-auto mb-10 space-y-6 text-xl prose">
       <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">About Me</h1>
 
