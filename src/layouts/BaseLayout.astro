@@ -14,7 +14,7 @@ const {
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
 // Generate dynamic OG image using osig.app
-const ogImageUrl = pageImage || `https://osig.app/api/og?title=${encodeURIComponent(pageTitle)}&subtitle=${encodeURIComponent(pageDescription)}&theme=light&fontSize=large`;
+const ogImageUrl = pageImage || `https://osig.app/g?site=x&style=base&font=helvetica&eyebrow=rasulkireev.com&title=${encodeURIComponent(pageTitle)}&subtitle=${encodeURIComponent(pageDescription)}&theme=light&fontSize=large`;
 ---
 
 <html lang="en">
