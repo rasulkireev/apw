@@ -6,8 +6,30 @@ import { Image } from 'astro:assets';
 const pageTitle = "Book Reviews by Rasul Kireev";
 const allBooks = await getCollection('books');
 
-// Sort books by rating
-allBooks.sort((a, b) => b.data.rating.valueOf() - a.data.rating.valueOf());
+// Get the selected tags, category, and sort from URL params
+const selectedTags = Astro.url.searchParams.get('tags')?.split(',').filter(Boolean) || [];
+const selectedCategory = Astro.url.searchParams.get('category');
+const selectedSort = Astro.url.searchParams.get('sort') || 'rating-desc';
+
+// Sort books based on selected sort option
+function sortBooks(books, sortOption) {
+  return [...books].sort((a, b) => {
+    switch (sortOption) {
+      case 'rating-asc':
+        return a.data.rating.valueOf() - b.data.rating.valueOf();
+      case 'rating-desc':
+        return b.data.rating.valueOf() - a.data.rating.valueOf();
+      case 'date-asc':
+        return new Date(a.data.dateRead).getTime() - new Date(b.data.dateRead).getTime();
+      case 'date-desc':
+        return new Date(b.data.dateRead).getTime() - new Date(a.data.dateRead).getTime();
+      default:
+        return b.data.rating.valueOf() - a.data.rating.valueOf();
+    }
+  });
+}
+
+const sortedBooks = sortBooks(allBooks, selectedSort);
 
 // Get unique tags from all books
 const allTags = [...new Set(allBooks.flatMap(book => book.data.tags || []))].sort();
@@ -15,12 +37,8 @@ const allTags = [...new Set(allBooks.flatMap(book => book.data.tags || []))].sor
 // Get unique categories from all books
 const allCategories = [...new Set(allBooks.map(book => book.data.category).filter(Boolean))].sort();
 
-// Get the selected tags and category from URL params
-const selectedTags = Astro.url.searchParams.get('tags')?.split(',').filter(Boolean) || [];
-const selectedCategory = Astro.url.searchParams.get('category');
-
 // Filter books if tags or category are selected
-const filteredBooks = allBooks.filter(book => {
+const filteredBooks = sortedBooks.filter(book => {
   const matchesTags = selectedTags.length === 0 ||
     book.data.tags?.some(tag => selectedTags.includes(tag));
   const matchesCategory = !selectedCategory ||
@@ -31,28 +49,42 @@ const filteredBooks = allBooks.filter(book => {
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="mb-4 space-y-4">
-    <div class="flex gap-2">
-      <button
-        id="toggleTags"
-        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-      >
-        Filter by tags
-      </button>
+    <div class="flex justify-between items-center">
+      <div class="flex gap-2">
+        <button
+          id="toggleTags"
+          class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+        >
+          Filter by tags
+        </button>
 
-      <select
-        id="categoryFilter"
-        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-      >
-        <option value="">All Categories</option>
-        {allCategories.map(category => (
-          <option
-            value={category}
-            selected={category === selectedCategory}
-          >
-            {category}
-          </option>
-        ))}
-      </select>
+        <select
+          id="categoryFilter"
+          class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+        >
+          <option value="">All Categories</option>
+          {allCategories.map(category => (
+            <option
+              value={category}
+              selected={category === selectedCategory}
+            >
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div class="flex gap-2">
+        <select
+          id="sortFilter"
+          class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+        >
+          <option value="rating-desc" selected={selectedSort === 'rating-desc'}>Rating (High to Low)</option>
+          <option value="rating-asc" selected={selectedSort === 'rating-asc'}>Rating (Low to High)</option>
+          <option value="date-desc" selected={selectedSort === 'date-desc'}>Date Read (Newest First)</option>
+          <option value="date-asc" selected={selectedSort === 'date-asc'}>Date Read (Oldest First)</option>
+        </select>
+      </div>
     </div>
 
     <div id="tagContainer" class="hidden mt-4 space-y-2">
@@ -70,7 +102,7 @@ const filteredBooks = allBooks.filter(book => {
   </div>
 
   {filteredBooks.map(p => (
-    <div class="mb-1 book-item" data-tags={p.data.tags?.join(',')} data-category={p.data.category}>
+    <div class="mb-1 book-item" data-tags={p.data.tags?.join(',')} data-category={p.data.category} data-date-read={p.data.dateRead}>
       <a
         href={"/" + p.slug}
         class="flex flex-col items-center p-3 space-x-0 space-y-2 text-xl text-gray-900 border-0 rounded-lg md:space-x-4 md:flex-row hover:bg-gray-200"
@@ -84,7 +116,7 @@ const filteredBooks = allBooks.filter(book => {
         <div class="md:flex-col md:space-y-2 md:flex">
           <div class="flex flex-col space-y-2">
             <p class="text-xl font-semibold md:text-2xl">{ p.data.title } by { p.data.author }</p>
-            <p class="text-sm text-gray-600">Rating: { p.data.rating }/10</p>
+            <p class="text-sm text-gray-600">Rating: <span class="rating-value">{ p.data.rating }</span>/10</p>
             <p class="text-sm text-gray-600">Date Read: {p.data.dateRead.toLocaleDateString('en-us', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
             <p class="m-0 text-base text-gray-800">
               { p.data.description }
@@ -102,6 +134,7 @@ const filteredBooks = allBooks.filter(book => {
   const tagPills = document.querySelectorAll('.tag-pill');
   const bookItems = document.querySelectorAll('.book-item');
   const categoryFilter = document.getElementById('categoryFilter');
+  const sortFilter = document.getElementById('sortFilter');
 
   // Toggle tag container visibility
   toggleButton?.addEventListener('click', () => {
@@ -122,7 +155,20 @@ const filteredBooks = allBooks.filter(book => {
     }
     window.history.pushState({}, '', newUrl);
 
-    filterBooks();
+    filterAndSortBooks();
+  });
+
+  // Handle sort selection
+  sortFilter?.addEventListener('change', (e) => {
+    const select = e.target as HTMLSelectElement;
+    const selectedSort = select.value;
+
+    // Update URL without page reload
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('sort', selectedSort);
+    window.history.pushState({}, '', newUrl);
+
+    filterAndSortBooks();
   });
 
   // Handle tag selection
@@ -147,7 +193,7 @@ const filteredBooks = allBooks.filter(book => {
       }
       window.history.pushState({}, '', newUrl);
 
-      filterBooks();
+      filterAndSortBooks();
     });
 
     // Set initial selected state based on URL params
@@ -157,11 +203,38 @@ const filteredBooks = allBooks.filter(book => {
     }
   });
 
-  function filterBooks() {
+  function sortBooksClient(books, sortOption) {
+    return Array.from(books).sort((a, b) => {
+      const aRating = parseInt(a.querySelector('.rating-value')?.textContent || '0');
+      const bRating = parseInt(b.querySelector('.rating-value')?.textContent || '0');
+      const aDate = new Date(a.getAttribute('data-date-read') || '');
+      const bDate = new Date(b.getAttribute('data-date-read') || '');
+
+      switch (sortOption) {
+        case 'rating-asc':
+          return aRating - bRating;
+        case 'rating-desc':
+          return bRating - aRating;
+        case 'date-asc':
+          return aDate.getTime() - bDate.getTime();
+        case 'date-desc':
+          return bDate.getTime() - aDate.getTime();
+        default:
+          return bRating - aRating;
+      }
+    });
+  }
+
+  function filterAndSortBooks() {
     const selectedTags = Array.from(document.querySelectorAll('.tag-pill.selected'))
       .map(el => el.getAttribute('data-tag'))
       .filter(Boolean);
     const selectedCategory = (categoryFilter as HTMLSelectElement).value;
+    const selectedSort = (sortFilter as HTMLSelectElement).value;
+
+    // First filter books
+    const visibleBooks = [];
+    const hiddenBooks = [];
 
     bookItems.forEach(book => {
       const bookTags = book.getAttribute('data-tags')?.split(',').filter(Boolean) || [];
@@ -172,10 +245,32 @@ const filteredBooks = allBooks.filter(book => {
       const matchesCategory = !selectedCategory ||
         bookCategory === selectedCategory;
 
-      book.style.display = (matchesTags && matchesCategory) ? '' : 'none';
+      if (matchesTags && matchesCategory) {
+        visibleBooks.push(book);
+        book.style.display = '';
+      } else {
+        hiddenBooks.push(book);
+        book.style.display = 'none';
+      }
     });
+
+    // Then sort visible books
+    const sortedBooks = sortBooksClient(visibleBooks, selectedSort);
+
+    // Get the parent container
+    const container = bookItems[0]?.parentNode;
+    if (container) {
+      // Remove all books from DOM
+      bookItems.forEach(book => book.remove());
+
+      // Add sorted visible books back
+      sortedBooks.forEach(book => container.appendChild(book));
+
+      // Add hidden books at the end (they won't be visible anyway)
+      hiddenBooks.forEach(book => container.appendChild(book));
+    }
   }
 
-  // Initial filter on page load
-  filterBooks();
+  // Initial filter and sort on page load
+  filterAndSortBooks();
 </script>

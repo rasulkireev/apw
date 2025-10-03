@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+description: Rules for how Cursor should behave in agent mnode
+---
+
+- The only command to use in agent mode is `pnpm run build` to test the site is working before deployment.
+- Don't run any other commands.
+- Don't write or run tests, unless specifically asked to.
