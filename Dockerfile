@@ -11,29 +11,13 @@ FROM base AS prod-deps
 RUN pnpm install --prod --frozen-lockfile
 
 FROM base AS build-deps
-# Install Sharp dependencies for building
-RUN apt-get update && apt-get install -y \
-    python3 \
-    make \
-    g++ \
-    && rm -rf /var/lib/apt/lists/*
-
 RUN pnpm install --frozen-lockfile
 
 FROM build-deps AS build
 COPY . .
 RUN pnpm run build
 
-FROM node:lts-slim AS runtime
-WORKDIR /app
-
-# Install runtime dependencies for Sharp
-RUN apt-get update && apt-get install -y \
-    libvips \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN corepack enable
-
+FROM base AS runtime
 COPY --from=prod-deps /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 
