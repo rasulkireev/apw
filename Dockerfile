@@ -19,6 +19,8 @@ RUN pnpm install --frozen-lockfile
 
 FROM build-deps AS build
 COPY . .
+# Rebuild Sharp for the current platform
+RUN pnpm rebuild sharp
 RUN pnpm run build
 
 FROM base AS runtime
