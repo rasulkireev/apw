@@ -1,17 +1,21 @@
 FROM node:lts AS base
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# Install pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copy package files
+COPY package.json pnpm-lock.yaml ./
 
 FROM base AS prod-deps
-RUN npm install --omit=dev
+RUN pnpm install --prod --frozen-lockfile
 
 FROM base AS build-deps
-RUN npm install
+RUN pnpm install --frozen-lockfile
 
 FROM build-deps AS build
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 FROM base AS runtime
 COPY --from=prod-deps /app/node_modules ./node_modules
