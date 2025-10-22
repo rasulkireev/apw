@@ -7,9 +7,6 @@ RUN corepack enable && corepack prepare pnpm@latest --activate
 # Copy package files
 COPY package.json pnpm-lock.yaml ./
 
-FROM base AS prod-deps
-RUN pnpm install --prod --frozen-lockfile
-
 FROM base AS build-deps
 RUN pnpm install --frozen-lockfile
 
@@ -18,7 +15,11 @@ COPY . .
 RUN pnpm run build
 
 FROM base AS runtime
-COPY --from=prod-deps /app/node_modules ./node_modules
+
+# Install only production dependencies including Sharp
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install --prod --frozen-lockfile
+
 COPY --from=build /app/dist ./dist
 
 ENV HOST=0.0.0.0
