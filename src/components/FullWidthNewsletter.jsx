@@ -54,7 +54,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer joeKSWJRzHZnNMFXq39GJXYc1mshy2',
+          'Authorization': 'Bearer 9eHmmwaBQ9eKfT8Sr88ZRrOxKkXRl1gY',
         },
         body: JSON.stringify(formData),
       });
