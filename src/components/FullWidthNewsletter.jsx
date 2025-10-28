@@ -50,7 +50,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
     };
 
     try {
-      const response = await fetch('https://windmill.cr.lvtd.dev/api/w/main/jobs/run/p/u/rasul/improving_script', {
+      const response = await fetch('https://windmill.cr.lvtd.dev/api/w/main/jobs/run/p/u/rasul/add_buttondown_email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
