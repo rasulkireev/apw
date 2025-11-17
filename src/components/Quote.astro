@@ -1,0 +1,72 @@
+---
+const { author } = Astro.props;
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+  .quote-container {
+    font-family: 'Special Elite', cursive;
+    color: #3f3f5a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem 0.25rem 1rem;
+  }
+
+  .quote-wrapper {
+    font-weight: 100;
+    font-size: 2rem;
+    max-width: 600px;
+    line-height: 1.4;
+    position: relative;
+    margin: 0;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  .quote-text:before,
+  .quote-text:after {
+    position: absolute;
+    color: #f1efe6;
+    font-size: 8rem;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .quote-text:before {
+    content: '"';
+    left: -5rem;
+    top: -2rem;
+  }
+
+  .quote-text:after {
+    content: '"';
+    right: -5rem;
+    top: -2rem;
+  }
+
+  .quote-text {
+    position: relative;
+  }
+
+  .quote-author {
+    line-height: 3;
+    text-align: center;
+    display: block;
+    margin-top: 1rem;
+    font-style: italic;
+  }
+</style>
+
+<div class="not-prose my-12 quote-container">
+  <blockquote class="quote-wrapper">
+    <div class="quote-text">
+      <slot />
+    </div>
+  </blockquote>
+  {author && (
+    <cite class="quote-author">{author}</cite>
+  )}
+</div>
