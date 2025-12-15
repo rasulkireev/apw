@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { marked } from 'marked';
+import fs from 'fs';
+import path from 'path';
+
+const pageTitle = "Changelog - Rasul Kireev";
+const pageDescription = "All notable changes to this project documented in chronological order.";
+const pageKeywords = "changelog, updates, changes, project history, Rasul Kireev";
+
+// Read the CHANGELOG.md file from the root directory
+const changelogPath = path.join(process.cwd(), 'CHANGELOG.md');
+const changelogContent = fs.readFileSync(changelogPath, 'utf-8');
+
+// Parse markdown to HTML
+const changelogHtml = marked.parse(changelogContent);
+---
+
+<BaseLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+>
+  <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
+    <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Changelog</h1>
+
+    <div class="prose lg:prose-xl" set:html={changelogHtml} />
+  </div>
+</BaseLayout>
