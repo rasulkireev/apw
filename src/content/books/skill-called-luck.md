@@ -29,6 +29,17 @@ tags:
 
 ## My Thoughts
 
+This was a great and short read. I really enjoyed it.
+
+There is nothing revolutionary about the content, but it is very nicely structured and reminds you of the important things in a very structured maner.
+
+This one is good for re-reading from time to time.
+
+In fact, I'll go as far as to say that this is what many books should be.
+
+Straight to the point. Direct, no fluff. Nicely structured.
+
+When I end up writing a book, it will hopefully look like this.
 
 ## Summary
 
