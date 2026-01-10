@@ -33,7 +33,7 @@ tags:
 
 ## My Thoughts
 
-...
+Another banger by Jakob. If you are on your sales journey, do yourself a favor and read this. It's free.
 
 ## Summary
 
