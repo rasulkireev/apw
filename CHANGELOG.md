@@ -15,7 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 2026-01-10
 ### Added
-- Boook notes: Cold Email Manifesto by Alex Berman
+- Book notes:
+  - Cold Email Manifesto by Alex Berman
+  - Unfuck Your Sales by Jakob Greenfeld
 
 ## 2026-01-06
 ### Added
