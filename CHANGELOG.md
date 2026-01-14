@@ -1,5 +1,9 @@
 ## 2026-01-10
 ### Added
+- Free book: Best Practices for Data Visualisation
+
+## 2026-01-10
+### Added
 - Book notes:
   - Cold Email Manifesto by Alex Berman
   - Unfuck Your Sales by Jakob Greenfeld
