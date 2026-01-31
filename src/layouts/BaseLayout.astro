@@ -81,5 +81,47 @@ const ogImageUrl = pageImage || `https://osig.app/g?site=x&style=base&font=helve
       </div>
       <Footer />
     </div>
+    <script>
+      function addExternalLinkFavicons() {
+        const siteHost = window.location.hostname;
+        const links = document.querySelectorAll('a[href^="http"]');
+
+        links.forEach((link) => {
+          if (!(link instanceof HTMLAnchorElement)) return;
+          const href = link.getAttribute("href");
+          if (!href) return;
+
+          let url;
+          try {
+            url = new URL(href);
+          } catch {
+            return;
+          }
+
+          if (!url.hostname || url.hostname === siteHost) return;
+          if (link.dataset.faviconApplied === "true") return;
+          if (link.querySelector(".external-favicon")) return;
+
+          const favicon = document.createElement("img");
+          favicon.className = "external-favicon";
+          favicon.alt = "";
+          favicon.loading = "lazy";
+          favicon.decoding = "async";
+          favicon.width = 16;
+          favicon.height = 16;
+          favicon.src = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(url.hostname)}&sz=32`;
+          favicon.style.setProperty("width", "16px", "important");
+          favicon.style.setProperty("height", "16px", "important");
+          favicon.style.setProperty("margin", "0 0.35rem 0 0", "important");
+          favicon.style.setProperty("display", "inline-block", "important");
+          favicon.style.setProperty("vertical-align", "text-bottom", "important");
+
+          link.prepend(favicon);
+          link.dataset.faviconApplied = "true";
+        });
+      }
+
+      addExternalLinkFavicons();
+    </script>
   </body>
 </html>
