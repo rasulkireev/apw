@@ -1,0 +1,150 @@
+---
+const {
+  note,
+  tone = "neutral",
+  width = "18rem",
+  offset = "0.6rem",
+  align = "center",
+  class: className,
+  ariaLabel,
+} = Astro.props;
+
+const toneValue = ["neutral", "info", "warn", "success"].includes(tone)
+  ? tone
+  : "neutral";
+const alignValue =
+  align === "start" || align === "left"
+    ? "start"
+    : align === "end" || align === "right"
+      ? "end"
+      : "center";
+const wrapperClass = ["floating-note", "not-prose", className]
+  .filter(Boolean)
+  .join(" ");
+const computedAriaLabel = ariaLabel || note || "Note";
+---
+
+<span
+  class={wrapperClass}
+  data-tone={toneValue}
+  data-align={alignValue}
+  style={`--note-width: ${width}; --note-offset: ${offset};`}
+>
+  <span class="floating-note__trigger" tabindex="0">
+    <slot />
+  </span>
+  <span class="floating-note__box" aria-label={computedAriaLabel} role="note">
+    <span class="floating-note__content">
+      {note ? note : <slot name="note" />}
+    </span>
+  </span>
+</span>
+
+<style>
+  .floating-note {
+    position: relative;
+    display: inline-block;
+    vertical-align: baseline;
+    margin: 0;
+  }
+
+  .floating-note__trigger {
+    font: inherit;
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+    text-decoration-color: var(--note-title);
+    cursor: help;
+  }
+
+  .floating-note__box {
+    position: absolute;
+    bottom: calc(100% + var(--note-offset, 0.6rem));
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    z-index: 30;
+    width: var(--note-width, 18rem);
+    max-width: min(22rem, 80vw);
+    border: 1px solid var(--note-border);
+    background: var(--note-bg);
+    color: var(--note-text);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    padding: 0.8rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0s linear 0.15s;
+  }
+
+  .floating-note__content {
+    display: block;
+  }
+
+  .floating-note__content :global(p:first-child) {
+    margin-top: 0;
+  }
+
+  .floating-note__content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .floating-note[data-tone="neutral"] {
+    --note-border: #e2e8f0;
+    --note-bg: #f8fafc;
+    --note-text: #1f2937;
+    --note-title: #0f172a;
+  }
+
+  .floating-note[data-tone="info"] {
+    --note-border: #c7d2fe;
+    --note-bg: #eef2ff;
+    --note-text: #1e293b;
+    --note-title: #1e40af;
+  }
+
+  .floating-note[data-tone="warn"] {
+    --note-border: #fcd34d;
+    --note-bg: #fffbeb;
+    --note-text: #92400e;
+    --note-title: #92400e;
+  }
+
+  .floating-note[data-tone="success"] {
+    --note-border: #86efac;
+    --note-bg: #f0fdf4;
+    --note-text: #166534;
+    --note-title: #166534;
+  }
+
+  .floating-note:hover .floating-note__box,
+  .floating-note:focus-within .floating-note__box {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+    transition-delay: 0s;
+  }
+
+  .floating-note[data-align="start"] .floating-note__box {
+    left: 0;
+    transform: translateY(6px);
+  }
+
+  .floating-note[data-align="end"] .floating-note__box {
+    left: auto;
+    right: 0;
+    transform: translateY(6px);
+  }
+
+  .floating-note[data-align="start"]:hover .floating-note__box,
+  .floating-note[data-align="start"]:focus-within .floating-note__box,
+  .floating-note[data-align="end"]:hover .floating-note__box,
+  .floating-note[data-align="end"]:focus-within .floating-note__box {
+    transform: translateY(0);
+  }
+</style>
