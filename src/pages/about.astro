@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import Link from '../components/Link.astro';
 import FloatingNote from '../components/FloatingNote.astro';
 
 const pageTitle = "About Rasul Kireev";
@@ -38,18 +39,18 @@ const pageType = "profile";
       <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">About Me</h1>
 
       <p>My name is Rasul.</p>
-      <p>I write code at <a class="underline" href="https://readwise.io">Readwise</a>.</p>
+      <p>I write code at <Link class="underline" href="https://readwise.io">Readwise</Link>.</p>
 
       <p>
         In my free time, I love to do more web dev. More specifically, I like to develop small and fun projects that help
-        me learn new technologies. You can see a list of my projects <a href="https://rasulkireev/projects">here</a>.
+        me learn new technologies. You can see a list of my projects <a href="/projects/">here</a>.
       </p>
 
       <p>
         As a programmer, I learned to love writing. I try to write regularly, be it <a href="/tutorials/">
         tech tutorials</a> or about <a href="/articles/">any other topic</a>. An extension of written
         tech tutorials was to start making videos. For that, you can check
-        <a href="https://www.youtube.com/channel/UC-r4_CjDp4n4O-36rnUe8gg">my Youtube channel</a>.
+        <Link href="https://www.youtube.com/channel/UC-r4_CjDp4n4O-36rnUe8gg">my Youtube channel</Link>.
       </p>
 
       <p>

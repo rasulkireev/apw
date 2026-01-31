@@ -1,0 +1,51 @@
+---
+const {
+  href,
+  class: className,
+  rel: relProp,
+  target: targetProp,
+  ...rest
+} = Astro.props;
+
+const hrefValue = href ? href.toString() : "";
+let isExternal = false;
+let externalDomain = "";
+
+if (hrefValue) {
+  try {
+    const url = new URL(hrefValue, Astro.site);
+    const siteHost = Astro.site ? new URL(Astro.site).hostname : "";
+    const isHttp = url.protocol === "http:" || url.protocol === "https:";
+    isExternal = isHttp && url.hostname && url.hostname !== siteHost;
+    externalDomain = url.hostname;
+  } catch {
+    // Ignore invalid URLs; treat as internal.
+  }
+}
+
+const finalRel =
+  targetProp === "_blank" && !relProp ? "noopener noreferrer" : relProp;
+
+const faviconUrl = isExternal
+  ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(
+      externalDomain
+    )}&sz=32`
+  : null;
+---
+
+<a href={hrefValue} class={className} target={targetProp} rel={finalRel} {...rest}>
+  {isExternal && (
+    <img
+      class="external-favicon"
+      alt=""
+      aria-hidden="true"
+      loading="lazy"
+      decoding="async"
+      width="16"
+      height="16"
+      src={faviconUrl}
+      style="width:16px; height:16px; margin:0 0.35rem 0 0; display:inline-block; vertical-align:middle;"
+    />
+  )}
+  <slot />
+</a>

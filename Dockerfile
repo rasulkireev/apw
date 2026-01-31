@@ -7,7 +7,12 @@ RUN apt-get update && apt-get install -y \
     python3 \
     make \
     g++ \
+    pkg-config \
+    libvips-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# Ensure Sharp builds its native module during install.
+ENV npm_config_build_from_source=true
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
