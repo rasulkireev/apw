@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
 import vercel from "@astrojs/vercel";
@@ -10,6 +10,9 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.rasulkireev.com",
+  image: {
+    service: passthroughImageService()
+  },
   integrations: [tailwind(), vue(), mdx(), react(), sitemap()],
   output: "static",
   adapter: vercel(),
