@@ -11,8 +11,10 @@ RUN apt-get update && apt-get install -y \
     libvips-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Ensure Sharp builds its native module during install.
-ENV npm_config_build_from_source=true
+# Ensure install scripts run and deps are accessible.
+ENV PNPM_CONFIG_IGNORE_SCRIPTS=false
+ENV PNPM_CONFIG_SHAMEFULLY_HOIST=true
+ENV npm_config_unsafe_perm=true
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
