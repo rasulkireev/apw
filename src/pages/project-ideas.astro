@@ -430,14 +430,107 @@ const projectIdeas = [
     <hr />
 
     <h2>All project ideas</h2>
-    {projectIdeas.map((idea) => (
-      <section class="space-y-1">
-        <h3>{idea.title}</h3>
-        <p>{idea.description}</p>
-        <p class="text-base">
-          <strong>Difficulty:</strong> {idea.difficulty}/10 · <strong>$$$ potential:</strong> {idea.moneyPotential}/10
-        </p>
-      </section>
-    ))}
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end">
+      <label class="flex w-full flex-col gap-1 text-base">
+        <span class="font-semibold">Search</span>
+        <input
+          id="ideaSearch"
+          type="search"
+          placeholder="Search ideas..."
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-base shadow-sm focus:border-slate-500 focus:outline-none"
+        />
+      </label>
+      <label class="flex w-full flex-col gap-1 text-base sm:max-w-xs">
+        <span class="font-semibold">Sort</span>
+        <select
+          id="ideaSort"
+          class="w-full rounded-md border border-slate-300 px-3 py-2 text-base shadow-sm focus:border-slate-500 focus:outline-none"
+        >
+          <option value="original">Original order</option>
+          <option value="difficulty-desc">Difficulty: high to low</option>
+          <option value="difficulty-asc">Difficulty: low to high</option>
+          <option value="money-desc">$$$ potential: high to low</option>
+          <option value="money-asc">$$$ potential: low to high</option>
+        </select>
+      </label>
+    </div>
+    <div id="ideasList" class="space-y-6">
+      {projectIdeas.map((idea, index) => (
+        <section
+          class="space-y-1"
+          data-search={`${idea.title} ${idea.description}`.toLowerCase()}
+          data-difficulty={idea.difficulty}
+          data-money={idea.moneyPotential}
+          data-index={index}
+        >
+          <h3>{idea.title}</h3>
+          <p>{idea.description}</p>
+          <p class="text-base">
+            <strong>Difficulty:</strong> {idea.difficulty}/10 · <strong>$$$ potential:</strong> {idea.moneyPotential}/10
+          </p>
+        </section>
+      ))}
+    </div>
   </div>
 </BaseLayout>
+
+<script>
+  const searchInput = document.getElementById('ideaSearch');
+  const sortSelect = document.getElementById('ideaSort');
+  const ideasList = document.getElementById('ideasList');
+
+  if (searchInput && sortSelect && ideasList) {
+    const items = Array.from(ideasList.children);
+
+    const getSortKey = (item, type) => {
+      if (type === 'difficulty') {
+        return Number(item.dataset.difficulty || 0);
+      }
+      if (type === 'money') {
+        return Number(item.dataset.money || 0);
+      }
+      return Number(item.dataset.index || 0);
+    };
+
+    const applyFilters = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      const sortValue = sortSelect.value;
+      const [sortType, sortDirection] = sortValue.split('-');
+
+      const visibleItems = items.filter((item) => {
+        if (!query) {
+          return true;
+        }
+        const haystack = item.dataset.search || '';
+        return haystack.includes(query);
+      });
+
+      const sortedItems = [...visibleItems].sort((a, b) => {
+        const aKey = getSortKey(a, sortType);
+        const bKey = getSortKey(b, sortType);
+
+        if (aKey === bKey) {
+          return Number(a.dataset.index || 0) - Number(b.dataset.index || 0);
+        }
+
+        if (sortDirection === 'desc') {
+          return bKey - aKey;
+        }
+
+        return aKey - bKey;
+      });
+
+      items.forEach((item) => {
+        item.style.display = visibleItems.includes(item) ? '' : 'none';
+      });
+
+      sortedItems.forEach((item) => {
+        ideasList.appendChild(item);
+      });
+    };
+
+    searchInput.addEventListener('input', applyFilters);
+    sortSelect.addEventListener('change', applyFilters);
+    applyFilters();
+  }
+</script>
