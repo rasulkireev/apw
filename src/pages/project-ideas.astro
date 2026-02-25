@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Project Ideas - Free Startup Ideas by Rasul Kireev";
-const pageDescription = "A single list of startup and side-project ideas with subjective difficulty and $$$ potential scoring.";
-const pageKeywords = "project ideas, startup ideas, side projects, revenue potential, difficulty score, AI tools, developer tools, Rasul Kireev";
+const pageDescription = "A single list of startup and side-project ideas with subjective easiness, $$$ potential, and total scoring.";
+const pageKeywords = "project ideas, startup ideas, side projects, revenue potential, easiness score, total score, AI tools, developer tools, Rasul Kireev";
 
 const projectIdeas = [
   {
@@ -754,9 +754,11 @@ const projectIdeas = [
       Everything is now in one list. Scores are subjective and intentionally rough so I can prioritize what to ship next.
     </p>
     <p>
-      <strong>Difficulty:</strong> 0 = super easy, 10 = nearly impossible.
+      <strong>Easiness:</strong> 0 = very hard, 10 = very easy.
       <br />
       <strong>$$$ potential:</strong> 0 = basically no revenue path, 10 = unicorn-scale upside.
+      <br />
+      <strong>Total:</strong> easiness + $$$ potential (0-20).
     </p>
     <p>
       If you have comments, questions, or want to build one together,
@@ -800,8 +802,8 @@ const projectIdeas = [
               </button>
             </th>
             <th class="px-4 py-3 font-semibold">
-              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="difficulty">
-                <span>Difficulty</span>
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="easiness">
+                <span>Easiness</span>
                 <span class="text-xs text-slate-500" data-sort-indicator></span>
               </button>
             </th>
@@ -811,28 +813,41 @@ const projectIdeas = [
                 <span class="text-xs text-slate-500" data-sort-indicator></span>
               </button>
             </th>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="total">
+                <span>Total</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
           </tr>
         </thead>
         <tbody id="ideasTableBody" class="divide-y divide-slate-200">
-          {projectIdeas.map((idea, index) => (
-            <tr
-              class="align-top"
-              data-search={`${idea.title} ${idea.description}`.toLowerCase()}
-              data-idea={idea.title}
-              data-description={idea.description}
-              data-difficulty={idea.difficulty}
-              data-money={idea.moneyPotential}
-              data-index={index}
-            >
-              <td class="whitespace-nowrap px-4 py-3 font-mono text-sm text-slate-500">{index + 1}</td>
-              <td class="px-4 py-3 font-semibold text-slate-900">{idea.title}</td>
-              <td class="min-w-[18rem] px-4 py-3 text-slate-700">{idea.description}</td>
-              <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.difficulty}/10</td>
-              <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.moneyPotential}/10</td>
-            </tr>
-          ))}
+          {projectIdeas.map((idea, index) => {
+            const easiness = 10 - idea.difficulty;
+            const total = easiness + idea.moneyPotential;
+
+            return (
+              <tr
+                class="align-top"
+                data-search={`${idea.title} ${idea.description}`.toLowerCase()}
+                data-idea={idea.title}
+                data-description={idea.description}
+                data-easiness={easiness}
+                data-money={idea.moneyPotential}
+                data-total={total}
+                data-index={index}
+              >
+                <td class="whitespace-nowrap px-4 py-3 font-mono text-sm text-slate-500">{index + 1}</td>
+                <td class="px-4 py-3 font-semibold text-slate-900">{idea.title}</td>
+                <td class="min-w-[18rem] px-4 py-3 text-slate-700">{idea.description}</td>
+                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{easiness}/10</td>
+                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.moneyPotential}/10</td>
+                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{total}</td>
+              </tr>
+            );
+          })}
           <tr id="ideasNoResults" class="hidden">
-            <td class="px-4 py-6 text-center text-slate-500" colspan="5">
+            <td class="px-4 py-6 text-center text-slate-500" colspan="6">
               No ideas match your search.
             </td>
           </tr>
@@ -856,11 +871,14 @@ const projectIdeas = [
     };
 
     const getSortValue = (row, key) => {
-      if (key === 'difficulty') {
-        return Number(row.dataset.difficulty || 0);
+      if (key === 'easiness') {
+        return Number(row.dataset.easiness || 0);
       }
       if (key === 'money') {
         return Number(row.dataset.money || 0);
+      }
+      if (key === 'total') {
+        return Number(row.dataset.total || 0);
       }
       if (key === 'idea') {
         return (row.dataset.idea || '').toLowerCase();
