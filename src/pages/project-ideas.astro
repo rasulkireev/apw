@@ -303,6 +303,104 @@ const keepIdeaGroups = [
     ],
   },
 ];
+
+const todoistIdeaGroups = [
+  {
+    name: "SEO, Publishing, and Monetization",
+    ideas: [
+      {
+        title: "Internal Linking Analyzer",
+        description:
+          "One-time paid SEO analysis: user submits sitemap, tool scans pages, suggests where internal links should be inserted, recommends target URLs, and flags dead links.",
+      },
+      {
+        title: "Add Comments to Static Sites",
+        description:
+          "Simple plug-and-play comment solution for statically generated websites.",
+      },
+      {
+        title: "Ethical Ads for Niche Communities",
+        description:
+          "Build ethical ad networks for different blogospheres/communities as an alternative to surveillance advertising.",
+      },
+      {
+        title: "Conference Talk: Build Software Fast with Django",
+        description:
+          "Package practical systems and workflows for shipping quickly with Django into a conference talk/workshop.",
+      },
+    ],
+  },
+  {
+    name: "Directories and Discovery",
+    ideas: [
+      {
+        title: "Directory of Great AI Prompts",
+        description:
+          "Curated prompt directory by category (writing, reading, coding, prompt-engineering) and type (single prompt vs system instruction).",
+      },
+      {
+        title: "Directory of Directories",
+        description:
+          "Index directories across the web with filtering by category and pricing model.",
+      },
+      {
+        title: "Citizenship-by-Investment Directory",
+        description:
+          "Directory of countries and their citizenship purchase/investment policies.",
+      },
+    ],
+  },
+  {
+    name: "Product and Learning Apps",
+    ideas: [
+      {
+        title: "Canny-style Feature Suggestion Tracker",
+        description:
+          "Simple public board where users submit, vote, and discuss product feature ideas.",
+      },
+      {
+        title: "AI Flashcard Feed Replacement",
+        description:
+          "App that generates random, useful learnings as flashcard-like snippets to replace doom-scrolling on X/Reddit.",
+      },
+      {
+        title: "Mobile App Potential Classifier",
+        description:
+          "Feed a list of project ideas into AI and score which ones are strongest candidates for mobile-first products.",
+      },
+    ],
+  },
+  {
+    name: "Developer Experiments",
+    ideas: [
+      {
+        title: "Lightweight Markdown Viewer/Editor (new language)",
+        description:
+          "Build a small markdown editor/viewer using a language/framework I do not already know, mainly as a learning project.",
+      },
+      {
+        title: "Birch Sap Timing App (Go)",
+        description:
+          "Small Go web app that estimates the best local timing window to start collecting birch sap.",
+      },
+    ],
+  },
+  {
+    name: "Trading and Quant",
+    ideas: [
+      {
+        title: "VectorBT Playground",
+        description:
+          "Explore vectorbt for backtesting and trading research, likely through Marimo notebooks.",
+      },
+      {
+        title: "Moltbook for Trading Agents",
+        description:
+          "Competition platform where autonomous agents run and compare trading strategies.",
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -360,6 +458,27 @@ const keepIdeaGroups = [
     </p>
 
     {keepIdeaGroups.map((group) => (
+      <section class="space-y-2">
+        <h3>{group.name}</h3>
+        <ul>
+          {group.ideas.map((idea) => (
+            <li>
+              <strong>{idea.title}:</strong> {idea.description}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <hr />
+
+    <h2>Todoist backlog (Project Ideas project)</h2>
+    <p>
+      Additional ideas pulled from my Todoist <em>Project Ideas</em> project.
+      These are raw-but-structured entries that I can revisit, prioritize, and ship over time.
+    </p>
+
+    {todoistIdeaGroups.map((group) => (
       <section class="space-y-2">
         <h3>{group.name}</h3>
         <ul>
