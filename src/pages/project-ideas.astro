@@ -2,8 +2,307 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Project Ideas - Free Startup Ideas by Rasul Kireev";
-const pageDescription = "Browse my collection of free startup and project ideas. From AI-powered tools to developer utilities - feel free to steal these ideas and build something amazing!";
-const pageKeywords = "project ideas, startup ideas, free ideas, developer projects, AI tools, bookmarking, async book club, Know Thy Self, Rasul Kireev";
+const pageDescription = "Browse my collection of startup and project ideas: AI products, dev tools, growth tools, and experiments. Feel free to steal and build.";
+const pageKeywords = "project ideas, startup ideas, AI tools, developer tools, growth ideas, changelog automation, readwise ideas, knowledge tools, Rasul Kireev";
+
+const featuredIdeas = [
+  {
+    title: "Know Thy Self",
+    description:
+      "Let users connect different sources (comments, posts, notes, and saved content) into one place and build a personal intelligence layer on top.",
+    notes: [
+      "Useful outputs: personalized prompts, better recommendations (books, games, events, gifts), and better self-understanding over time.",
+      "Sources: Hacker News, Reddit, personal website sitemap, X/Twitter, Google Keep, Obsidian, ChatGPT/Claude/Perplexity/TypingMind logs, Readwise, Instapaper.",
+    ],
+  },
+  {
+    title: "Smart Bookmarking Extension (.forsale.com)",
+    description:
+      "Browser extension that lets users save any page instantly. Backend parses page text, summarizes it, tags it, and stores embeddings for semantic search.",
+    notes: [
+      "Ingestion flow: fetch page -> extract text (BeautifulSoup/Jina Reader) -> summarize -> auto-tag -> embed.",
+      "Could expose timeline views, topic clusters, and memory recall across saved links.",
+    ],
+  },
+  {
+    title: "Async Book Club",
+    description:
+      "Book discussion forum with asynchronous threads (no mandatory Zoom). One book post, unlimited long-form discussion.",
+    notes: ["Could be built on top of Discourse for a fast MVP."],
+  },
+  {
+    title: "ICP Suggester",
+    description:
+      "Tool that analyzes a business and suggests ultra-niche ICPs/MCPs with structured output for prospecting workflows.",
+    notes: [
+      "Flow: analyze site -> detect product category -> suggest ICP slices -> export for outreach tools.",
+    ],
+  },
+  {
+    title: "Email Warmup Tool",
+    description:
+      "Not groundbreaking, but durable. Compete on pricing and network size. A larger email network should improve warmup quality.",
+    notes: ["Potential wedge: free tier to grow the sender network quickly."],
+  },
+];
+
+const keepIdeaGroups = [
+  {
+    name: "Distribution & Growth",
+    ideas: [
+      {
+        title: "Recommenddit / WhereToShare",
+        description:
+          "User submits a link. System parses content and suggests where to share it (Reddit + other communities), with suggested titles/descriptions and URL validation.",
+      },
+      {
+        title: "Directory + Newsletter Submission Intelligence",
+        description:
+          "Build a database of places to submit products/content (directories, newsletters, aggregators, social). Track submit links, instructions, audience, and update date.",
+      },
+      {
+        title: "Blog Sitemap -> Indie Link Recommender",
+        description:
+          "User submits their sitemap and gets a list of relevant indie-web links they could reference in existing/future posts.",
+      },
+      {
+        title: "Markdown Link Enrichment API",
+        description:
+          "API that takes markdown text and returns an enriched version with contextually relevant links inserted.",
+      },
+      {
+        title: "Ask HN Digests",
+        description:
+          "Weekly newsletter + site: fetch top Ask HN threads by comments, generate short and long summaries, send short version to Buttondown, publish long version on-site.",
+      },
+      {
+        title: "Social Mention Scanner (Redreach-style)",
+        description:
+          "Scan X, Reddit, Hacker News, Quora for relevant conversations around a product/category. Suggest when and how to reply.",
+      },
+      {
+        title: "Funding Contact Feed",
+        description:
+          "Newsletter/database with contact info for recently funded companies (for partnership/outreach use cases).",
+      },
+      {
+        title: "ETF Search Trend Newsletter",
+        description:
+          "Track ETFs gaining search popularity and send periodic insights.",
+      },
+      {
+        title: "Macro Indicators Weekly Email",
+        description:
+          "Send key economic indicators (e.g., Market Cap-to-GDP and similar metrics) in one concise weekly brief.",
+      },
+      {
+        title: "LevReview: Russian Market Exploration",
+        description:
+          "Research feasibility for serving Russian market and whether Yandex provides review APIs or useful alternatives.",
+      },
+    ],
+  },
+  {
+    name: "Developer Tools & GitHub Automation",
+    ideas: [
+      {
+        title: "Repo Function Explorer",
+        description:
+          "Parse a codebase into functions, auto-generate function descriptions, embed them, and let users search either the full repo or selected subsets.",
+      },
+      {
+        title: "Interactive Repo Documentation",
+        description:
+          "Generate docs from source code, publish interactive pages, allow private notes/comments, and keep docs updated per commit/PR.",
+      },
+      {
+        title: "Commit Digest Engine (whatsincomm.it)",
+        description:
+          "Summarize commits, tag changes (backend/frontend/tests/etc), and generate weekly/monthly change logs suitable for blog/newsletter/release notes.",
+      },
+      {
+        title: "PR '/augment' Assistant",
+        description:
+          "On PR comment command, rewrite PR title/description based on code diff and update CHANGELOG when changes are within a configurable size limit.",
+      },
+      {
+        title: "GitHub Changelog Extension",
+        description:
+          "Browser extension or app that drafts changelog entries automatically from PR content.",
+      },
+      {
+        title: "GitLetter",
+        description:
+          "Generate changelogs from repos and optionally publish a feed/newsletter people can subscribe to. Team mode for private update streams.",
+      },
+      {
+        title: "Changelogify Automation",
+        description:
+          "Given a PR: generate changelog, draft social thread, and (after merge) prepare a release flow.",
+      },
+      {
+        title: "FAQfy",
+        description:
+          "Analyze a project URL and generate FAQ responses automatically.",
+      },
+      {
+        title: "Build a Simple MCP",
+        description:
+          "A minimal but useful MCP server/tooling starter with practical examples.",
+      },
+      {
+        title: "library.json Adoption Index",
+        description:
+          "Track websites/projects that expose data in library.json format and maintain a public index.",
+      },
+    ],
+  },
+  {
+    name: "Reading, Notes, and Knowledge Products",
+    ideas: [
+      {
+        title: "Whisper for Obsidian",
+        description:
+          "Fast voice-to-note flow for Obsidian using Whisper API.",
+      },
+      {
+        title: "Readwise -> Blog Title Ideas",
+        description:
+          "Users connect Readwise and get blog post title ideas based on highlights and notes across books/articles.",
+      },
+      {
+        title: "Prompt Generator from Book Highlights",
+        description:
+          "Pull books + highlights from Readwise and generate reusable prompts based on a selected book or combined ideas.",
+      },
+      {
+        title: "Automatic Quiz Generator for Books",
+        description:
+          "Generate quizzes from book content/highlights to improve retention.",
+      },
+      {
+        title: "EPUB Analyzer + Master Summary",
+        description:
+          "Upload EPUB, extract chapter/subchapter structure, generate per-chapter summaries, then produce one master summary and reading recommendation.",
+      },
+      {
+        title: "PDF -> EPUB OCR Converter",
+        description:
+          "Convert scanned PDF books into EPUB by OCR-ing each page, then improving text quality with AI post-processing.",
+      },
+      {
+        title: "Book Wishlist Assistant",
+        description:
+          "Capture books-to-read from links/manual input/highlights, including source context (who recommended it, why save it).",
+      },
+      {
+        title: "Readwise Analytics Toolkit",
+        description:
+          "Weekly/monthly/annual review stats from Readwise Reader and highlights.",
+      },
+      {
+        title: "Generate a PDF/Book from Any Site",
+        description:
+          "Turn a website into a clean downloadable PDF/book artifact.",
+      },
+      {
+        title: "RSS Feed Intelligence",
+        description:
+          "Parse multiple RSS feeds, vectorize posts, score likely AI-written content, and suggest similar authors/posts.",
+      },
+    ],
+  },
+  {
+    name: "Personal AI, Identity, and Biographical Tools",
+    ideas: [
+      {
+        title: "People Bot / Person Summarizer",
+        description:
+          "Ingest a person's website/blog, summarize their themes over time, and let users chat with a voice modeled on their published writing.",
+      },
+      {
+        title: "talkto.Me",
+        description:
+          "Website owners submit sitemap, get an embeddable Q&A widget that answers using their own content and cites source links.",
+      },
+      {
+        title: "Autobiography Builder",
+        description:
+          "Users answer guided life questions with audio. Responses are transcribed, followed by personalized follow-ups, and compiled into an evolving autobiography.",
+      },
+      {
+        title: "Directory of Annual Review Writers",
+        description:
+          "Curated directory of people who publish annual reviews and retrospectives.",
+      },
+      {
+        title: "Historical Timeline Explorer",
+        description:
+          "Interactive timeline/map of historical figures with direct and indirect connections (influence, mentions, shared eras, interactions).",
+      },
+      {
+        title: "Russian Classics Website",
+        description:
+          "A focused library experience for Russian classic literature.",
+      },
+      {
+        title: "Folklore Storybook for Kids",
+        description:
+          "Structure traditional Celtic/Inuit cautionary stories into child-friendly narratives with illustrations.",
+      },
+    ],
+  },
+  {
+    name: "Bots, Learning, and Experimental Apps",
+    ideas: [
+      {
+        title: "Telegram Bot Playground",
+        description:
+          "Simple Telegram bot built mainly for learning and experimentation.",
+      },
+      {
+        title: "Telegram Coloring Book Generator",
+        description:
+          "Bot that creates children's coloring-book pages from prompts.",
+      },
+      {
+        title: "Encrypted Chat with Shared Passwords",
+        description:
+          "Chat app where each room has a separate password users share in person; a learning project for cryptography + mobile app development.",
+      },
+      {
+        title: "AI-Written Text Detector Extension",
+        description:
+          "Browser extension that estimates whether webpage text was AI-generated.",
+      },
+      {
+        title: "Virtual Try-On for Clothing",
+        description:
+          "Generate images of people wearing uploaded clothing items.",
+      },
+      {
+        title: "SQL Copilot for Analytics Dashboards",
+        description:
+          "Connect to PostgreSQL, inspect schema, let users ask questions (text/audio), generate SQL + charts, then evolve to framework-specific ORM output. Competitor reference: findly.ai.",
+      },
+      {
+        title: "Year-in-Review Data Scripts",
+        description:
+          "Collection of scripts that pull API data (e.g., Readwise, Hacker News) and generate personal yearly wrap-ups.",
+      },
+      {
+        title: "Lichess Blunder-to-Puzzle Generator",
+        description:
+          "Analyze your Lichess games, detect missed wins/mistakes, and generate custom puzzles from your own positions.",
+      },
+      {
+        title: "YC Legacy Business Analyzer",
+        description:
+          "Analyze YC posts/discussions to find older durable businesses worth buying or imitating.",
+      },
+    ],
+  },
+];
 ---
 
 <BaseLayout
@@ -12,79 +311,65 @@ const pageKeywords = "project ideas, startup ideas, free ideas, developer projec
   pageKeywords={pageKeywords}
 >
   <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
-
     <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Project Ideas</h1>
-    <p>If you are a developer you konw this problem well: you have a million ideas for projects, but you don't have time to build all of them.</p>
-    <p>So, I decided that instead of having them collect dust in Todoist, Obsidian, Google Keep, Google Sheets, and god knows where else, I will write them down here and share them with you.</p>
-    <p>These are sorted by how much I like these ideas, but that is obvioulsy a changing matter.</p>
-    <p>Feel free to steal them!</p>
-    <p>If you have some comments, ideas or questions, please <a href="mailto:kireevr1996@gmail.com">let me know</a>!</p>
-
-    <hr/>
-
-    <h2>Know Thy Self</h2>
-    <p>Let user connect various sources to get all their comments, posts and thoughts. Load them into db as a centralized location for all their thoughts. This will allow to do fun stuff like:</p>
-    <ul>
-      <li>create a prompt for ai that will be hyper specific to that person this helping ask personal questions</li>
-      <li>give recommendations to that person on various things: events , books, games, gifts</li>
-    </ul>
-    <details>
-      <summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">Additional notes</summary>
-      <p>Sources:</p>
-      <ul>
-        <li>Social Media Comments: Hacker news, Reddit</li>
-        <li>personal website sitemap</li>
-        <li>Twitter tweets</li>
-        <li>note taking apps (google keep, obsidian)</li>
-        <li>conversations with ai (chatgpt, claude, perplexity, typingmind)</li>
-        <li>save-it-later apps (reader, instapaper) to give insight into what type of stuff you read</li>
-      </p>
-    </details>
-
-    <hr/>
-
-    <h2>Smart Bookmarking Extension</h2>
-    <p>Simple extension that can be triggered with a shortcut, allowing users to instantly bookmark. On the backend we parse, summarize, taggify and generate the embeddings for the page.</p>
-    <p>This will make it super easy to search and use the bookmarks in the future, plus will allow us to create interesting graphs and data for the user.</p>
-
-    <hr/>
-
-    <h2>Async Book Club</h2>
-    <p>Place where people can discuss books asynchronously. One post per book, limitless discussions.</p>
-    <details>
-      <summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">Additional notes</summary>
-      <p class="mt-2">
-        Tech Stack: https://www.discourse.org/
-      </p>
-    </details>
-
-    <hr/>
-
-    <h2>ICP Suggester</h2>
-    <p>A simple tool that helps you find various ultra niche ICPs for your business.</p>
-
-    <details>
-      <summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">Additional notes</summary>
-      <ol class="mt-2">
-        <li>Analyze the website.</li>
-        <li>Suggest MCPs.</li>
-      </ol>
-      <p>
-        Return structured output that can be easily entered
-        into various online tools that help with prospecting.
-      </p>
-
-    </details>
-
-    <hr/>
-
-    <h2>Email Warmup Tool</h2>
     <p>
-      This is not groundbreaking, but seems like a good business.
-      The key would be to offer this at a low price, to get more emails.
-      Big network, means better results. Could even offer a free tier,
-      to get more emails.
+      If you are a developer, you probably know this problem well: you have a million ideas for projects,
+      but you do not have time to build all of them.
+    </p>
+    <p>
+      So instead of letting them collect dust in Todoist, Obsidian, Google Keep, and random docs,
+      I am writing them down here and sharing them publicly.
+    </p>
+    <p>
+      These are sorted loosely by my current level of excitement, and that changes over time.
+      Feel free to steal any of them.
+    </p>
+    <p>
+      If you have comments, questions, or want to build one together,
+      <a href="mailto:kireevr1996@gmail.com">let me know</a>.
     </p>
 
+    <hr />
+
+    <h2>Featured ideas</h2>
+    {featuredIdeas.map((idea) => (
+      <section class="space-y-2">
+        <h3>{idea.title}</h3>
+        <p>{idea.description}</p>
+        {idea.notes.length > 0 && (
+          <details>
+            <summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">
+              Additional notes
+            </summary>
+            <ul class="mt-2">
+              {idea.notes.map((note) => (
+                <li>{note}</li>
+              ))}
+            </ul>
+          </details>
+        )}
+      </section>
+    ))}
+
+    <hr />
+
+    <h2>Google Keep backlog (new batch)</h2>
+    <p>
+      Raw ideas from Keep, lightly edited for clarity and deduplicated where possible.
+      This list is intentionally broad: some are products, some are scripts, some are just experiments.
+    </p>
+
+    {keepIdeaGroups.map((group) => (
+      <section class="space-y-2">
+        <h3>{group.name}</h3>
+        <ul>
+          {group.ideas.map((idea) => (
+            <li>
+              <strong>{idea.title}:</strong> {idea.description}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
   </div>
 </BaseLayout>
