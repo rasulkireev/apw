@@ -747,8 +747,8 @@ const projectIdeas = [
       but you do not have time to build all of them.
     </p>
     <p>
-      So instead of letting them collect dust in Todoist, Obsidian, Google Keep, and random docs,
-      I am writing them down here and sharing them publicly.
+      These used to be scattered across Google Keep, Google Sheets, Obsidian, Todoist, and text files.
+      Now they are tracked here and shared publicly.
     </p>
     <p>
       Everything is now in one list. Scores are subjective and intentionally rough so I can prioritize what to ship next.
@@ -776,97 +776,173 @@ const projectIdeas = [
           class="w-full rounded-md border border-slate-300 px-3 py-2 text-base shadow-sm focus:border-slate-500 focus:outline-none"
         />
       </label>
-      <label class="flex w-full flex-col gap-1 text-base sm:max-w-xs">
-        <span class="font-semibold">Sort</span>
-        <select
-          id="ideaSort"
-          class="w-full rounded-md border border-slate-300 px-3 py-2 text-base shadow-sm focus:border-slate-500 focus:outline-none"
-        >
-          <option value="original">Original order</option>
-          <option value="difficulty-desc">Difficulty: high to low</option>
-          <option value="difficulty-asc">Difficulty: low to high</option>
-          <option value="money-desc">$$$ potential: high to low</option>
-          <option value="money-asc">$$$ potential: low to high</option>
-        </select>
-      </label>
     </div>
-    <div id="ideasList" class="space-y-6">
-      {projectIdeas.map((idea, index) => (
-        <section
-          class="space-y-1"
-          data-search={`${idea.title} ${idea.description}`.toLowerCase()}
-          data-difficulty={idea.difficulty}
-          data-money={idea.moneyPotential}
-          data-index={index}
-        >
-          <h3>{idea.title}</h3>
-          <p>{idea.description}</p>
-          <p class="text-base">
-            <strong>Difficulty:</strong> {idea.difficulty}/10 · <strong>$$$ potential:</strong> {idea.moneyPotential}/10
-          </p>
-        </section>
-      ))}
+    <div class="w-full overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm">
+      <table class="min-w-full border-collapse text-left text-base">
+        <thead class="bg-slate-100 text-sm uppercase tracking-wide text-slate-600">
+          <tr>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="index">
+                <span>#</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="idea">
+                <span>Idea</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="description">
+                <span>Description</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="difficulty">
+                <span>Difficulty</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
+            <th class="px-4 py-3 font-semibold">
+              <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="money">
+                <span>Money potential</span>
+                <span class="text-xs text-slate-500" data-sort-indicator></span>
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="ideasTableBody" class="divide-y divide-slate-200">
+          {projectIdeas.map((idea, index) => (
+            <tr
+              class="align-top"
+              data-search={`${idea.title} ${idea.description}`.toLowerCase()}
+              data-idea={idea.title}
+              data-description={idea.description}
+              data-difficulty={idea.difficulty}
+              data-money={idea.moneyPotential}
+              data-index={index}
+            >
+              <td class="whitespace-nowrap px-4 py-3 font-mono text-sm text-slate-500">{index + 1}</td>
+              <td class="px-4 py-3 font-semibold text-slate-900">{idea.title}</td>
+              <td class="min-w-[18rem] px-4 py-3 text-slate-700">{idea.description}</td>
+              <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.difficulty}/10</td>
+              <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.moneyPotential}/10</td>
+            </tr>
+          ))}
+          <tr id="ideasNoResults" class="hidden">
+            <td class="px-4 py-6 text-center text-slate-500" colspan="5">
+              No ideas match your search.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </BaseLayout>
 
 <script>
   const searchInput = document.getElementById('ideaSearch');
-  const sortSelect = document.getElementById('ideaSort');
-  const ideasList = document.getElementById('ideasList');
+  const ideasTableBody = document.getElementById('ideasTableBody');
+  const noResultsRow = document.getElementById('ideasNoResults');
+  const sortButtons = Array.from(document.querySelectorAll('[data-sort]'));
 
-  if (searchInput && sortSelect && ideasList) {
-    const items = Array.from(ideasList.children);
+  if (searchInput && ideasTableBody) {
+    const rows = Array.from(ideasTableBody.querySelectorAll('tr[data-index]'));
+    const sortState = {
+      key: 'index',
+      direction: 'asc',
+    };
 
-    const getSortKey = (item, type) => {
-      if (type === 'difficulty') {
-        return Number(item.dataset.difficulty || 0);
+    const getSortValue = (row, key) => {
+      if (key === 'difficulty') {
+        return Number(row.dataset.difficulty || 0);
       }
-      if (type === 'money') {
-        return Number(item.dataset.money || 0);
+      if (key === 'money') {
+        return Number(row.dataset.money || 0);
       }
-      return Number(item.dataset.index || 0);
+      if (key === 'idea') {
+        return (row.dataset.idea || '').toLowerCase();
+      }
+      if (key === 'description') {
+        return (row.dataset.description || '').toLowerCase();
+      }
+      return Number(row.dataset.index || 0);
+    };
+
+    const updateSortIndicators = () => {
+      sortButtons.forEach((button) => {
+        const indicator = button.querySelector('[data-sort-indicator]');
+        if (!indicator) {
+          return;
+        }
+        if (button.dataset.sort === sortState.key) {
+          indicator.textContent = sortState.direction === 'asc' ? '▲' : '▼';
+        } else {
+          indicator.textContent = '';
+        }
+      });
     };
 
     const applyFilters = () => {
       const query = searchInput.value.trim().toLowerCase();
-      const sortValue = sortSelect.value;
-      const [sortType, sortDirection] = sortValue.split('-');
 
-      const visibleItems = items.filter((item) => {
+      const visibleRows = rows.filter((row) => {
         if (!query) {
           return true;
         }
-        const haystack = item.dataset.search || '';
+        const haystack = row.dataset.search || '';
         return haystack.includes(query);
       });
 
-      const sortedItems = [...visibleItems].sort((a, b) => {
-        const aKey = getSortKey(a, sortType);
-        const bKey = getSortKey(b, sortType);
+      const sortedRows = [...visibleRows].sort((a, b) => {
+        const aKey = getSortValue(a, sortState.key);
+        const bKey = getSortValue(b, sortState.key);
 
         if (aKey === bKey) {
           return Number(a.dataset.index || 0) - Number(b.dataset.index || 0);
         }
 
-        if (sortDirection === 'desc') {
-          return bKey - aKey;
+        if (sortState.key === 'idea' || sortState.key === 'description') {
+          return sortState.direction === 'asc' ? aKey.localeCompare(bKey) : bKey.localeCompare(aKey);
         }
 
-        return aKey - bKey;
+        return sortState.direction === 'asc' ? aKey - bKey : bKey - aKey;
       });
 
-      items.forEach((item) => {
-        item.style.display = visibleItems.includes(item) ? '' : 'none';
+      rows.forEach((row) => {
+        row.style.display = visibleRows.includes(row) ? '' : 'none';
       });
 
-      sortedItems.forEach((item) => {
-        ideasList.appendChild(item);
+      sortedRows.forEach((row) => {
+        ideasTableBody.appendChild(row);
       });
+
+      if (noResultsRow) {
+        noResultsRow.classList.toggle('hidden', visibleRows.length > 0);
+      }
+
+      updateSortIndicators();
     };
 
+    sortButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const nextKey = button.dataset.sort;
+        if (!nextKey) {
+          return;
+        }
+        if (sortState.key === nextKey) {
+          sortState.direction = sortState.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortState.key = nextKey;
+          sortState.direction = 'asc';
+        }
+        applyFilters();
+      });
+    });
+
     searchInput.addEventListener('input', applyFilters);
-    sortSelect.addEventListener('change', applyFilters);
     applyFilters();
   }
 </script>
