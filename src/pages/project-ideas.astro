@@ -2,404 +2,400 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Project Ideas - Free Startup Ideas by Rasul Kireev";
-const pageDescription = "Browse my collection of startup and project ideas: AI products, dev tools, growth tools, and experiments. Feel free to steal and build.";
-const pageKeywords = "project ideas, startup ideas, AI tools, developer tools, growth ideas, changelog automation, readwise ideas, knowledge tools, Rasul Kireev";
+const pageDescription = "A single list of startup and side-project ideas with subjective difficulty and $$$ potential scoring.";
+const pageKeywords = "project ideas, startup ideas, side projects, revenue potential, difficulty score, AI tools, developer tools, Rasul Kireev";
 
-const featuredIdeas = [
+const projectIdeas = [
   {
     title: "Know Thy Self",
-    description:
-      "Let users connect different sources (comments, posts, notes, and saved content) into one place and build a personal intelligence layer on top.",
-    notes: [
-      "Useful outputs: personalized prompts, better recommendations (books, games, events, gifts), and better self-understanding over time.",
-      "Sources: Hacker News, Reddit, personal website sitemap, X/Twitter, Google Keep, Obsidian, ChatGPT/Claude/Perplexity/TypingMind logs, Readwise, Instapaper.",
-    ],
+    description: "Unify a user's comments, posts, notes, and saved content into one personal knowledge graph, then use it for deeply personalized prompts and recommendations.",
+    difficulty: 9,
+    moneyPotential: 8,
   },
   {
     title: "Smart Bookmarking Extension (.forsale.com)",
-    description:
-      "Browser extension that lets users save any page instantly. Backend parses page text, summarizes it, tags it, and stores embeddings for semantic search.",
-    notes: [
-      "Ingestion flow: fetch page -> extract text (BeautifulSoup/Jina Reader) -> summarize -> auto-tag -> embed.",
-      "Could expose timeline views, topic clusters, and memory recall across saved links.",
-    ],
+    description: "Browser extension for instant bookmarking with an AI pipeline: fetch page text, summarize, auto-tag, embed, and make everything semantically searchable.",
+    difficulty: 7,
+    moneyPotential: 7,
   },
   {
     title: "Async Book Club",
-    description:
-      "Book discussion forum with asynchronous threads (no mandatory Zoom). One book post, unlimited long-form discussion.",
-    notes: ["Could be built on top of Discourse for a fast MVP."],
+    description: "Asynchronous book discussion forum with one canonical thread per book; no meeting schedule required (Discourse could be a fast MVP).",
+    difficulty: 4,
+    moneyPotential: 5,
   },
   {
     title: "ICP Suggester",
-    description:
-      "Tool that analyzes a business and suggests ultra-niche ICPs/MCPs with structured output for prospecting workflows.",
-    notes: [
-      "Flow: analyze site -> detect product category -> suggest ICP slices -> export for outreach tools.",
-    ],
+    description: "Analyze a company's site/product and propose ultra-niche ICPs/MCPs, then export structured segments for outreach tools.",
+    difficulty: 6,
+    moneyPotential: 6,
   },
   {
     title: "Email Warmup Tool",
-    description:
-      "Not groundbreaking, but durable. Compete on pricing and network size. A larger email network should improve warmup quality.",
-    notes: ["Potential wedge: free tier to grow the sender network quickly."],
-  },
-];
-
-const keepIdeaGroups = [
-  {
-    name: "Distribution & Growth",
-    ideas: [
-      {
-        title: "Recommenddit / WhereToShare",
-        description:
-          "User submits a link. System parses content and suggests where to share it (Reddit + other communities), with suggested titles/descriptions and URL validation.",
-      },
-      {
-        title: "Directory + Newsletter Submission Intelligence",
-        description:
-          "Build a database of places to submit products/content (directories, newsletters, aggregators, social). Track submit links, instructions, audience, and update date.",
-      },
-      {
-        title: "Blog Sitemap -> Indie Link Recommender",
-        description:
-          "User submits their sitemap and gets a list of relevant indie-web links they could reference in existing/future posts.",
-      },
-      {
-        title: "Markdown Link Enrichment API",
-        description:
-          "API that takes markdown text and returns an enriched version with contextually relevant links inserted.",
-      },
-      {
-        title: "Ask HN Digests",
-        description:
-          "Weekly newsletter + site: fetch top Ask HN threads by comments, generate short and long summaries, send short version to Buttondown, publish long version on-site.",
-      },
-      {
-        title: "Social Mention Scanner (Redreach-style)",
-        description:
-          "Scan X, Reddit, Hacker News, Quora for relevant conversations around a product/category. Suggest when and how to reply.",
-      },
-      {
-        title: "Funding Contact Feed",
-        description:
-          "Newsletter/database with contact info for recently funded companies (for partnership/outreach use cases).",
-      },
-      {
-        title: "ETF Search Trend Newsletter",
-        description:
-          "Track ETFs gaining search popularity and send periodic insights.",
-      },
-      {
-        title: "Macro Indicators Weekly Email",
-        description:
-          "Send key economic indicators (e.g., Market Cap-to-GDP and similar metrics) in one concise weekly brief.",
-      },
-      {
-        title: "LevReview: Russian Market Exploration",
-        description:
-          "Research feasibility for serving Russian market and whether Yandex provides review APIs or useful alternatives.",
-      },
-    ],
+    description: "Email warmup platform that competes on pricing + network size, with a free tier wedge to grow sender volume quickly.",
+    difficulty: 8,
+    moneyPotential: 8,
   },
   {
-    name: "Developer Tools & GitHub Automation",
-    ideas: [
-      {
-        title: "Repo Function Explorer",
-        description:
-          "Parse a codebase into functions, auto-generate function descriptions, embed them, and let users search either the full repo or selected subsets.",
-      },
-      {
-        title: "Interactive Repo Documentation",
-        description:
-          "Generate docs from source code, publish interactive pages, allow private notes/comments, and keep docs updated per commit/PR.",
-      },
-      {
-        title: "Commit Digest Engine (whatsincomm.it)",
-        description:
-          "Summarize commits, tag changes (backend/frontend/tests/etc), and generate weekly/monthly change logs suitable for blog/newsletter/release notes.",
-      },
-      {
-        title: "PR '/augment' Assistant",
-        description:
-          "On PR comment command, rewrite PR title/description based on code diff and update CHANGELOG when changes are within a configurable size limit.",
-      },
-      {
-        title: "GitHub Changelog Extension",
-        description:
-          "Browser extension or app that drafts changelog entries automatically from PR content.",
-      },
-      {
-        title: "GitLetter",
-        description:
-          "Generate changelogs from repos and optionally publish a feed/newsletter people can subscribe to. Team mode for private update streams.",
-      },
-      {
-        title: "Changelogify Automation",
-        description:
-          "Given a PR: generate changelog, draft social thread, and (after merge) prepare a release flow.",
-      },
-      {
-        title: "FAQfy",
-        description:
-          "Analyze a project URL and generate FAQ responses automatically.",
-      },
-      {
-        title: "Build a Simple MCP",
-        description:
-          "A minimal but useful MCP server/tooling starter with practical examples.",
-      },
-      {
-        title: "library.json Adoption Index",
-        description:
-          "Track websites/projects that expose data in library.json format and maintain a public index.",
-      },
-    ],
+    title: "Recommenddit / WhereToShare",
+    description: "User submits a link. System parses content and suggests where to share it (Reddit + other communities), with suggested titles/descriptions and URL validation.",
+    difficulty: 7,
+    moneyPotential: 8,
   },
   {
-    name: "Reading, Notes, and Knowledge Products",
-    ideas: [
-      {
-        title: "Whisper for Obsidian",
-        description:
-          "Fast voice-to-note flow for Obsidian using Whisper API.",
-      },
-      {
-        title: "Readwise -> Blog Title Ideas",
-        description:
-          "Users connect Readwise and get blog post title ideas based on highlights and notes across books/articles.",
-      },
-      {
-        title: "Prompt Generator from Book Highlights",
-        description:
-          "Pull books + highlights from Readwise and generate reusable prompts based on a selected book or combined ideas.",
-      },
-      {
-        title: "Automatic Quiz Generator for Books",
-        description:
-          "Generate quizzes from book content/highlights to improve retention.",
-      },
-      {
-        title: "EPUB Analyzer + Master Summary",
-        description:
-          "Upload EPUB, extract chapter/subchapter structure, generate per-chapter summaries, then produce one master summary and reading recommendation.",
-      },
-      {
-        title: "PDF -> EPUB OCR Converter",
-        description:
-          "Convert scanned PDF books into EPUB by OCR-ing each page, then improving text quality with AI post-processing.",
-      },
-      {
-        title: "Book Wishlist Assistant",
-        description:
-          "Capture books-to-read from links/manual input/highlights, including source context (who recommended it, why save it).",
-      },
-      {
-        title: "Readwise Analytics Toolkit",
-        description:
-          "Weekly/monthly/annual review stats from Readwise Reader and highlights.",
-      },
-      {
-        title: "Generate a PDF/Book from Any Site",
-        description:
-          "Turn a website into a clean downloadable PDF/book artifact.",
-      },
-      {
-        title: "RSS Feed Intelligence",
-        description:
-          "Parse multiple RSS feeds, vectorize posts, score likely AI-written content, and suggest similar authors/posts.",
-      },
-    ],
+    title: "Directory + Newsletter Submission Intelligence",
+    description: "Build a database of places to submit products/content (directories, newsletters, aggregators, social). Track submit links, instructions, audience, and update date.",
+    difficulty: 8,
+    moneyPotential: 7,
   },
   {
-    name: "Personal AI, Identity, and Biographical Tools",
-    ideas: [
-      {
-        title: "People Bot / Person Summarizer",
-        description:
-          "Ingest a person's website/blog, summarize their themes over time, and let users chat with a voice modeled on their published writing.",
-      },
-      {
-        title: "talkto.Me",
-        description:
-          "Website owners submit sitemap, get an embeddable Q&A widget that answers using their own content and cites source links.",
-      },
-      {
-        title: "Autobiography Builder",
-        description:
-          "Users answer guided life questions with audio. Responses are transcribed, followed by personalized follow-ups, and compiled into an evolving autobiography.",
-      },
-      {
-        title: "Directory of Annual Review Writers",
-        description:
-          "Curated directory of people who publish annual reviews and retrospectives.",
-      },
-      {
-        title: "Historical Timeline Explorer",
-        description:
-          "Interactive timeline/map of historical figures with direct and indirect connections (influence, mentions, shared eras, interactions).",
-      },
-      {
-        title: "Russian Classics Website",
-        description:
-          "A focused library experience for Russian classic literature.",
-      },
-      {
-        title: "Folklore Storybook for Kids",
-        description:
-          "Structure traditional Celtic/Inuit cautionary stories into child-friendly narratives with illustrations.",
-      },
-    ],
+    title: "Blog Sitemap -> Indie Link Recommender",
+    description: "User submits their sitemap and gets a list of relevant indie-web links they could reference in existing/future posts.",
+    difficulty: 5,
+    moneyPotential: 5,
   },
   {
-    name: "Bots, Learning, and Experimental Apps",
-    ideas: [
-      {
-        title: "Telegram Bot Playground",
-        description:
-          "Simple Telegram bot built mainly for learning and experimentation.",
-      },
-      {
-        title: "Telegram Coloring Book Generator",
-        description:
-          "Bot that creates children's coloring-book pages from prompts.",
-      },
-      {
-        title: "Encrypted Chat with Shared Passwords",
-        description:
-          "Chat app where each room has a separate password users share in person; a learning project for cryptography + mobile app development.",
-      },
-      {
-        title: "AI-Written Text Detector Extension",
-        description:
-          "Browser extension that estimates whether webpage text was AI-generated.",
-      },
-      {
-        title: "Virtual Try-On for Clothing",
-        description:
-          "Generate images of people wearing uploaded clothing items.",
-      },
-      {
-        title: "SQL Copilot for Analytics Dashboards",
-        description:
-          "Connect to PostgreSQL, inspect schema, let users ask questions (text/audio), generate SQL + charts, then evolve to framework-specific ORM output. Competitor reference: findly.ai.",
-      },
-      {
-        title: "Year-in-Review Data Scripts",
-        description:
-          "Collection of scripts that pull API data (e.g., Readwise, Hacker News) and generate personal yearly wrap-ups.",
-      },
-      {
-        title: "Lichess Blunder-to-Puzzle Generator",
-        description:
-          "Analyze your Lichess games, detect missed wins/mistakes, and generate custom puzzles from your own positions.",
-      },
-      {
-        title: "YC Legacy Business Analyzer",
-        description:
-          "Analyze YC posts/discussions to find older durable businesses worth buying or imitating.",
-      },
-    ],
-  },
-];
-
-const todoistIdeaGroups = [
-  {
-    name: "SEO, Publishing, and Monetization",
-    ideas: [
-      {
-        title: "Internal Linking Analyzer",
-        description:
-          "One-time paid SEO analysis: user submits sitemap, tool scans pages, suggests where internal links should be inserted, recommends target URLs, and flags dead links.",
-      },
-      {
-        title: "Add Comments to Static Sites",
-        description:
-          "Simple plug-and-play comment solution for statically generated websites.",
-      },
-      {
-        title: "Ethical Ads for Niche Communities",
-        description:
-          "Build ethical ad networks for different blogospheres/communities as an alternative to surveillance advertising.",
-      },
-      {
-        title: "Conference Talk: Build Software Fast with Django",
-        description:
-          "Package practical systems and workflows for shipping quickly with Django into a conference talk/workshop.",
-      },
-    ],
+    title: "Markdown Link Enrichment API",
+    description: "API that takes markdown text and returns an enriched version with contextually relevant links inserted.",
+    difficulty: 6,
+    moneyPotential: 6,
   },
   {
-    name: "Directories and Discovery",
-    ideas: [
-      {
-        title: "Directory of Great AI Prompts",
-        description:
-          "Curated prompt directory by category (writing, reading, coding, prompt-engineering) and type (single prompt vs system instruction).",
-      },
-      {
-        title: "Directory of Directories",
-        description:
-          "Index directories across the web with filtering by category and pricing model.",
-      },
-      {
-        title: "Citizenship-by-Investment Directory",
-        description:
-          "Directory of countries and their citizenship purchase/investment policies.",
-      },
-    ],
+    title: "Ask HN Digests",
+    description: "Weekly newsletter + site: fetch top Ask HN threads by comments, generate short and long summaries, send short version to Buttondown, publish long version on-site.",
+    difficulty: 5,
+    moneyPotential: 6,
   },
   {
-    name: "Product and Learning Apps",
-    ideas: [
-      {
-        title: "Canny-style Feature Suggestion Tracker",
-        description:
-          "Simple public board where users submit, vote, and discuss product feature ideas.",
-      },
-      {
-        title: "AI Flashcard Feed Replacement",
-        description:
-          "App that generates random, useful learnings as flashcard-like snippets to replace doom-scrolling on X/Reddit.",
-      },
-      {
-        title: "Mobile App Potential Classifier",
-        description:
-          "Feed a list of project ideas into AI and score which ones are strongest candidates for mobile-first products.",
-      },
-    ],
+    title: "Social Mention Scanner (Redreach-style)",
+    description: "Scan X, Reddit, Hacker News, Quora for relevant conversations around a product/category. Suggest when and how to reply.",
+    difficulty: 8,
+    moneyPotential: 8,
   },
   {
-    name: "Developer Experiments",
-    ideas: [
-      {
-        title: "Lightweight Markdown Viewer/Editor (new language)",
-        description:
-          "Build a small markdown editor/viewer using a language/framework I do not already know, mainly as a learning project.",
-      },
-      {
-        title: "Birch Sap Timing App (Go)",
-        description:
-          "Small Go web app that estimates the best local timing window to start collecting birch sap.",
-      },
-    ],
+    title: "Funding Contact Feed",
+    description: "Newsletter/database with contact info for recently funded companies (for partnership/outreach use cases).",
+    difficulty: 7,
+    moneyPotential: 7,
   },
   {
-    name: "Trading and Quant",
-    ideas: [
-      {
-        title: "VectorBT Playground",
-        description:
-          "Explore vectorbt for backtesting and trading research, likely through Marimo notebooks.",
-      },
-      {
-        title: "Moltbook for Trading Agents",
-        description:
-          "Competition platform where autonomous agents run and compare trading strategies.",
-      },
-    ],
+    title: "ETF Search Trend Newsletter",
+    description: "Track ETFs gaining search popularity and send periodic insights.",
+    difficulty: 5,
+    moneyPotential: 5,
   },
+  {
+    title: "Macro Indicators Weekly Email",
+    description: "Send key economic indicators (e.g., Market Cap-to-GDP and similar metrics) in one concise weekly brief.",
+    difficulty: 4,
+    moneyPotential: 4,
+  },
+  {
+    title: "LevReview: Russian Market Exploration",
+    description: "Research feasibility for serving Russian market and whether Yandex provides review APIs or useful alternatives.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "Repo Function Explorer",
+    description: "Parse a codebase into functions, auto-generate function descriptions, embed them, and let users search either the full repo or selected subsets.",
+    difficulty: 8,
+    moneyPotential: 7,
+  },
+  {
+    title: "Interactive Repo Documentation",
+    description: "Generate docs from source code, publish interactive pages, allow private notes/comments, and keep docs updated per commit/PR.",
+    difficulty: 8,
+    moneyPotential: 8,
+  },
+  {
+    title: "Commit Digest Engine (whatsincomm.it)",
+    description: "Summarize commits, tag changes (backend/frontend/tests/etc), and generate weekly/monthly change logs suitable for blog/newsletter/release notes.",
+    difficulty: 7,
+    moneyPotential: 7,
+  },
+  {
+    title: "PR '/augment' Assistant",
+    description: "On PR comment command, rewrite PR title/description based on code diff and update CHANGELOG when changes are within a configurable size limit.",
+    difficulty: 7,
+    moneyPotential: 7,
+  },
+  {
+    title: "GitHub Changelog Extension",
+    description: "Browser extension or app that drafts changelog entries automatically from PR content.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "GitLetter",
+    description: "Generate changelogs from repos and optionally publish a feed/newsletter people can subscribe to. Team mode for private update streams.",
+    difficulty: 7,
+    moneyPotential: 7,
+  },
+  {
+    title: "Changelogify Automation",
+    description: "Given a PR: generate changelog, draft social thread, and (after merge) prepare a release flow.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "FAQfy",
+    description: "Analyze a project URL and generate FAQ responses automatically.",
+    difficulty: 5,
+    moneyPotential: 5,
+  },
+  {
+    title: "Build a Simple MCP",
+    description: "Build a minimal but useful MCP server starter that solves one concrete workflow and ships with practical examples.",
+    difficulty: 3,
+    moneyPotential: 4,
+  },
+  {
+    title: "library.json Adoption Index",
+    description: "Track and index websites/projects that expose `library.json`, making the ecosystem easier to discover and analyze.",
+    difficulty: 4,
+    moneyPotential: 3,
+  },
+  {
+    title: "Whisper for Obsidian",
+    description: "Fast voice-to-note flow for Obsidian using Whisper API.",
+    difficulty: 5,
+    moneyPotential: 5,
+  },
+  {
+    title: "Readwise -> Blog Title Ideas",
+    description: "Users connect Readwise and get blog post title ideas based on highlights and notes across books/articles.",
+    difficulty: 5,
+    moneyPotential: 6,
+  },
+  {
+    title: "Prompt Generator from Book Highlights",
+    description: "Pull books + highlights from Readwise and generate reusable prompts based on a selected book or combined ideas.",
+    difficulty: 5,
+    moneyPotential: 5,
+  },
+  {
+    title: "Automatic Quiz Generator for Books",
+    description: "Generate quizzes from book content/highlights to improve retention.",
+    difficulty: 5,
+    moneyPotential: 5,
+  },
+  {
+    title: "EPUB Analyzer + Master Summary",
+    description: "Upload EPUB, extract chapter/subchapter structure, generate per-chapter summaries, then produce one master summary and reading recommendation.",
+    difficulty: 7,
+    moneyPotential: 6,
+  },
+  {
+    title: "PDF -> EPUB OCR Converter",
+    description: "Convert scanned PDF books into EPUB by OCR-ing each page, then improving text quality with AI post-processing.",
+    difficulty: 8,
+    moneyPotential: 6,
+  },
+  {
+    title: "Book Wishlist Assistant",
+    description: "Capture books-to-read from links/manual input/highlights, including source context (who recommended it, why save it).",
+    difficulty: 6,
+    moneyPotential: 5,
+  },
+  {
+    title: "Readwise Analytics Toolkit",
+    description: "Weekly/monthly/annual review stats from Readwise Reader and highlights.",
+    difficulty: 5,
+    moneyPotential: 6,
+  },
+  {
+    title: "Generate a PDF/Book from Any Site",
+    description: "Turn a website into a clean downloadable PDF/book artifact.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "RSS Feed Intelligence",
+    description: "Parse multiple RSS feeds, vectorize posts, score likely AI-written content, and suggest similar authors/posts.",
+    difficulty: 7,
+    moneyPotential: 6,
+  },
+  {
+    title: "People Bot / Person Summarizer",
+    description: "Ingest a person's website/blog, summarize their themes over time, and let users chat with a voice modeled on their published writing.",
+    difficulty: 8,
+    moneyPotential: 7,
+  },
+  {
+    title: "talkto.Me",
+    description: "Website owners submit sitemap, get an embeddable Q&A widget that answers using their own content and cites source links.",
+    difficulty: 7,
+    moneyPotential: 8,
+  },
+  {
+    title: "Autobiography Builder",
+    description: "Users answer guided life questions with audio. Responses are transcribed, followed by personalized follow-ups, and compiled into an evolving autobiography.",
+    difficulty: 8,
+    moneyPotential: 7,
+  },
+  {
+    title: "Directory of Annual Review Writers",
+    description: "Curated index of people who publish annual reviews, useful for inspiration, networking, and trend discovery.",
+    difficulty: 4,
+    moneyPotential: 4,
+  },
+  {
+    title: "Historical Timeline Explorer",
+    description: "Interactive timeline/map of historical figures with direct and indirect connections (influence, mentions, shared eras, interactions).",
+    difficulty: 8,
+    moneyPotential: 6,
+  },
+  {
+    title: "Russian Classics Website",
+    description: "A focused library experience for Russian classic literature.",
+    difficulty: 6,
+    moneyPotential: 5,
+  },
+  {
+    title: "Folklore Storybook for Kids",
+    description: "Structure traditional Celtic/Inuit cautionary stories into child-friendly narratives with illustrations.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "Telegram Bot Playground",
+    description: "A lightweight Telegram bot sandbox for learning command routing, webhook/polling, state handling, and small utility flows.",
+    difficulty: 2,
+    moneyPotential: 2,
+  },
+  {
+    title: "Telegram Coloring Book Generator",
+    description: "Bot that creates children's coloring-book pages from prompts.",
+    difficulty: 4,
+    moneyPotential: 5,
+  },
+  {
+    title: "Encrypted Chat with Shared Passwords",
+    description: "Chat app where each room has a separate password users share in person; a learning project for cryptography + mobile app development.",
+    difficulty: 9,
+    moneyPotential: 5,
+  },
+  {
+    title: "AI-Written Text Detector Extension",
+    description: "Browser extension that estimates whether webpage text was AI-generated.",
+    difficulty: 7,
+    moneyPotential: 4,
+  },
+  {
+    title: "Virtual Try-On for Clothing",
+    description: "Generate images of people wearing uploaded clothing items.",
+    difficulty: 8,
+    moneyPotential: 8,
+  },
+  {
+    title: "SQL Copilot for Analytics Dashboards",
+    description: "Connect to PostgreSQL, inspect schema, let users ask questions (text/audio), generate SQL + charts, then evolve to framework-specific ORM output. Competitor reference: findly.ai.",
+    difficulty: 9,
+    moneyPotential: 9,
+  },
+  {
+    title: "Year-in-Review Data Scripts",
+    description: "Collection of scripts that pull API data (e.g., Readwise, Hacker News) and generate personal yearly wrap-ups.",
+    difficulty: 5,
+    moneyPotential: 6,
+  },
+  {
+    title: "Lichess Blunder-to-Puzzle Generator",
+    description: "Analyze your Lichess games, detect missed wins/mistakes, and generate custom puzzles from your own positions.",
+    difficulty: 7,
+    moneyPotential: 6,
+  },
+  {
+    title: "YC Legacy Business Analyzer",
+    description: "Analyze YC posts/discussions to find older durable businesses worth buying or imitating.",
+    difficulty: 6,
+    moneyPotential: 5,
+  },
+  {
+    title: "Internal Linking Analyzer",
+    description: "One-time paid SEO analysis: user submits sitemap, tool scans pages, suggests where internal links should be inserted, recommends target URLs, and flags dead links.",
+    difficulty: 6,
+    moneyPotential: 7,
+  },
+  {
+    title: "Add Comments to Static Sites",
+    description: "Simple plug-and-play comment solution for statically generated websites.",
+    difficulty: 5,
+    moneyPotential: 6,
+  },
+  {
+    title: "Ethical Ads for Niche Communities",
+    description: "Build ethical ad networks for different blogospheres/communities as an alternative to surveillance advertising.",
+    difficulty: 8,
+    moneyPotential: 7,
+  },
+  {
+    title: "Conference Talk: Build Software Fast with Django",
+    description: "Turn battle-tested Django shipping workflows into a talk/workshop that can evolve into paid training or a course.",
+    difficulty: 3,
+    moneyPotential: 4,
+  },
+  {
+    title: "Directory of Great AI Prompts",
+    description: "Curated prompt directory by category (writing, reading, coding, prompt-engineering) and type (single prompt vs system instruction).",
+    difficulty: 4,
+    moneyPotential: 5,
+  },
+  {
+    title: "Directory of Directories",
+    description: "Index directories across the web with filtering by category and pricing model.",
+    difficulty: 5,
+    moneyPotential: 5,
+  },
+  {
+    title: "Citizenship-by-Investment Directory",
+    description: "Directory of countries and their citizenship purchase/investment policies.",
+    difficulty: 5,
+    moneyPotential: 6,
+  },
+  {
+    title: "Canny-style Feature Suggestion Tracker",
+    description: "Simple public board where users submit, vote, and discuss product feature ideas.",
+    difficulty: 6,
+    moneyPotential: 6,
+  },
+  {
+    title: "AI Flashcard Feed Replacement",
+    description: "App that generates random, useful learnings as flashcard-like snippets to replace doom-scrolling on X/Reddit.",
+    difficulty: 7,
+    moneyPotential: 6,
+  },
+  {
+    title: "Mobile App Potential Classifier",
+    description: "Feed project ideas into AI and rank which concepts are strongest mobile candidates using TAM, retention, and UX constraints.",
+    difficulty: 3,
+    moneyPotential: 4,
+  },
+  {
+    title: "Lightweight Markdown Viewer/Editor (new language)",
+    description: "Build a small markdown editor/viewer using a language/framework I do not already know, mainly as a learning project.",
+    difficulty: 3,
+    moneyPotential: 2,
+  },
+  {
+    title: "Birch Sap Timing App (Go)",
+    description: "Small Go web app that estimates the best local window for collecting birch sap using weather and seasonal signals.",
+    difficulty: 4,
+    moneyPotential: 3,
+  },
+  {
+    title: "VectorBT Playground",
+    description: "Experiment with vectorbt strategies via Marimo notebooks and reusable templates for backtesting workflows.",
+    difficulty: 4,
+    moneyPotential: 3,
+  },
+  {
+    title: "Moltbook for Trading Agents",
+    description: "Competition platform where autonomous agents run and compare trading strategies.",
+    difficulty: 9,
+    moneyPotential: 8,
+  }
 ];
 ---
 
@@ -419,8 +415,12 @@ const todoistIdeaGroups = [
       I am writing them down here and sharing them publicly.
     </p>
     <p>
-      These are sorted loosely by my current level of excitement, and that changes over time.
-      Feel free to steal any of them.
+      Everything is now in one list. Scores are subjective and intentionally rough so I can prioritize what to ship next.
+    </p>
+    <p>
+      <strong>Difficulty:</strong> 0 = super easy, 10 = nearly impossible.
+      <br />
+      <strong>$$$ potential:</strong> 0 = basically no revenue path, 10 = unicorn-scale upside.
     </p>
     <p>
       If you have comments, questions, or want to build one together,
@@ -429,65 +429,14 @@ const todoistIdeaGroups = [
 
     <hr />
 
-    <h2>Featured ideas</h2>
-    {featuredIdeas.map((idea) => (
-      <section class="space-y-2">
+    <h2>All project ideas</h2>
+    {projectIdeas.map((idea) => (
+      <section class="space-y-1">
         <h3>{idea.title}</h3>
         <p>{idea.description}</p>
-        {idea.notes.length > 0 && (
-          <details>
-            <summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-gray-800">
-              Additional notes
-            </summary>
-            <ul class="mt-2">
-              {idea.notes.map((note) => (
-                <li>{note}</li>
-              ))}
-            </ul>
-          </details>
-        )}
-      </section>
-    ))}
-
-    <hr />
-
-    <h2>Google Keep backlog (new batch)</h2>
-    <p>
-      Raw ideas from Keep, lightly edited for clarity and deduplicated where possible.
-      This list is intentionally broad: some are products, some are scripts, some are just experiments.
-    </p>
-
-    {keepIdeaGroups.map((group) => (
-      <section class="space-y-2">
-        <h3>{group.name}</h3>
-        <ul>
-          {group.ideas.map((idea) => (
-            <li>
-              <strong>{idea.title}:</strong> {idea.description}
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))}
-
-    <hr />
-
-    <h2>Todoist backlog (Project Ideas project)</h2>
-    <p>
-      Additional ideas pulled from my Todoist <em>Project Ideas</em> project.
-      These are raw-but-structured entries that I can revisit, prioritize, and ship over time.
-    </p>
-
-    {todoistIdeaGroups.map((group) => (
-      <section class="space-y-2">
-        <h3>{group.name}</h3>
-        <ul>
-          {group.ideas.map((idea) => (
-            <li>
-              <strong>{idea.title}:</strong> {idea.description}
-            </li>
-          ))}
-        </ul>
+        <p class="text-base">
+          <strong>Difficulty:</strong> {idea.difficulty}/10 · <strong>$$$ potential:</strong> {idea.moneyPotential}/10
+        </p>
       </section>
     ))}
   </div>
