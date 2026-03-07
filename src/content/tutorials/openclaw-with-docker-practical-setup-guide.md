@@ -1,5 +1,5 @@
 ---
-title: "OpenClaw with Docker: A Practical Setup Guide"
+title: "OpenClaw with Docker: Simple, Repeatable Deployment Guide"
 dateCreated: 2026-03-07
 dateUpdated: 2026-03-07
 icon: ./icons/developer.png
@@ -10,180 +10,312 @@ tags:
   - caprover
 category: OpenClaw
 type: tutorial
-description: A practical, production-minded guide for deploying OpenClaw with Docker Compose, with optional notes for CapRover and other reverse proxy setups.
+description: Deploy OpenClaw with Docker using a minimal custom image, persistent volumes, and a WebSocket-ready proxy. Focused on deployment only.
 ---
 
-If you want to run OpenClaw in a clean, repeatable way, Docker is a great option.
+This is a **deployment-only** guide for OpenClaw with Docker.
 
-This guide is intentionally **tool-agnostic**: the same setup principles apply whether you deploy with plain Docker Compose, CapRover, or another platform that can run Docker containers.
+No channel setup deep dive, no model strategy deep dive — just the parts that consistently matter in real deployments:
 
-## What you are setting up
+- container image
+- startup command
+- persistent volumes
+- proxy with WebSockets
+- gateway token + control UI access
+- pairing fix (`openclaw devices list`)
 
-At a high level, a stable OpenClaw Docker deployment has four parts:
+If you run Docker directly, CapRover, Coolify, or any other Docker-based platform, this structure is the same.
 
-1. **Gateway container** (the OpenClaw server)
-2. **CLI access** (for onboarding, auth, and management)
-3. **Persistent storage** (config/workspace/session state)
-4. **Network edge** (local port or reverse proxy with TLS)
+## 0) What actually matters (the short version)
 
-If you get those four right, the rest is mostly provider/channel configuration.
+If you only remember 6 things, make it these:
 
-## Prerequisites
+1. **Use persistent volumes** for `/home/node/.openclaw` and `/home/node/.openclaw/workspace`.
+2. Start OpenClaw with: `node /app/dist/index.js gateway --bind lan`.
+3. Put it behind a proxy with **WebSocket upgrades enabled**.
+4. Keep `OPENCLAW_GATEWAY_TOKEN` and `openclaw.json` token in sync.
+5. Set `controlUi.allowedOrigins` to your proxy URL (with and without trailing slash).
+6. If UI says pairing required, run `openclaw devices list` in the container and approve pending device(s).
 
-- Docker Engine (or Docker Desktop)
-- Docker Compose v2
-- At least 2 GB RAM available for build + runtime
-- A domain and TLS setup if you want remote access
+---
 
-## Recommended path (official and fastest)
+## 1) Minimal Dockerfile (from our working pattern)
 
-The official OpenClaw Docker workflow uses the repo’s setup script.
+This is the stripped version of what we use in our helper setup.
 
-### 1) Clone OpenClaw and run setup
+```dockerfile
+FROM ghcr.io/openclaw/openclaw:2026.2.26
 
-```bash
-git clone https://github.com/openclaw/openclaw.git
-cd openclaw
-./docker-setup.sh
+USER root
+
+# Map `openclaw` command explicitly (useful in custom images/environments)
+RUN printf '#!/usr/bin/env sh\nexec node /app/dist/index.js "$@"\n' > /usr/local/bin/openclaw \
+ && chmod +x /usr/local/bin/openclaw
+
+# Command that should run when container starts
+CMD ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
+
+USER node
 ```
 
-What this does for you:
+### Why this startup command?
 
-- builds (or pulls) the OpenClaw image
-- runs onboarding
-- starts gateway via Docker Compose
-- generates and stores gateway token
-
-When it finishes, open:
-
-- `http://127.0.0.1:18789/`
-
-Then paste your token into the Control UI.
-
-### 2) Verify health
+Use the absolute path version:
 
 ```bash
-curl -fsS http://127.0.0.1:18789/healthz
-curl -fsS http://127.0.0.1:18789/readyz
+node /app/dist/index.js gateway --bind lan
 ```
 
-If both return success, your core service is up.
+It is more reliable than short-path variants in orchestrated environments.
 
-### 3) Get dashboard URL/token again anytime
+---
+
+## 2) Optional: add a couple build-time packages
+
+Keep this small and intentional.
+
+```dockerfile
+# Example: add a few useful tools at build time
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends curl jq tmux \
+ && rm -rf /var/lib/apt/lists/*
+```
+
+Why build-time? Because runtime installs are brittle and disappear across redeploys.
+
+---
+
+## 3) Required environment variables
+
+At minimum:
 
 ```bash
-docker compose run --rm openclaw-cli dashboard --no-open
+# .env
+OPENCLAW_GATEWAY_TOKEN=replace_with_long_random_hex
+
+# one model provider key (pick your provider)
+GEMINI_API_KEY=...
+# or OPENAI_API_KEY=...
+# or ANTHROPIC_API_KEY=...
+
+# your public proxy URL
+CONTROL_UI_ALLOWED_ORIGIN=https://openclaw.yourdomain.com
 ```
 
-Useful when reconnecting a browser or rotating sessions.
-
-## Optional: use prebuilt image instead of local build
-
-If you want faster startup on fresh servers, use the official GHCR image:
+Generate token:
 
 ```bash
-export OPENCLAW_IMAGE="ghcr.io/openclaw/openclaw:latest"
-./docker-setup.sh
+openssl rand -hex 32
 ```
 
-## Persistence (don’t skip this)
+---
 
-For real usage, make sure OpenClaw state survives restarts/redeploys.
+## 4) openclaw.json (initial setup fields that matter)
 
-The setup persists OpenClaw config/workspace under:
+Create `openclaw.json` in your persistent config directory.
 
-- `~/.openclaw/`
-- `~/.openclaw/workspace`
+Example:
 
-You can also persist all `/home/node` using a named Docker volume:
+```json
+{
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "port": 18789,
+    "auth": {
+      "mode": "token",
+      "token": "REPLACE_WITH_SAME_GATEWAY_TOKEN"
+    },
+    "trustedProxies": ["10.0.0.0/8", "172.16.0.0/12"],
+    "controlUi": {
+      "allowedOrigins": [
+        "https://openclaw.yourdomain.com",
+        "https://openclaw.yourdomain.com/"
+      ],
+      "allowInsecureAuth": false
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "google/gemini-2.5-flash"
+      },
+      "workspace": "/home/node/.openclaw/workspace",
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  }
+}
+```
+
+### Practical notes
+
+- If you are not on HTTPS yet, temporarily set `allowInsecureAuth: true`.
+- Keep `auth.token` equal to your `OPENCLAW_GATEWAY_TOKEN` value.
+- Include both origin forms in `allowedOrigins` (with and without trailing slash).
+
+---
+
+## 5) Docker Compose (gateway + proxy with WebSockets)
+
+```yaml
+services:
+  openclaw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: openclaw-gateway
+    restart: unless-stopped
+    expose:
+      - "18789"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
+    volumes:
+      - ./data/config:/home/node/.openclaw
+      - ./data/workspace:/home/node/.openclaw/workspace
+
+  proxy:
+    image: nginx:1.27-alpine
+    container_name: openclaw-proxy
+    restart: unless-stopped
+    depends_on:
+      - openclaw
+    ports:
+      - "80:80"
+      # if terminating TLS here, also expose 443:443 and add cert config
+    volumes:
+      - ./proxy/default.conf:/etc/nginx/conf.d/default.conf:ro
+```
+
+`proxy/default.conf`:
+
+```nginx
+server {
+  listen 80;
+  server_name _;
+
+  location / {
+    proxy_pass http://openclaw:18789;
+
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+
+    proxy_read_timeout 3600;
+    proxy_send_timeout 3600;
+  }
+}
+```
+
+That `Upgrade`/`Connection` setup is what prevents silent websocket failures.
+
+---
+
+## 6) Start it
 
 ```bash
-export OPENCLAW_HOME_VOLUME="openclaw_home"
-./docker-setup.sh
+mkdir -p data/config data/workspace proxy
+# put openclaw.json into ./data/config/openclaw.json
+# put nginx config into ./proxy/default.conf
+
+# OpenClaw runs as uid 1000 (node)
+sudo chown -R 1000:1000 data/config data/workspace
+
+docker compose build
+docker compose up -d
 ```
 
-## Reverse proxy setup (generic)
+---
 
-If exposing OpenClaw outside localhost:
+## 7) Enter container and run onboarding
 
-1. Put it behind a reverse proxy (Nginx, Caddy, Traefik, CapRover ingress, etc.)
-2. Terminate TLS at the proxy
-3. Ensure **WebSocket upgrade headers** are correctly forwarded
-4. Restrict inbound IPs if possible
-
-If WebSocket forwarding is wrong, the UI typically shows disconnect/pairing issues.
-
-## Security baseline
-
-- Keep tokens/secrets in environment variables, not in repo files.
-- Restrict dashboard exposure (private network, VPN, or auth proxy if possible).
-- Keep Docker host patched.
-- Use least-privilege mounts (`:ro` where possible).
-- Only enable insecure/private WebSocket overrides when you explicitly need them.
-
-## Optional: sandboxing for safer tool execution
-
-You can run non-main session tools in sandboxed Docker containers.
-
-Enable during setup:
+You can run onboarding directly inside the running container:
 
 ```bash
-export OPENCLAW_SANDBOX=1
-./docker-setup.sh
+docker exec -it openclaw-gateway openclaw onboard
 ```
 
-This is useful when you want stronger isolation between gateway and tool execution.
-
-## CapRover-specific notes (from real deployments)
-
-You can absolutely run OpenClaw under CapRover. Keep these in mind:
-
-- Treat CapRover as the **orchestration + TLS edge** layer; OpenClaw still needs stable volume mounts.
-- Make sure your app/domain config preserves WebSocket upgrades.
-- Keep Docker/CapRover versions reasonably current to avoid API compatibility surprises during migration/restore operations.
-- After DNS cutovers or migrations, validate `/healthz`, dashboard connect, and one end-to-end tool call before calling deployment complete.
-
-## Common pitfalls and quick fixes
-
-### “Disconnected” / “pairing required” in UI
-
-- Regenerate dashboard URL:
+Or open a shell first:
 
 ```bash
-docker compose run --rm openclaw-cli dashboard --no-open
+docker exec -it openclaw-gateway sh
+openclaw onboard
 ```
 
-- Confirm device status:
+Again: this guide is deployment-focused; onboarding details depend on your channel/model choices.
+
+---
+
+## 8) First access after deploy (easy to miss)
+
+After deployment succeeds:
+
+1. Open your proxy URL.
+2. Go to the **Overview** tab in Control UI.
+3. Paste your `OPENCLAW_GATEWAY_TOKEN`.
+4. Click **Save**.
+
+If you skip this, it often looks like the gateway is up but UI is unauthorized/disconnected.
+
+---
+
+## 9) Pairing fix: run devices list
+
+If you see pairing/1008-style access errors, check device requests:
 
 ```bash
-docker compose run --rm openclaw-cli devices list
+docker exec -it openclaw-gateway openclaw devices list
 ```
 
-### Permission errors on `.openclaw` paths
+If needed, approve pending request(s):
 
-The container runs as uid `1000` (`node` user). Ensure mounted folders are writable by uid 1000.
+```bash
+docker exec -it openclaw-gateway openclaw devices approve <requestId>
+```
 
-### Host can’t reach gateway
+This is a very common post-deploy gotcha.
 
-Confirm bind mode/network assumptions in your deployment. In Docker Compose workflows, `lan` bind mode is usually the expected default for host access.
+---
 
-## Ops checklist for production-ish stability
+## 10) Reverse proxy + domain checklist
 
-- [ ] Health checks wired (`/healthz`, `/readyz`)
-- [ ] Persistent volumes verified
-- [ ] Reverse proxy + WebSocket forwarding confirmed
-- [ ] TLS active
-- [ ] Backup/restore path for OpenClaw config tested
-- [ ] One channel integration tested end-to-end
-- [ ] Upgrade plan documented (image tag strategy + rollback)
+- DNS points your domain to the host running proxy.
+- Proxy forwards to OpenClaw container port 18789.
+- WebSocket upgrade headers are enabled.
+- `controlUi.allowedOrigins` matches your exact public URL.
+- If using HTTPS, terminate TLS correctly and keep scheme aligned.
+
+---
+
+## 11) CapRover users: same principles, different UI
+
+If deploying on CapRover:
+
+- still use persistent data for config/workspace
+- still run startup command with `/app/dist/index.js gateway --bind lan`
+- still require websocket-enabled proxy behavior
+- still need matching token + allowed origins
+
+CapRover changes *where* you click, not *what* must be true.
+
+---
 
 ## Final take
 
-If you’re deploying OpenClaw with Docker through *any* platform, optimize for these first:
+The simplest reliable deployment is:
 
-1. repeatable bootstrapping,
-2. persistent state,
-3. clean networking/TLS,
-4. observable health.
+- minimal image,
+- explicit start command,
+- persistent volumes,
+- websocket-ready proxy,
+- correct token + origins.
 
-Once those are solid, OpenClaw is straightforward to operate, whether on a laptop, VPS, or a managed Docker platform like CapRover.
+Get those right and OpenClaw deployment is straightforward across most Docker platforms.
