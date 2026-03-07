@@ -26,7 +26,7 @@ If you only remember 6 things, remember these:
 3. Start with: `node /app/dist/index.js gateway --bind lan`.
 4. Put OpenClaw behind a proxy with **WebSocket upgrade headers** enabled.
 5. Set `controlUi.allowedOrigins` correctly in `openclaw.json`.
-6. After deploy, open **Overview** and save your gateway token; if needed run `openclaw devices list`.
+6. After deploy, validate public URL, run `openclaw onboard`, then save token in Overview and approve device.
 
 ---
 
@@ -198,64 +198,59 @@ docker compose up -d --build
 
 ---
 
-## 6) Deployment path B: container runner UI (CapRover, etc.)
+## 6) Deployment path B: CapRover (2-app setup)
 
-If you use a container runner (like CapRover), you usually don’t need Compose.
+For CapRover, use **two separate apps**:
 
-Set these in UI:
+1. `openclaw` (the gateway container)
+2. `openclaw-proxy` (public reverse proxy)
 
-- Build/deploy from your Dockerfile, or use equivalent runner build mechanism.
+You cannot fully replace this with proxy settings only inside the `openclaw` app.
+
+### App 1: `openclaw`
+
+- Build/deploy from your Dockerfile
 - Persistent mounts:
   - `/home/node/.openclaw`
   - `/home/node/.openclaw/workspace`
 - Env var:
   - `OPENCLAW_GATEWAY_TOKEN`
-- Proxy/front-door:
-  - WebSockets enabled
-  - route traffic to container port `18789`
 
-### Do you still need a startup command in CapRover UI?
+### App 2: `openclaw-proxy`
 
-If your Dockerfile already sets:
+Use CapRover’s **Nginx Reverse Proxy** prebuilt app.
 
-```dockerfile
-CMD ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
-```
-
-then **usually no** — Dockerfile CMD is enough.
-
-Use a CapRover startup override only if you intentionally want to override CMD, or if your specific deployment setup is ignoring/replacing it.
+- Upstream points to the internal `openclaw` service at port `18789`
+- WebSockets enabled
+- Public domain attached to `openclaw-proxy` app
 
 ---
 
-## 7) First access after deploy (easy to miss)
+## 7) Post-deploy sequence (important order)
 
-After deployment succeeds:
+1. Open your **public OpenClaw URL** and confirm the instance loads.
+2. Enter the OpenClaw container and run:
 
-1. Open your public OpenClaw URL.
-2. Go to the **Overview** tab.
-3. Paste `OPENCLAW_GATEWAY_TOKEN`.
-4. Click **Save**.
+   ```bash
+   openclaw onboard
+   ```
 
----
+3. After onboarding is done, go to **Overview** and save your OpenClaw workspace token.
+4. Back in container, run:
 
-## 8) If access/pairing fails, run devices list
+   ```bash
+   openclaw devices list
+   ```
 
-```bash
-openclaw devices list
-```
+   If needed:
 
-If needed:
-
-```bash
-openclaw devices approve <requestId>
-```
-
-This is one of the most common first-deploy fixes.
+   ```bash
+   openclaw devices approve <requestId>
+   ```
 
 ---
 
-## 9) Optional later: add build-time packages + update image tags
+## 8) Optional later: add build-time packages + update image tags
 
 This is for later optimization, not initial deployment.
 
