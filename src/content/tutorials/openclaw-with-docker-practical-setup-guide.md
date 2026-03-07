@@ -10,7 +10,7 @@ tags:
   - caprover
 category: OpenClaw
 type: tutorial
-description: Deploy OpenClaw with Docker using the prebuilt image, persistent volumes, and a WebSocket-ready proxy. Focused on deployment only.
+description: Deploy OpenClaw with Docker using a small custom Dockerfile, persistent volumes, and a WebSocket-ready proxy. Focused on deployment only.
 ---
 
 This guide is **deployment-only**.
@@ -21,47 +21,59 @@ No model setup walkthrough, no channel setup walkthrough — just what you need 
 
 If you only remember 6 things, remember these:
 
-1. Use a **prebuilt OpenClaw release image** from GitHub releases.
-2. Create persistent dirs for config/workspace **before first container start**.
+1. Build a tiny custom Dockerfile from a pinned OpenClaw release image.
+2. Use persistent storage for `/home/node/.openclaw` and `/home/node/.openclaw/workspace`.
 3. Start with: `node /app/dist/index.js gateway --bind lan`.
 4. Put OpenClaw behind a proxy with **WebSocket upgrade headers** enabled.
 5. Set `controlUi.allowedOrigins` correctly in `openclaw.json`.
-6. After deploy, go to **Overview** and save your gateway token; if needed run `openclaw devices list`.
+6. After deploy, open **Overview** and save your gateway token; if needed run `openclaw devices list`.
 
 ---
 
-## 1) Use a prebuilt image (recommended)
+## 1) Create a small custom Dockerfile first
 
-Prefer a pinned release tag from:
+Use a pinned release tag from:
 
 - <https://github.com/openclaw/openclaw/releases>
 
-Image format:
+Create `Dockerfile`:
 
-```bash
-ghcr.io/openclaw/openclaw:<release-tag>
+```dockerfile
+FROM ghcr.io/openclaw/openclaw:2026.3.2
+
+USER root
+
+# Ensure `openclaw` command exists consistently in your custom image
+RUN printf '#!/usr/bin/env sh\nexec node /app/dist/index.js "$@"\n' > /usr/local/bin/openclaw \
+ && chmod +x /usr/local/bin/openclaw
+
+CMD ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
+
+USER node
 ```
 
-Example:
+### Why map the `openclaw` command?
 
-```bash
-ghcr.io/openclaw/openclaw:2026.3.2
-```
-
-You do **not** need to clone the repo for initial deployment.
+In practice, this avoids path/entrypoint ambiguity across different Docker runners and makes post-deploy commands (`openclaw devices list`, `openclaw onboard`, etc.) predictable.
 
 ---
 
-## 2) Create persistent dirs first (important)
+## 2) Prepare persistent paths and ownership
 
-Before creating/running any container:
+Before first container start, prepare storage and permissions.
+
+Example (local Compose bind mounts):
 
 ```bash
 mkdir -p data/config data/workspace proxy
 sudo chown -R 1000:1000 data/config data/workspace
 ```
 
-OpenClaw runs as `node` (uid 1000). If ownership is wrong, you'll hit permission issues.
+Important notes:
+
+- `data/...` can be anywhere on your host, not necessarily this exact path.
+- Your container must have access to those host paths via Compose mounts or your runner’s volume settings.
+- Docker Compose can auto-create missing bind-mount dirs, but creating them yourself is still better for explicit ownership/permission control.
 
 ---
 
@@ -80,13 +92,13 @@ Generate token:
 openssl rand -hex 32
 ```
 
-Note: model/provider keys are intentionally omitted here. Configure models later via `openclaw onboard`.
+Model credentials are intentionally omitted here; set them later during onboarding.
 
 ---
 
 ## 4) Minimal openclaw.json for deployment
 
-Create `data/config/openclaw.json`:
+Create `openclaw.json` in your config volume/path (for example `data/config/openclaw.json`):
 
 ```json
 {
@@ -114,23 +126,26 @@ Create `data/config/openclaw.json`:
 
 - Keep `gateway.auth.token` equal to `OPENCLAW_GATEWAY_TOKEN`.
 - Include origin with and without trailing slash.
-- If you are using plain HTTP temporarily, set `allowInsecureAuth: true`.
+- If you are on plain HTTP temporarily, set `allowInsecureAuth: true`.
 
 ---
 
 ## 5) Deployment path A: Docker Compose (convenient)
 
-Docker Compose is very convenient, but optional.
+Compose is convenient, but optional.
+
+`docker-compose.yml`:
 
 ```yaml
 services:
   openclaw:
-    image: ghcr.io/openclaw/openclaw:2026.3.2
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: openclaw-gateway
     restart: unless-stopped
     expose:
       - "18789"
-    command: ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
     environment:
       - OPENCLAW_GATEWAY_TOKEN=${OPENCLAW_GATEWAY_TOKEN}
     volumes:
@@ -178,7 +193,7 @@ server {
 Start:
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 ---
@@ -189,9 +204,7 @@ If you use a container runner (like CapRover), you usually don’t need Compose.
 
 Set these in UI:
 
-- Image: `ghcr.io/openclaw/openclaw:<release-tag>`
-- Startup command:
-  - `node /app/dist/index.js gateway --bind lan`
+- Build/deploy from your Dockerfile, or use equivalent runner build mechanism.
 - Persistent mounts:
   - `/home/node/.openclaw`
   - `/home/node/.openclaw/workspace`
@@ -199,45 +212,23 @@ Set these in UI:
   - `OPENCLAW_GATEWAY_TOKEN`
 - Proxy/front-door:
   - WebSockets enabled
-  - routes traffic to container port `18789`
+  - route traffic to container port `18789`
+
+### Do you still need a startup command in CapRover UI?
+
+If your Dockerfile already sets:
+
+```dockerfile
+CMD ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
+```
+
+then **usually no** — Dockerfile CMD is enough.
+
+Use a CapRover startup override only if you intentionally want to override CMD, or if your specific deployment setup is ignoring/replacing it.
 
 ---
 
-## 7) Enter container and run onboarding
-
-Yes — you can still `docker exec` into a running container even if CMD is:
-
-```json
-["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
-```
-
-That CMD only controls the main process. `docker exec` is separate.
-
-### Generic
-
-```bash
-docker exec -it openclaw-gateway /bin/bash
-# if bash is missing:
-docker exec -it openclaw-gateway /bin/sh
-```
-
-### CapRover-style container name lookup
-
-```bash
-docker exec -it "$(docker ps -q --filter "name=srv-captain--openclaw" | head -n 1)" /bin/bash
-# fallback:
-docker exec -it "$(docker ps -q --filter "name=srv-captain--openclaw" | head -n 1)" /bin/sh
-```
-
-Then run:
-
-```bash
-openclaw onboard
-```
-
----
-
-## 8) First access after deploy (easy to miss)
+## 7) First access after deploy (easy to miss)
 
 After deployment succeeds:
 
@@ -248,7 +239,7 @@ After deployment succeeds:
 
 ---
 
-## 9) If access/pairing fails, run devices list
+## 8) If access/pairing fails, run devices list
 
 ```bash
 openclaw devices list
@@ -264,20 +255,19 @@ This is one of the most common first-deploy fixes.
 
 ---
 
-## 10) Optional later: custom Dockerfile (updates, tooling)
+## 9) Optional later: add build-time packages + update image tags
 
-This is **not required** for initial deployment, but useful later when you want custom tooling baked into your image.
+This is for later optimization, not initial deployment.
 
 ```dockerfile
 FROM ghcr.io/openclaw/openclaw:2026.3.2
 
 USER root
 
-# Optional: map `openclaw` command explicitly
 RUN printf '#!/usr/bin/env sh\nexec node /app/dist/index.js "$@"\n' > /usr/local/bin/openclaw \
  && chmod +x /usr/local/bin/openclaw
 
-# Optional: add build-time packages (example only)
+# Optional deps (example only)
 RUN apt-get update \
  && apt-get install -y --no-install-recommends curl jq tmux \
  && rm -rf /var/lib/apt/lists/*
@@ -287,11 +277,7 @@ CMD ["node", "/app/dist/index.js", "gateway", "--bind", "lan"]
 USER node
 ```
 
-### Updating later
-
-- Update only the `FROM ghcr.io/openclaw/openclaw:<new-tag>` line.
-- Rebuild/redeploy.
-- Keep persistent volumes mounted so config/workspace survive.
+For OpenClaw upgrades later, usually just bump the `FROM ghcr.io/openclaw/openclaw:<tag>` line and redeploy.
 
 ---
 
@@ -299,10 +285,10 @@ USER node
 
 Reliable deployment is mostly about:
 
-- prebuilt release image,
-- correct start command,
-- persistent dirs + ownership,
+- tiny custom Dockerfile from a pinned release image,
+- correct startup command,
+- persistent storage + ownership,
 - websocket-ready proxy,
 - token + allowed origins.
 
-If those are right, deploying OpenClaw is straightforward across Docker platforms.
+If those are right, OpenClaw deployment is straightforward across Docker platforms.
