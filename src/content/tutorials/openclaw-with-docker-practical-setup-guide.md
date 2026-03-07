@@ -2,7 +2,7 @@
 title: "OpenClaw with Docker: A Practical Setup Guide"
 dateCreated: 2026-03-07
 dateUpdated: 2026-03-07
-icon: ./icons/developer.png
+icon: ./icons/lobster.svg
 tags:
   - openclaw
   - docker
