@@ -220,9 +220,14 @@ You cannot fully replace this with proxy settings only inside the `openclaw` app
 
 Use CapRover’s **Nginx Reverse Proxy** prebuilt app.
 
+Bare minimum settings:
+
 - Upstream points to the internal `openclaw` service at port `18789`
 - WebSockets enabled
 - Public domain attached to `openclaw-proxy` app
+
+You do **not** need to paste a full custom Nginx template for normal usage.
+CapRover generates the extra SSL/ACME/health-check boilerplate. The OpenClaw-critical part is simply: route to `openclaw:18789` and keep websocket upgrade support on.
 
 ---
 
