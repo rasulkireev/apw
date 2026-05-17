@@ -1,12 +1,12 @@
-FROM node:lts AS base
+FROM node:22 AS base
 
 WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@11.1.2 --activate
 
-# By copying only the package.json and pnpm-lock.yaml here, the deps steps are
-# cached unless dependencies change.
-COPY package.json pnpm-lock.yaml ./
+# By copying only the package manager manifests here, the deps steps are cached
+# unless dependencies or install policy change.
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
 FROM base AS build-deps
 RUN pnpm install --frozen-lockfile
