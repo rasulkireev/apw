@@ -112,9 +112,20 @@ function whatHappenedFor(project: (typeof projectsData.projects)[number], lastAt
 }
 
 function primaryUrlFor(project: (typeof projectsData.projects)[number]) {
-  if (Array.isArray(project.links)) return project.links[0]?.url ?? null;
-  if (project.closedYear && project.url) return project.url;
-  return homepageOverrides.get(project.name) ?? project.homepageUrl ?? project.url ?? null;
+  const homepageUrl = homepageOverrides.get(project.name) || project.homepageUrl || null;
+
+  if (Array.isArray(project.links) && project.links.length > 0) return project.links[0]?.url ?? null;
+  return homepageUrl;
+}
+
+function sourceCodeUrlFor(project: (typeof projectsData.projects)[number]) {
+  const isPrivate = 'isPrivate' in project && project.isPrivate;
+
+  if (isPrivate || !project.url || !project.url.startsWith('https://github.com/')) {
+    return null;
+  }
+
+  return project.url;
 }
 
 const projects = projectsData.projects
@@ -129,6 +140,7 @@ const projects = projectsData.projects
       displayName: project.displayName ?? readableName(project.name),
       description: descriptionOverrides.get(project.name) ?? project.description,
       primaryUrl: primaryUrlFor(project),
+      sourceCodeUrl: sourceCodeUrlFor(project),
       whatHappened,
       startYear,
     };
@@ -163,13 +175,20 @@ const projects = projectsData.projects
         {projects.map((project) => (
           <tr>
             <td class="min-w-40 py-2 pr-4 align-top font-bold">
-              {project.primaryUrl ? (
-                <a class="underline decoration-stone-300 underline-offset-2 hover:text-black hover:decoration-current" href={project.primaryUrl} target="_blank" rel="noreferrer">
-                  {project.displayName}
-                </a>
-              ) : (
-                project.displayName
-              )}
+              <div class="flex flex-col items-start gap-1">
+                {project.primaryUrl ? (
+                  <a class="underline decoration-stone-300 underline-offset-2 hover:text-black hover:decoration-current" href={project.primaryUrl} target="_blank" rel="noreferrer">
+                    {project.displayName}
+                  </a>
+                ) : (
+                  <span>{project.displayName}</span>
+                )}
+                {project.sourceCodeUrl && (
+                  <a class="text-xs font-normal text-stone-500 underline decoration-stone-300 underline-offset-2 hover:text-black hover:decoration-current" href={project.sourceCodeUrl} target="_blank" rel="noreferrer">
+                    Source code
+                  </a>
+                )}
+              </div>
             </td>
             <td class="px-4 py-2 align-top tabular-nums text-stone-600">
               {project.startYear ?? 'Unknown'}
