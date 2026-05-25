@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-05-17T11:59:33.000Z",
+  "generatedAt": "2026-05-24T12:21:05.000Z",
   "sources": [
     "https://github.com/rasulkireev",
     "https://github.com/gregagi",
-    "https://github.com/LVTD-LLC"
+    "https://github.com/LVTD-LLC",
+    "https://github.com/builtwithdjango"
   ],
   "notes": "Filtered to launched projects and commercial experiments that were intended to earn money. Forks, personal repos, learning repos, utilities, and dev-only experiments are excluded. GitHub firstCommitAt and lastCommitAt are inferred from default branch commits via the GitHub API. Older Shopify, WordPress, and newsletter projects are manually added from personal project history.",
   "projects": [
@@ -24,6 +25,30 @@
       "startedAt": "2020-01-01T00:00:00Z",
       "closedYear": 2020,
       "success": false
+    },
+    {
+      "owner": "builtwithdjango",
+      "name": "builtwithdjango",
+      "displayName": "Built with Django",
+      "description": "A directory and community site for projects built with Django.",
+      "url": "https://github.com/builtwithdjango/builtwithdjango",
+      "homepageUrl": "https://builtwithdjango.com",
+      "primaryLanguage": "JavaScript",
+      "topics": [
+        "django",
+        "indiehackers",
+        "makers",
+        "hacktoberfest"
+      ],
+      "stars": 77,
+      "isArchived": false,
+      "createdAt": "2019-12-03T21:35:08Z",
+      "updatedAt": "2026-05-24T12:08:33Z",
+      "pushedAt": "2026-05-24T12:08:29Z",
+      "defaultBranch": "master",
+      "firstCommitAt": "2019-12-03T21:42:56Z",
+      "lastCommitAt": "2026-05-24T12:08:25Z",
+      "commitCount": 777
     },
     {
       "name": "osar-journal",
@@ -225,6 +250,7 @@
       "name": "clawrn",
       "displayName": "Clawrn",
       "description": "A Reddit-like community where AI agents ask and answer technical questions and share operational knowledge.",
+      "statusOverride": "idle",
       "url": "https://github.com/gregagi/clawrn",
       "homepageUrl": "https://clawrn.com/",
       "primaryLanguage": "Python",
@@ -244,6 +270,7 @@
       "name": "barshelf",
       "displayName": "Barshelf",
       "description": "Very early-stage desktop app for managing macOS menu bar items. Almost not usable yet; mostly a vehicle for learning desktop development.",
+      "statusOverride": "closed",
       "url": "https://github.com/LVTD-LLC/barshelf",
       "homepageUrl": "https://lvtd-llc.github.io/barshelf/",
       "primaryLanguage": "Swift",
@@ -300,6 +327,26 @@
       "firstCommitAt": "2026-05-12T10:58:58Z",
       "lastCommitAt": "2026-05-16T13:17:15Z",
       "commitCount": 51
+    },
+    {
+      "owner": "LVTD-LLC",
+      "name": "awesome-repos",
+      "displayName": "Awesome Repos",
+      "description": "Search and monitor repositories listed across awesome lists.",
+      "url": "https://github.com/LVTD-LLC/awesome-repos",
+      "homepageUrl": "",
+      "primaryLanguage": "Python",
+      "topics": [],
+      "stars": 0,
+      "isArchived": false,
+      "isPrivate": true,
+      "createdAt": "2026-05-21T22:15:58Z",
+      "updatedAt": "2026-05-23T21:07:15Z",
+      "pushedAt": "2026-05-23T21:07:10Z",
+      "defaultBranch": "main",
+      "firstCommitAt": "2026-05-21T22:16:14Z",
+      "lastCommitAt": "2026-05-23T21:07:10Z",
+      "commitCount": 65
     },
     {
       "owner": "LVTD-LLC",
