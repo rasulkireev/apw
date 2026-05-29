@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T12:21:05.000Z",
+  "generatedAt": "2026-05-29T11:31:37.000Z",
   "sources": [
     "https://github.com/rasulkireev",
     "https://github.com/gregagi",
@@ -290,6 +290,7 @@
       "name": "bloom-atlas",
       "displayName": "Bloom Atlas",
       "description": "An app that helps people navigate flower blooming across the world. Very early dev, mostly used as a vehicle for learning mobile development.",
+      "statusOverride": "closed",
       "url": "https://github.com/LVTD-LLC/bloom-atlas",
       "homepageUrl": "",
       "primaryLanguage": "TypeScript",
@@ -334,7 +335,7 @@
       "displayName": "Awesome Repos",
       "description": "Search and monitor repositories listed across awesome lists.",
       "url": "https://github.com/LVTD-LLC/awesome-repos",
-      "homepageUrl": "",
+      "homepageUrl": "https://awesome.lvtd.dev/",
       "primaryLanguage": "Python",
       "topics": [],
       "stars": 0,
@@ -347,6 +348,26 @@
       "firstCommitAt": "2026-05-21T22:16:14Z",
       "lastCommitAt": "2026-05-23T21:07:10Z",
       "commitCount": 65
+    },
+    {
+      "owner": "LVTD-LLC",
+      "name": "pgsandbox-mcp",
+      "displayName": "PGSandbox MCP",
+      "description": "Agent-facing MCP for disposable Postgres experimentation databases.",
+      "url": "https://github.com/LVTD-LLC/pgsandbox-mcp",
+      "homepageUrl": "",
+      "primaryLanguage": "TypeScript",
+      "topics": [],
+      "stars": 0,
+      "isArchived": false,
+      "isPrivate": true,
+      "createdAt": "2026-05-28T11:47:52Z",
+      "updatedAt": "2026-05-28T15:49:28Z",
+      "pushedAt": "2026-05-29T11:31:23Z",
+      "defaultBranch": "main",
+      "firstCommitAt": "2026-05-28T11:47:52Z",
+      "lastCommitAt": "2026-05-28T15:49:14Z",
+      "commitCount": 6
     },
     {
       "owner": "LVTD-LLC",
