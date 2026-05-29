@@ -41,6 +41,8 @@ const schema = {
         "url": socialImageUrl
     }
 };
+
+const currentPath = Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -84,7 +86,7 @@ const schema = {
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-shell light-mode">
-      <Navbar client:load />
+      <Navbar initialPath={currentPath} client:load />
       <main id="main-content" class="site-main">
         <slot />
       </main>

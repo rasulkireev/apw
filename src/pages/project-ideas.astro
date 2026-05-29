@@ -896,7 +896,7 @@ const projectIdeas = [
           return;
         }
         if (button.dataset.sort === sortState.key) {
-          indicator.textContent = sortState.direction === 'asc' ? 'asc' : 'desc';
+          indicator.textContent = sortState.direction === 'asc' ? '▲' : '▼';
         } else {
           indicator.textContent = '';
         }

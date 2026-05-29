@@ -1,5 +1,5 @@
 <template>
-  <nav class="site-nav" @keydown.escape="dropdownIsOpen = false">
+  <nav class="site-nav" @keydown.escape="closeMenus">
     <div class="site-nav-inner">
       <a class="nav-logo" href="/" aria-label="Rasul Kireev home">
         <img src="/logo.png" alt="" />
@@ -80,6 +80,12 @@ const writingLinks = [
 ];
 
 export default {
+  props: {
+    initialPath: {
+      type: String,
+      default: "/",
+    },
+  },
   data: () => ({
     isOpen: false,
     dropdownIsOpen: false,
@@ -92,6 +98,9 @@ export default {
       ...writingLinks,
     ],
   }),
+  created() {
+    this.currentPath = this.initialPath;
+  },
   computed: {
     isWritingActive() {
       return this.writingLinks.some((item) => this.isActive(item.href));
@@ -107,6 +116,10 @@ export default {
     },
     isActive(href) {
       return this.normalize(this.currentPath) === this.normalize(href);
+    },
+    closeMenus() {
+      this.isOpen = false;
+      this.dropdownIsOpen = false;
     },
   },
 };

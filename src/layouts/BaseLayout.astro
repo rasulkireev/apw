@@ -1,6 +1,6 @@
 ---
 import "../styles/global.css";
-import Navbar from "../components/Navbar.vue"
+import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.astro";
 const {
   pageTitle,
@@ -13,6 +13,7 @@ const {
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const currentPath = Astro.url.pathname;
 
 // Generate dynamic OG image using osig.app
 const ogImageUrl = pageImage || `https://osig.app/g?site=x&style=base&font=helvetica&eyebrow=rasulkireev.com&title=${encodeURIComponent(pageTitle)}&subtitle=${encodeURIComponent(pageDescription)}&theme=light&fontSize=large`;
@@ -77,7 +78,7 @@ const ogImageUrl = pageImage || `https://osig.app/g?site=x&style=base&font=helve
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <div class="site-shell light-mode">
-      <Navbar client:load />
+      <Navbar initialPath={currentPath} client:load />
       <main id="main-content" class="site-main">
         <slot />
       </main>
