@@ -608,6 +608,7 @@ a:hover {
   padding: clamp(1rem, 3vw, 1.35rem);
 }
 
+.subsection-title,
 .newsletter-title {
   margin: 0;
   color: var(--color-ink);

@@ -1,6 +1,6 @@
 <template>
     <div v-if="twitterLink || hnLink || redditLink || indiehackersLink" class="my-6">
-      <p class="newsletter-title">Discuss on</p>
+      <p class="subsection-title">Discuss on</p>
       <div class="discuss-links mt-3">
         <a
           v-if=twitterLink
