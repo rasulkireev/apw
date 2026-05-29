@@ -1,6 +1,6 @@
 <template>
   <div :class="isOpen ? 'block' : 'h-10'" class="flex flex-row">
-    <button @click="isOpen = !isOpen" class="foldable-button group">
+    <button type="button" @click="isOpen = !isOpen" class="foldable-button group">
       <span v-if="isOpen" class="absolute z-10 invisible w-24 min-w-full text-center transform -rotate-90 bg-white border-2 rounded -left-20 top-8 group-hover:visible">fold me</span>
       <span v-if="!isOpen">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

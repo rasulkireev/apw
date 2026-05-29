@@ -69,7 +69,7 @@ const pageKeywords = "favourites, recommendations, blogs, feeds, books, movies, 
     I have listened to quite a few episodes, since last update.
     Although at the same time I haven't been listening much in the last 6 months, so muught just leave it as is.
   </p>
-  <ul v-for="episode in episodes" :key="episode.id" class="list-outside">
+  <ul class="list-outside">
       {favouritePodcasts.map(episode => (
         <li class="mb-2">
             <a href={episode.url}>{ episode.episode }</a> - { episode.podcast }

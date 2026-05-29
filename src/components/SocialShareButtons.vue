@@ -13,7 +13,7 @@
         <i class="las la-envelope" aria-hidden="true"></i>
       </a>
       <a class="social-link" :href='"https://reddit.com/submit/?url=" + url + "&amp;resubmit=true&amp;title=" + title + " by Rasul Kireev"' target="_blank" rel="noopener" aria-label="Share on Reddit">
-        <i class="la la-reddit" aria-hidden="true"></i>
+        <i class="lab la-reddit" aria-hidden="true"></i>
       </a>
       <a class="social-link" :href='"https://www.linkedin.com/shareArticle?mini=True&amp;url=" + url + "&title=" + title + " by Rasul Kireev" + "&amp;summary=" + text' target="_blank" rel="noopener" aria-label="Share on LinkedIn">
         <i class="lab la-linkedin-in" aria-hidden="true"></i>
