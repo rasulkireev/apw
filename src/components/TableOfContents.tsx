@@ -167,10 +167,10 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       {/* Toggle button with arrow */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="my-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors table-of-contents lg:hidden"
-        aria-label="Toggle Table of Contents"
+        className="control-button my-4 table-of-contents lg:hidden"
+        aria-label="Toggle table of contents"
       >
-        <span className="mr-2">Table of Contents</span>
+        <span className="mr-2">Table of contents</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className={`h-5 w-5 transition-transform duration-200 ${
@@ -191,7 +191,7 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
       {/* Mobile TOC - Dropdown under button */}
       <div
-        className={`lg:hidden bg-white border border-gray-200 rounded-lg shadow-md mb-6 ${
+        className={`toc-panel lg:hidden mb-6 ${
           isOpen ? 'block' : 'hidden'
         } table-of-contents`}
       >
@@ -205,10 +205,10 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       </div>
 
       {/* Desktop TOC - Left Sidebar */}
-      <div className="hidden lg:block fixed left-[max(0px,calc(50%-45rem))] top-[1rem] px-4 py-6 border border-gray-100 rounded-lg shadow w-64 max-h-[calc(100vh-2rem)] overflow-y-auto">
+      <div className="toc-panel hidden lg:block fixed left-[max(0px,calc(50%-45rem))] top-[1rem] px-4 py-6 w-64 max-h-[calc(100vh-2rem)] overflow-y-auto">
         <nav className="table-of-contents">
-          <div className="mb-4 border-b border-gray-200">
-            <p className="font-bold text-gray-900">Table of Contents</p>
+          <div className="mb-4 border-b border-[var(--color-border)]">
+            <p className="font-bold text-[var(--color-ink)]">Table of contents</p>
           </div>
           <TableOfContentsList
             headings={headings}
@@ -268,8 +268,8 @@ function TableOfContentsList({
             <a
               href={`#${parent.id}`}
               onClick={() => setIsOpen(false)}
-              className={`block py-1 hover:text-blue-600 ${
-                activeId === parent.id ? "text-blue-600 font-medium" : "text-gray-600"
+              className={`toc-link py-1 ${
+                activeId === parent.id ? "toc-link-active" : ""
               }`}
             >
               {parent.text}
@@ -277,7 +277,7 @@ function TableOfContentsList({
             {children.length > 0 && (
               <button
                 onClick={() => toggleSection(id)}
-                className="p-1 hover:bg-gray-100 rounded-full"
+                className="rounded p-1 hover:bg-[var(--color-surface-alt)]"
                 aria-label={`Toggle section ${parent.text}`}
               >
                 <svg
@@ -306,8 +306,8 @@ function TableOfContentsList({
                   <a
                     href={`#${child.id}`}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-1 pl-4 hover:text-blue-600 ${
-                      activeId === child.id ? "text-blue-600 font-medium" : "text-gray-600"
+                    className={`toc-link py-1 pl-4 ${
+                      activeId === child.id ? "toc-link-active" : ""
                     }`}
                   >
                     {child.text}

@@ -28,31 +28,41 @@ const defaultLanguage = "english";
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <div class="mb-4">
-    <select id="languageFilter" class="p-2 border rounded-lg">
-      {languages.map(lang => (
-        <option value={lang.toLowerCase()} selected={lang.toLowerCase() === defaultLanguage}>
-          {lang.charAt(0).toUpperCase() + lang.slice(1)}
-        </option>
-      ))}
-    </select>
-  </div>
-
-  {allRecipes.map(recipe => (
-    <div class="mb-1 recipe-item" data-language={getLanguage(recipe)}>
-      <a href={"/" + recipe.slug} class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200">
-        <div>
-          <p class="text-sm md:text-lg">{ recipe.data.title }</p>
-          <p class="m-0 text-xs text-gray-600" itemprop="headline">{ recipe.data.description }</p>
-
-          <span id="blog-post-info" class="hidden">
-            <time class="dt-published" itemprop="datePublished" datetime={recipe.data.dateCreated.toString()}>{recipe.data.dateCreated}</time>
-            <span itemprop="author">Rasul Kireev</span>
-          </span>
-        </div>
-      </a>
+  <div class="page-stack">
+    <div>
+      <h1 class="section-title">Recipes</h1>
+      <p class="page-lede">A small kitchen notebook in English and Russian.</p>
     </div>
-  ))}
+
+    <div class="control-row">
+      <label class="sr-only" for="languageFilter">Recipe language</label>
+      <select id="languageFilter" class="control-select">
+        {languages.map(lang => (
+          <option value={lang.toLowerCase()} selected={lang.toLowerCase() === defaultLanguage}>
+            {lang.charAt(0).toUpperCase() + lang.slice(1)}
+          </option>
+        ))}
+      </select>
+    </div>
+
+    <div class="entry-list">
+      {allRecipes.map(recipe => (
+        <div class="recipe-item" data-language={getLanguage(recipe)}>
+          <a href={"/" + recipe.slug} class="entry-card entry-card-full">
+            <div>
+              <p class="entry-title">{ recipe.data.title }</p>
+              <p class="entry-description" itemprop="headline">{ recipe.data.description }</p>
+
+              <span id="blog-post-info" class="hidden">
+                <time class="dt-published" itemprop="datePublished" datetime={recipe.data.dateCreated.toString()}>{recipe.data.dateCreated}</time>
+                <span itemprop="author">Rasul Kireev</span>
+              </span>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
 </BaseLayout>
 
 <script>

@@ -1,45 +1,44 @@
 <template>
-    <div v-if="twitterLink || hnLink || redditLink || indiehackersLink" class="my-4 text-gray-900 flex-root">
-      <p class="mb-2 text-xl font-semibold text-gray-800">Discuss on</p>
-      <div class="flex flex-row flex-wrap -m-2">
+    <div v-if="twitterLink || hnLink || redditLink || indiehackersLink" class="my-6">
+      <p class="newsletter-title">Discuss on</p>
+      <div class="discuss-links mt-3">
         <a
           v-if=twitterLink
-          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-blue-500 rounded-lg hover:bg-blue-700"
+          class="discuss-link"
           :href=twitterLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-twitter"></i>
-          <span class="text-lg font-semibold text-white">Twitter</span>
+          <i class="text-2xl lab la-twitter"></i>
+          <span>Twitter</span>
         </a>
 
         <a
           v-if=hnLink
-          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-orange-600 rounded-lg hover:bg-orange-700"
+          class="discuss-link"
           :href=hnLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-hacker-news"></i>
-          <span class="text-lg font-semibold text-white">HackerNews</span>
+          <i class="text-2xl lab la-hacker-news"></i>
+          <span>Hacker News</span>
         </a>
 
         <a
           v-if=redditLink
-          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-red-600 rounded-lg hover:bg-red-700"
+          class="discuss-link"
           :href=redditLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-reddit"></i>
-          <span class="text-lg font-semibold text-white">Reddit</span>
+          <i class="text-2xl lab la-reddit"></i>
+          <span>Reddit</span>
         </a>
 
         <a
           v-if=indiehackersLink
-          class="flex flex-row items-center px-3 py-2 m-2 space-x-2 bg-blue-900 rounded-lg hover:bg-blue-700"
+          class="discuss-link"
           :href=indiehackersLink
           target="_blank"
         >
-          <!-- <i class="text-3xl text-white lab la-reddit"></i> -->
-          <span class="text-lg font-semibold text-white">Indiehackers</span>
+          <span>Indie Hackers</span>
         </a>
 
       </div>

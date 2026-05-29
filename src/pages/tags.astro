@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const pageTitle = "Browse by Tags - Rasul KireevContent Categories";
+const pageTitle = "Browse by Tags - Rasul Kireev Content Categories";
 const pageDescription = "Browse all content by tags and categories. Discover articles, tutorials, books, and prompts organized by topics including programming, web development, books, and more.";
 const pageKeywords = "tags, categories, content organization, programming tags, web development, books, tutorials, articles, browse by topic";
 
@@ -39,37 +39,40 @@ const allTags = extractAllTagsWithCounts(allContent);
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <div class="max-w-4xl mx-auto">
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold text-gray-900">Browse by Tags</h1>
+  <div class="page-stack">
+    <div class="control-row">
+      <div>
+        <h1 class="section-title">Browse by tags</h1>
+        <p class="page-lede">Find articles, tutorials, books, and prompts by topic.</p>
+      </div>
 
       <!-- Sort options with client-side buttons -->
-      <div class="flex space-x-2">
+      <div class="control-group">
         <button
           id="sort-alpha"
-          class="px-3 py-1 text-sm font-medium rounded-full bg-blue-600 text-white"
+          class="control-button sort-button-active"
         >
           A-Z
         </button>
         <button
           id="sort-count"
-          class="px-3 py-1 text-sm font-medium rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200"
+          class="control-button"
         >
-          By Count
+          By count
         </button>
       </div>
     </div>
 
     <!-- All tags in a single flowing list -->
-    <div id="tags-container" class="flex flex-wrap gap-2 mb-8">
+    <div id="tags-container" class="control-group">
       {allTags.map(({ tag, count }) => (
         <a
           href={`/tag/${tag}`}
-          class="tag-item px-3 py-1 text-sm bg-gray-100 rounded-lg hover:bg-gray-200"
+          class="chip tag-item"
           data-tag={tag}
           data-count={count}
         >
-          {tag} <span class="text-gray-500">({count})</span>
+          {tag} <span class="entry-meta">({count})</span>
         </a>
       ))}
     </div>
@@ -95,11 +98,8 @@ const allTags = extractAllTagsWithCounts(allContent);
       });
 
       // Update active button state
-      sortAlphaBtn.classList.add('bg-blue-600', 'text-white');
-      sortAlphaBtn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
-
-      sortCountBtn.classList.remove('bg-blue-600', 'text-white');
-      sortCountBtn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+      sortAlphaBtn.classList.add('sort-button-active');
+      sortCountBtn.classList.remove('sort-button-active');
 
       // Reorder elements in the DOM
       tagElements.forEach(el => tagsContainer.appendChild(el));
@@ -112,11 +112,8 @@ const allTags = extractAllTagsWithCounts(allContent);
       });
 
       // Update active button state
-      sortCountBtn.classList.add('bg-blue-600', 'text-white');
-      sortCountBtn.classList.remove('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
-
-      sortAlphaBtn.classList.remove('bg-blue-600', 'text-white');
-      sortAlphaBtn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+      sortCountBtn.classList.add('sort-button-active');
+      sortAlphaBtn.classList.remove('sort-button-active');
 
       // Reorder elements in the DOM
       tagElements.forEach(el => tagsContainer.appendChild(el));

@@ -13,9 +13,9 @@ const pageKeywords = "favourites, recommendations, blogs, feeds, books, movies, 
   pageKeywords={pageKeywords}
 >
 
-<div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
+<div class="prose page-stack">
 
-  <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Favourites</h1>
+  <h1>Favourites</h1>
   <p>This is a list of my favourites.</p>
 
   <h2 id="feeds" class="mb-4 text-2xl border-b border-gray-200">Feeds</h2>
@@ -72,7 +72,7 @@ const pageKeywords = "favourites, recommendations, blogs, feeds, books, movies, 
   <ul v-for="episode in episodes" :key="episode.id" class="list-outside">
       {favouritePodcasts.map(episode => (
         <li class="mb-2">
-            <a class="text-blue-700" href={episode.url}>{ episode.episode }</a> - { episode.podcast }
+            <a href={episode.url}>{ episode.episode }</a> - { episode.podcast }
         </li>
       ))}
   </ul>

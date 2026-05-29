@@ -31,53 +31,66 @@ const filteredTutorials = selectedTags.length > 0
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <div class="mb-4">
-    <button
-      id="toggleTags"
-      class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
-    >
-      Filter by tags
-    </button>
+  <div class="page-stack">
+    <div>
+      <h1 class="section-title">Tutorials</h1>
+      <p class="page-lede">Practical notes on Django, Python, web development, and the tooling I use.</p>
+    </div>
 
-    <div id="tagContainer" class="hidden mt-4 space-y-2">
-      <div class="flex flex-wrap gap-2">
-        {allTags.map(tag => (
-          <button
-            class="px-3 py-1 text-sm text-gray-700 bg-white rounded-full hover:bg-gray-50 tag-pill"
-            data-tag={tag}
-          >
-            {tag}
-          </button>
-        ))}
+    <div>
+      <div class="control-row">
+        <button
+          id="toggleTags"
+          class="control-button"
+          aria-expanded="false"
+          aria-controls="tagContainer"
+        >
+          Filter by tags
+        </button>
+      </div>
+
+      <div id="tagContainer" class="tag-panel hidden">
+        <div class="control-group">
+          {allTags.map(tag => (
+            <button
+              class="chip tag-pill"
+              data-tag={tag}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
 
-  {filteredTutorials.map(p => (
-    <div class="mb-1 tutorial-item" data-tags={p.data.tags?.join(',')}>
-      <a
-        href={"/" + p.slug}
-        class="flex flex-row items-center p-1 text-xl text-gray-900 border-0 rounded-lg hover:bg-gray-200"
-        itemprop="blogPost"
-        itemscope
-        itemtype="http://schema.org/BlogPosting"
-      >
-        <Image
-          src={p.data.icon}
-          width="50"
-          height="50"
-          alt={p.data.title}
-          class="self-start inline w-auto h-16 p-2 mr-4 align-middle"
-          itemprop="image"
-        />
+    <div class="entry-list">
+      {filteredTutorials.map(p => (
+        <div class="tutorial-item" data-tags={p.data.tags?.join(',')}>
+          <a
+            href={"/" + p.slug}
+            class="entry-card"
+            itemprop="blogPost"
+            itemscope
+            itemtype="http://schema.org/BlogPosting"
+          >
+            <Image
+              src={p.data.icon}
+              width="50"
+              height="50"
+              alt={p.data.title}
+              class="entry-icon"
+              itemprop="image"
+            />
 
-        <div>
-          <p class="text-sm md:text-lg">{ p.data.title }</p>
-          <p class="m-0 text-xs text-gray-600" itemprop="headline">{ p.data.description }</p>
+            <div>
+              <p class="entry-title">{ p.data.title }</p>
+              <p class="entry-description" itemprop="headline">{ p.data.description }</p>
+            </div>
+          </a>
         </div>
-      </a>
+      ))}
     </div>
-  ))}
+  </div>
 </BaseLayout>
 
 <script>
@@ -89,6 +102,7 @@ const filteredTutorials = selectedTags.length > 0
   // Toggle tag container visibility
   toggleButton?.addEventListener('click', () => {
     tagContainer?.classList.toggle('hidden');
+    toggleButton.setAttribute('aria-expanded', String(!tagContainer?.classList.contains('hidden')));
   });
 
   // Handle tag selection
@@ -96,9 +110,6 @@ const filteredTutorials = selectedTags.length > 0
     pill.addEventListener('click', () => {
       // Toggle visual state
       pill.classList.toggle('selected');
-      pill.classList.toggle('bg-gray-100');
-      pill.classList.toggle('border');
-      pill.classList.toggle('border-blue-500');
 
       // Get all selected tags
       const selectedTags = Array.from(document.querySelectorAll('.tag-pill.selected'))
@@ -121,21 +132,17 @@ const filteredTutorials = selectedTags.length > 0
     // Set initial selected state based on URL params
     const currentTags = new URLSearchParams(window.location.search).get('tags')?.split(',').filter(Boolean) || [];
     if (currentTags.includes(pill.getAttribute('data-tag'))) {
-      pill.classList.add('selected', 'bg-gray-100', 'border', 'border-blue-500');
+      pill.classList.add('selected');
     }
   });
 
   function filterTutorials(selectedTags) {
-    console.log('Filtering with tags:', selectedTags); // Debug log
-
     tutorialItems.forEach(tutorial => {
       const tutorialTags = tutorial.getAttribute('data-tags')?.split(',').filter(Boolean) || [];
-      console.log('Tutorial tags:', tutorialTags); // Debug log
 
       const shouldShow = selectedTags.length === 0 ||
         selectedTags.some(tag => tutorialTags.includes(tag));
 
-      console.log('Should show:', shouldShow); // Debug log
       tutorial.style.display = shouldShow ? '' : 'none';
     });
   }

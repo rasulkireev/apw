@@ -13,25 +13,25 @@ const pageKeywords = "Tuesday Letter, newsletter, weekly newsletter, Rasul Kiree
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <FullWidthNewsletter client:load
-    title="Tuesday Letter"
-    description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
-    tag="newsletter"
-  />
+  <div class="page-stack">
+    <FullWidthNewsletter client:load
+      title="Tuesday Letter"
+      description="Consider signing up for my personal newsletter. I will share the most interesting articles and resources I've encountered during the week."
+      tag="newsletter"
+    />
 
-  <div class="mb-4">
-    <h1 class="text-4xl">Past Newsletter Issues</h1>
+    <div>
+      <h1 class="section-title">Past newsletter issues</h1>
+    </div>
+
+    <section id="letters">
+      <div class="entry-list">
+        {newsletter.map(letter => (
+          <a class="entry-card entry-card-full" href={letter.url} target="_blank" rel="noreferrer">
+            <p class="entry-title">{ letter.title }</p>
+          </a>
+        ))}
+      </div>
+    </section>
   </div>
-
-  <section id="letters">
-    <ul class="list-outside">
-      {newsletter.map(letter => (
-        <li class="mb-2 text-lg">
-            <a class="text-blue-700 border-b-2 hover:text-blue-500 hover:border-blue-500" href={letter.url} target="_blank">
-                { letter.title }
-            </a>
-        </li>
-      ))}
-    </ul>
-  </section>
 </BaseLayout>

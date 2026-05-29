@@ -21,7 +21,6 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
           setUserIp(data.ip);
         }
       } catch (error) {
-        console.log('Could not fetch IP address:', error);
         // Continue without IP if fetch fails
       }
     };
@@ -63,7 +62,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
         setFormState({
           ...formState,
           isSubmitting: false,
-          message: 'Thank for subscribing! You should receive an email soon.',
+          message: 'Thanks for subscribing. You should receive an email soon.',
           isError: false,
         });
       } else {
@@ -87,28 +86,28 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
 
   // JSX to render the form or the message
   return (
-    <div className="p-4 my-4 border-2 border-green-300 rounded">
-      <h2 className="text-2xl font-semibold">{title}</h2>
-      <p className="mb-2 text-xl">{description}</p>
+    <div className="surface-panel newsletter-panel">
+      <h2 className="newsletter-title">{title}</h2>
+      <p className="newsletter-description">{description}</p>
 
       {/* Conditional rendering based on formState */}
       {formState.message ? (
         <div
-          className={`w-full p-2 text-lg text-gray-700 border rounded mt-2 ${
-            formState.isError ? 'bg-red-100 border-red-700' : 'bg-green-100 border-green-700'
+          className={`form-message ${
+            formState.isError ? 'is-error' : ''
           }`}
         >
           {formState.message}
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col md:flex-row">
+        <form onSubmit={handleSubmit} className="newsletter-form">
           <input
             type="text"
             name="userName"
             value={formState.userName}
             onChange={handleInputChange}
-            placeholder="First Name"
-            className="w-full p-1 mb-2 leading-tight text-gray-800 bg-gray-200 border border-gray-500 rounded appearance-none md:h-10 md:mr-2 focus:outline-none focus:bg-white md:w-64"
+            placeholder="First name"
+            className="newsletter-input"
           />
           <input
             type="email"
@@ -116,16 +115,15 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
             value={formState.userEmail}
             onChange={handleInputChange}
             placeholder="Email"
-            className="w-full p-1 mb-2 leading-tight text-gray-800 bg-gray-200 border border-gray-500 rounded appearance-none md:mr-2 md:h-10 focus:outline-none focus:bg-white md:w-64"
+            className="newsletter-input"
+            required
           />
           <button
             type="submit"
             disabled={formState.isSubmitting}
-            className={`w-full text-lg font-semibold text-center text-white no-underline bg-green-500 border border-green-500 rounded cursor-pointer md:h-10 sm:w-32 ${
-              formState.isSubmitting ? 'opacity-25' : 'opacity-100'
-            }`}
+            className="primary-button"
           >
-            {formState.isSubmitting ? 'Submitting...' : 'Subscribe'}
+            {formState.isSubmitting ? 'Submitting' : 'Subscribe'}
           </button>
         </form>
       )}

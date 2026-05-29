@@ -740,8 +740,8 @@ const projectIdeas = [
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
-    <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Project Ideas</h1>
+  <div class="prose page-stack">
+    <h1>Project ideas</h1>
     <p>
       If you are a developer, you probably know this problem well: you have a million ideas for projects,
       but you do not have time to build all of them.
@@ -768,20 +768,20 @@ const projectIdeas = [
     <hr />
 
     <h2>All project ideas</h2>
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-end">
+    <div class="control-row not-prose">
       <label class="flex w-full flex-col gap-1 text-base">
         <span class="font-semibold">Search</span>
         <input
           id="ideaSearch"
           type="search"
           placeholder="Search ideas..."
-          class="w-full rounded-md border border-slate-300 px-3 py-2 text-base shadow-sm focus:border-slate-500 focus:outline-none"
+          class="newsletter-input w-full"
         />
       </label>
     </div>
-    <div class="w-full overflow-x-auto rounded-lg border border-slate-200 bg-white shadow-sm">
-      <table class="min-w-full border-collapse text-left text-base">
-        <thead class="bg-slate-100 text-sm uppercase tracking-wide text-slate-600">
+    <div class="table-wrap not-prose">
+      <table class="data-table">
+        <thead>
           <tr>
             <th class="px-4 py-3 font-semibold">
               <button type="button" class="flex w-full items-center justify-between gap-2" data-sort="index">
@@ -837,17 +837,17 @@ const projectIdeas = [
                 data-total={total}
                 data-index={index}
               >
-                <td class="whitespace-nowrap px-4 py-3 font-mono text-sm text-slate-500">{index + 1}</td>
-                <td class="px-4 py-3 font-semibold text-slate-900">{idea.title}</td>
-                <td class="min-w-[18rem] px-4 py-3 text-slate-700">{idea.description}</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{easiness}/10</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{idea.moneyPotential}/10</td>
-                <td class="whitespace-nowrap px-4 py-3 text-slate-700">{total}</td>
+                <td class="whitespace-nowrap font-mono text-sm text-slate-500">{index + 1}</td>
+                <td class="font-semibold text-slate-900">{idea.title}</td>
+                <td class="min-w-[18rem] text-slate-700">{idea.description}</td>
+                <td class="whitespace-nowrap text-slate-700">{easiness}/10</td>
+                <td class="whitespace-nowrap text-slate-700">{idea.moneyPotential}/10</td>
+                <td class="whitespace-nowrap text-slate-700">{total}</td>
               </tr>
             );
           })}
           <tr id="ideasNoResults" class="hidden">
-            <td class="px-4 py-6 text-center text-slate-500" colspan="6">
+            <td class="text-center text-slate-500" colspan="6">
               No ideas match your search.
             </td>
           </tr>
@@ -896,7 +896,7 @@ const projectIdeas = [
           return;
         }
         if (button.dataset.sort === sortState.key) {
-          indicator.textContent = sortState.direction === 'asc' ? '▲' : '▼';
+          indicator.textContent = sortState.direction === 'asc' ? 'asc' : 'desc';
         } else {
           indicator.textContent = '';
         }

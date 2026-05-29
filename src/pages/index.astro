@@ -13,72 +13,72 @@ const pageKeywords = "Rasul Kireev, software engineer, digital garden, book revi
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
-  <div class="flex flex-col mx-auto mb-10 space-y-6 text-xl px-4">
-    <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Hey, I'm Rasul</h1>
-    <p class="mb-4 text-xl">
-      I'm a Software Engineer. This website is my Digital Garden, a collections of things I've learnt and created over the years.
+  <div class="page-stack">
+    <h1 class="page-title">Hey, I'm Rasul</h1>
+    <p class="page-lede">
+      I'm a software engineer. This website is my digital garden: a collection of things I've learned and created over the years.
     </p>
 
-    <p>
+    <p class="page-lede">
       I like to
       <a
-        class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+        class="text-link"
         href="/book-notes/"
       >read</a>,
       <a
-        class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+        class="text-link"
         href="/articles/"
       >write</a>,
       <a
-        class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+        class="text-link"
         href="/tutorials/"
       >code</a>,
       and do a lot of
       <a
         href="/projects"
-        class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+        class="text-link"
       >other things</a>.
       You can read more about me,
       <a
         href="/about"
-        class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+        class="text-link"
       >here</a>.
     </p>
 
-    <div class="flex flex-col space-y-4 rounded-lg p-4 border-2 border-blue-200">
+    <div class="surface-panel home-start">
       <p>
-        Here is a good place to start, when it comes to this site:
+        Good places to start:
       </p>
       <ul class="list-disc list-inside">
         <li>
           <a
-            class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600"
+            class="text-link"
             href="/favourites">
             My Favourites
           </a>
         </li>
         <li>
-          <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="/project-ideas">
+          <a class="text-link" href="/project-ideas">
             My Project Ideas
-          </a> - Feel free to steal them!
+          </a> - Feel free to steal them.
         </li>
         <li>
-          <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="/free-books-and-courses">
+          <a class="text-link" href="/free-books-and-courses">
             Free Books and Courses
           </a> - I found online over the years.
         </li>
         <li>
-          <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="/economical-writing">
+          <a class="text-link" href="/economical-writing">
             'Economical Writing' Book Review
           </a> - Most read book review on my site.
         </li>
         <li>
-          <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="/managing-django-with-poetry/">
+          <a class="text-link" href="/managing-django-with-poetry/">
             Managing a Django Project with Poetry
           </a> - Most read tutorial on my site.
         </li>
         <li>
-          <a class="text-lg font-semibold text-blue-700 border-b-2 border-blue-200 hover:bg-blue-200 hover:border-blue-600" href="/10-years-of-great-books/">
+          <a class="text-link" href="/10-years-of-great-books/">
             10 Years of Great Books
           </a> - Most read post on my site.
         </li>
@@ -91,7 +91,7 @@ const pageKeywords = "Rasul Kireev, software engineer, digital garden, book revi
       tag="home"
     />
 
-    <div class="flex justify-center mt-6 text-gray-900">
+    <div>
       <SocialLinks />
     </div>
 
