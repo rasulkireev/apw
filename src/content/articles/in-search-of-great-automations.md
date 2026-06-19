@@ -17,7 +17,7 @@ I've been thinking a lot about automations lately.
 
 Not in the abstract "AI will do everything for us" kind of way. More in the very practical, slightly boring way. What annoying things do I do every week? What information do I keep looking up? What decisions could be easier if the right context was already there?
 
-This is one of the reasons I am excited about [OpenClaw](https://github.com/openclaw/openclaw), [Codex Automations](https://developers.openai.com/codex/app/automations), and tools like them. I also wrote a short [OpenClaw deployment guide](/openclaw-with-docker-practical-setup-guide/) because it feels like we are getting closer to the point where I can have agents help with more of the background work of life and projects.
+This is one of the reasons I am excited about [OpenClaw](https://github.com/openclaw/openclaw), [Codex Automations](https://openai.com/academy/codex-automations/), and tools like them. I also wrote a short [OpenClaw deployment guide](/openclaw-with-docker-practical-setup-guide/) because it feels like we are getting closer to the point where I can have agents help with more of the background work of life and projects.
 
 But there is one problem.
 
