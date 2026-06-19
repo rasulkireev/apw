@@ -17,13 +17,15 @@ I've been thinking a lot about automations lately.
 
 Not in the abstract "AI will do everything for us" kind of way. More in the very practical, slightly boring way. What annoying things do I do every week? What information do I keep looking up? What decisions could be easier if the right context was already there?
 
-This is one of the reasons I am excited about OpenClaw and Codex Automations. It feels like we are getting closer to the point where I can have agents help with more of the background work of life and projects.
+This is one of the reasons I am excited about [OpenClaw](https://github.com/openclaw/openclaw), [Codex Automations](https://developers.openai.com/codex/app/automations), and tools like them. I also wrote a short [OpenClaw deployment guide](/openclaw-with-docker-practical-setup-guide/) because it feels like we are getting closer to the point where I can have agents help with more of the background work of life and projects.
 
 But there is one problem.
 
 Agents are only useful when they have the right data.
 
-This sounds obvious, but I think it is the main thing. If an agent doesn't know what is happening in my life, it can't really help. It can write a nice generic answer, but it can't notice the thing I forgot, connect two events together, or remind me about something that is quietly becoming a problem.
+Sherlock Holmes put it well in *A Scandal in Bohemia*: ["It is a capital mistake to theorize before one has data."](https://www.gutenberg.org/files/48320/48320-h/48320-h.htm)
+
+This sounds obvious, but I think it is the main thing. If an agent doesn't know [what is happening in my life](/february-2025/#documentation-and-reflection), it can't really help. It can write a nice generic answer, but it can't notice the thing I forgot, connect two events together, or remind me about something that is quietly becoming a problem.
 
 That is why I liked playing around with [OpenBudget](https://www.openbudget.sh/). The idea is simple: give AI tools access to your finance data, and then ask questions about it in normal language.
 
@@ -43,7 +45,7 @@ This is where things get exciting to me.
 
 I don't think the future is just "use ChatGPT more". I think each of us will have some version of an AI agent that knows enough context to be useful. Maybe it is one main agent, maybe it is a bunch of small agents, but the point is the same: they will need good tools and good data.
 
-So if you are building projects, I think this is worth paying attention to. Tools that make life easier for humans are great. Tools that make life easier for humans and their agents might be even better.
+So if you are [building projects](/cleanapp/), I think this is worth paying attention to. Tools that make life easier for humans are great. Tools that make life easier for humans and their agents might be even better.
 
 I am very interested in finding more of these.
 
