@@ -14,11 +14,15 @@ type: article
 description: A short note on why OpenBudget feels useful for faster personal finance reviews with AI.
 ---
 
+<!-- Drafted from Rasul's requested angle. Merge only after Rasul approves the first-person wording. -->
+
 I keep looking for small ways to make my life more efficient. Not in a fancy "optimize every second" way, but in the boring practical sense: fewer repeated tasks, fewer forgotten subscriptions, fewer tabs open in my head.
 
 Money is one of those areas where automation has a very obvious place.
 
 A friend is building [OpenBudget](https://www.openbudget.sh/), and he showed it to me recently. This is not a deep review after months of usage. It is more of a quick note about why the idea clicked for me and where I can see it fitting into my own workflow.
+
+Quick disclosure: this is not sponsored, and I do not have a financial relationship with OpenBudget. I am writing about it because the workflow is directly relevant to how I want to handle personal finance.
 
 I do not need a huge budgeting ritual. I mostly want a system that helps me answer questions quickly:
 
