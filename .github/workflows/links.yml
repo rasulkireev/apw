@@ -1,0 +1,97 @@
+name: Links
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: links-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  internal-links:
+    name: Internal links
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          run_install: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            --quiet
+            --offline
+            --index-files index.html
+            --root-dir "${{ github.workspace }}/dist"
+            './dist/**/*.html'
+            './dist/**/*.xml'
+            './dist/**/*.txt'
+          fail: true
+          jobSummary: true
+
+  external-links:
+    name: External links
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.repository }}-${{ github.ref_name }}-${{ github.sha }}
+          restore-keys: |
+            lychee-${{ github.repository }}-${{ github.ref_name }}-
+            lychee-${{ github.repository }}-
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --config lychee.toml
+            --quiet
+            --cache
+            --max-cache-age 7d
+            './README.md'
+            './CHANGELOG.md'
+            './src/**/*.md'
+            './src/**/*.mdx'
+            './src/**/*.astro'
+            './src/**/*.js'
+            './src/**/*.jsx'
+            './src/**/*.ts'
+            './src/**/*.tsx'
+            './src/**/*.vue'
+          fail: false
+          jobSummary: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

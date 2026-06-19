@@ -29,9 +29,9 @@ Another thing that I thought a lot about is AI. This books was written when ther
 
 I don't want to offload my thinking to AI, but I do want to use it to augment my understanding. I have just started thinking about it, but here are some prompts that I came up with, that I use in [Readwise Reader](https://readwise.io/i/rasul), when reading books:
 
-- [Nature of the Book](nature-of-the-book)
-- [Unity of the Book](unity-of-the-book)
-- [Book Structure Analysis](analyze-book-structure)
+- [Nature of the Book](/nature-of-the-book)
+- [Unity of the Book](/unity-of-the-book)
+- [Book Structure Analysis](/analyze-book-structure)
 
 The potential is limitless. I'm planning to write more prompt to help me read better.
 
@@ -39,7 +39,7 @@ One thing I know for sure is that Mortimer would want me to replace my own readi
 
 If you have any ideas, please let me know.
 
-I'm glad I read this book. I feel more prepared for a journey of a lifetime. A journey to better myself through reading great books. This is a book that helped me find the [10 Year Reading Plan](10-years-of-great-books), by the way.
+I'm glad I read this book. I feel more prepared for a journey of a lifetime. A journey to better myself through reading great books. This is a book that helped me find the [10 Year Reading Plan](/10-years-of-great-books), by the way.
 
 
 ## Learnings

@@ -1,0 +1,31 @@
+# Configuration for .github/workflows/links.yml.
+no_progress = true
+format = "compact"
+
+max_redirects = 10
+max_retries = 2
+retry_wait_time = 2
+timeout = 20
+max_concurrency = 8
+method = "get"
+
+accept = ["100..=103", "200..=299", "429"]
+exclude_loopback = true
+exclude_private = true
+exclude_link_local = true
+include_mail = false
+include_verbatim = false
+no_ignore = true
+
+exclude_path = [
+  "^node_modules/",
+  "^dist/_astro/",
+]
+
+exclude = [
+  "^#",
+  "^javascript:",
+  "^mailto:",
+  "^sms:",
+  "^tel:",
+]
