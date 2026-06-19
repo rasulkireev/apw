@@ -1,4 +1,17 @@
 ---
+type AttributionParams = Record<
+  string,
+  string | number | boolean | null | undefined
+>;
+
+interface Props {
+  href?: string | URL;
+  class?: string;
+  attribution?: string | AttributionParams;
+  rel?: string;
+  target?: string;
+}
+
 const {
   href,
   class: className,
@@ -12,21 +25,21 @@ let hrefValue = href ? href.toString() : "";
 let isExternal = false;
 let externalDomain = "";
 
-const getAttributionParams = () => {
+const getAttributionParams = (source: string): AttributionParams | null => {
   if (!attribution) {
     return null;
   }
 
   if (typeof attribution === "string") {
     return {
-      ref: "rasulkireev.com",
-      utm_source: "rasulkireev.com",
+      ref: source,
+      utm_source: source,
       utm_medium: "referral",
       utm_campaign: attribution,
     };
   }
 
-  if (typeof attribution === "object") {
+  if (typeof attribution === "object" && !Array.isArray(attribution)) {
     return attribution;
   }
 
@@ -42,11 +55,11 @@ if (hrefValue) {
     externalDomain = url.hostname;
 
     if (isExternal) {
-      const attributionParams = getAttributionParams();
+      const attributionParams = getAttributionParams(siteHost);
 
       if (attributionParams) {
         Object.entries(attributionParams).forEach(([key, value]) => {
-          if (value) {
+          if (value !== null && value !== undefined && value !== "") {
             url.searchParams.set(key, value.toString());
           }
         });
