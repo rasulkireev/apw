@@ -1,6 +1,6 @@
 ## 2026-06-19
 ### Added
-- Added a short personal article about using OpenBudget for AI-assisted monthly money audits.
+- Added a short personal article about useful life-admin automations, featuring OpenBudget as a personal finance example.
 
 ## 2026-01-10
 ### Added
