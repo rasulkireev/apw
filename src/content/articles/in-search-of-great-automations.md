@@ -39,16 +39,6 @@ This is exactly the kind of thing I want an agent to help with. Not because it i
 
 The more interesting part is the broader pattern. OpenBudget gives agents better data around finances. What are the other versions of this?
 
-For calendar, I want agents to understand what my week actually looked like, not just what was planned.
-
-For email, I want agents to know what conversations are waiting on me, what I promised to send, and what can be ignored.
-
-For receipts and subscriptions, I want agents to catch recurring charges and things I need for taxes later.
-
-For projects, I want agents to know what I shipped, what I got stuck on, and what follow-ups are still open.
-
-For personal logs, I want agents to help me notice patterns I would otherwise miss. When did I feel productive? What was I working on? What keeps coming up again and again?
-
 This is where things get exciting to me.
 
 I don't think the future is just "use ChatGPT more". I think each of us will have some version of an AI agent that knows enough context to be useful. Maybe it is one main agent, maybe it is a bunch of small agents, but the point is the same: they will need good tools and good data.
