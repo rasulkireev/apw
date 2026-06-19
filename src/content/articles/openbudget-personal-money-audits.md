@@ -2,7 +2,6 @@
 title: OpenBudget for Monthly Money Audits
 dateCreated: 2026-06-19
 dateUpdated: 2026-06-19
-published: true
 icon: ./icons/balance.png
 tags:
   - AI
