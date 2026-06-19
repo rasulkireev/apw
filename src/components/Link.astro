@@ -2,14 +2,36 @@
 const {
   href,
   class: className,
+  attribution,
   rel: relProp,
   target: targetProp,
   ...rest
 } = Astro.props;
 
-const hrefValue = href ? href.toString() : "";
+let hrefValue = href ? href.toString() : "";
 let isExternal = false;
 let externalDomain = "";
+
+const getAttributionParams = () => {
+  if (!attribution) {
+    return null;
+  }
+
+  if (typeof attribution === "string") {
+    return {
+      ref: "rasulkireev.com",
+      utm_source: "rasulkireev.com",
+      utm_medium: "referral",
+      utm_campaign: attribution,
+    };
+  }
+
+  if (typeof attribution === "object") {
+    return attribution;
+  }
+
+  return null;
+};
 
 if (hrefValue) {
   try {
@@ -18,6 +40,19 @@ if (hrefValue) {
     const isHttp = url.protocol === "http:" || url.protocol === "https:";
     isExternal = isHttp && url.hostname && url.hostname !== siteHost;
     externalDomain = url.hostname;
+
+    if (isExternal) {
+      const attributionParams = getAttributionParams();
+
+      if (attributionParams) {
+        Object.entries(attributionParams).forEach(([key, value]) => {
+          if (value) {
+            url.searchParams.set(key, value.toString());
+          }
+        });
+        hrefValue = url.toString();
+      }
+    }
   } catch {
     // Ignore invalid URLs; treat as internal.
   }
