@@ -19,6 +19,8 @@ I keep looking for small ways to make my life more efficient. Not in a fancy "op
 
 Money is one of those areas where I still want more automation.
 
+A friend is building [OpenBudget](https://www.openbudget.sh/), and he showed it to me recently. This is not a deep review after months of usage. It is more of a quick note about why the idea clicked for me and where I can see it fitting into my own workflow.
+
 I do not need a huge budgeting ritual. I mostly want a system that helps me answer questions quickly:
 
 - What did I spend more on this month than usual?
@@ -27,7 +29,7 @@ I do not need a huge budgeting ritual. I mostly want a system that helps me answ
 - How much did I spend on a specific category, merchant, or project?
 - Are there returns or refunds I still need to track?
 
-This is why I liked the idea behind [OpenBudget](https://www.openbudget.sh/).
+This is why I liked the idea behind OpenBudget.
 
 The simple pitch is that it connects your bank data to AI tools like Claude or ChatGPT, so instead of exporting CSVs and manually digging through transactions, you can ask questions in plain English.
 
