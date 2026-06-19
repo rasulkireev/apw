@@ -10,20 +10,16 @@ tags:
   - Productivity
 category: Personal
 type: article
-description: A short note on why OpenBudget feels useful for faster personal finance reviews with AI.
+description: A short note on why OpenBudget looks useful for faster personal finance reviews with AI.
 ---
 
-<!-- Drafted from Rasul's requested angle. Merge only after Rasul approves the first-person wording. -->
+There are obvious places where AI can make everyday life less annoying. Personal finance is one of them.
 
-I keep looking for small ways to make my life more efficient. Not in a fancy "optimize every second" way, but in the boring practical sense: fewer repeated tasks, fewer forgotten subscriptions, fewer tabs open in my head.
+A friend is building [OpenBudget](https://www.openbudget.sh/), and the idea is simple: connect bank data to AI tools like Claude or ChatGPT, then ask questions about transactions in plain English.
 
-Money is one of those areas where automation has a very obvious place.
+Quick disclosure: this is not sponsored, and there is no financial relationship with OpenBudget. It is just a relevant tool for the broader goal of making repetitive life admin more automated.
 
-A friend is building [OpenBudget](https://www.openbudget.sh/), and he showed it to me recently. This is not a deep review after months of usage. It is more of a quick note about why the idea clicked for me and where I can see it fitting into my own workflow.
-
-Quick disclosure: this is not sponsored, and I do not have a financial relationship with OpenBudget. I am writing about it because the workflow is directly relevant to how I want to handle personal finance.
-
-I do not need a huge budgeting ritual. I mostly want a system that helps me answer questions quickly:
+A tool like this is useful because personal finance does not always need a huge budgeting ritual. Often, the useful thing is being able to answer questions quickly:
 
 - What did I spend more on this month than usual?
 - Which subscriptions or recurring payments are still active?
@@ -31,13 +27,7 @@ I do not need a huge budgeting ritual. I mostly want a system that helps me answ
 - How much did I spend on a specific category, merchant, or project?
 - Are there returns or refunds I still need to track?
 
-This is why I liked the idea behind OpenBudget.
-
-The simple pitch is that it connects your bank data to AI tools like Claude or ChatGPT, so instead of exporting CSVs and manually digging through transactions, you can ask questions in plain English.
-
-That is the part that feels useful to me. I already use AI for code, notes, summaries, research, planning, and random life admin. Personal finance should be part of that same workflow too.
-
-The useful workflow is pretty straightforward:
+That is where OpenBudget fits nicely. Instead of exporting CSVs, opening bank statements, and manually digging through transactions, the workflow can become:
 
 1. Run a monthly audit.
 2. Ask what changed compared to last month.
@@ -47,12 +37,10 @@ The useful workflow is pretty straightforward:
 
 Nothing too dramatic. Just a calmer way to stay aware of where money is going.
 
-I also like that this fits nicely with the direction I want more of my life to move in: data available when needed, automation doing the boring parts, and AI helping me ask better questions.
-
-The simple version is this: once a month, instead of staring at bank statements, I want to ask:
+This is also a good example of where AI feels genuinely practical: data available when needed, automation doing the boring parts, and the human asking better questions.
 
 > "What should I pay attention to this month?"
 
-And then get an answer grounded in the actual transactions.
+That is a much better starting point than staring at a list of raw transactions.
 
 That feels much closer to how personal finance should work.
