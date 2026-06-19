@@ -10,35 +10,53 @@ tags:
   - Productivity
 category: Personal
 type: article
-description: A short note on finding practical automations for repetitive life admin.
+description: A short note on why useful automations depend on giving AI agents better data.
 ---
 
-I am always looking for small ways to make my life a little more efficient.
+I've been thinking a lot about automations lately.
 
-Not huge, life-changing systems. More like boring automations that remove one recurring annoyance, make a weekly or monthly task easier, or help me notice something I would otherwise miss.
+Not in the abstract "AI will do everything for us" kind of way. More in the very practical, slightly boring way. What annoying things do I do every week? What information do I keep looking up? What decisions could be easier if the right context was already there?
 
-I recently stumbled upon [OpenBudget](https://www.openbudget.sh/), which is a good example of the kind of tool I mean. It lets you connect your bank data to AI tools like Claude or ChatGPT, then ask questions about your own transactions in plain English.
+This is one of the reasons I am excited about OpenClaw and Codex Automations. It feels like we are getting closer to the point where I can have agents help with more of the background work of life and projects.
 
-Quick disclosure: this is not sponsored, and there is no financial relationship with OpenBudget. A friend is building it, I played around with it, and I liked the idea.
+But there is one problem.
 
-Personal finance is exactly the kind of area where I want more automation. I do not want to turn money tracking into a giant ritual. I mostly want to know what deserves attention.
+Agents are only useful when they have the right data.
 
-For example:
+This sounds obvious, but I think it is the main thing. If an agent doesn't know what is happening in my life, it can't really help. It can write a nice generic answer, but it can't notice the thing I forgot, connect two events together, or remind me about something that is quietly becoming a problem.
 
-- "What did I spend unusually more on this month?"
-- "Which recurring payments are still active?"
-- "Did I get charged for anything I thought I cancelled?"
-- "Are there refunds or returns I should follow up on?"
-- "How much did I spend on a specific merchant, project, or category?"
+That is why I liked playing around with [OpenBudget](https://www.openbudget.sh/). The idea is simple: give AI tools access to your finance data, and then ask questions about it in normal language.
 
-That feels much more useful than exporting CSVs, opening bank statements, and manually scanning line items.
+Personal finances are a perfect example of data that already exists, but is usually painful to use. I don't want to spend a Sunday exporting CSVs and looking through bank statements. I want to ask:
 
-The workflow I want is simple: run a monthly audit, ask what changed, notice hidden recurring payments, track refunds, and ask follow-up questions when something looks off.
+- What did I spend more on this month than usual?
+- Which subscriptions are still active?
+- Did I get charged for something I thought I cancelled?
+- Are there any refunds I should follow up on?
+- How much did I spend on a specific project or merchant?
 
-This is the kind of AI use case I find genuinely practical. The data is already there. The annoying part is the digging. A good automation should make it easier to ask better questions.
+This is exactly the kind of thing I want an agent to help with. Not because it is impossible to do manually. It is possible. It is just annoying enough that I won't do it consistently.
 
-So now I am curious: what other tools are people using for this?
+The more interesting part is the broader pattern. OpenBudget gives agents better data around finances. What are the other versions of this?
 
-Not just for personal finance, but for life admin in general. Calendar, email, subscriptions, receipts, travel, home admin, taxes, documents, anything like that.
+For calendar, I want agents to understand what my week actually looked like, not just what was planned.
 
-If you have a small automation tool that quietly saves you time or helps you stay on top of things, I would love to hear about it.
+For email, I want agents to know what conversations are waiting on me, what I promised to send, and what can be ignored.
+
+For receipts and subscriptions, I want agents to catch recurring charges and things I need for taxes later.
+
+For projects, I want agents to know what I shipped, what I got stuck on, and what follow-ups are still open.
+
+For personal logs, I want agents to help me notice patterns I would otherwise miss. When did I feel productive? What was I working on? What keeps coming up again and again?
+
+This is where things get exciting to me.
+
+I don't think the future is just "use ChatGPT more". I think each of us will have some version of an AI agent that knows enough context to be useful. Maybe it is one main agent, maybe it is a bunch of small agents, but the point is the same: they will need good tools and good data.
+
+So if you are building projects, I think this is worth paying attention to. Tools that make life easier for humans are great. Tools that make life easier for humans and their agents might be even better.
+
+I am very interested in finding more of these.
+
+What other tools are good at giving agents data about the things that already happen in life? Calendar, email, finance, health, documents, notes, browser history, subscriptions, family logistics, anything.
+
+If you know something useful, please send it my way.
