@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: links-${{ github.workflow }}-${{ github.ref }}
+  group: links-${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -81,6 +81,7 @@ jobs:
             --quiet
             --cache
             --max-cache-age 7d
+            --skip-missing
             './README.md'
             './CHANGELOG.md'
             './src/**/*.md'
