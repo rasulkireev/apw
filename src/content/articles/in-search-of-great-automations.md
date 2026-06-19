@@ -2,7 +2,7 @@
 title: In Search of Great Automations
 dateCreated: 2026-06-19
 dateUpdated: 2026-06-19
-icon: ./icons/balance.png
+icon: ./icons/icons8-home_automation.svg
 tags:
   - AI
   - Personal Finance
