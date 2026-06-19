@@ -1,3 +1,7 @@
+## 2026-06-19
+### Added
+- Added a short personal article about using OpenBudget for AI-assisted monthly money audits.
+
 ## 2026-01-10
 ### Added
 - Free book: Best Practices for Data Visualisation
