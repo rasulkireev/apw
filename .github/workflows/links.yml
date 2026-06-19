@@ -22,15 +22,15 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271
         with:
           run_install: false
 
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
         with:
           node-version: 22
           cache: pnpm
@@ -42,7 +42,7 @@ jobs:
         run: pnpm run build
 
       - name: Check internal links
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411
         with:
           args: >-
             --config lychee.toml
@@ -62,10 +62,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
 
       - name: Restore lychee cache
-        uses: actions/cache@v4
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: .lycheecache
           key: lychee-${{ github.repository }}-${{ github.ref_name }}-${{ github.sha }}
@@ -74,7 +74,7 @@ jobs:
             lychee-${{ github.repository }}-
 
       - name: Check links
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411
         with:
           args: >-
             --config lychee.toml
@@ -90,7 +90,6 @@ jobs:
             './src/**/*.jsx'
             './src/**/*.ts'
             './src/**/*.tsx'
-            './src/**/*.vue'
           fail: false
           jobSummary: true
         env:

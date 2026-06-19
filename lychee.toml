@@ -18,8 +18,8 @@ include_verbatim = false
 no_ignore = true
 
 exclude_path = [
-  "^node_modules/",
-  "^dist/_astro/",
+  "node_modules/",
+  "dist/_astro/",
 ]
 
 exclude = [
