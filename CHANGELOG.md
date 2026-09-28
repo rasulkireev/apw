@@ -1,4 +1,8 @@
 ## 2026-09-28
+### Added
+- IndexNow verification and automatic post-deployment submission of added, changed, and deleted sitemap URLs, with rollout checks and retryable submission state.
+
+## 2026-09-28
 ### Changed
 - Corrected SEO tool access and page priorities, enabled bounded DataForSEO research, and documented the standing Greptile review exception. No editorial content changes.
 
