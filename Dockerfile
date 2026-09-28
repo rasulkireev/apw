@@ -13,6 +13,8 @@ RUN pnpm install --frozen-lockfile
 
 FROM build-deps AS build
 COPY . .
+ARG PUBLIC_POSTHOG_KEY
+ARG PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
 RUN pnpm run build
 
 FROM nginx:alpine AS runtime

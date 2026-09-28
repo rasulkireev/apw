@@ -1,3 +1,8 @@
+## 2026-09-28
+### Added
+- PostHog visitor analytics on production pages, alongside existing Plausible tracking.
+- Build-time analytics configuration through GitHub repository variables.
+
 ## 2026-06-19
 ### Added
 - Added a short personal article about useful life-admin automations, featuring OpenBudget as a personal finance example.
