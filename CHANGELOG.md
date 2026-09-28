@@ -1,3 +1,7 @@
+## 2026-09-28
+### Added
+- Added SEO operating configuration, private research-store references, and a sanitized technical improvement plan. Autonomous maintenance is limited to engineering and existing-content improvements; no new AI-authored editorial content.
+
 ## 2026-06-19
 ### Added
 - Added a short personal article about useful life-admin automations, featuring OpenBudget as a personal finance example.
