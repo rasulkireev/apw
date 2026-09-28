@@ -32,6 +32,9 @@ jobs:
           context: .
           push: true
           file: Dockerfile
+          build-args: |
+            PUBLIC_POSTHOG_KEY=${{ vars.PUBLIC_POSTHOG_KEY }}
+            PUBLIC_POSTHOG_HOST=${{ vars.PUBLIC_POSTHOG_HOST }}
           tags: ghcr.io/${{ github.repository_owner }}/${{ env.PROJECT_NAME }}
 
       - name: Deploy to CapRover

@@ -1,0 +1,23 @@
+<script>
+  // Astro bundles this once; no inline script or window-global SDK is needed.
+  const key = import.meta.env.PUBLIC_POSTHOG_KEY;
+  const productionHosts = ['rasulkireev.com', 'www.rasulkireev.com'];
+
+  if (import.meta.env.PROD && key && productionHosts.includes(window.location.hostname)) {
+    import('posthog-js').then(({ default: posthog }) => {
+      posthog.init(key, {
+        api_host: import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
+        ui_host: 'https://us.posthog.com',
+        person_profiles: 'identified_only',
+        capture_pageview: true,
+        capture_pageleave: true,
+        autocapture: { mask_all_text: true, mask_all_element_attributes: true },
+        disable_session_recording: true,
+        enable_heatmaps: false,
+        disable_surveys: true,
+      });
+    }).catch(() => {
+      // Analytics must never prevent the site from working (e.g. ad blockers).
+    });
+  }
+</script>
