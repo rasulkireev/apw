@@ -1,0 +1,22 @@
+[
+  {
+    "claim": "Personal-site author remains Rasul Kireev",
+    "paths": [
+      "src/layouts/PostLayout.astro"
+    ],
+    "must_match": [
+      "Rasul Kireev"
+    ],
+    "must_not_match": []
+  },
+  {
+    "claim": "Site content remains file-backed Astro collections",
+    "paths": [
+      "src/pages/*.astro"
+    ],
+    "must_match": [
+      "getCollection"
+    ],
+    "must_not_match": []
+  }
+]

@@ -1,0 +1,256 @@
+{
+  "site": {
+    "domain": "https://rasulkireev.com",
+    "name": "Rasul Kireev",
+    "aliases": [
+      "Rasul Kireev",
+      "rasulkireev.com"
+    ],
+    "locale": {
+      "country": "United States",
+      "language": "en"
+    },
+    "repo_kind": "marketing",
+    "sitemap_url": "https://rasulkireev.com/sitemap-index.xml",
+    "canonical_decision": "Unresolved: live redirects choose apex while Google/canonicals choose www. Do not infer desired migration from measurement base URL."
+  },
+  "stack": {
+    "kind": "astro",
+    "pages_dir": "src/pages",
+    "content_dir": "src/content",
+    "content_layout": "src/layouts/PostLayout.astro",
+    "content_store": {
+      "type": "files",
+      "body_format": "Markdown/MDX",
+      "read_method": "git",
+      "write_method": "branch/PR"
+    },
+    "sitemap_path": "astro.config.mjs",
+    "alternate_sitemap_path": "src/pages/sitemap.xml.js",
+    "robots_path": "public/robots.txt",
+    "llms_txt_path": "src/pages/llms.txt.js",
+    "output_url_prefix": "/"
+  },
+  "gsc": {
+    "site_url": "sc-domain:rasulkireev.com"
+  },
+  "bing": {
+    "api_key_env": null,
+    "site_url": null
+  },
+  "openseo": {
+    "project_id": "8b0c7a92-ec7d-4d33-bedf-26d0e1439331",
+    "tracker_id": null
+  },
+  "ga4": {
+    "property_id": null
+  },
+  "competitors": [],
+  "content_surfaces": [
+    "src/content/",
+    "src/pages/",
+    "src/layouts/"
+  ],
+  "priority_pages": [
+    "https://rasulkireev.com/",
+    "https://rasulkireev.com/how-to-read-a-book/",
+    "https://rasulkireev.com/10-years-of-great-books/",
+    "https://rasulkireev.com/fifa-data-cleaning/"
+  ],
+  "crawl_hubs": [
+    "/",
+    "/articles/",
+    "/book-notes/",
+    "/tutorials/"
+  ],
+  "authority": {
+    "dr": null,
+    "dr_source": "none",
+    "kd_ceiling": null,
+    "kd_source": null,
+    "last_read": null
+  },
+  "budget": {
+    "per_run_usd": 0,
+    "ai_panel_cadence_days": 14,
+    "health_diff_cadence_days": 1,
+    "claim_reverify_sample": 3,
+    "link_check_cadence_days": 7
+  },
+  "select": {
+    "floor": 9
+  },
+  "paths": {
+    "roadmap": ".seo/roadmap.md",
+    "ledger": ".seo/content-ledger.md",
+    "truth": ".seo/truth.md",
+    "needs_you": ".seo/needs-you.md",
+    "runs": ".seo/runs/",
+    "health": ".seo/health/",
+    "briefs": ".seo/briefs/",
+    "evidence": ".seo/evidence/"
+  },
+  "logs": {
+    "path": null,
+    "format": "none"
+  },
+  "tools_detected": {
+    "gsc": true,
+    "bing_webmaster": false,
+    "dfs": false,
+    "openseo": true,
+    "answer_engine_data": false,
+    "brand_tracking": false,
+    "crawl_audit": true,
+    "python3": true,
+    "ga4": false,
+    "psi": true,
+    "logs": false,
+    "community_search": false,
+    "social_posting": false,
+    "browser": true,
+    "git": true,
+    "rowset": true,
+    "posthog": false,
+    "citeguild": false,
+    "reddit": false
+  },
+  "tools_declined": [],
+  "cache": {
+    "domain_rating": {
+      "value": null,
+      "read": null
+    },
+    "keyword_volumes": {
+      "read": null
+    },
+    "competitor_gap": {
+      "read": null
+    },
+    "ai_panel": {
+      "read": null
+    },
+    "health_fingerprint": {
+      "read": null
+    }
+  },
+  "sampling": {
+    "p1": {
+      "variants": 6,
+      "platforms": 4,
+      "n": 3
+    },
+    "p2": {
+      "variants": 3,
+      "platforms": 2,
+      "n": 2
+    },
+    "p3": {
+      "variants": 1,
+      "platforms": 1,
+      "n": 1
+    }
+  },
+  "initialized": true,
+  "radar": {
+    "seeds": [
+      "book reviews and reading methods",
+      "Django and Python tutorials",
+      "personal projects and automation"
+    ],
+    "communities": [],
+    "cadence_days": 7
+  },
+  "speed": {
+    "psi_api_key_env": "PSI_API_KEY",
+    "top_pages": 10,
+    "cadence_days": 7
+  },
+  "cadence": {
+    "gsc_hours": 20,
+    "health_hours": 6,
+    "link_check_hours": 20,
+    "radar_free_hours": 20,
+    "bing_hours": 20,
+    "outcomes_hours": 20,
+    "competitor_hours": 168,
+    "serp_hours": 168,
+    "backlinks_hours": 168,
+    "link_opportunities_hours": 168,
+    "seasonality_hours": 720,
+    "site_search_hours": 168
+  },
+  "git": {
+    "mode": "pr",
+    "merge_policy": "autonomous",
+    "required_gates": "Repository CI and enabled automated review; no human approval required."
+  },
+  "repo": {
+    "watch_paths": [
+      "CHANGELOG.md",
+      "src/content/**",
+      "src/pages/**",
+      "src/layouts/**",
+      "astro.config.*"
+    ]
+  },
+  "serp": {
+    "top_queries": 20
+  },
+  "distribute": {
+    "enabled": false,
+    "reason": "No new editorial content or publication/outreach authorization."
+  },
+  "posthog": {
+    "host": null,
+    "project_id": null,
+    "production_hosts": [],
+    "timezone": null,
+    "success_events": [],
+    "site_search_events": [],
+    "web_vitals_enabled": null
+  },
+  "research_store": {
+    "backend": "rowset",
+    "project_key": "9d31d9aa-9a59-4065-b576-03abb4088033",
+    "seo_section_key": "d7b766cd-e103-46e8-bb8f-f07038812384",
+    "datasets": {
+      "observations": "12a243e2-c643-459b-89ed-e6e228a8f8b9",
+      "runs": "d0547a0e-19f2-4342-bedc-b4c50a3ca919",
+      "actions": "318fbce5-d46a-4c25-8e91-4bab59e4decd"
+    },
+    "schema_version": 1,
+    "last_sync_at": "2026-09-28T09:41:00Z"
+  },
+  "community": {
+    "reddit_enabled": true,
+    "subreddits": [],
+    "max_results_per_query": 10
+  },
+  "citations": {
+    "citeguild_enabled": true,
+    "max_results": 10
+  },
+  "tool_evidence": {
+    "verified_on": "2026-09-28",
+    "source": "Private baseline run apw:2026-09-28:baseline",
+    "note": "No new paid research authorized; presence of optional tools is not verified access."
+  },
+  "version": "2.2",
+  "editorial_policy": {
+    "new_ai_editorial_content": false,
+    "existing_content_edits": true,
+    "preserve_author_voice_and_experience": true,
+    "authority_date": "2026-09-28",
+    "human_approval_required": false
+  },
+  "analytics": {
+    "provider": "plausible",
+    "site_id": "rasulkireev.com",
+    "host": "https://plausible-v2.cr.lvtd.dev",
+    "api_key_env": "PLAUSIBLE_API_KEY",
+    "timezone": "Europe/Istanbul",
+    "conversion_attribution": "unverified",
+    "posthog_note": "Instrumentation added separately in PR31 during setup. Project/event access and deployed coverage not yet verified; do not treat tools_detected.posthog=false as absence of source instrumentation."
+  }
+}

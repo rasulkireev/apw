@@ -23,5 +23,22 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Private SEO state (hydrate outside Git; Rowset is authoritative)
+.seo/health/
+.seo/gsc/
+.seo/evidence/
+.seo/census/
+.seo/competitors/
+.seo/serp/
+.seo/backlinks/
+.seo/aeo/
+.seo/keyword-research.json
+.seo/backlink-targets.json
+.seo/content-ledger.md
+.seo/census.md
+.seo/outcomes.json
+.seo/priors.json
+.seo/seasonality.json
+.seo/*snapshot*.json
 .env.*
 !.env.example
