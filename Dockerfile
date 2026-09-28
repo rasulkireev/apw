@@ -15,6 +15,7 @@ FROM build-deps AS build
 COPY . .
 ARG PUBLIC_POSTHOG_KEY
 ARG PUBLIC_POSTHOG_HOST=https://us.i.posthog.com
+ARG INDEXNOW_REVISION=local
 RUN pnpm run build
 
 FROM nginx:alpine AS runtime

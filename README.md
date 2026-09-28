@@ -77,3 +77,29 @@ After merging/deploying, visit a production page and check PostHog Live events
 for `$pageview` and navigation/click events. Check that newsletter field values
 are absent. Blocking PostHog should not affect navigation or newsletter forms.
 To disable collection, clear the GitHub `PUBLIC_POSTHOG_KEY` variable and rebuild.
+
+## IndexNow
+
+After each successful production rollout, the deployment workflow notifies
+[IndexNow](https://www.indexnow.org/documentation) about added, changed, and
+removed sitemap pages. No editorial content is generated or modified.
+
+- `scripts/indexnow-config.json` defines the canonical `www` origin and ownership
+  key. The matching `public/<key>.txt` is intentionally served publicly; it is
+  not an administrative credential.
+- The build writes `dist/indexnow-manifest.json` containing SHA-256 hashes of
+  sitemap HTML and `INDEXNOW_REVISION` (the deployed commit). A layout/asset
+  reference change can correctly mark multiple pages as changed.
+- Deployment waits up to 30 polls for that revision, verifies the live key,
+  then submits batches of at most 10,000 URLs. HTTP 200 means received; 202
+  means received with key validation pending. Neither guarantees indexing.
+- GitHub Actions caches the last successfully submitted manifest. Failed
+  submissions fail the notification step without rolling back the website or
+  advancing submission state. Rerun the failed deploy workflow to retry. If the
+  cache expires/is evicted, the next run safely resubmits the full sitemap.
+- Production deployments are serialized to avoid overlapping rollout/submission
+  operations. The first deployment submits the whole sitemap.
+
+Run integration checks with `node --test tests/*.test.mjs`. For an explicit
+operator retry, use `INDEXNOW_REVISION=<live-commit> node scripts/indexnow.mjs submit`
+from the matching checkout (without local state this submits all sitemap URLs).

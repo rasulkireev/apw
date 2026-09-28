@@ -5,6 +5,10 @@ on:
     branches:
         - main
 
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
 env:
   PROJECT_NAME: apw
 
@@ -33,6 +37,7 @@ jobs:
           push: true
           file: Dockerfile
           build-args: |
+            INDEXNOW_REVISION=${{ github.sha }}
             PUBLIC_POSTHOG_KEY=${{ vars.PUBLIC_POSTHOG_KEY }}
             PUBLIC_POSTHOG_HOST=${{ vars.PUBLIC_POSTHOG_HOST }}
           tags: ghcr.io/${{ github.repository_owner }}/${{ env.PROJECT_NAME }}
@@ -44,3 +49,26 @@ jobs:
             app: ${{ env.PROJECT_NAME }}
             token: ${{ secrets.APP_TOKEN }}
             image: ghcr.io/${{ github.repository_owner }}/${{ env.PROJECT_NAME }}
+
+      - name: Set up Node for IndexNow
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: 22
+
+      - name: Restore last successful IndexNow submission
+        uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: .indexnow-state
+          key: indexnow-v1-${{ github.sha }}
+          restore-keys: indexnow-v1-
+
+      - name: Verify rollout and notify IndexNow
+        run: node scripts/indexnow.mjs submit
+        env:
+          INDEXNOW_REVISION: ${{ github.sha }}
+
+      - name: Save successful IndexNow submission
+        uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
+        with:
+          path: .indexnow-state
+          key: indexnow-v1-${{ github.sha }}
