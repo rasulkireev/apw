@@ -1,4 +1,8 @@
 ## 2026-09-28
+### Changed
+- Corrected SEO tool access and page priorities, enabled bounded DataForSEO research, and documented the standing Greptile review exception. No editorial content changes.
+
+## 2026-09-28
 ### Added
 - Added SEO operating configuration, private research-store references, and a sanitized technical improvement plan. Autonomous maintenance is limited to engineering and existing-content improvements; no new AI-authored editorial content.
 

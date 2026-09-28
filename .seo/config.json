@@ -36,11 +36,13 @@
   },
   "bing": {
     "api_key_env": null,
-    "site_url": null
+    "site_url": "https://www.rasulkireev.com/",
+    "registration_status": "Owner believes registered; scoped API access not verified. Site URL must be confirmed by provider."
   },
   "openseo": {
     "project_id": "8b0c7a92-ec7d-4d33-bedf-26d0e1439331",
-    "tracker_id": null
+    "tracker_id": null,
+    "brand_tracking_status": "Owner expects capability via OpenSEO; brand-monitoring interface and measurements not verified. Connected project alone is not proof. Rank-tracker listing returned no configured trackers; rank tracking is distinct from brand tracking."
   },
   "ga4": {
     "property_id": null
@@ -54,8 +56,7 @@
   "priority_pages": [
     "https://rasulkireev.com/",
     "https://rasulkireev.com/how-to-read-a-book/",
-    "https://rasulkireev.com/10-years-of-great-books/",
-    "https://rasulkireev.com/fifa-data-cleaning/"
+    "https://rasulkireev.com/10-years-of-great-books/"
   ],
   "crawl_hubs": [
     "/",
@@ -71,11 +72,12 @@
     "last_read": null
   },
   "budget": {
-    "per_run_usd": 0,
+    "per_run_usd": 2,
     "ai_panel_cadence_days": 14,
     "health_diff_cadence_days": 1,
     "claim_reverify_sample": 3,
-    "link_check_cadence_days": 7
+    "link_check_cadence_days": 7,
+    "authority": "Owner requested enabling DataForSEO on 2026-09-28; use skill default cap of USD 2 per unattended run. Preflight costs, reuse fresh data, no billing changes."
   },
   "select": {
     "floor": 9
@@ -97,7 +99,7 @@
   "tools_detected": {
     "gsc": true,
     "bing_webmaster": false,
-    "dfs": false,
+    "dfs": true,
     "openseo": true,
     "answer_engine_data": false,
     "brand_tracking": false,
@@ -111,8 +113,8 @@
     "browser": true,
     "git": true,
     "rowset": true,
-    "posthog": false,
-    "citeguild": false,
+    "posthog": true,
+    "citeguild": true,
     "reddit": false
   },
   "tools_declined": [],
@@ -183,7 +185,7 @@
   "git": {
     "mode": "pr",
     "merge_policy": "autonomous",
-    "required_gates": "Repository CI and enabled automated review; no human approval required."
+    "required_gates": "Repository CI, correctness checks and other applicable reviews. Greptile explicitly waived for this SEO cron by owner on 2026-09-28; record waived, never passed. No human approval required."
   },
   "repo": {
     "watch_paths": [
@@ -202,9 +204,12 @@
     "reason": "No new editorial content or publication/outreach authorization."
   },
   "posthog": {
-    "host": null,
-    "project_id": null,
-    "production_hosts": [],
+    "host": "https://us.posthog.com",
+    "project_id": "632904",
+    "production_hosts": [
+      "rasulkireev.com",
+      "www.rasulkireev.com"
+    ],
     "timezone": null,
     "success_events": [],
     "site_search_events": [],
@@ -229,12 +234,13 @@
   },
   "citations": {
     "citeguild_enabled": true,
-    "max_results": 10
+    "max_results": 10,
+    "membership_status": "Owner confirmed site is on CiteGuild on 2026-09-28; bounded relevant search access verified."
   },
   "tool_evidence": {
     "verified_on": "2026-09-28",
-    "source": "Private baseline run apw:2026-09-28:baseline",
-    "note": "No new paid research authorized; presence of optional tools is not verified access."
+    "source": "Private capability observation apw:2026-09-28:capabilities:connections",
+    "note": "tools_detected means verified usable access, not whether a service exists. Bing and brand tracking remain unverified, not declined. PostHog, DFS and CiteGuild checks passed; raw evidence stays private."
   },
   "version": "2.2",
   "editorial_policy": {
@@ -251,6 +257,14 @@
     "api_key_env": "PLAUSIBLE_API_KEY",
     "timezone": "Europe/Istanbul",
     "conversion_attribution": "unverified",
-    "posthog_note": "Instrumentation added separately in PR31 during setup. Project/event access and deployed coverage not yet verified; do not treat tools_detected.posthog=false as absence of source instrumentation."
+    "posthog_note": "Production-host events verified on 2026-09-28. Conversion attribution, full page coverage and field vitals remain unverified."
+  },
+  "dfs": {
+    "enabled": true,
+    "login_env": "DATAFORSEO_LOGIN",
+    "password_env": "DATAFORSEO_PASSWORD",
+    "secret_path": "/services/dataforseo",
+    "account_access_verified_on": "2026-09-28",
+    "endpoint_coverage": "Free appendix/user_data succeeded; paid endpoints not yet tested."
   }
 }
