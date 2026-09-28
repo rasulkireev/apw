@@ -4,9 +4,9 @@ This is an existing-content and engineering program, not a publishing pipeline. 
 
 ## Daily operation
 
-Read the installed unified `seo` skill and `PROCESSES.md` in the operator workspace. Measure, rank eligible repairs/refreshes, ship one justified action through PR, verify, and register. Existing user authorization permits merging without human approval after required CI/reviews. Do not change protections. Record unavailable reviews as blocked, not passed.
+Read the installed unified `seo` skill and `PROCESSES.md` in the operator workspace. Measure, rank eligible repairs/refreshes, ship one justified action through PR, verify, and register. Existing user authorization permits merging without human approval after required CI/reviews. Do not change protections. Greptile has a standing owner-authorized waiver for this cron (2026-09-28): record waived, not passed; no repeated approval requests. Other unavailable required reviews remain blocked.
 
-The scheduler is outside this repo: daily 10:30 Europe/Istanbul, reporting to the personal-website Slack channel. This config does not create a schedule. No new paid research unless separately authorized; current per-run incremental research budget is zero.
+The scheduler is outside this repo: daily 10:30 Europe/Istanbul, reporting to the personal-website Slack channel. This config does not create a schedule. DataForSEO is enabled at the skill-default USD 2 per-run ceiling following the owner's 2026-09-28 instruction. Preflight costs and reuse fresh data; a ceiling is not a spending target. Do not change billing.
 
 ## Authoritative private store
 
@@ -27,3 +27,9 @@ Resolve observed www/apex redirects before counting internal links or orphans. P
 ## Privacy
 
 Never commit credentials, private analytics, raw responses, research snapshots, health inventories, content/action ledgers or outcome history. Ignore patterns are defense in depth, not permission to stage everything. Keep public rule/plan files here; store research in Rowset. Original local audit evidence is retained until read-back verification succeeds.
+
+## Connected tools and priorities
+
+PostHog production-host events, DataForSEO free account access and CiteGuild search were verified on 2026-09-28. PostHog conversion attribution is still unverified. The owner reports CiteGuild membership and believes Bing registration exists; Bing API access remains unverified. OpenSEO project access is verified, but a brand-tracking interface/measurement is not; do not equate rank tracking or AI referrals with brand visibility. Capability flags mean verified access, not service absence. Recheck unresolved capabilities when a supported connection becomes available.
+
+FIFA data cleaning is not a priority page, per the owner. Keep it in ordinary site health coverage without elevating it based on traffic alone.
