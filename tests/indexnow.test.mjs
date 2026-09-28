@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, mkdir, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { changedUrls, validateManifest, submit } from '../scripts/indexnow.mjs';
+import { buildManifest, changedUrls, validateManifest, submit } from '../scripts/indexnow.mjs';
 const config = JSON.parse(await readFile(new URL('../scripts/indexnow-config.json', import.meta.url)));
 const url = name => `${config.origin}/${name}`;
 const manifest = pages => ({ version: 1, revision: 'abc', pages });
@@ -47,5 +47,19 @@ test('does not submit when live key differs', async () => {
     await assert.rejects(submit({ revision: 'abc', previousPath: join(dir, 'state.json'),
       fetchFn: async target => target.includes('manifest') ? Response.json(manifest({ [url('')]: hash })) : new Response('wrong'),
     }), /key verification failed/);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
+
+test('build uses final apex URLs and tracks actual generated HTML changes', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'indexnow-build-'));
+  try {
+    await mkdir(join(dir, 'hello'));
+    await writeFile(join(dir, 'hello/index.html'), '<h1>Hello</h1>');
+    await writeFile(join(dir, 'sitemap-0.xml'), `<urlset><url><loc>${config.sitemapOrigin}/hello/</loc></url></urlset>`);
+    const first = await buildManifest(dir, 'one');
+    assert.deepEqual(Object.keys(first.pages), [url('hello/')]);
+    await writeFile(join(dir, 'hello/index.html'), '<h1>Updated</h1>');
+    const second = await buildManifest(dir, 'two');
+    assert.deepEqual(changedUrls(first, second), [url('hello/')]);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
