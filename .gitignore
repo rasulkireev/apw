@@ -40,3 +40,5 @@ pnpm-debug.log*
 .seo/priors.json
 .seo/seasonality.json
 .seo/*snapshot*.json
+.env.*
+!.env.example

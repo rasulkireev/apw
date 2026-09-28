@@ -38,6 +38,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Test analytics guards
+        run: node --test tests/posthog.test.mjs
+
       - name: Build
         run: pnpm run build
 

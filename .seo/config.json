@@ -250,6 +250,7 @@
     "host": "https://plausible-v2.cr.lvtd.dev",
     "api_key_env": "PLAUSIBLE_API_KEY",
     "timezone": "Europe/Istanbul",
-    "conversion_attribution": "unverified"
+    "conversion_attribution": "unverified",
+    "posthog_note": "Instrumentation added separately in PR31 during setup. Project/event access and deployed coverage not yet verified; do not treat tools_detected.posthog=false as absence of source instrumentation."
   }
 }
