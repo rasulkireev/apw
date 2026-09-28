@@ -84,9 +84,11 @@ After each successful production rollout, the deployment workflow notifies
 [IndexNow](https://www.indexnow.org/documentation) about added, changed, and
 removed sitemap pages. No editorial content is generated or modified.
 
-- `scripts/indexnow-config.json` defines the canonical `www` origin and ownership
+- `scripts/indexnow-config.json` defines the final non-www origin and ownership
   key. The matching `public/<key>.txt` is intentionally served publicly; it is
-  not an administrative credential.
+  not an administrative credential. Sitemap URLs currently use `www`, which
+  redirects to the apex host; submissions normalize to the final HTTPS host.
+  This integration does not change existing canonicals or redirect rules.
 - The build writes `dist/indexnow-manifest.json` containing SHA-256 hashes of
   sitemap HTML and `INDEXNOW_REVISION` (the deployed commit). A layout/asset
   reference change can correctly mark multiple pages as changed.

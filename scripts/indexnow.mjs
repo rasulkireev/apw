@@ -37,9 +37,10 @@ export async function buildManifest(dist = 'dist', revision = process.env.INDEXN
   for (const file of maps) {
     const xml = await readFile(join(dist, file), 'utf8');
     for (const match of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
-      const url = match[1].replace(/&amp;/g, '&');
-      const parsed = new URL(url);
-      if (parsed.origin !== config.origin) throw new Error('Unexpected sitemap origin');
+      const parsed = new URL(match[1].replace(/&amp;/g, '&'));
+      if (parsed.origin !== config.sitemapOrigin) throw new Error('Unexpected sitemap origin');
+      // The current sitemap uses www, but production redirects to the apex host.
+      const url = new URL(parsed.pathname, config.origin).href;
       const pathname = decodeURIComponent(parsed.pathname);
       const relative = pathname.replace(/^\//, '');
       const htmlPath = resolve(dist, relative.endsWith('.html') ? relative : join(relative, 'index.html'));
