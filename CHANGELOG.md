@@ -1,3 +1,7 @@
+## 2026-09-29
+### Fixed
+- Made the legacy sitemap reuse Astro's generated route inventory, removing nonexistent URLs and including the changelog without maintaining a second page list.
+
 ## 2026-09-28
 ### Added
 - IndexNow verification and automatic post-deployment submission of added, changed, and deleted sitemap URLs, with rollout checks and retryable submission state.
