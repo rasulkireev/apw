@@ -5,6 +5,7 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 
 import sitemap from "@astrojs/sitemap";
+import sitemapAlias from "./scripts/sitemap-alias.mjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,7 +13,7 @@ export default defineConfig({
   image: {
     service: passthroughImageService()
   },
-  integrations: [tailwind(), vue(), mdx(), react(), sitemap()],
+  integrations: [tailwind(), vue(), mdx(), react(), sitemap(), sitemapAlias()],
   output: "static",
   i18n: {
     defaultLocale: "en",

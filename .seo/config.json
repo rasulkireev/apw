@@ -26,7 +26,7 @@
       "write_method": "branch/PR"
     },
     "sitemap_path": "astro.config.mjs",
-    "alternate_sitemap_path": "src/pages/sitemap.xml.js",
+    "alternate_sitemap_path": "scripts/sitemap-alias.mjs",
     "robots_path": "public/robots.txt",
     "llms_txt_path": "src/pages/llms.txt.js",
     "output_url_prefix": "/"
