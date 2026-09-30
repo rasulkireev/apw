@@ -62,3 +62,15 @@ jobs:
           context: .
           file: Dockerfile
           push: false
+          load: true
+          tags: apw:routing-test
+
+      - name: Verify production nginx routing
+        run: |
+          docker run --detach --name apw-routing --publish 127.0.0.1:8080:80 apw:routing-test
+          trap 'docker logs apw-routing; docker rm --force apw-routing' EXIT
+          for attempt in $(seq 1 20); do
+            if curl --silent --fail http://127.0.0.1:8080/ > /dev/null; then break; fi
+            sleep 1
+          done
+          APW_ROUTING_TEST_ORIGIN=http://127.0.0.1:8080 node --test tests/nginx-routing.test.mjs

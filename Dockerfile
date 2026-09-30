@@ -20,6 +20,8 @@ RUN pnpm run build
 
 FROM nginx:alpine AS runtime
 COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx/redirects.conf /etc/nginx/conf.d/redirects.conf
+RUN nginx -t
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
