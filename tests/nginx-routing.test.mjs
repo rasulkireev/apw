@@ -9,7 +9,10 @@ const request = path => fetch(new URL(path, origin), {
 });
 
 test('nginx directory redirects retain the public HTTPS scheme and query', { skip: !origin }, async () => {
-  for (const path of ['/articles', '/how-to-read-a-book']) {
+  for (const [path, title] of [
+    ['/articles', 'Articles by Rasul Kireev'],
+    ['/how-to-read-a-book', 'How to Read a Book by Mortimer Adler | Book Review by Rasul Kireev'],
+  ]) {
     for (const query of ['', '?source=seo-test&value=a%20b']) {
       const response = await request(path + query);
       assert.equal(response.status, 301);
@@ -19,7 +22,8 @@ test('nginx directory redirects retain the public HTTPS scheme and query', { ski
       assert.equal(publicDestination.origin, 'https://rasulkireev.com');
       const destination = await request(location);
       assert.equal(destination.status, 200);
-      assert.match(await destination.text(), /<h1\b/);
+      const html = await destination.text();
+      assert.equal(html.match(/<title>(.*?)<\/title>/s)?.[1], title);
     }
   }
 });
