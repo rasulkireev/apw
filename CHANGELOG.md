@@ -1,3 +1,7 @@
+## 2026-09-30
+### Fixed
+- Kept nginx directory redirects on the visitor's HTTPS scheme behind the reverse proxy, eliminating HTTP detours for slashless page links. Existing host and canonical conventions are unchanged.
+
 ## 2026-09-29
 ### Fixed
 - Made the legacy sitemap reuse Astro's generated route inventory, removing nonexistent URLs and including the changelog without maintaining a second page list.
