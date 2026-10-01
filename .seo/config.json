@@ -1,6 +1,6 @@
 {
   "site": {
-    "domain": "https://rasulkireev.com",
+    "domain": "https://www.rasulkireev.com",
     "name": "Rasul Kireev",
     "aliases": [
       "Rasul Kireev",
@@ -11,8 +11,8 @@
       "language": "en"
     },
     "repo_kind": "marketing",
-    "sitemap_url": "https://rasulkireev.com/sitemap-index.xml",
-    "canonical_decision": "Unresolved: live redirects choose apex while Google/canonicals choose www. Do not infer desired migration from measurement base URL."
+    "sitemap_url": "https://www.rasulkireev.com/sitemap-index.xml",
+    "canonical_decision": "Preserve existing declared/Google-selected HTTPS www host. Proxy redirects and IndexNow aligned on 2026-10-01; existing article canonical-path conventions unchanged."
   },
   "stack": {
     "kind": "astro",

@@ -1,3 +1,7 @@
+## 2026-10-01
+### Fixed
+- Aligned production routing and IndexNow with the existing HTTPS www canonical host. Noncanonical host/protocol requests now redirect permanently without HTTP detours; article text and canonical paths are unchanged.
+
 ## 2026-09-30
 ### Fixed
 - Kept nginx directory redirects on the visitor's HTTPS scheme behind the reverse proxy, eliminating HTTP detours for slashless page links. Existing host and canonical conventions are unchanged.

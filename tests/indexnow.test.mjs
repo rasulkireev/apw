@@ -50,7 +50,7 @@ test('does not submit when live key differs', async () => {
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
-test('build uses final apex URLs and tracks actual generated HTML changes', async () => {
+test('build uses final canonical URLs and tracks actual generated HTML changes', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'indexnow-build-'));
   try {
     await mkdir(join(dir, 'hello'));
