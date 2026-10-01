@@ -39,7 +39,7 @@ export async function buildManifest(dist = 'dist', revision = process.env.INDEXN
     for (const match of xml.matchAll(/<loc>(.*?)<\/loc>/g)) {
       const parsed = new URL(match[1].replace(/&amp;/g, '&'));
       if (parsed.origin !== config.sitemapOrigin) throw new Error('Unexpected sitemap origin');
-      // The current sitemap uses www, but production redirects to the apex host.
+      // Submission URLs use the same canonical origin as the generated sitemap.
       const url = new URL(parsed.pathname, config.origin).href;
       const pathname = decodeURIComponent(parsed.pathname);
       const relative = pathname.replace(/^\//, '');
