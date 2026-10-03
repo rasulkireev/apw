@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build && node scripts/indexnow.mjs build",
+    "build": "astro build && node scripts/canonical-paths.mjs && node scripts/indexnow.mjs build",
     "preview": "astro preview",
     "astro": "astro"
   },

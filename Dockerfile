@@ -21,6 +21,8 @@ RUN pnpm run build
 FROM nginx:alpine AS runtime
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx/redirects.conf /etc/nginx/conf.d/redirects.conf
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/generated/canonical-locations.conf /etc/nginx/canonical-locations.conf
 RUN nginx -t
 
 EXPOSE 80
