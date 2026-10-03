@@ -1,3 +1,7 @@
+## 2026-10-03
+### Fixed
+- Serve existing slashless article canonical URLs directly, redirect their trailing-slash aliases, and use those same canonical paths in sitemaps and IndexNow. Article text, declared canonicals, hub URLs and external canonical overrides are unchanged.
+
 ## 2026-10-01
 ### Fixed
 - Aligned production routing and IndexNow with the existing HTTPS www canonical host. Noncanonical host/protocol requests now redirect permanently without HTTP detours; article text and canonical paths are unchanged.

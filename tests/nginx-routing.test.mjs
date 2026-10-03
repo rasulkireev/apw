@@ -11,7 +11,6 @@ const request = path => fetch(new URL(path, origin), {
 test('nginx directory redirects retain the public HTTPS scheme and query', { skip: !origin }, async () => {
   for (const [path, title] of [
     ['/articles', 'Articles by Rasul Kireev'],
-    ['/how-to-read-a-book', 'How to Read a Book by Mortimer Adler | Book Review by Rasul Kireev'],
   ]) {
     for (const query of ['', '?source=seo-test&value=a%20b']) {
       const response = await request(path + query);
@@ -29,7 +28,7 @@ test('nginx directory redirects retain the public HTTPS scheme and query', { ski
 });
 
 test('nginx keeps pages, sitemap, assets and real 404 responses working', { skip: !origin }, async () => {
-  for (const path of ['/', '/articles/', '/how-to-read-a-book/', '/sitemap.xml', '/sitemap-index.xml', '/logo.png']) {
+  for (const path of ['/', '/articles/', '/how-to-read-a-book', '/tag/Personal%20Finance/', '/sitemap.xml', '/sitemap-index.xml', '/logo.png']) {
     const response = await request(path);
     assert.equal(response.status, 200, path);
     assert.equal(response.headers.get('location'), null, path);
@@ -39,5 +38,28 @@ test('nginx keeps pages, sitemap, assets and real 404 responses working', { skip
     const response = await request(path);
     assert.equal(response.status, 404, path);
     assert.equal(response.headers.get('location'), null, path);
+  }
+});
+
+test('every generated article canonical serves directly and its alias redirects once', { skip: !origin }, async () => {
+  const response = await request('/indexnow-manifest.json');
+  assert.equal(response.status, 200);
+  const { pages } = await response.json();
+  const owners = Object.keys(pages).map(url => new URL(url).pathname).filter(path => !path.endsWith('/'));
+  assert.ok(owners.length > 100, 'exercise the complete generated article routing inventory');
+  for (const path of owners) {
+    const direct = await request(path);
+    assert.equal(direct.status, 200, path);
+    assert.equal(direct.headers.get('location'), null, path);
+    const html = await direct.text();
+    assert.ok(html.includes(`href="https://www.rasulkireev.com${path}"`), path);
+    for (const query of ['', '?source=seo-test&value=a%20b']) {
+      const alias = await request(path + '/' + query);
+      assert.equal(alias.status, 301, path);
+      assert.equal(alias.headers.get('location'), path + query, path);
+      const final = await request(alias.headers.get('location'));
+      assert.equal(final.status, 200, path);
+      assert.equal(await final.text(), html, path);
+    }
   }
 });
