@@ -1,3 +1,7 @@
+## 2026-10-04
+### Fixed
+- Point RSS and machine-readable source links directly to existing local pages. Preserve RSS item IDs and publication dates, retain external canonical overrides, and stop advertising nonexistent archive URLs without removing their text.
+
 ## 2026-10-03
 ### Fixed
 - Serve existing slashless article canonical URLs directly, redirect their trailing-slash aliases, and use those same canonical paths in sitemaps and IndexNow. Article text, declared canonicals, hub URLs and external canonical overrides are unchanged.
