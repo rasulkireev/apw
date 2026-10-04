@@ -1,5 +1,6 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
+import { feedItem } from '../utils/discovery-urls.mjs';
 
 
 export async function GET(context) {
@@ -10,11 +11,6 @@ export async function GET(context) {
     title: "Rasul's Django Blog",
     description: "Rasul's Django Tutorials",
     site: context.site,
-    items: filteredEntries.map((post) => ({
-      title: post.data.title,
-      pubDate: post.data.dateCreated,
-      description: post.data.description,
-      link: `/${post.slug}/`,
-    })),
+    items: filteredEntries.map((post) => feedItem(post, context.site)),
   });
 }

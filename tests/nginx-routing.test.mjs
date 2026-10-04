@@ -8,6 +8,30 @@ const request = path => fetch(new URL(path, origin), {
   headers: { Host: 'rasulkireev.com', 'X-Forwarded-Proto': 'https' },
 });
 
+test('all advertised RSS and machine-readable source URLs resolve without redirects', { skip: !origin }, async () => {
+  const urls = new Set();
+  for (const path of ['/rss.xml', '/django-rss.xml', '/llms.txt']) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    const body = await response.text();
+    const matches = path.endsWith('.xml')
+      ? [...body.matchAll(/<link>(.*?)<\/link>/g)].map(match => match[1])
+      : [...body.matchAll(/^URL: (\S+)/gm)].map(match => match[1]);
+    assert.ok(matches.length > 1, `nonempty discovery endpoint ${path}`);
+    for (const url of matches) urls.add(url);
+  }
+  assert.ok(urls.size > 100, 'exercise all advertised source URLs');
+  for (const url of urls) {
+    const parsed = new URL(url);
+    assert.equal(parsed.origin, 'https://www.rasulkireev.com');
+    assert.ok(!parsed.pathname.includes('//'), url);
+    const response = await request(parsed.pathname);
+    assert.equal(response.status, 200, url);
+    assert.equal(response.headers.get('location'), null, url);
+    await response.arrayBuffer();
+  }
+});
+
 test('nginx directory redirects retain the public HTTPS scheme and query', { skip: !origin }, async () => {
   for (const [path, title] of [
     ['/articles', 'Articles by Rasul Kireev'],

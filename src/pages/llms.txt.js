@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import fs from 'fs';
 import path from 'path';
+import { localEntryUrl } from '../utils/discovery-urls.mjs';
 
 export async function GET(context) {
   // Get all content collections
@@ -155,7 +156,8 @@ export async function GET(context) {
   // Helper function to render content entry
   async function renderContentEntry(entry) {
     let output = `# ${entry.data.title}\n`;
-    output += `URL: ${context.site}${entry.slug}/\n`;
+    const url = localEntryUrl(entry, context.site);
+    if (url) output += `URL: ${url}\n`;
     output += `Type: ${entry.data.type || 'content'}\n`;
     output += `Date: ${entry.data.dateCreated ? entry.data.dateCreated.toISOString().split('T')[0] : 'Unknown'}\n`;
 
@@ -203,7 +205,7 @@ export async function GET(context) {
   textContent += `## Static Pages\n\n`;
   for (const page of staticPages) {
     textContent += `# ${page.title}\n`;
-    textContent += `URL: ${context.site}${page.url}\n`;
+    textContent += `URL: ${new URL(page.url === '/' ? '/' : `${page.url}/`, context.site).href}\n`;
     textContent += `Type: static-page\n\n`;
     textContent += `Content:\n${page.content}\n\n`;
     textContent += '---\n\n';
@@ -228,7 +230,8 @@ export async function GET(context) {
       console.error(`Error processing entry ${entry.slug}:`, error);
       // Add basic info even if rendering fails
       textContent += `# ${entry.data.title}\n`;
-      textContent += `URL: ${context.site}${entry.slug}/\n`;
+      const url = localEntryUrl(entry, context.site);
+      if (url) textContent += `URL: ${url}\n`;
       textContent += `Type: ${entry.data.type || 'content'}\n`;
       textContent += `Error: Could not render content\n\n`;
       textContent += '---\n\n';
