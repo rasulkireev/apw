@@ -2,126 +2,227 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const pageTitle = "Content Statistics - Rasul Kireev";
-const pageDescription = "Explore interactive statistics and data visualizations of my content creation over time. See monthly content production trends across articles, tutorials, books, and more.";
-const pageKeywords = "content statistics, data visualization, content creation, monthly trends, articles, tutorials, books, D3.js charts, Rasul Kireev";
-
-// Get all content collections
-const articles = await getCollection('articles');
-const books = await getCollection('books');
-const tutorials = await getCollection('tutorials');
-const prompts = await getCollection('prompts');
-const recipes = await getCollection('recipes');
-
-// Combine all content
-const allContent = [...articles, ...books, ...tutorials, ...prompts, ...recipes];
-
-// Create monthly counts
-const monthlyData = allContent.reduce((acc, content) => {
-  const date = new Date(content.data.dateCreated);
-  const monthYear = date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
-
-  acc[monthYear] = (acc[monthYear] || 0) + 1;
-  return acc;
-}, {});
-
-// Convert to array and sort chronologically
-const sortedData = Object.entries(monthlyData)
-  .map(([date, count]) => ({ date, count }))
-  .sort((a, b) => new Date(a.date) - new Date(b.date));
+const collections = [
+  { key: 'articles', label: 'Articles', href: '/articles/', description: 'Ideas, experiments, and things I’m figuring out.', entries: await getCollection('articles') },
+  { key: 'tutorials', label: 'Tutorials', href: '/tutorials/', description: 'Things I’ve learned by building them.', entries: await getCollection('tutorials') },
+  { key: 'books', label: 'Book notes', href: '/book-notes/', description: 'Good books, underlined passages, and takeaways.', entries: await getCollection('books') },
+  { key: 'prompts', label: 'Prompts', href: '/prompts/', description: 'A small collection of useful AI instructions.', entries: await getCollection('prompts') },
+  { key: 'recipes', label: 'Recipes', href: '/recipes/', description: 'A few things worth making again.', entries: await getCollection('recipes') },
+];
+const entries = collections.flatMap(collection => collection.entries.map(entry => ({
+  title: entry.data.title as string,
+  href: `/${entry.slug}`,
+  date: new Date(entry.data.dateCreated).toISOString(),
+  key: collection.key,
+  label: collection.label,
+}))).sort((a, b) => b.date.localeCompare(a.date));
+const currentYear = new Date().getUTCFullYear();
+const firstYear = entries.length ? Math.min(...entries.map(entry => new Date(entry.date).getUTCFullYear())) : currentYear;
+const lastYear = Math.max(currentYear, ...entries.map(entry => new Date(entry.date).getUTCFullYear()));
+const years = Array.from({ length: lastYear - firstYear + 1 }, (_, index) => firstYear + index);
+const yearly = years.map(year => ({ year, counts: collections.map(collection => entries.filter(entry => entry.key === collection.key && new Date(entry.date).getUTCFullYear() === year).length) }));
+const maxYearCount = Math.max(1, ...yearly.map(row => row.counts.reduce((sum, count) => sum + count, 0)));
+const tags = new Map<string, number>();
+// Match the collections included by the site's tag routes.
+collections.filter(collection => collection.key !== 'recipes').forEach(collection => collection.entries.forEach(entry => {
+  new Set<string>(entry.data.tags || []).forEach(tag => tags.set(tag, (tags.get(tag) || 0) + 1));
+}));
+const topTags = [...tags].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).slice(0, 7);
+const dateLabel = (date: string) => new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
 ---
 
-<BaseLayout
-  pageTitle={pageTitle}
-  pageDescription={pageDescription}
-  pageKeywords={pageKeywords}
->
-  <div class="flex flex-col mx-auto mb-10 space-y-6 prose text-xl">
-    <h1 class="mt-0 mb-4 text-4xl font-bold md:mb-6 md:text-5xl">Statistics</h1>
+<BaseLayout pageTitle="The site in numbers — Rasul Kireev" pageDescription="A different way to explore my digital garden: years of articles, tutorials, book notes, and little discoveries.">
+  <main class="stats isolate antialiased" data-years={JSON.stringify(yearly)}>
+    <header class="intro">
+      <p class="eyebrow">THE DIGITAL GARDEN / IN NUMBERS</p>
+      <h1>A little curiosity.<br /><span>A growing archive.</span></h1>
+      <p class="lede">I read, I build, I write things down. Here’s what that looks like over the years — and a few paths into the collection.</p>
+      <p class="archive-note"><span aria-hidden="true">↳</span> An ongoing collection, since {firstYear}.</p>
+    </header>
 
-    <h2 class="mt-8 mb-4 text-3xl font-bold">Number of Content Pieces Created</h2>
+    <div class="overview">
+      <div class="total"><p class="big-number">{entries.length}</p><p>things shared here</p></div>
+      <div class="overview-copy"><p>One website.<br />Many rabbit holes.</p><p>From code that finally works to a book that stays with me. A record of what caught my attention.</p></div>
+    </div>
 
-    <div id="chart" class="w-full h-[400px]" data-stats={JSON.stringify(sortedData)}></div>
-  </div>
+    <section class="timeline" aria-labelledby="timeline-heading">
+      <div class="section-heading"><div><p class="eyebrow">01 / THE LONG VIEW</p><h2 id="timeline-heading">Some years are wordier.</h2></div><p class="small-note">Published entries, by year</p></div>
+      <div class="chart-controls" hidden>
+        <label for="content-type">Show</label>
+        <select name="content-type" id="content-type"><option value="all">Everything</option>{collections.map(collection => <option value={collection.key}>{collection.label}</option>)}</select>
+        <button type="button" id="reset-year">View all years</button>
+      </div>
+      <div class="chart-scroll">
+        <div class="chart" style={`--columns: ${years.length}`} aria-label="Annual publishing totals. Select a year to browse its entries.">
+          {yearly.map(row => {
+            const total = row.counts.reduce((sum, count) => sum + count, 0);
+            return <button type="button" class="year" data-year={row.year} aria-pressed="false" aria-label={`${row.year}: ${total} entries. Browse this year.`}>
+              <span class="bar-total">{total}</span>
+              <span class="bar-track"><span class="bar-stack">{row.counts.map((count, index) => <span class={`segment ${collections[index].key}`} data-key={collections[index].key} style={`--height: ${count / maxYearCount * 100}%`} />)}</span></span>
+              <span class="year-label">{row.year}</span>
+            </button>;
+          })}
+        </div>
+      </div>
+      <ul class="legend" role="list">{collections.map(collection => <li><span class={`dot ${collection.key}`} aria-hidden="true" />{collection.label}</li>)}</ul>
+      <p class="chart-hint">Select a year to see what I was sharing. Quiet years are part of the story, too.</p>
+    </section>
 
-  <script>
-    import * as d3 from 'd3';
+    <section class="archive-section" aria-labelledby="archive-heading">
+      <div class="section-heading"><div><p class="eyebrow">02 / FOLLOW YOUR CURIOSITY</p><h2 id="archive-heading">What’s in the garden?</h2></div></div>
+      <div class="collection-list">{collections.map((collection, index) => <a class="collection-row" href={collection.href}>
+        <span class="collection-number">0{index + 1}</span><span class={`dot ${collection.key}`} aria-hidden="true" />
+        <div class="collection-copy"><h3>{collection.label}</h3><p>{collection.description}</p></div>
+        <span class="collection-count">{collection.entries.length}</span><span class="arrow" aria-hidden="true">↗</span>
+      </a>)}</div>
+    </section>
 
-    // Get the data that we prepared in the frontmatter
-    const data = JSON.parse(document.getElementById('chart').dataset.stats);
-
-    // Set dimensions
-    const margin = {top: 20, right: 20, bottom: 60, left: 40};
-    const width = document.getElementById('chart').offsetWidth - margin.left - margin.right;
-    const height = 400 - margin.top - margin.bottom;
-
-    // Create tooltip div
-    const tooltip = d3.select('#chart')
-      .append('div')
-      .attr('class', 'tooltip')
-      .style('opacity', 0)
-      .style('position', 'absolute')
-      .style('background-color', 'white')
-      .style('border', '1px solid #ddd')
-      .style('border-radius', '4px')
-      .style('padding', '8px')
-      .style('pointer-events', 'none');
-
-    // Create SVG
-    const svg = d3.select('#chart')
-      .append('svg')
-        .attr('width', width + margin.left + margin.right)
-        .attr('height', height + margin.top + margin.bottom)
-      .append('g')
-        .attr('transform', `translate(${margin.left},${margin.top})`);
-
-    // X axis
-    const x = d3.scaleBand()
-      .range([0, width])
-      .domain(data.map(d => d.date))
-      .padding(0.2);
-
-    svg.append('g')
-      .attr('transform', `translate(0,${height})`)
-      .call(d3.axisBottom(x))
-      .selectAll('text')
-        .attr('transform', 'rotate(-45)')
-        .style('text-anchor', 'end');
-
-    // Y axis
-    const y = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.count)])
-      .range([height, 0]);
-
-    svg.append('g')
-      .call(d3.axisLeft(y));
-
-    // Bars with tooltips
-    svg.selectAll('rect')
-      .data(data)
-      .enter()
-      .append('rect')
-        .attr('x', d => x(d.date))
-        .attr('y', d => y(d.count))
-        .attr('width', x.bandwidth())
-        .attr('height', d => height - y(d.count))
-        .attr('fill', '#3B82F6')
-        .on('mouseover', function(event, d) {
-          tooltip.transition()
-            .duration(200)
-            .style('opacity', .9);
-          tooltip.html(`${d.date}<br/>Content pieces: ${d.count}`)
-            .style('left', (event.pageX + 10) + 'px')
-            .style('top', (event.pageY - 28) + 'px');
-          d3.select(this)
-            .style('opacity', 0.8);
-        })
-        .on('mouseout', function() {
-          tooltip.transition()
-            .duration(500)
-            .style('opacity', 0);
-          d3.select(this)
-            .style('opacity', 1);
-        });
-  </script>
+    <div class="bottom-grid">
+      <section aria-labelledby="topics-heading"><p class="eyebrow">03 / RECURRING THREADS</p><h2 id="topics-heading">On my mind.</h2><p class="section-description">The topics I keep coming back to.</p>
+        <ul class="topics" role="list">{topTags.map(([tag, count]) => <li><a href={`/tag/${encodeURIComponent(tag)}/`}><span>{tag}</span><span class="topic-count">{count} <span aria-hidden="true">↗</span></span></a></li>)}</ul>
+      </section>
+      <section aria-labelledby="entries-heading" id="browse-entries"><p class="eyebrow">04 / KEEP EXPLORING</p><h2 id="entries-heading" tabindex="-1">Freshly added.</h2><p class="section-description" id="entries-summary" aria-live="polite">The latest {Math.min(5, entries.length)} entries in the archive.</p>
+        <ul class="entry-list" role="list">{entries.map((entry, index) => <li data-entry data-key={entry.key} data-year={new Date(entry.date).getUTCFullYear()} hidden={index >= 5}><a href={entry.href}><p class="entry-meta">{entry.label} <span aria-hidden="true">/</span> <time datetime={entry.date}>{dateLabel(entry.date)}</time></p><h3>{entry.title} <span aria-hidden="true">↗</span></h3></a></li>)}</ul>
+        <button type="button" id="show-more" hidden>Show more entries <span aria-hidden="true">↓</span></button>
+        <noscript><p class="chart-hint">Enable JavaScript to filter by year. You can also explore every collection using the links above.</p></noscript>
+      </section>
+    </div>
+    <aside class="colophon"><p>A note on the numbers</p><p>These counts come from the articles, tutorials, book notes, prompts, and recipes on this site. The timeline uses publication dates, not reading dates. Topics can overlap. Updated whenever the site is built.</p></aside>
+  </main>
 </BaseLayout>
+
+<style>
+  .stats { --ink: #202b38; --muted: #596577; --rule: rgb(32 43 56 / .13); color: var(--ink); padding: 0 16px; }
+  .eyebrow { font: 11px/1.5 ui-monospace, monospace; letter-spacing: .1em; color: var(--muted); }
+  .intro { padding: 14px 0 44px; }
+  h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.1; margin: 22px 0; text-wrap: balance; }
+  h1 span { color: #255dc0; }
+  .lede { font-size: 18px; max-width: 53ch; color: var(--muted); line-height: 1.75; text-wrap: pretty; }
+  .archive-note { margin-top: 24px; font: 13px ui-monospace, monospace; color: var(--muted); }
+  .archive-note span { color: #255dc0; margin-right: 8px; }
+  .overview { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 32px 0; gap: 40px; align-items: center; }
+  .big-number { font-size: clamp(5rem, 13vw, 8rem); letter-spacing: -.07em; line-height: 1; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .total > p:last-child { color: var(--muted); margin-top: 12px; }
+  .overview-copy > p:first-child { font-family: Georgia, serif; font-size: 29px; line-height: 1.25; }
+  .overview-copy > p:last-child { color: var(--muted); font-size: 14px; margin-top: 14px; max-width: 32ch; }
+  section { min-width: 0; }
+  .timeline, .archive-section { padding-top: 54px; }
+  .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+  h2 { font-size: 27px; font-weight: 500; letter-spacing: -.035em; margin-top: 8px; text-wrap: balance; }
+  .small-note, .chart-hint, .section-description { font-size: 13px; color: var(--muted); }
+  .chart-controls { align-items: center; gap: 10px; margin-bottom: 24px; font-size: 13px; }
+  .chart-controls:not([hidden]) { display: flex; }
+  select { border: 1px solid var(--rule); border-radius: 4px; padding: 7px 28px 7px 10px; background-color: white; color: var(--ink); }
+  button { cursor: pointer; }
+  #reset-year { margin-left: auto; color: #255dc0; padding: 8px 0; text-decoration: underline; text-underline-offset: 4px; }
+  .chart-scroll { overflow-x: auto; }
+  .chart { display: grid; grid-template-columns: repeat(var(--columns), minmax(48px, 1fr)); gap: 12px; padding: 4px 3px 0; }
+  .year { display: flex; flex-direction: column; align-items: stretch; gap: 10px; min-width: 0; border-radius: 3px; }
+  .bar-total, .year-label { font: 12px ui-monospace, monospace; font-variant-numeric: tabular-nums; color: var(--muted); }
+  .bar-track { height: 190px; border-bottom: 1px solid var(--rule); background: repeating-linear-gradient(to top, transparent 0, transparent 46px, rgb(32 43 56 / .055) 47px, transparent 48px); }
+  .bar-stack { display: flex; flex-direction: column-reverse; height: 100%; padding: 0 9px; }
+  .segment { height: var(--height); min-height: 0; flex-shrink: 0; }
+  .articles { background: #3869b8; } .tutorials { background: #86a9da; } .books { background: #de936c; } .prompts { background: #97ab96; } .recipes { background: #c1b89e; }
+  .year:hover, .year[aria-pressed="true"] { background: #edf3fb; }
+  .year[aria-pressed="true"] .year-label { color: #17498e; font-weight: 700; }
+  .year-label { padding-bottom: 8px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 24px; font-size: 12px; color: var(--muted); }
+  .legend li { display: flex; align-items: center; gap: 7px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .chart-hint { margin-top: 16px; }
+  .collection-row { display: flex; align-items: center; gap: 18px; padding: 22px 0; border-top: 1px solid var(--rule); }
+  .collection-row:last-child { border-bottom: 1px solid var(--rule); }
+  .collection-row:hover .collection-copy h3, .entry-list a:hover h3, .topics a:hover { color: #255dc0; }
+  .collection-number { font: 11px ui-monospace, monospace; color: var(--muted); }
+  .collection-copy { flex: 1; min-width: 0; }
+  h3 { font-size: 18px; font-weight: 500; letter-spacing: -.015em; }
+  .collection-copy p { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .collection-count { font-size: 27px; font-variant-numeric: tabular-nums; letter-spacing: -.04em; }
+  .arrow { color: var(--muted); padding-left: 8px; }
+  .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 56px; }
+  .section-description { margin-top: 10px; }
+  .topics, .entry-list { margin-top: 24px; }
+  .topics a { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--rule); font-size: 14px; }
+  .topic-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .topic-count > span { margin-left: 12px; }
+  .entry-list li { border-bottom: 1px solid var(--rule); }
+  .entry-list a { display: block; padding: 14px 0; }
+  .entry-list li:first-child a { padding-top: 0; }
+  .entry-meta { font-size: 11px; color: var(--muted); margin-bottom: 5px; }
+  .entry-meta span { margin: 0 5px; }
+  .entry-list h3 { font-size: 15px; }
+  .entry-list h3 span { color: var(--muted); white-space: nowrap; }
+  #show-more { color: #255dc0; font-size: 14px; padding: 16px 0; }
+  #show-more:hover { text-decoration: underline; }
+  .colophon { border-top: 1px solid var(--rule); margin-top: 54px; padding: 24px 0 12px; font-size: 12px; color: var(--muted); }
+  .colophon p:first-child { color: var(--ink); margin-bottom: 6px; font-weight: 500; }
+  .colophon p:last-child { max-width: 85ch; }
+  a:focus-visible, button:focus-visible, select:focus-visible { outline: 2px solid #255dc0; outline-offset: 4px; }
+  @media (max-width: 639px) {
+    .stats { padding: 0; } .intro { padding-top: 0; padding-bottom: 32px; }
+    .overview { gap: 24px; } .overview-copy > p:first-child { font-size: 23px; } .overview-copy > p:last-child { font-size: 16px; }
+    .section-heading { display: block; } .small-note { margin-top: 8px; }
+    .chart { gap: 6px; } .bar-stack { padding: 0 8px; }
+    .bottom-grid { grid-template-columns: 1fr; gap: 40px; }
+    .collection-row { gap: 12px; } .collection-number { display: none; }
+    .collection-copy p, .small-note, .chart-hint, .section-description, .topics a, .entry-list h3, .colophon, #show-more, .chart-controls { font-size: 16px; }
+    .entry-meta, .legend { font-size: 13px; } select { max-width: 155px; font-size: 16px; min-height: 48px; }
+    #reset-year, #show-more { min-height: 48px; } h2 { font-size: 26px; }
+  }
+</style>
+
+<script>
+  const root = document.querySelector<HTMLElement>('.stats');
+  if (root) {
+    const yearly: { year: number; counts: number[] }[] = JSON.parse(root.dataset.years!);
+    const keys = ['articles', 'tutorials', 'books', 'prompts', 'recipes'];
+    const filter = root.querySelector<HTMLSelectElement>('#content-type')!;
+    const yearButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-year].year')];
+    const items = [...root.querySelectorAll<HTMLLIElement>('[data-entry]')];
+    const more = root.querySelector<HTMLButtonElement>('#show-more')!;
+    const summary = root.querySelector<HTMLElement>('#entries-summary')!;
+    const heading = root.querySelector<HTMLElement>('#entries-heading')!;
+    let selectedYear: number | null = null;
+    let limit = 5;
+    function update() {
+      const type = filter.value;
+      const index = keys.indexOf(type);
+      const totals = yearly.map(row => index === -1 ? row.counts.reduce((sum, count) => sum + count, 0) : row.counts[index]);
+      const max = Math.max(1, ...totals);
+      yearButtons.forEach((button, rowIndex) => {
+        const year = yearly[rowIndex].year;
+        button.setAttribute('aria-pressed', String(year === selectedYear));
+        button.setAttribute('aria-label', `${year}: ${totals[rowIndex]} ${filter.selectedOptions[0].text === 'Everything' ? 'entries' : filter.selectedOptions[0].text.toLowerCase()}. Browse this year.`);
+        button.querySelector('.bar-total')!.textContent = String(totals[rowIndex]);
+        button.querySelectorAll<HTMLElement>('.segment').forEach((segment, segmentIndex) => {
+          const count = index === -1 || index === segmentIndex ? yearly[rowIndex].counts[segmentIndex] : 0;
+          segment.style.setProperty('--height', `${count / max * 100}%`);
+        });
+      });
+      const matching = items.filter(item => (type === 'all' || item.dataset.key === type) && (selectedYear === null || Number(item.dataset.year) === selectedYear));
+      items.forEach(item => { item.hidden = true; });
+      matching.slice(0, limit).forEach(item => { item.hidden = false; });
+      heading.textContent = selectedYear === null ? 'Freshly added.' : `From ${selectedYear}.`;
+      const label = type === 'all' ? 'entries' : filter.selectedOptions[0].text.toLowerCase();
+      summary.textContent = matching.length ? `Showing ${Math.min(limit, matching.length)} of ${matching.length} ${label}${selectedYear ? ` published in ${selectedYear}` : ', newest first'}.` : `No ${label}${selectedYear ? ` published in ${selectedYear}` : ''}. Try another year or collection.`;
+      more.hidden = matching.length <= limit;
+    }
+    root.querySelector<HTMLElement>('.chart-controls')!.hidden = false;
+    filter.addEventListener('change', () => { limit = 5; update(); });
+    yearButtons.forEach(button => button.addEventListener('click', () => {
+      const year = Number(button.dataset.year);
+      selectedYear = selectedYear === year ? null : year;
+      limit = 5;
+      update();
+      heading.focus({ preventScroll: true });
+      root.querySelector('#browse-entries')!.scrollIntoView({ behavior: 'instant', block: 'start' });
+    }));
+    root.querySelector('#reset-year')!.addEventListener('click', () => { selectedYear = null; limit = 5; update(); });
+    more.addEventListener('click', () => {
+      const previousVisible = new Set(items.filter(item => !item.hidden));
+      limit += 5; update();
+      items.find(item => !item.hidden && !previousVisible.has(item))?.querySelector('a')?.focus();
+    });
+    update();
+  }
+</script>
