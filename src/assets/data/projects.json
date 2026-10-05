@@ -7,7 +7,7 @@
     "https://github.com/builtwithdjango",
     "https://lvtd.dev/projects/"
   ],
-  "notes": "Project names, descriptions, links, and explicit active/archive statuses reconciled with https://lvtd.dev/projects/ on 2026-10-05. Includes launched products, tools, commercial experiments, and clearly identified website builds; preserves older personal project history. Renamed products retain their original start dates. New repository-backed entries use GitHub repository creation dates where launch dates are unavailable; Meliora Advisory has no verified start date. Historical GitHub activity metadata and generatedAt remain the May 2026 snapshot used for entries not covered by LVTD.",
+  "notes": "Project names, descriptions, links, and explicit active/archive statuses reconciled with https://lvtd.dev/projects/ on 2026-10-05. Includes launched products, tools, and commercial experiments; preserves older personal project history. Website-only entries are excluded. Renamed products retain their original start dates. New repository-backed entries use GitHub repository creation dates where launch dates are unavailable. Historical GitHub activity metadata and generatedAt remain the May 2026 snapshot used for entries not covered by LVTD.",
   "projects": [
     {
       "name": "fermentline-apparel",
@@ -623,9 +623,9 @@
       "isArchived": false
     },
     {
-      "name": "built-with-bend",
+      "name": "builtwithbend",
       "createdAt": "2026-09-23T20:03:21Z",
-      "displayName": "Built with Bend",
+      "displayName": "builtwithbend",
       "description": "A human-reviewed collection of apps, games, tools, and experiments built with Bend 2.",
       "homepageUrl": "https://builtwithbend.com/",
       "url": "https://github.com/LVTD-LLC/built-with-bend",
@@ -657,26 +657,6 @@
       "owner": "LVTD-LLC",
       "isPrivate": false,
       "isArchived": false
-    },
-    {
-      "name": "apw",
-      "createdAt": "2023-09-08T14:09:30Z",
-      "displayName": "rasulkireev.com",
-      "description": "My personal website, built with Astro. This entry covers the current website build, started in 2023.",
-      "homepageUrl": "https://rasulkireev.com/",
-      "url": "https://github.com/rasulkireev/apw",
-      "statusOverride": "active",
-      "owner": "rasulkireev",
-      "isPrivate": false,
-      "isArchived": false
-    },
-    {
-      "name": "meliora-advisory",
-      "displayName": "Meliora Advisory",
-      "description": "Website build only for an independently owned advisory business. LVTD does not own or operate the business.",
-      "homepageUrl": "https://meliora-advisory.com/",
-      "url": "",
-      "statusOverride": "active"
     },
     {
       "name": "reviewgate",
