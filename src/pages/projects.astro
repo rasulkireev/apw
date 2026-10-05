@@ -2,48 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import projectsData from '../assets/data/projects.json';
 
-const pageTitle = "Rasul Kireev's Launched Project Archive";
-const pageDescription = "A focused archive of launched side projects and commercial experiments Rasul Kireev has worked on since 2018.";
+const pageTitle = "Rasul Kireev's Project Archive";
+const pageDescription = "An archive of products, tools, commercial experiments, and website builds Rasul Kireev has worked on since 2018.";
 const pageKeywords = "Rasul Kireev projects, launched side projects, commercial side projects, SaaS, Django projects, indie hacking, developer tools";
 
 const snapshotDate = new Date(projectsData.generatedAt);
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
-const displayNameOverrides = new Map([
-  ['django-saas-starter', 'Djass'],
-  ['filebridge', 'FileBridge'],
-  ['isitketo-django', 'Is It Keto'],
-  ['osig', 'OSIG'],
-  ['statushen', 'StatusHen'],
-  ['talentleads', 'Talent Leads'],
-  ['tjalerts', 'TJ Alerts'],
-  ['tolstoy_calendar', 'Tolstoy Newsletter'],
-]);
-
-const descriptionOverrides = new Map([
-  ['django-saas-starter', 'A Django SaaS starter template for launching paid web apps faster.'],
-  ['cleanapp', 'An Anki-style habit for keeping old pages, styles, and content fresh.'],
-  ['filebridge', 'A product for turning uploaded files into clean API endpoints and structured data feeds.'],
-  ['isitketo-django', 'A food lookup site for learning what is keto compliant.'],
-  ['levreview', 'A tool for helping local businesses improve their Google review flow.'],
-  ['statushen', 'Uptime monitoring and status pages for SaaS projects.'],
-  ['talentleads', 'A recruiting lead tool for startups looking for strong technical talent.'],
-  ['tjalerts', 'A job alert product for staying on top of new roles in the tech market.'],
-]);
-
-const homepageOverrides = new Map([
-  ['cleanapp', 'https://cleanapp.dev'],
-  ['django-saas-starter', 'https://djass.dev'],
-  ['isitketo-django', 'https://isitketo.org'],
-  ['levreview', 'https://levreview.com'],
-  ['talentleads', 'https://gettalentleads.com'],
-  ['tjalerts', 'https://gettjalerts.com'],
-  ['ask-hn-digests', 'https://askhndigests.com/'],
-]);
-
 function readableName(name: string) {
-  if (displayNameOverrides.has(name)) return displayNameOverrides.get(name);
-
   return name
     .replace(/\.(ru|com|dev|app)$/i, '.$1')
     .replace(/[-_]/g, ' ')
@@ -77,6 +43,12 @@ const whatHappenedOptions = {
     title: 'It is live, but not in active development.',
     dotClass: 'bg-amber-400',
     textClass: 'text-amber-700',
+  },
+  archived: {
+    label: 'Archived',
+    tone: 'archived',
+    dotClass: 'bg-stone-300',
+    textClass: 'text-stone-500',
   },
   closed: {
     label: 'Shut it down',
@@ -112,7 +84,7 @@ function whatHappenedFor(project: (typeof projectsData.projects)[number], lastAt
 }
 
 function primaryUrlFor(project: (typeof projectsData.projects)[number]) {
-  const homepageUrl = homepageOverrides.get(project.name) || project.homepageUrl || null;
+  const homepageUrl = project.homepageUrl || null;
 
   if (Array.isArray(project.links) && project.links.length > 0) return project.links[0]?.url ?? null;
   return homepageUrl;
@@ -138,7 +110,7 @@ const projects = projectsData.projects
     return {
       ...project,
       displayName: project.displayName ?? readableName(project.name),
-      description: descriptionOverrides.get(project.name) ?? project.description,
+      description: project.description,
       primaryUrl: primaryUrlFor(project),
       sourceCodeUrl: sourceCodeUrlFor(project),
       whatHappened,
@@ -146,7 +118,7 @@ const projects = projectsData.projects
     };
   })
   .sort((a, b) => {
-    const yearDelta = (a.startYear ?? 0) - (b.startYear ?? 0);
+    const yearDelta = (a.startYear ?? Number.MAX_SAFE_INTEGER) - (b.startYear ?? Number.MAX_SAFE_INTEGER);
     if (yearDelta !== 0) return yearDelta;
     return dateValue(a.firstCommitAt ?? a.createdAt ?? a.startedAt) - dateValue(b.firstCommitAt ?? b.createdAt ?? b.startedAt);
   });
@@ -158,7 +130,7 @@ const projects = projectsData.projects
   pageKeywords={pageKeywords}
 >
   <p class="mb-4 text-sm text-stone-700">
-    Since 2018, I've launched {projects.length} projects while trying to turn side ideas into real products and businesses, with no success yet.
+    Since 2018, I've worked on {projects.length} projects, from side ideas and commercial experiments to tools and website builds.
   </p>
 
   <div class="overflow-x-auto">
@@ -185,7 +157,7 @@ const projects = projectsData.projects
                 )}
                 {project.sourceCodeUrl && (
                   <a class="text-xs font-normal text-stone-500 underline decoration-stone-300 underline-offset-2 hover:text-black hover:decoration-current" href={project.sourceCodeUrl} target="_blank" rel="noreferrer">
-                    Source code
+                    {'sourceLabel' in project ? project.sourceLabel : 'Source code'}
                   </a>
                 )}
               </div>
