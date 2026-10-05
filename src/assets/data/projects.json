@@ -4,9 +4,10 @@
     "https://github.com/rasulkireev",
     "https://github.com/gregagi",
     "https://github.com/LVTD-LLC",
-    "https://github.com/builtwithdjango"
+    "https://github.com/builtwithdjango",
+    "https://lvtd.dev/projects/"
   ],
-  "notes": "Filtered to launched projects and commercial experiments that were intended to earn money. Forks, personal repos, learning repos, utilities, and dev-only experiments are excluded. GitHub firstCommitAt and lastCommitAt are inferred from default branch commits via the GitHub API. Older Shopify, WordPress, and newsletter projects are manually added from personal project history.",
+  "notes": "Project names, descriptions, links, and explicit active/archive statuses reconciled with https://lvtd.dev/projects/ on 2026-10-05. Includes launched products, tools, and commercial experiments; preserves older personal project history. Website-only entries are excluded. Renamed products retain their original start dates. New repository-backed entries use GitHub repository creation dates where launch dates are unavailable. Historical GitHub activity metadata and generatedAt remain the May 2026 snapshot used for entries not covered by LVTD.",
   "projects": [
     {
       "name": "fermentline-apparel",
@@ -27,11 +28,11 @@
       "success": false
     },
     {
-      "owner": "builtwithdjango",
+      "owner": "LVTD-LLC",
       "name": "builtwithdjango",
       "displayName": "Built with Django",
-      "description": "A directory and community site for projects built with Django.",
-      "url": "https://github.com/builtwithdjango/builtwithdjango",
+      "description": "Developer education, product discovery, and useful examples for Django builders.",
+      "url": "https://github.com/LVTD-LLC/builtwithdjango",
       "homepageUrl": "https://builtwithdjango.com",
       "primaryLanguage": "JavaScript",
       "topics": [
@@ -48,7 +49,9 @@
       "defaultBranch": "master",
       "firstCommitAt": "2019-12-03T21:42:56Z",
       "lastCommitAt": "2026-05-24T12:08:25Z",
-      "commitCount": 777
+      "commitCount": 777,
+      "statusOverride": "active",
+      "isPrivate": false
     },
     {
       "name": "osar-journal",
@@ -113,8 +116,8 @@
       "owner": "rasulkireev",
       "name": "levreview",
       "displayName": "LevReview",
-      "description": "A tool for helping local businesses improve their Google review flow.",
-      "statusOverride": "idle",
+      "description": "Review collection workflows for operators who need better customer proof.",
+      "statusOverride": "archived",
       "url": "https://github.com/rasulkireev/levreview",
       "homepageUrl": "",
       "primaryLanguage": "HTML",
@@ -127,7 +130,8 @@
       "defaultBranch": "main",
       "firstCommitAt": "2022-10-04T16:09:54Z",
       "lastCommitAt": "2024-10-01T16:43:36Z",
-      "commitCount": 116
+      "commitCount": 116,
+      "isPrivate": false
     },
     {
       "owner": "rasulkireev",
@@ -187,12 +191,12 @@
       "commitCount": 2
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "ask-hn-digests",
-      "displayName": "Ask HN Digests",
-      "description": "Digest of the most engaging discussions on Hacker News.",
-      "url": "https://github.com/rasulkireev/ask-hn-digests",
-      "homepageUrl": "https://askhndigests.com/",
+      "displayName": "Ask HN Digest",
+      "description": "Summaries of the most engaging Ask HN discussions for readers who want the signal.",
+      "url": "https://github.com/LVTD-LLC/ask-hn-digests",
+      "homepageUrl": "",
       "primaryLanguage": "Python",
       "topics": [],
       "stars": 0,
@@ -203,7 +207,9 @@
       "defaultBranch": "main",
       "firstCommitAt": "2025-05-13T07:54:19Z",
       "lastCommitAt": "2026-02-05T14:47:47Z",
-      "commitCount": 107
+      "commitCount": 107,
+      "statusOverride": "archived",
+      "isPrivate": false
     },
     {
       "owner": "rasulkireev",
@@ -314,9 +320,9 @@
     {
       "owner": "LVTD-LLC",
       "name": "filebridge",
-      "description": "FileBridge — turn uploaded files into clean API endpoints and structured data feeds.",
-      "url": "https://github.com/LVTD-LLC/filebridge",
-      "homepageUrl": "https://filebridge.lvtd.dev/",
+      "description": "Private MCP and REST backend for agent-managed datasets, row updates, exports, and previews.",
+      "url": "https://github.com/LVTD-LLC/rowset",
+      "homepageUrl": "https://rowset.app/",
       "primaryLanguage": "Python",
       "topics": [],
       "stars": 0,
@@ -327,54 +333,59 @@
       "defaultBranch": "main",
       "firstCommitAt": "2026-05-12T10:58:58Z",
       "lastCommitAt": "2026-05-16T13:17:15Z",
-      "commitCount": 51
+      "commitCount": 51,
+      "displayName": "Rowset",
+      "statusOverride": "active",
+      "isPrivate": false
     },
     {
       "owner": "LVTD-LLC",
       "name": "awesome-repos",
-      "displayName": "Awesome Repos",
-      "description": "Search and monitor repositories listed across awesome lists.",
-      "url": "https://github.com/LVTD-LLC/awesome-repos",
-      "homepageUrl": "https://awesome.lvtd.dev/",
+      "displayName": "Browse Awesome",
+      "description": "Search and monitor repositories discovered across curated awesome lists.",
+      "url": "https://github.com/LVTD-LLC/awesome",
+      "homepageUrl": "https://browseawesome.com/",
       "primaryLanguage": "Python",
       "topics": [],
       "stars": 0,
       "isArchived": false,
-      "isPrivate": true,
+      "isPrivate": false,
       "createdAt": "2026-05-21T22:15:58Z",
       "updatedAt": "2026-05-23T21:07:15Z",
       "pushedAt": "2026-05-23T21:07:10Z",
       "defaultBranch": "main",
       "firstCommitAt": "2026-05-21T22:16:14Z",
       "lastCommitAt": "2026-05-23T21:07:10Z",
-      "commitCount": 65
+      "commitCount": 65,
+      "statusOverride": "active"
     },
     {
       "owner": "LVTD-LLC",
       "name": "pgsandbox-mcp",
-      "displayName": "PGSandbox MCP",
-      "description": "Agent-facing MCP for disposable Postgres experimentation databases.",
-      "url": "https://github.com/LVTD-LLC/pgsandbox-mcp",
-      "homepageUrl": "",
+      "displayName": "PGSandbox",
+      "description": "Agent-facing MCP server for disposable Postgres sandboxes with TTLs and cleanup built in.",
+      "url": "https://github.com/LVTD-LLC/pgsandbox",
+      "homepageUrl": "https://pgsandbox.dev/",
       "primaryLanguage": "TypeScript",
       "topics": [],
       "stars": 0,
       "isArchived": false,
-      "isPrivate": true,
+      "isPrivate": false,
       "createdAt": "2026-05-28T11:47:52Z",
       "updatedAt": "2026-05-28T15:49:28Z",
       "pushedAt": "2026-05-29T11:31:23Z",
       "defaultBranch": "main",
       "firstCommitAt": "2026-05-28T11:47:52Z",
       "lastCommitAt": "2026-05-28T15:49:14Z",
-      "commitCount": 6
+      "commitCount": 6,
+      "statusOverride": "active"
     },
     {
       "owner": "LVTD-LLC",
       "name": "django-saas-starter",
-      "description": "Django Cookiecutter for starting your projects quickly.",
-      "url": "https://github.com/LVTD-LLC/django-saas-starter",
-      "homepageUrl": "https://lvtd-llc.github.io/django-saas-starter/",
+      "description": "Generate production-ready Django SaaS codebases with deployment paths and agent instructions.",
+      "url": "https://github.com/LVTD-LLC/djass-skills",
+      "homepageUrl": "https://djass.dev/",
       "primaryLanguage": "HTML",
       "topics": [
         "cookiecutter",
@@ -390,14 +401,18 @@
       "defaultBranch": "main",
       "firstCommitAt": "2022-05-04T16:01:42Z",
       "lastCommitAt": "2026-05-15T07:09:38Z",
-      "commitCount": 276
+      "commitCount": 276,
+      "displayName": "Djass",
+      "statusOverride": "active",
+      "isPrivate": false,
+      "sourceLabel": "Agent skills"
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "tjalerts",
-      "description": "",
-      "statusOverride": "idle",
-      "url": "https://github.com/rasulkireev/tjalerts",
+      "description": "Automated matching and alerts for people tracking technical roles.",
+      "statusOverride": "archived",
+      "url": "https://github.com/LVTD-LLC/tjalerts",
       "homepageUrl": "",
       "primaryLanguage": "Python",
       "topics": [],
@@ -409,14 +424,16 @@
       "defaultBranch": "main",
       "firstCommitAt": "2023-03-13T22:10:29Z",
       "lastCommitAt": "2026-05-11T12:49:28Z",
-      "commitCount": 410
+      "commitCount": 410,
+      "displayName": "Tech Job Alerts",
+      "isPrivate": false
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "TuxSEO",
-      "description": "Automated Blog Content Creation for Founders Who Hate Writing",
-      "url": "https://github.com/rasulkireev/TuxSEO",
-      "homepageUrl": "https://tuxseo.com",
+      "description": "Programmatic SEO tooling, now archived and available as a public read-only repository.",
+      "url": "https://github.com/LVTD-LLC/TuxSEO",
+      "homepageUrl": "",
       "primaryLanguage": "Python",
       "topics": [
         "agents",
@@ -434,15 +451,18 @@
       "defaultBranch": "main",
       "firstCommitAt": "2024-10-30T07:49:17Z",
       "lastCommitAt": "2026-05-09T11:33:17Z",
-      "commitCount": 755
+      "commitCount": 755,
+      "displayName": "TuxSEO",
+      "statusOverride": "archived",
+      "isPrivate": false
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "cleanapp",
-      "description": "Anki for your sites",
-      "statusOverride": "idle",
-      "url": "https://github.com/rasulkireev/cleanapp",
-      "homepageUrl": "",
+      "description": "Scheduled page review reminders for every sitemap, sent as practical email digests.",
+      "statusOverride": "active",
+      "url": "https://github.com/LVTD-LLC/staleaway",
+      "homepageUrl": "https://staleaway.com/",
       "primaryLanguage": "Python",
       "topics": [],
       "stars": 0,
@@ -453,15 +473,17 @@
       "defaultBranch": "main",
       "firstCommitAt": "2025-10-21T07:59:57Z",
       "lastCommitAt": "2026-02-26T10:04:41Z",
-      "commitCount": 29
+      "commitCount": 29,
+      "displayName": "Staleaway",
+      "isPrivate": false
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "osig",
-      "description": "Generate Beautiful OG Images for Your Site",
-      "statusOverride": "idle",
-      "url": "https://github.com/rasulkireev/osig",
-      "homepageUrl": "https://osig.app",
+      "description": "Open-source social image generation utility, now archived and available as a public read-only repository.",
+      "statusOverride": "archived",
+      "url": "https://github.com/LVTD-LLC/osig",
+      "homepageUrl": "",
       "primaryLanguage": "Python",
       "topics": [
         "og-image-generator",
@@ -475,14 +497,16 @@
       "defaultBranch": "main",
       "firstCommitAt": "2024-09-27T07:36:01Z",
       "lastCommitAt": "2026-02-26T08:59:59Z",
-      "commitCount": 93
+      "commitCount": 93,
+      "displayName": "OSIG",
+      "isPrivate": false
     },
     {
-      "owner": "rasulkireev",
+      "owner": "LVTD-LLC",
       "name": "talentleads",
-      "description": "",
-      "statusOverride": "idle",
-      "url": "https://github.com/rasulkireev/talentleads",
+      "description": "Lead generation for startup hiring teams that need targeted outreach inputs.",
+      "statusOverride": "archived",
+      "url": "https://github.com/LVTD-LLC/talentleads",
       "homepageUrl": "",
       "primaryLanguage": "HTML",
       "topics": [],
@@ -494,14 +518,16 @@
       "defaultBranch": "main",
       "firstCommitAt": "2023-03-13T22:10:29Z",
       "lastCommitAt": "2025-12-10T11:53:54Z",
-      "commitCount": 153
+      "commitCount": 153,
+      "displayName": "Talent Leads",
+      "isPrivate": false
     },
     {
       "owner": "rasulkireev",
       "name": "isitketo-django",
-      "description": "",
+      "description": "Look up foods and ingredients to find out whether they fit a keto diet.",
       "url": "https://github.com/rasulkireev/isitketo-django",
-      "homepageUrl": "",
+      "homepageUrl": "https://isitketo.org/",
       "primaryLanguage": "HTML",
       "topics": [],
       "stars": 0,
@@ -512,16 +538,19 @@
       "defaultBranch": "main",
       "firstCommitAt": "2024-09-02T08:55:48Z",
       "lastCommitAt": "2025-11-23T00:36:07Z",
-      "commitCount": 90
+      "commitCount": 90,
+      "displayName": "Is It Keto",
+      "statusOverride": "active",
+      "isPrivate": false
     },
     {
       "owner": "rasulkireev",
       "name": "statushen",
-      "description": "",
+      "description": "Uptime monitoring and status page product, preserved in a public repository.",
       "links": [],
-      "statusOverride": "closed",
+      "statusOverride": "archived",
       "url": "https://github.com/rasulkireev/statushen",
-      "homepageUrl": "https://statushen.cr.lvtd.dev",
+      "homepageUrl": "",
       "primaryLanguage": "HTML",
       "topics": [],
       "stars": 0,
@@ -532,7 +561,9 @@
       "defaultBranch": "main",
       "firstCommitAt": "2024-10-14T10:56:24Z",
       "lastCommitAt": "2025-10-15T17:22:14Z",
-      "commitCount": 32
+      "commitCount": 32,
+      "displayName": "StatusHen",
+      "isPrivate": false
     },
     {
       "owner": "rasulkireev",
@@ -554,6 +585,91 @@
       "firstCommitAt": "2019-10-15T03:44:31Z",
       "lastCommitAt": "2020-06-19T21:01:23Z",
       "commitCount": 138
+    },
+    {
+      "name": "tastefulkit",
+      "createdAt": "2026-09-12T11:01:37Z",
+      "displayName": "TastefulKit",
+      "description": "Discover real landing pages, UI components, libraries, and AI skills for you and your coding agent.",
+      "homepageUrl": "https://tastefulkit.com/",
+      "url": "https://github.com/LVTD-LLC/tastefulkit",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "nitpick",
+      "createdAt": "2026-09-30T11:38:50Z",
+      "displayName": "nitpick",
+      "description": "Get a second model to review your diff and surrounding code, with structured findings your agent can fix.",
+      "homepageUrl": "https://nitpick.sh/",
+      "url": "https://github.com/LVTD-LLC/nitpick",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "builtwithrust",
+      "createdAt": "2026-10-01T06:54:45Z",
+      "displayName": "Built with Rust",
+      "description": "Explore websites, apps, and tools built with Rust, in a directory itself built with Rust.",
+      "homepageUrl": "https://builtwithrust.com/",
+      "url": "https://github.com/LVTD-LLC/builtwithrust",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "builtwithbend",
+      "createdAt": "2026-09-23T20:03:21Z",
+      "displayName": "builtwithbend",
+      "description": "A human-reviewed collection of apps, games, tools, and experiments built with Bend 2.",
+      "homepageUrl": "https://builtwithbend.com/",
+      "url": "https://github.com/LVTD-LLC/built-with-bend",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "games",
+      "createdAt": "2026-09-11T21:49:16Z",
+      "displayName": "LVTD Games",
+      "description": "Small, independently built browser games. Pick a game and play.",
+      "homepageUrl": "https://games.lvtd.dev/",
+      "url": "https://github.com/LVTD-LLC/games",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "citeguild",
+      "createdAt": "2026-07-31T22:30:04Z",
+      "displayName": "CiteGuild",
+      "description": "A searchable network of member articles that helps AI content agents discover relevant sources to cite.",
+      "homepageUrl": "https://citeguild.dev/",
+      "url": "https://github.com/LVTD-LLC/citeguild",
+      "statusOverride": "active",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": false
+    },
+    {
+      "name": "reviewgate",
+      "createdAt": "2026-06-25T17:03:04Z",
+      "displayName": "ReviewGate",
+      "description": "AI pre-merge checks for agent-written pull requests, preserved in a public read-only repository.",
+      "homepageUrl": "",
+      "url": "https://github.com/LVTD-LLC/reviewgate",
+      "statusOverride": "archived",
+      "owner": "LVTD-LLC",
+      "isPrivate": false,
+      "isArchived": true
     }
-  ]
+  ],
+  "reviewedAt": "2026-10-05"
 }
