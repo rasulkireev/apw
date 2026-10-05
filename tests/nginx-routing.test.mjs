@@ -87,3 +87,40 @@ test('every generated article canonical serves directly and its alias redirects 
     }
   }
 });
+
+// Check rendered hrefs against nginx, not only a hard-coded list of destinations.
+test('shared navigation and tag browsing link directly to existing pages', { skip: !origin }, async () => {
+  const targets = new Set();
+  for (const path of ['/', '/how-to-read-a-book', '/tags/', '/tag/Personal%20Finance/']) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    const shared = [...html.matchAll(/<(nav|footer)\b[^>]*>[\s\S]*?<\/\1>/g)];
+    assert.ok(shared.length >= 2, `navigation and footer rendered on ${path}`);
+    for (const [section] of shared) {
+      for (const [, href] of section.matchAll(/href="([^"]+)"/g)) {
+        if (href.startsWith('/') && !href.startsWith('//')) targets.add(href);
+      }
+    }
+    if (path === '/tags/') {
+      const tagLinks = [...html.matchAll(/href="(\/tag\/[^"#?]+)"/g)];
+      assert.ok(tagLinks.length > 350, 'all tag destinations exercised');
+      assert.ok(tagLinks.some(([, href]) => href.includes('%20')), 'multi-word tags encoded');
+      for (const [, href] of tagLinks) {
+        assert.ok(!href.includes(' '), href);
+        targets.add(href);
+      }
+    }
+    if (path.startsWith('/tag/')) {
+      const backLinks = [...html.matchAll(/href="(\/tags\/?)"/g)];
+      assert.ok(backLinks.length > 0, 'tag archive links back to tag index');
+      for (const [, href] of backLinks) targets.add(href);
+    }
+  }
+  for (const href of targets) {
+    const response = await request(href);
+    assert.equal(response.status, 200, href);
+    assert.equal(response.headers.get('location'), null, href);
+    await response.arrayBuffer();
+  }
+});
