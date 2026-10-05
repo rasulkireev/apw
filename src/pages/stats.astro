@@ -11,7 +11,7 @@ const collections = [
 ];
 const entries = collections.flatMap(collection => collection.entries.map(entry => ({
   title: entry.data.title as string,
-  href: `/${entry.slug}/`,
+  href: `/${entry.slug}`,
   date: new Date(entry.data.dateCreated).toISOString(),
   key: collection.key,
   label: collection.label,
