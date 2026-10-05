@@ -1,3 +1,7 @@
+## 2026-10-05
+### Fixed
+- Link shared navigation, footer and tag browsing directly to their existing canonical routes, avoiding unnecessary redirects. Encode tag names in URLs without changing labels, article text or canonical values.
+
 ## 2026-10-04
 ### Fixed
 - Point RSS and machine-readable source links directly to existing local pages. Preserve RSS item IDs and publication dates, retain external canonical overrides, and stop advertising nonexistent archive URLs without removing their text.

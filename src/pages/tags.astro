@@ -64,7 +64,7 @@ const allTags = extractAllTagsWithCounts(allContent);
     <div id="tags-container" class="flex flex-wrap gap-2 mb-8">
       {allTags.map(({ tag, count }) => (
         <a
-          href={`/tag/${tag}`}
+          href={`/tag/${encodeURIComponent(tag)}/`}
           class="tag-item px-3 py-1 text-sm bg-gray-100 rounded-lg hover:bg-gray-200"
           data-tag={tag}
           data-count={count}
