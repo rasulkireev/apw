@@ -1,4 +1,8 @@
 ## 2026-10-05
+
+## 2026-10-06
+
+- Serve social, share and discussion icons as a small local SVG sprite instead of render-blocking third-party icon CSS and fonts. Preserve link destinations and artwork, and name icon-only links for screen readers.
 ### Fixed
 - Link shared navigation, footer and tag browsing directly to their existing canonical routes, avoiding unnecessary redirects. Encode tag names in URLs without changing labels, article text or canonical values.
 

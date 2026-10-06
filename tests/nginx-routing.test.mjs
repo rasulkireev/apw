@@ -124,3 +124,32 @@ test('shared navigation and tag browsing link directly to existing pages', { ski
     await response.arrayBuffer();
   }
 });
+
+
+test('social icons render from a complete local sprite without icon-font CSS', { skip: !origin }, async () => {
+  const spriteResponse = await request('/icons/social.svg');
+  assert.equal(spriteResponse.status, 200);
+  assert.match(spriteResponse.headers.get('content-type'), /image\/svg\+xml/);
+  const sprite = await spriteResponse.text();
+  const symbols = new Set([...sprite.matchAll(/<symbol id="([^"]+)"/g)].map(match => match[1]));
+  assert.equal(symbols.size, 12);
+  assert.doesNotMatch(sprite, /<script|onload=|https?:\/\/(?!www\.w3\.org)/);
+  for (const path of ['/', '/how-to-read-a-book', '/10-years-of-great-books']) {
+    const response = await request(path);
+    assert.equal(response.status, 200, path);
+    const html = await response.text();
+    assert.doesNotMatch(html, /maxst\.icons8\.com|line-awesome.*\.css|class="[^"]*\bla[bsr]? la-/);
+    const icons = [...html.matchAll(/<svg\b[^>]*>[\s\S]*?<use href="\/icons\/social\.svg#([^"]+)"[^>]*>[\s\S]*?<\/svg>/g)];
+    assert.ok(icons.length >= 7, `rendered icons on ${path}`);
+    for (const [markup, name] of icons) {
+      assert.ok(symbols.has(name), `${path}: ${name} exists`);
+      assert.match(markup, /aria-hidden="true"/);
+      assert.match(markup, /width="1em" height="1em"/);
+    }
+    for (const [anchor] of html.matchAll(/<a\b[^>]*>[\s\S]*?<\/a>/g)) {
+      if (!anchor.includes('/icons/social.svg#')) continue;
+      const visibleText = anchor.replace(/<[^>]+>/g, '').trim();
+      assert.ok(visibleText || /aria-label="[^" ]/.test(anchor), `icon link has an accessible name on ${path}`);
+    }
+  }
+});
