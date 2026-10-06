@@ -8,7 +8,7 @@
           :href=twitterLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-twitter"></i>
+          <svg class="text-3xl text-white inline-block align-middle shrink-0" width="1em" height="1em" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><use href="/icons/social.svg#twitter"></use></svg>
           <span class="text-lg font-semibold text-white">Twitter</span>
         </a>
 
@@ -18,7 +18,7 @@
           :href=hnLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-hacker-news"></i>
+          <svg class="text-3xl text-white inline-block align-middle shrink-0" width="1em" height="1em" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><use href="/icons/social.svg#hacker-news"></use></svg>
           <span class="text-lg font-semibold text-white">HackerNews</span>
         </a>
 
@@ -28,7 +28,7 @@
           :href=redditLink
           target="_blank"
         >
-          <i class="text-3xl text-white lab la-reddit"></i>
+          <svg class="text-3xl text-white inline-block align-middle shrink-0" width="1em" height="1em" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true" focusable="false"><use href="/icons/social.svg#reddit"></use></svg>
           <span class="text-lg font-semibold text-white">Reddit</span>
         </a>
 
@@ -38,7 +38,6 @@
           :href=indiehackersLink
           target="_blank"
         >
-          <!-- <i class="text-3xl text-white lab la-reddit"></i> -->
           <span class="text-lg font-semibold text-white">Indiehackers</span>
         </a>
 
