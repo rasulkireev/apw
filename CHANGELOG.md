@@ -1,3 +1,7 @@
+## 2026-10-07
+### Fixed
+- Reserve book-cover space using each image's intrinsic dimensions, preventing loading images from shifting book-review titles and text. Preserve existing artwork, display size and content.
+
 ## 2026-10-05
 
 ## 2026-10-06
