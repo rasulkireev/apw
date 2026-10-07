@@ -1,6 +1,12 @@
 <template>
   <div class="flex flex-col items-center md:flex-row md:items-start md:space-x-6">
-    <img class="w-32" :src=getImageUrl(data.cover) :alt="`${data.title} by ${data.author}`" />
+    <img
+      class="w-32 h-auto shrink-0"
+      :src="getImageUrl(data.cover)"
+      :width="data.cover.width"
+      :height="data.cover.height"
+      :alt="`${data.title} by ${data.author}`"
+    />
     <div class="flex flex-col space-y-2">
       <h1 class="h-full text-2xl font-extrabold leading-10 text-center text-gray-900 md:text-left md:text-5xl">
         {{ data.title }} by {{ data.author }}
