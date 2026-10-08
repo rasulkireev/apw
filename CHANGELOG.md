@@ -1,5 +1,10 @@
 ## 2026-10-08
 
+## 2026-10-08 — Newsletter cutover verification
+
+- Record live signup/delivery/unsubscribe and offsite recovery verification; document the revoked legacy Windmill token and safe rollback limitations.
+
+
 ## 2026-10-08 — Native newsletter signup
 
 - Route all existing signup forms through an Astro server endpoint to dedicated Listmonk with double opt-in; remove browser-side Windmill credentials and IP lookup.
