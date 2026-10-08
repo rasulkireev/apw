@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url';
 // Preserve the canonical already declared by each rendered page. Only remove a
 // trailing slash when that is the sole difference; external canonicals and hubs
 // are deliberately not rewritten. Run after Astro and before IndexNow.
-export async function buildCanonicalPaths(dist = 'dist', output = 'generated/canonical-locations.conf') {
+export async function buildCanonicalPaths(dist = 'dist/client', output = 'generated/canonical-locations.conf') {
   const origin = 'https://www.rasulkireev.com';
   const maps = (await readdir(dist)).filter(name => /^sitemap-\d+\.xml$/.test(name));
   if (!maps.length) throw new Error('No generated sitemaps found');

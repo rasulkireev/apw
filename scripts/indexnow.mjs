@@ -30,7 +30,7 @@ export function changedUrls(previous, current) {
     .filter(url => previous.pages[url] !== current.pages[url]).sort();
 }
 
-export async function buildManifest(dist = 'dist', revision = process.env.INDEXNOW_REVISION || 'local') {
+export async function buildManifest(dist = 'dist/client', revision = process.env.INDEXNOW_REVISION || 'local') {
   const pages = {};
   const maps = (await readdir(dist)).filter(name => /^sitemap-\d+\.xml$/.test(name));
   if (!maps.length) throw new Error('No generated sitemaps found');

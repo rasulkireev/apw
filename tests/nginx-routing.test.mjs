@@ -153,3 +153,21 @@ test('social icons render from a complete local sprite without icon-font CSS', {
     }
   }
 });
+
+test('native newsletter endpoint validates requests and rate limits spoofed client headers', { skip: !origin }, async () => {
+  const call = (headers = {}, data = {}) => fetch(new URL('/api/newsletter', origin), {
+    method: 'POST', headers: { Origin: 'https://www.rasulkireev.com', 'Content-Type': 'application/json', Accept: 'application/json', ...headers },
+    body: JSON.stringify({ email: 'reader@example.com', ...data }),
+  });
+  assert.equal((await call({ Origin: 'https://attacker.example' })).status, 403);
+  assert.equal((await call({}, { email: 'bad' })).status, 400);
+  // CI has no provider configuration: unavailable must not look like successful signup.
+  assert.equal((await call()).status, 503);
+  let limited = false;
+  for (let i = 0; i < 6; i++) {
+    const response = await call({ 'X-Real-IP': `192.0.2.${i + 1}`, 'X-Forwarded-For': `192.0.2.${i + 1}` }, { website: 'bot' });
+    if (response.status === 429) { limited = true; assert.equal(response.headers.get('cache-control'), 'no-store'); }
+    else assert.equal(response.status, 200);
+  }
+  assert.ok(limited, 'client-supplied IP headers cannot bypass the ingress budget');
+});

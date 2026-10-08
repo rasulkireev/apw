@@ -1,4 +1,11 @@
 ## 2026-10-08
+
+## 2026-10-08 — Native newsletter signup
+
+- Route all existing signup forms through an Astro server endpoint to dedicated Listmonk with double opt-in; remove browser-side Windmill credentials and IP lookup.
+- Add validation, same-origin checks, a honeypot, request/rate limits, accessible confirmation feedback and no-JavaScript form support.
+- Preserve static Nginx routing and the existing Buttondown newsletter archive; document runtime, backups and rollback.
+
 ### Added
 - Link the three existing parenting book reviews to one another through a server-rendered related-reading section. Reuse existing titles and authors; preserve review text, dates and URLs.
 

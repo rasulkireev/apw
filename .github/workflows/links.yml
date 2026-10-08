@@ -51,10 +51,10 @@ jobs:
             --quiet
             --offline
             --index-files index.html
-            --root-dir "${{ github.workspace }}/dist"
-            './dist/**/*.html'
-            './dist/**/*.xml'
-            './dist/**/*.txt'
+            --root-dir "${{ github.workspace }}/dist/client"
+            './dist/client/**/*.html'
+            './dist/client/**/*.xml'
+            './dist/client/**/*.txt'
           fail: true
           jobSummary: true
 

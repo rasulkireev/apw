@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
+const FullWidthNewsletter = ({ title, description, tag }) => {
   const [formState, setFormState] = useState({
     userName: '',
     userEmail: '',
@@ -9,31 +9,12 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
     isError: false,
   });
 
-  const [userIp, setUserIp] = useState('');
-
-  // Fetch user's IP address when component mounts
-  useEffect(() => {
-    const fetchIP = async () => {
-      try {
-        const response = await fetch('https://api.ipify.org?format=json');
-        if (response.ok) {
-          const data = await response.json();
-          setUserIp(data.ip);
-        }
-      } catch (error) {
-        console.log('Could not fetch IP address:', error);
-        // Continue without IP if fetch fails
-      }
-    };
-
-    fetchIP();
-  }, []);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormState({
       ...formState,
-      [name]: value,
+      [name === 'name' ? 'userName' : 'userEmail']: value,
     });
   };
 
@@ -45,17 +26,13 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
       name: formState.userName,
       email: formState.userEmail,
       tag: tag,
-      source: source,
-      ip_address: userIp,
+      website: new FormData(event.currentTarget).get('website'),
     };
 
     try {
-      const response = await fetch('https://windmill.cr.lvtd.dev/api/w/main/jobs/run/p/u/rasul/add_buttondown_email', {
+      const response = await fetch('/api/newsletter', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer 9eHmmwaBQ9eKfT8Sr88ZRrOxKkXRl1gY',
-        },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(formData),
       });
 
@@ -63,7 +40,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
         setFormState({
           ...formState,
           isSubmitting: false,
-          message: 'Thank for subscribing! You should receive an email soon.',
+          message: 'Check your inbox for a confirmation link. If you are already subscribed, you are all set.',
           isError: false,
         });
       } else {
@@ -74,8 +51,7 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
           isError: true,
         });
       }
-    } catch (error) {
-      console.error('Subscription error:', error);
+    } catch {
       setFormState({
         ...formState,
         isSubmitting: false,
@@ -91,9 +67,11 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
       <h2 className="text-2xl font-semibold">{title}</h2>
       <p className="mb-2 text-xl">{description}</p>
 
+      <p className="mb-2 text-sm">Confirm your email to subscribe. Unsubscribe at any time.</p>
+      {formState.isError && <p role="alert">{formState.message}</p>}
       {/* Conditional rendering based on formState */}
-      {formState.message ? (
-        <div
+      {formState.message && !formState.isError ? (
+        <div role="status" aria-live="polite"
           className={`w-full p-2 text-lg text-gray-700 border rounded mt-2 ${
             formState.isError ? 'bg-red-100 border-red-700' : 'bg-green-100 border-green-700'
           }`}
@@ -101,10 +79,13 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
           {formState.message}
         </div>
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col md:flex-row">
+        <form method="post" action="/api/newsletter" onSubmit={handleSubmit} className="flex flex-col md:flex-row">
           <input
             type="text"
-            name="userName"
+            name="name"
+            aria-label="First name"
+            autoComplete="given-name"
+            maxLength={100}
             value={formState.userName}
             onChange={handleInputChange}
             placeholder="First Name"
@@ -112,12 +93,18 @@ const FullWidthNewsletter = ({ title, description, tag, source = '' }) => {
           />
           <input
             type="email"
-            name="userEmail"
+            name="email"
+            aria-label="Email address"
+            autoComplete="email"
+            maxLength={254}
+            required
             value={formState.userEmail}
             onChange={handleInputChange}
             placeholder="Email"
             className="w-full p-1 mb-2 leading-tight text-gray-800 bg-gray-200 border border-gray-500 rounded appearance-none md:mr-2 md:h-10 focus:outline-none focus:bg-white md:w-64"
           />
+          <input type="hidden" name="tag" value={tag || ''} />
+          <div hidden aria-hidden="true"><label>Leave empty<input name="website" tabIndex={-1} autoComplete="off" /></label></div>
           <button
             type="submit"
             disabled={formState.isSubmitting}
