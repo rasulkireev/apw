@@ -10,6 +10,7 @@ import FullWidthNewsletter from '../components/FullWidthNewsletter';
 import type { Code } from 'astro:components';
 import { capitalize } from 'vue';
 import TableOfContents from '../components/TableOfContents';
+import RelatedReading from '../components/RelatedReading.astro';
 
 export async function getStaticPaths() {
   const articleEntries = await getCollection('articles');
@@ -30,11 +31,19 @@ export async function getStaticPaths() {
     params: {
       slug: entry.slug
     },
-    props: { entry },
+    props: {
+      entry,
+      relatedBooks: entry.collection === 'books' && entry.data.category === 'Parenting'
+        ? bookEntries
+            .filter(book => book.data.category === 'Parenting' && book.slug !== entry.slug)
+            .sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'))
+            .map(book => ({ slug: book.slug, title: book.data.title, author: book.data.author }))
+        : [],
+    },
   }));
 }
 
-const { entry } = Astro.props;
+const { entry, relatedBooks } = Astro.props;
 const { Content } = await entry.render();
 
 const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title + " | " + capitalize(entry.data.type) + " ";
@@ -78,6 +87,8 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
     </div>
 
   </article>
+
+  <RelatedReading books={relatedBooks} />
 
   <SocialShareButtons
     title={entry.data.title}

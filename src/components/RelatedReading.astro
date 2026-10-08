@@ -1,0 +1,23 @@
+---
+interface Props {
+  books: { slug: string; title: string; author: string }[];
+}
+
+const { books } = Astro.props;
+---
+
+{books.length > 0 && (
+  <nav aria-labelledby="related-reading-title" class="my-8 border-t border-gray-200 pt-6">
+    <h2 id="related-reading-title" class="mb-3 text-xl font-semibold">More parenting book notes</h2>
+    <ul class="space-y-3">
+      {books.map(book => (
+        <li>
+          <a href={`/${book.slug}`} class="text-blue-700 underline underline-offset-2 hover:text-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+            {book.title}
+          </a>
+          <span class="block text-sm text-gray-600">{book.author}</span>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}

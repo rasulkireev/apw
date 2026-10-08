@@ -1,3 +1,7 @@
+## 2026-10-08
+### Added
+- Link the three existing parenting book reviews to one another through a server-rendered related-reading section. Reuse existing titles and authors; preserve review text, dates and URLs.
+
 ## 2026-10-07
 ### Fixed
 - Reserve book-cover space using each image's intrinsic dimensions, preventing loading images from shifting book-review titles and text. Preserve existing artwork, display size and content.
