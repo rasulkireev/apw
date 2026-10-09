@@ -1,3 +1,10 @@
+## 2026-10-09 — Public reading analytics
+
+- Include PostHog on existing articles and book notes so search landings and onward reading can be measured alongside hub visits.
+- Limit collection to anonymous page views/leaves with sanitized URLs and referrer origins; disable DOM/form capture, replay and campaign-parameter collection, and respect browser privacy signals.
+- Correct the offline link checker’s static-file expectation for the server-only newsletter endpoint; retain its Docker runtime checks.
+- Keep newsletter acceptance separate from confirmed subscriptions; no new editorial content or subscriber tests.
+
 ## 2026-10-08
 
 ## 2026-10-08 — Newsletter cutover verification

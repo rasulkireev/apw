@@ -23,6 +23,9 @@ exclude_path = [
 ]
 
 exclude = [
+  # Server-only POST route, not a static file. The Docker CI job verifies its
+  # validation, unavailable-provider response and rate limits at runtime.
+  '^file://.*/dist/client/api/newsletter$',
   "^#",
   "^javascript:",
   "^mailto:",
