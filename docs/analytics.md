@@ -1,6 +1,6 @@
 # Public reading measurement
 
-PostHog project 632904 (`https://us.posthog.com`) measures public hub and article visits through the same `PostHog.astro` component. Build variables are `PUBLIC_POSTHOG_KEY` (public ingestion key only) and `PUBLIC_POSTHOG_HOST`. Never put a management API key in a browser bundle.
+PostHog project 632904 (`https://us.posthog.com`) measures public hub and article visits through the same `PostHog.astro` component. Build variables are `PUBLIC_POSTHOG_KEY` (public ingestion key only) and `PUBLIC_POSTHOG_HOST`. Never put a management API key in a browser bundle. The project timezone is `Europe/Moscow`; record explicit UTC bounds when using UTC diagnostic queries, and keep GSC Pacific dates separate.
 
 ## Event contract
 

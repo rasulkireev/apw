@@ -210,7 +210,7 @@
       "rasulkireev.com",
       "www.rasulkireev.com"
     ],
-    "timezone": null,
+    "timezone": "Europe/Moscow",
     "success_events": [],
     "site_search_events": [],
     "web_vitals_enabled": null
@@ -254,7 +254,7 @@
     "provider": "posthog",
     "host": "https://us.posthog.com",
     "api_key_env": "POSTHOG_API_KEY",
-    "timezone": "UTC",
+    "timezone": "Europe/Moscow",
     "conversion_attribution": "unverified; Listmonk double-opt-in confirmation not instrumented",
     "posthog_note": "Public-reading-v1 adds article coverage; compare post-deployment cohorts separately from earlier hub-only traffic. See docs/analytics.md.",
     "project_id": "632904"
