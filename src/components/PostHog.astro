@@ -1,9 +1,10 @@
 <script>
+  import { publicPageUrl, sanitizePageEvent } from "../lib/analytics.mjs";
   // Astro bundles this once; no inline script or window-global SDK is needed.
   const key = import.meta.env.PUBLIC_POSTHOG_KEY;
   const productionHosts = ['rasulkireev.com', 'www.rasulkireev.com'];
 
-  if (import.meta.env.PROD && key && productionHosts.includes(window.location.hostname)) {
+  if (import.meta.env.PROD && key && productionHosts.includes(window.location.hostname) && navigator.doNotTrack !== '1' && !navigator.globalPrivacyControl) {
     import('posthog-js').then(({ default: posthog }) => {
       posthog.init(key, {
         api_host: import.meta.env.PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com',
@@ -11,7 +12,17 @@
         person_profiles: 'identified_only',
         capture_pageview: true,
         capture_pageleave: true,
-        autocapture: { mask_all_text: true, mask_all_element_attributes: true },
+        // Page-level discovery, not DOM/form/link-content capture.
+        autocapture: false,
+        capture_dead_clicks: false,
+        capture_performance: false,
+        advanced_disable_flags: true,
+        save_campaign_params: false,
+        save_referrer: false,
+        respect_dnt: true,
+        disable_capture_url_hashes: true,
+        get_current_url: () => publicPageUrl(window.location.href) || '',
+        before_send: (event) => sanitizePageEvent(event, document.referrer),
         disable_session_recording: true,
         enable_heatmaps: false,
         disable_surveys: true,

@@ -251,13 +251,13 @@
     "human_approval_required": false
   },
   "analytics": {
-    "provider": "plausible",
-    "site_id": "rasulkireev.com",
-    "host": "https://plausible-v2.cr.lvtd.dev",
-    "api_key_env": "PLAUSIBLE_API_KEY",
-    "timezone": "Europe/Istanbul",
-    "conversion_attribution": "unverified",
-    "posthog_note": "Production-host events verified on 2026-09-28. Conversion attribution, full page coverage and field vitals remain unverified."
+    "provider": "posthog",
+    "host": "https://us.posthog.com",
+    "api_key_env": "POSTHOG_API_KEY",
+    "timezone": "UTC",
+    "conversion_attribution": "unverified; Listmonk double-opt-in confirmation not instrumented",
+    "posthog_note": "Public-reading-v1 adds article coverage; compare post-deployment cohorts separately from earlier hub-only traffic. See docs/analytics.md.",
+    "project_id": "632904"
   },
   "dfs": {
     "enabled": true,
