@@ -2,7 +2,7 @@
 title: Gateway to Great Books
 description: In this post I'll be listing the works from the "Gateway to Great Books" series that I'll be reading to keep track of my progress.
 dateCreated: 2024-12-07
-dateUpdated: 2024-12-07
+dateUpdated: 2026-10-10
 published: true
 slug: gateway-to-great-books
 icon: ./icons/book_reading.png
@@ -21,7 +21,7 @@ tags:
   - Self-improvement
 ---
 
-Not too long ago I have [started a 10 year long journey to read great books](/10-years-of-great-books). It's been a pleasant journey thus far. I'm definitely behind on the plan, but that's fine, I've been reading both older ('great') and newer books. I originally came across that plan in the "How to Read a Book" book by [Mortimer Adler](https://en.wikipedia.org/wiki/Mortimer_J._Adler), which I almost finished and am about to write a review on.
+Not too long ago I have [started a 10 year long journey to read great books](/10-years-of-great-books). It's been a pleasant journey thus far. I'm definitely behind on the plan, but that's fine, I've been reading both older ('great') and newer books. I originally came across that plan in the "[How to Read a Book](/how-to-read-a-book)" book by [Mortimer Adler](https://en.wikipedia.org/wiki/Mortimer_J._Adler), which I almost finished and am about to write a review on.
 
 Well, this time around I noticed there was a reference to another book compilation called "[Gateway to Great Books](https://www.amazon.com/Gateway-Great-Books-10-Set/dp/B000K078GY/ref=sr_1_1)". This is very similar to the "Great Books of the Western World" series, but with works that are simpler/shorter. I thought it would be a good idea to start reading some of them too.
 
