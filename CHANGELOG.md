@@ -1,3 +1,9 @@
+## 2026-10-10 — Reading-plan discovery
+
+- Link the existing mentions of *How to Read a Book* in both Great Books reading plans directly to the published book notes.
+- Preserve the original prose, reading lists, publication dates, titles and canonical URLs; update the two pages’ modification dates.
+- No new editorial posts.
+
 ## 2026-10-09 — Public reading analytics
 
 - Include PostHog on existing articles and book notes so search landings and onward reading can be measured alongside hub visits.
