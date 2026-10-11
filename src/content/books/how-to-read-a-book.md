@@ -3,11 +3,11 @@ title: How to Read a Book
 author: Mortimer Adler
 rating: 9
 slug: how-to-read-a-book
-description: This book is a must read for anyone who wants to read better. It's not easy to read, but it's worth it.
+description: "My review and notes on Mortimer Adler's How to Read a Book: the four levels of reading, inspectional reading, and analytical reading."
 cover: "./images/htrab.jpg"
 dateRead: 2024-12-11
 dateCreated: 2024-12-12
-dateUpdated: 2024-12-12
+dateUpdated: 2026-10-11
 category: "Reading"
 type: book
 hasSummaries: false
