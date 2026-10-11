@@ -1,3 +1,9 @@
+## 2026-10-11 — Adler book-note description
+
+- Describe the existing review and reading-method notes in the *How to Read a Book* search/social description instead of a generic recommendation.
+- Preserve the title, article text, links, canonical URL and original publication date; update the modification date.
+- No new editorial posts.
+
 ## 2026-10-10 — Reading-plan discovery
 
 - Link the existing mentions of *How to Read a Book* in both Great Books reading plans directly to the published book notes.
