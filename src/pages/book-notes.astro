@@ -55,11 +55,15 @@ const filteredBooks = sortedBooks.filter(book => {
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
+  <h1 class="mb-4 text-3xl font-bold">Book Reviews</h1>
   <div class="mb-4 space-y-4">
-    <div class="flex justify-between items-center">
-      <div class="flex gap-2">
+    <div class="flex flex-wrap justify-between items-center gap-2">
+      <div class="flex flex-wrap gap-2">
         <button
           id="toggleTags"
+          type="button"
+          aria-controls="tagContainer"
+          aria-expanded="false"
           class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
         >
           Filter by tags
@@ -67,6 +71,7 @@ const filteredBooks = sortedBooks.filter(book => {
 
         <select
           id="categoryFilter"
+          aria-label="Book category"
           class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
         >
           <option value="">All Categories</option>
@@ -81,9 +86,10 @@ const filteredBooks = sortedBooks.filter(book => {
         </select>
       </div>
 
-      <div class="flex gap-2">
+      <div class="flex flex-wrap gap-2">
         <select
           id="sortFilter"
+          aria-label="Sort books"
           class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
         >
           <option value="rating-desc" selected={selectedSort === 'rating-desc'}>Rating (High to Low)</option>
@@ -100,6 +106,8 @@ const filteredBooks = sortedBooks.filter(book => {
           <button
             class="px-3 py-1 text-sm text-gray-700 bg-white rounded-full hover:bg-gray-50 tag-pill"
             data-tag={tag}
+            type="button"
+            aria-pressed="false"
           >
             {tag}
           </button>
@@ -145,7 +153,8 @@ const filteredBooks = sortedBooks.filter(book => {
 
   // Toggle tag container visibility
   toggleButton?.addEventListener('click', () => {
-    tagContainer?.classList.toggle('hidden');
+    const isHidden = tagContainer?.classList.toggle('hidden');
+    toggleButton.setAttribute('aria-expanded', String(!isHidden));
   });
 
   // Handle category selection
@@ -185,6 +194,7 @@ const filteredBooks = sortedBooks.filter(book => {
       pill.classList.toggle('bg-gray-100');
       pill.classList.toggle('border');
       pill.classList.toggle('border-blue-500');
+      pill.setAttribute('aria-pressed', String(pill.classList.contains('selected')));
 
       // Get all selected tags
       const selectedTags = Array.from(document.querySelectorAll('.tag-pill.selected'))
@@ -202,13 +212,34 @@ const filteredBooks = sortedBooks.filter(book => {
 
       filterAndSortBooks();
     });
-
-    // Set initial selected state based on URL params
-    const currentTags = new URLSearchParams(window.location.search).get('tags')?.split(',').filter(Boolean) || [];
-    if (currentTags.includes(pill.getAttribute('data-tag'))) {
-      pill.classList.add('selected', 'bg-gray-100', 'border', 'border-blue-500');
-    }
   });
+
+  // Static HTML has build-time defaults. Restore controls from the actual URL
+  // on arrival and on Back/Forward before deriving the visible book list.
+  function restoreFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    const category = categoryFilter as HTMLSelectElement;
+    const sort = sortFilter as HTMLSelectElement;
+    const requestedCategory = params.get('category') || '';
+    const requestedSort = params.get('sort') || 'rating-desc';
+    category.value = Array.from(category.options).some(option => option.value === requestedCategory)
+      ? requestedCategory : '';
+    sort.value = Array.from(sort.options).some(option => option.value === requestedSort)
+      ? requestedSort : 'rating-desc';
+    const tags = params.get('tags')?.split(',').filter(Boolean) || [];
+    tagPills.forEach(pill => {
+      const selected = tags.includes(pill.getAttribute('data-tag') || '');
+      ['selected', 'bg-gray-100', 'border', 'border-blue-500'].forEach(name => {
+        pill.classList.toggle(name, selected);
+      });
+      pill.setAttribute('aria-pressed', String(selected));
+    });
+    if (document.querySelector('.tag-pill.selected')) {
+      tagContainer?.classList.remove('hidden');
+      toggleButton?.setAttribute('aria-expanded', 'true');
+    }
+    filterAndSortBooks();
+  }
 
   function sortBooksClient(books, sortOption) {
     return Array.from(books).sort((a, b) => {
@@ -278,6 +309,6 @@ const filteredBooks = sortedBooks.filter(book => {
     }
   }
 
-  // Initial filter and sort on page load
-  filterAndSortBooks();
+  window.addEventListener('popstate', restoreFromUrl);
+  restoreFromUrl();
 </script>

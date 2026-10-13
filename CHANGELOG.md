@@ -1,5 +1,9 @@
 ## 2026-10-11 — Adler book-note description
 
+## 2026-10-13
+
+- Restore book-review category, tag and sort controls from shared URLs and browser Back/Forward; keep existing reviews unchanged. Label browsing controls and let them wrap on narrow screens.
+
 - Describe the existing review and reading-method notes in the *How to Read a Book* search/social description instead of a generic recommendation.
 - Preserve the title, article text, links, canonical URL and original publication date; update the modification date.
 - No new editorial posts.
