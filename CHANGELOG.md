@@ -1,3 +1,8 @@
+## 2026-10-15 — Growth Levers review description
+
+- Clarify the existing review description with its author, topics and first-person Readwise perspective; preserve the title and article body.
+- Update the modification date. No new editorial posts.
+
 ## 2026-10-11 — Adler book-note description
 
 ## 2026-10-13
