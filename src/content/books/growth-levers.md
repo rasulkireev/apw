@@ -3,11 +3,11 @@ title: "Growth Levers and How to Find Them"
 author: "Matt Lerner"
 rating: 7
 slug: "growth-levers"
-description: "A practical playbook for finding outsized growth by shifting from optimization to discovery—map the customer journey (Struggle → Search → Selection), build a growth model (North Star, key drivers, rate‑limiting step), and run hypothesis‑driven sprints to do fewer, bigger things that truly move the needle."
+description: "My review and notes on Matt Lerner's Growth Levers and How to Find Them: growth models, customer research, and why I found it more useful at Readwise."
 cover: "./images/growth-levers.jpg"
 dateRead: 2025-08-10
 dateCreated: 2025-08-10
-dateUpdated: 2025-08-10
+dateUpdated: 2026-10-15
 category: "Business"
 type: book
 notAffiliateLink: https://bookshop.org/a/106638/9781738426225
