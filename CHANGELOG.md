@@ -1,3 +1,8 @@
+## 2026-10-16 — Tutorial browsing
+
+- Restore tutorial tag filters on shared links, reload and browser Back/Forward; ignore unknown tags without hiding the entire list.
+- Expose active filter and disclosure states to assistive technology and add a page heading. Keep every existing tutorial and its metadata unchanged; no new editorial posts.
+
 ## 2026-10-15 — Growth Levers review description
 
 - Clarify the existing review description with its author, topics and first-person Readwise perspective; preserve the title and article body.

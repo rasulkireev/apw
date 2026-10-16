@@ -15,15 +15,6 @@ allTutorials.sort((a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.va
 // Get unique tags from all tutorials
 const allTags = [...new Set(allTutorials.flatMap(tutorial => tutorial.data.tags || []))].sort();
 
-// Get the selected tags from URL params
-const selectedTags = Astro.url.searchParams.get('tags')?.split(',').filter(Boolean) || [];
-
-// Filter tutorials if tags are selected
-const filteredTutorials = selectedTags.length > 0
-  ? allTutorials.filter(tutorial =>
-      tutorial.data.tags?.some(tag => selectedTags.includes(tag))
-    )
-  : allTutorials;
 ---
 
 <BaseLayout
@@ -31,9 +22,13 @@ const filteredTutorials = selectedTags.length > 0
   pageDescription={pageDescription}
   pageKeywords={pageKeywords}
 >
+  <h1 class="mb-4 text-3xl font-bold">Programming Tutorials</h1>
   <div class="mb-4">
     <button
       id="toggleTags"
+      type="button"
+      aria-controls="tagContainer"
+      aria-expanded="false"
       class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
     >
       Filter by tags
@@ -45,6 +40,8 @@ const filteredTutorials = selectedTags.length > 0
           <button
             class="px-3 py-1 text-sm text-gray-700 bg-white rounded-full hover:bg-gray-50 tag-pill"
             data-tag={tag}
+            type="button"
+            aria-pressed="false"
           >
             {tag}
           </button>
@@ -53,7 +50,7 @@ const filteredTutorials = selectedTags.length > 0
     </div>
   </div>
 
-  {filteredTutorials.map(p => (
+  {allTutorials.map(p => (
     <div class="mb-1 tutorial-item" data-tags={p.data.tags?.join(',')}>
       <a
         href={"/" + p.slug}
@@ -85,64 +82,53 @@ const filteredTutorials = selectedTags.length > 0
   const tagContainer = document.getElementById('tagContainer');
   const tagPills = document.querySelectorAll('.tag-pill');
   const tutorialItems = document.querySelectorAll('.tutorial-item');
+  const knownTags = new Set(Array.from(tagPills, pill => pill.getAttribute('data-tag')));
 
-  // Toggle tag container visibility
   toggleButton?.addEventListener('click', () => {
-    tagContainer?.classList.toggle('hidden');
+    const isHidden = tagContainer?.classList.toggle('hidden');
+    toggleButton.setAttribute('aria-expanded', String(!isHidden));
   });
 
-  // Handle tag selection
+  function selectedTagsFromUrl() {
+    return (new URLSearchParams(window.location.search).get('tags')?.split(',') || [])
+      .filter(tag => knownTags.has(tag));
+  }
+
+  // The URL is the source of truth for shared links, reloads and Back/Forward.
+  function restoreFromUrl() {
+    const selectedTags = selectedTagsFromUrl();
+    tagPills.forEach(pill => {
+      const selected = selectedTags.includes(pill.getAttribute('data-tag'));
+      ['selected', 'bg-gray-100', 'border', 'border-blue-500'].forEach(name => {
+        pill.classList.toggle(name, selected);
+      });
+      pill.setAttribute('aria-pressed', String(selected));
+    });
+    if (selectedTags.length > 0) {
+      tagContainer?.classList.remove('hidden');
+      toggleButton?.setAttribute('aria-expanded', 'true');
+    }
+    tutorialItems.forEach(tutorial => {
+      const tags = tutorial.getAttribute('data-tags')?.split(',').filter(Boolean) || [];
+      const visible = selectedTags.length === 0 || selectedTags.some(tag => tags.includes(tag));
+      tutorial.style.display = visible ? '' : 'none';
+    });
+  }
+
   tagPills.forEach(pill => {
     pill.addEventListener('click', () => {
-      // Toggle visual state
-      pill.classList.toggle('selected');
-      pill.classList.toggle('bg-gray-100');
-      pill.classList.toggle('border');
-      pill.classList.toggle('border-blue-500');
-
-      // Get all selected tags
-      const selectedTags = Array.from(document.querySelectorAll('.tag-pill.selected'))
-        .map(el => el.getAttribute('data-tag'))
-        .filter(Boolean);
-
-      // Update URL without page reload
-      const newUrl = new URL(window.location.href);
-      if (selectedTags.length > 0) {
-        newUrl.searchParams.set('tags', selectedTags.join(','));
-      } else {
-        newUrl.searchParams.delete('tags');
-      }
-      window.history.pushState({}, '', newUrl);
-
-      // Filter tutorials client-side
-      filterTutorials(selectedTags);
+      const selectedTags = new Set(selectedTagsFromUrl());
+      const tag = pill.getAttribute('data-tag');
+      if (selectedTags.has(tag)) selectedTags.delete(tag);
+      else selectedTags.add(tag);
+      const url = new URL(window.location.href);
+      if (selectedTags.size > 0) url.searchParams.set('tags', Array.from(selectedTags).join(','));
+      else url.searchParams.delete('tags');
+      window.history.pushState({}, '', url);
+      restoreFromUrl();
     });
-
-    // Set initial selected state based on URL params
-    const currentTags = new URLSearchParams(window.location.search).get('tags')?.split(',').filter(Boolean) || [];
-    if (currentTags.includes(pill.getAttribute('data-tag'))) {
-      pill.classList.add('selected', 'bg-gray-100', 'border', 'border-blue-500');
-    }
   });
 
-  function filterTutorials(selectedTags) {
-    console.log('Filtering with tags:', selectedTags); // Debug log
-
-    tutorialItems.forEach(tutorial => {
-      const tutorialTags = tutorial.getAttribute('data-tags')?.split(',').filter(Boolean) || [];
-      console.log('Tutorial tags:', tutorialTags); // Debug log
-
-      const shouldShow = selectedTags.length === 0 ||
-        selectedTags.some(tag => tutorialTags.includes(tag));
-
-      console.log('Should show:', shouldShow); // Debug log
-      tutorial.style.display = shouldShow ? '' : 'none';
-    });
-  }
-
-  // Initial filter on page load
-  const initialTags = new URLSearchParams(window.location.search).get('tags')?.split(',').filter(Boolean) || [];
-  if (initialTags.length > 0) {
-    filterTutorials(initialTags);
-  }
+  window.addEventListener('popstate', restoreFromUrl);
+  restoreFromUrl();
 </script>
