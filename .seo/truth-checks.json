@@ -18,5 +18,11 @@
       "getCollection"
     ],
     "must_not_match": []
+  },
+  {
+    "claim": "Jupyter tutorial uses the documented Windows cmd activation script",
+    "paths": ["src/content/tutorials/venv-for-jupyter-notebook.md"],
+    "must_match": ["Windows Command Prompt", "\\.\\\\DS\\\\Scripts\\\\activate\\.bat"],
+    "must_not_match": ["actvate\\.bat"]
   }
 ]

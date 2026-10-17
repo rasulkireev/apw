@@ -1,3 +1,8 @@
+## 2026-10-17 — Jupyter environment setup
+
+- Correct the existing Jupyter tutorial's Windows activation command and label it for Command Prompt.
+- Link its virtual-environment reference to the existing setup tutorial; preserve the author's experience and update the modification date. No new editorial posts.
+
 ## 2026-10-16 — Tutorial browsing
 
 - Restore tutorial tag filters on shared links, reload and browser Back/Forward; ignore unknown tags without hiding the entire list.
