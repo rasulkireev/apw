@@ -1,7 +1,7 @@
 ---
 title: Using Virtual Environment with Jupyter Notebook
 dateCreated: 2019-08-26
-dateUpdated: 2019-08-26
+dateUpdated: 2026-10-17
 published: true
 slug: jupyter-venv
 icon: ./icons/jupyter.jpg
@@ -12,7 +12,7 @@ type: tutorial
 description: If you are using a virtual environment, you might have ome issues with Jupyter Notebook. In this post we go through proper Jupyter Setup with venv.
 ---
 
-I decided to try replacing the [Anaconda distribution](https://www.anaconda.com/distribution/) with a custom virtual environemnt, just for the purposes of learning, keeping the environemnts more lightweight and removing the unnecessary libraries.
+I decided to try replacing the [Anaconda distribution](https://www.anaconda.com/distribution/) with a [custom virtual environment](/django-venv), just for the purposes of learning, keeping the environemnts more lightweight and removing the unnecessary libraries.
 
 ## That is how I started:
 
@@ -28,8 +28,8 @@ python3 -m venv DS
 # Activate in Mac (& Linux)
 source DS/bin/activate
 
-# Activate in Windows
-.\DS\Scripts\actvate.bat
+# Activate in Windows Command Prompt (cmd)
+.\DS\Scripts\activate.bat
 ```
 
 Now our virtual environment is active and we can install any libraries that we want to. One of the libraries is [**jupyterlab**](https://jupyterlab.readthedocs.io/en/stable/). Actually, I always install it outside any virtaul environment (globally).
