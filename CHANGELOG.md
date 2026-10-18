@@ -1,3 +1,8 @@
+## 2026-10-18 — Poetry setup instructions
+
+- Replace the retired Poetry installer in the existing Django and ERC20 tutorials with the official installer and platform/PATH guidance.
+- Clarify Poetry 2.x shell/export plugin prerequisites and label the Django guide's historical setup output. Preserve the author's walkthroughs and metadata; update modification dates. No new editorial posts.
+
 ## 2026-10-17 — Jupyter environment setup
 
 - Correct the existing Jupyter tutorial's Windows activation command and label it for Command Prompt.

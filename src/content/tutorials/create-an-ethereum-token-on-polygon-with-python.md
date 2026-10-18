@@ -1,7 +1,7 @@
 ---
 title: How to create an Ethereum Token with Python (ERC20)
 dateCreated: 2021-09-01
-dateUpdated: 2021-09-01
+dateUpdated: 2026-10-18
 published: true
 slug: creating-ethereum-token-with-python
 icon: ./icons/ethereum.png
@@ -38,10 +38,12 @@ In this tutorial, we are going to use a lot of cool Python-related libraries, so
 
 Now that we have the basic knowledge out of the way let's talk about technical things. I will be developing on a macOS with the following technologies:
 ### a. Poetry
-[Poetry](https://python-poetry.org/docs/) is the new, hot tool that helps with dependency management and deployment. It is awesome. If you haven't worked with it before then you are in for a treat. You can install poetry by running this script in your terminal
+[Poetry](https://python-poetry.org/docs/) is the new, hot tool that helps with dependency management and deployment. It is awesome. If you haven't worked with it before then you are in for a treat. You can install poetry on macOS with the [official installer](https://python-poetry.org/docs/#installation):
 ```
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 ```
+
+If `poetry` is not found afterward, follow the installation guide's PATH instructions.
 
 ### b. Pyenv
 [Pyenv](https://github.com/pyenv/pyenv). Pyenv helps us to manage multiple versions of Python on our machine. It is a great tool that will make your life easier as you develop different Python projects. I recommend installing pyenv via Homebrew. If you have Homebrew installed just run `brew install pyenv` in your terminal.

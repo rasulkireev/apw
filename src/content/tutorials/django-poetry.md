@@ -1,7 +1,7 @@
 ---
 title: Managing a Django Project with Poetry
 dateCreated: 2020-10-31
-dateUpdated: 2022-02-22
+dateUpdated: 2026-10-18
 published: true
 slug: managing-django-with-poetry
 icon: ./icons/broken_link.png
@@ -21,9 +21,13 @@ Poetry is relatively new packaging and dependency manager. It makes it very easy
 
 ## 1. Install Poetry
 
+For Linux, macOS or WSL, use the [official Poetry installer](https://python-poetry.org/docs/#installation):
+
 ```bash
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 ```
+
+If `poetry` is not found afterward, follow the installation guide's PATH instructions for your platform.
 
 ## 2. Create a Directory for you Django Project
 
@@ -38,6 +42,8 @@ poetry init
 ```
 
 You will be asked to confirm the information about your project. You can skip through most of it.
+
+The output below is from the original walkthrough; current Poetry versions may prompt differently.
 
 ```
 This command will guide you through creating your pyproject.toml config.
@@ -87,13 +93,13 @@ poetry run django-admin startproject django_poetry_example .
 When you need to run any python function (for example, `python manage.py createsuperuser`) you have two options.
 
 1. You can leverage `poetry run`, which will run against the current project's dependencies. The command will be this: `poetry run python manage.py createsuperuser`.
-2. You can activate the virtual environment with a `poetry shell` command. Now you can run python commands, as is. They will be run with dependencies you have installed.
+2. You can activate the virtual environment with a `poetry shell` command. With Poetry 2.x, first install the [shell plugin](https://github.com/python-poetry/poetry-plugin-shell) with `poetry self add poetry-plugin-shell`. Now you can run python commands, as is. They will be run with dependencies you have installed.
 
 I prefer the first method, for an explicit approach.
 
 ## Bonus. Export dependencies to a requirements.txt
 
-If you need to have the `requirements.txt` file with all the dependencies, you can run `poetry export -f requirements.txt --output requirements.txt`. If you have configured a CI/CD job that auto deploys your project, you can add this function as a step, which will generate the updated version on each update.
+If you need to have the `requirements.txt` file with all the dependencies, you can run `poetry export -f requirements.txt --output requirements.txt`. With Poetry 2.x, first install the [export plugin](https://github.com/python-poetry/poetry-plugin-export) with `poetry self add poetry-plugin-export`; it is no longer included by default. If you have configured a CI/CD job that auto deploys your project, you can add this function as a step, which will generate the updated version on each update.
 
 ## Bonus II. Video
 
