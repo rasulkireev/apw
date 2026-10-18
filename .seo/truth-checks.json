@@ -24,5 +24,30 @@
     "paths": ["src/content/tutorials/venv-for-jupyter-notebook.md"],
     "must_match": ["Windows Command Prompt", "\\.\\\\DS\\\\Scripts\\\\activate\\.bat"],
     "must_not_match": ["actvate\\.bat"]
+  },
+  {
+    "claim": "Existing Poetry setup examples use the current official installer",
+    "paths": [
+      "src/content/tutorials/django-poetry.md",
+      "src/content/tutorials/create-an-ethereum-token-on-polygon-with-python.md"
+    ],
+    "must_match": [
+      "curl -sSL https://install\\.python-poetry\\.org \\| python3 -"
+    ],
+    "must_not_match": [
+      "get-poetry\\.py"
+    ]
+  },
+  {
+    "claim": "Django guide documents Poetry2 shell and export plugin prerequisites",
+    "paths": [
+      "src/content/tutorials/django-poetry.md"
+    ],
+    "must_match": [
+      "poetry self add poetry-plugin-shell",
+      "poetry self add poetry-plugin-export",
+      "original walkthrough"
+    ],
+    "must_not_match": []
   }
 ]
