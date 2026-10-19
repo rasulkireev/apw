@@ -76,7 +76,7 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
 
     <TableOfContents client:load />
 
-    <div class="my-4 md:my-10 prose lg:prose-xl">
+    <div class="my-4 md:my-10 prose lg:prose-xl [overflow-wrap:anywhere]">
       {entry.data.type === 'book' ? (
         <BookContent client:load>
           <Content />

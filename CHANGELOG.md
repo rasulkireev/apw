@@ -1,3 +1,8 @@
+## 2026-10-19 — Responsive reading layout
+
+- Keep the table of contents inline below 1536px; place the wide-screen sidebar beside the article, opposite sharing controls, rather than over the text.
+- Wrap long inline code and narrow-screen share controls without changing code-block whitespace, post content, metadata, dates, or URLs. Expose TOC disclosure state to assistive technology. No new editorial posts.
+
 ## 2026-10-18 — Poetry setup instructions
 
 - Replace the retired Poetry installer in the existing Django and ERC20 tutorials with the official installer and platform/PATH guidance.

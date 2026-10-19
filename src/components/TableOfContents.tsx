@@ -129,7 +129,7 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
       const handleClickOutside = (event: MouseEvent) => {
         const target = event.target as HTMLElement;
-        if (isOpen && !target.closest(".table-of-contents") && window.innerWidth < 1024) {
+        if (isOpen && !target.closest(".table-of-contents") && window.innerWidth < 1536) {
           setIsOpen(false);
         }
       };
@@ -167,8 +167,10 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
       {/* Toggle button with arrow */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="my-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors table-of-contents lg:hidden"
+        className="my-4 flex items-center text-blue-600 hover:text-blue-700 transition-colors table-of-contents 2xl:hidden"
         aria-label="Toggle Table of Contents"
+        aria-expanded={isOpen}
+        aria-controls="inline-table-of-contents"
       >
         <span className="mr-2">Table of Contents</span>
         <svg
@@ -191,7 +193,8 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
 
       {/* Mobile TOC - Dropdown under button */}
       <div
-        className={`lg:hidden bg-white border border-gray-200 rounded-lg shadow-md mb-6 ${
+        id="inline-table-of-contents"
+        className={`2xl:hidden bg-white border border-gray-200 rounded-lg shadow-md mb-6 ${
           isOpen ? 'block' : 'hidden'
         } table-of-contents`}
       >
@@ -204,8 +207,8 @@ export default function TableOfContents({ className = "" }: TableOfContentsProps
         </div>
       </div>
 
-      {/* Desktop TOC - Left Sidebar */}
-      <div className="hidden lg:block fixed left-[max(0px,calc(50%-45rem))] top-[1rem] px-4 py-6 border border-gray-100 rounded-lg shadow w-64 max-h-[calc(100vh-2rem)] overflow-y-auto">
+      {/* Use the sidebar only when it fits beside the article. Keep it opposite sharing controls. */}
+      <div className="hidden 2xl:block fixed right-[max(1rem,calc(50%-45rem))] top-[1rem] px-4 py-6 border border-gray-100 rounded-lg shadow w-64 max-h-[calc(100vh-2rem)] overflow-y-auto">
         <nav className="table-of-contents">
           <div className="mb-4 border-b border-gray-200">
             <p className="font-bold text-gray-900">Table of Contents</p>
