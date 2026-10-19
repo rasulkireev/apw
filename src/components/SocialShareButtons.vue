@@ -2,7 +2,7 @@
 <div class="my-3">
   <p class="block text-2xl font-bold lg:p-1 lg:text-sm lg:inline-block">Share</p>
 
-  <div class="flex flex-row lg:flex-col">
+  <div class="flex flex-row flex-wrap lg:flex-col">
 
     <!-- Sharingbutton HackerNews -->
     <div class="inline-block p-1 mr-1 bg-orange-600">
