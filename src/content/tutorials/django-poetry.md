@@ -1,7 +1,7 @@
 ---
 title: Managing a Django Project with Poetry
 dateCreated: 2020-10-31
-dateUpdated: 2026-10-18
+dateUpdated: 2026-10-20
 published: true
 slug: managing-django-with-poetry
 icon: ./icons/broken_link.png
@@ -80,7 +80,7 @@ Do you confirm generation? (yes/no) [yes]
 
 ## 4. Add the Necessary Dependencies
 
-Run `poetry add django` in your terminal. Poetry will add `django` to the `pyproject.toml` file under the dependencies section. A virtual environment will also be created for you.
+Run `poetry add django` in your terminal. Poetry will add `django` to the `pyproject.toml` file under the dependencies section. A [virtual environment](/django-venv) will also be created for you.
 
 ## 5. Start you Django Project
 

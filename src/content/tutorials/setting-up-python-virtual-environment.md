@@ -1,7 +1,7 @@
 ---
 title: Setting up Python virtual environment (for a Django Project)
 dateCreated: 2019-08-29
-dateUpdated: 2019-08-29
+dateUpdated: 2026-10-20
 published: true
 slug: django-venv
 icon: ./icons/python.svg
@@ -95,5 +95,7 @@ This will start server with your Django project, If you go to [http://127.0.0.1:
 
 
 **Congrats!** You can now develop your site with Django freely, which is a whole another topic of discussion.
+
+If you're using a virtual environment for notebooks, see [Using Virtual Environment with Jupyter Notebook](/jupyter-venv).
 
 If you have any questions please let me know at one of the social links on the top left.

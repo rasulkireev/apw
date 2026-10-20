@@ -1,3 +1,8 @@
+## 2026-10-20 — Python environment discovery
+
+- Link the existing Poetry guide's virtual-environment reference to the existing setup tutorial, and add a notebook continuation link from setup to the existing Jupyter guide.
+- Preserve tutorial code, titles, descriptions and author experience; update the two edited tutorials' modification dates. No new editorial posts.
+
 ## 2026-10-19 — Responsive reading layout
 
 - Keep the table of contents inline below 1536px; place the wide-screen sidebar beside the article, opposite sharing controls, rather than over the text.
