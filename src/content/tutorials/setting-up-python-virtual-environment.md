@@ -1,7 +1,7 @@
 ---
 title: Setting up Python virtual environment (for a Django Project)
 dateCreated: 2019-08-29
-dateUpdated: 2026-10-20
+dateUpdated: 2026-10-21
 published: true
 slug: django-venv
 icon: ./icons/python.svg
@@ -51,11 +51,11 @@ python -m venv venv
 ```
 Here the first `venv` refers to the program we are running. The second `venv` is referring to the name I gave my virtual environment. So, instead of a second `venv` you can type in whatever you want. I find the word venv pretty easy to rememeber and to type up, so that's how I usually call my virtual environments.
 
-Let the prgoram run. Congrats you now have created a virtual environment! You can check that everything worked by checking the contents of the folder. You can do that by navigating in `Finder` or `Windows Explorer` or even better just by typing `ls` to the command prompt, this will list out all the directories in your project folder.
+Let the prgoram run. Congrats you now have created a virtual environment! You can check that everything worked by checking the contents of the folder. You can do that by navigating in `Finder` or `Windows Explorer` or even better just by typing `ls` in a Mac or Linux terminal, or `dir` in Windows Command Prompt, to list the files and directories in your project folder.
 
 All there is left to do is to activate the environment to start the working process.
 
-On Mac to activate and deactivate the virtual environment you would use the following command:
+On Mac or Linux (bash/zsh) to activate and deactivate the virtual environment you would use the following command:
 ```
 # to activate
 source venv/bin/activate
@@ -64,14 +64,25 @@ source venv/bin/activate
 deactivate
 ```
 
-On Windows:
+On Windows Command Prompt (cmd.exe):
+```bat
+REM to activate
+.\venv\Scripts\activate.bat
+
+REM to deactivate
+deactivate
 ```
+
+On Windows PowerShell:
+```powershell
 # to activate
-.\venv\scripts\activate.bat
+.\venv\Scripts\Activate.ps1
 
 # to deactivate
 deactivate
 ```
+
+For other shells or PowerShell execution-policy restrictions, see [Python's venv documentation](https://docs.python.org/3/library/venv.html#how-venvs-work).
 
 When your virtual environemnt is active you will see the name of the virtual environment within bracket to the left of the command line. Like so:
  ![](https://i.imgur.com/mN0w7WA.png)
