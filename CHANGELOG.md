@@ -1,3 +1,8 @@
+## 2026-10-21 — Windows virtual-environment instructions
+
+- Clarify Command Prompt versus PowerShell activation in the existing Django environment tutorial, use batch-compatible comments, and correct the Windows directory-listing instruction.
+- Link Python's shell guidance; preserve the remaining walkthrough, title, description and author experience. Update the modification date. No new editorial posts.
+
 ## 2026-10-20 — Python environment discovery
 
 - Link the existing Poetry guide's virtual-environment reference to the existing setup tutorial, and add a notebook continuation link from setup to the existing Jupyter guide.
