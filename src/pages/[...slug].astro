@@ -33,9 +33,9 @@ export async function getStaticPaths() {
     },
     props: {
       entry,
-      relatedBooks: entry.collection === 'books' && entry.data.category === 'Parenting'
+      relatedBooks: entry.collection === 'books' && ['Parenting', 'Productivity'].includes(entry.data.category)
         ? bookEntries
-            .filter(book => book.data.category === 'Parenting' && book.slug !== entry.slug)
+            .filter(book => book.data.category === entry.data.category && book.slug !== entry.slug)
             .sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'))
             .map(book => ({ slug: book.slug, title: book.data.title, author: book.data.author }))
         : [],
@@ -88,7 +88,10 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
 
   </article>
 
-  <RelatedReading books={relatedBooks} />
+  <RelatedReading
+    books={relatedBooks}
+    heading={entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined}
+  />
 
   <SocialShareButtons
     title={entry.data.title}

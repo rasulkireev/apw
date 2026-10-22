@@ -1,3 +1,8 @@
+## 2026-10-22 — Productivity book-note discovery
+
+- Connect the existing *Four Thousand Weeks* and *Building a Second Brain* notes with server-rendered related-reading links, using their existing category, titles and authors.
+- Preserve the review text, ratings, titles, descriptions and existing parenting navigation. Update the two modification dates. No new editorial posts.
+
 ## 2026-10-21 — Windows virtual-environment instructions
 
 - Clarify Command Prompt versus PowerShell activation in the existing Django environment tutorial, use batch-compatible comments, and correct the Windows directory-listing instruction.

@@ -8,7 +8,7 @@ description: "Building a Second Brain is a great PKM approach created by Tiago F
 cover: "./images/building-a-second-brain.jpeg"
 dateRead: 2022-07-17
 dateCreated: 2022-08-16
-dateUpdated: 2022-08-16
+dateUpdated: 2026-10-22
 category: "Productivity"
 type: book
 twitterLink: https://twitter.com/rasulkireev/status/1587096265183137793

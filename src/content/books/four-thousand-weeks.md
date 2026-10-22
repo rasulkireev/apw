@@ -8,7 +8,7 @@ description: "Great book about our relatinship with time and productivity. The c
 cover: "./images/four-thousand-weeks.jpeg"
 dateRead: 2023-09-01
 dateCreated: 2023-10-24
-dateUpdated: 2023-10-24
+dateUpdated: 2026-10-22
 category: "Productivity"
 type: book
 notAffiliateLink: https://bookshop.org/p/books/four-thousand-weeks-time-management-for-mortals-oliver-burkeman/18140090?ean=9780374159122
