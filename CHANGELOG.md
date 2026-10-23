@@ -1,3 +1,8 @@
+## 2026-10-23 — Lessons of History description
+
+- Describe the existing review and notes, name both authors, and identify topics already covered in the notes.
+- Preserve the title, article text, rating and original dates; update the modification date. No new editorial posts.
+
 ## 2026-10-22 — Productivity book-note discovery
 
 - Connect the existing *Four Thousand Weeks* and *Building a Second Brain* notes with server-rendered related-reading links, using their existing category, titles and authors.

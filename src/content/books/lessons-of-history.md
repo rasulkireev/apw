@@ -3,11 +3,11 @@ title: "The Lessons of History"
 author: "Will and Ariel Durant"
 rating: 10
 slug: "lessons-of-history"
-description: "The Lessons of History is a fantastic book, the best one I read in 2020. It is undervalued. While people talk about recent bestsellers this gem is waiting to be read. Any person can gain valuable insight and knowledge from this book."
+description: "My review and notes on The Lessons of History by Will and Ariel Durant: human nature, religion, government, war and progress."
 cover: "./images/lessons-of-history.jpg"
 dateRead: 2020-12-20
 dateCreated: 2021-03-15
-dateUpdated: 2021-03-15
+dateUpdated: 2026-10-23
 category: "History"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1371646873723883523"
