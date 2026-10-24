@@ -1,3 +1,8 @@
+## 2026-10-24 — Code Book public reading links
+
+- Remove two unavailable private reading-app links while retaining their reference text; point the Chapter 6 link to the existing on-page chapter.
+- Preserve all review prose, metadata, ratings and original dates; update the modification date and add a scoped regression check. No new editorial posts.
+
 ## 2026-10-23 — Lessons of History description
 
 - Describe the existing review and notes, name both authors, and identify topics already covered in the notes.

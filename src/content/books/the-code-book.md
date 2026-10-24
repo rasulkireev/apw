@@ -8,7 +8,7 @@ description: This is a great intro into the world of Cryptography, if that is so
 cover: "./images/code-book.jpg"
 dateRead: 2024-07-25
 dateCreated: 2024-09-01
-dateUpdated: 2024-09-01
+dateUpdated: 2026-10-24
 category: "Cryptography"
 type: book
 hasSummaries: false
@@ -79,7 +79,7 @@ From the enemy’s point of view, if they intercept the message and suspect that
 The richness of Islamic culture was to a large part the result of a wealthy and peaceful society. The Abbasid caliphs were less interested than their predecessors in conquest, and instead concentrated on establishing an organized and affluent society. Lower taxes encouraged businesses to grow and gave rise to greater commerce and industry, while strict laws reduced corruption and protected the citizens.
 
 
-The only European institutions to encourage the study of secret writing were the monasteries, where monks would study the Bible in search of hidden meanings, a fascination that has persisted through to modern times (see [Appendix C](private://read/01j18hts3baemyxtvnkkdz4pav/#filepos867075)).
+The only European institutions to encourage the study of secret writing were the monasteries, where monks would study the Bible in search of hidden meanings, a fascination that has persisted through to modern times (see Appendix C).
 
 Medieval monks were intrigued by the fact that the Old Testament contained deliberate and obvious examples of cryptography.
 
@@ -166,7 +166,7 @@ One of the first scholars to question the prejudice that hieroglyphics was pictu
 However, there is evidence that, before 1450 B.C., Minoa was a truly independent state with its own language. It was in around 1450 B.C. that Linear B replaced Linear A, and although the two scripts look very similar, nobody has yet deciphered Linear A. Linear A therefore probably represents a distinctly different language from Linear B. It seems likely that in roughly 1450 B.C. the Mycenaeans conquered the Minoans, imposed their own language, and transformed Linear A into Linear B so that it functioned as a script for Greek.
 
 
-The following year, the men decided to write an authoritative three-volume account of their work which would include a description of the decipherment, a detailed analysis of three hundred tablets, a dictionary of 630 Mycenaean words and a list of sound values for nearly all Linear B signs, as given in [Table 23](private://read/01j18hts3baemyxtvnkkdz4pav/#filepos580220). *Documents in Mycenaean Greek* was completed in the summer of 1955, and was ready for publication in the autumn of 1956. However, a few weeks before printing, on September 6, 1956, Michael Ventris was killed. While driving home late at night on the Great North Road near Hatfield, his car collided with a truck. John Chadwick paid tribute to his colleague, a man who matched the genius of Champollion, and who also died at a tragically young age: “The work he did lives, and his name will be remembered so long as the ancient Greek language and civilization are studied.”
+The following year, the men decided to write an authoritative three-volume account of their work which would include a description of the decipherment, a detailed analysis of three hundred tablets, a dictionary of 630 Mycenaean words and a list of sound values for nearly all Linear B signs, as given in Table 23. *Documents in Mycenaean Greek* was completed in the summer of 1955, and was ready for publication in the autumn of 1956. However, a few weeks before printing, on September 6, 1956, Michael Ventris was killed. While driving home late at night on the Great North Road near Hatfield, his car collided with a truck. John Chadwick paid tribute to his colleague, a man who matched the genius of Champollion, and who also died at a tragically young age: “The work he did lives, and his name will be remembered so long as the ancient Greek language and civilization are studied.”
 
 
 ### 6 Alice and Bob Go Public
@@ -206,7 +206,7 @@ Rather than visualizing clocks, mathematicians often take the shortcut of perfor
 ### 7 Pretty Good Privacy
 
 
-The PGP digital signature is based on a principle that was first developed by Whitfield Diffie and Martin Hellman. When they proposed the idea of separate public keys and private keys, they realized that, in addition to solving the key distribution problem, their invention would also provide a natural mechanism for generating e-mail signatures. In [Chapter 6](private://read/01j18hts3baemyxtvnkkdz4pav/#filepos582977) we saw that the public key is for encrypting and the private key for decrypting. In fact the process can be swapped around, so that the private key is used for encrypting and the public key is used for decrypting. This mode of encryption is usually ignored because it offers no security. If Alice uses her private key to encrypt a message to Bob, then everybody can decrypt it because everybody has Alice’s public key. However, this mode of operation does verify authorship, because if Bob can decrypt a message using Alice’s public key, then it must have been encrypted using her private key-only Alice has access to her private key, so the message must have been sent by Alice.
+The PGP digital signature is based on a principle that was first developed by Whitfield Diffie and Martin Hellman. When they proposed the idea of separate public keys and private keys, they realized that, in addition to solving the key distribution problem, their invention would also provide a natural mechanism for generating e-mail signatures. In [Chapter 6](#6-alice-and-bob-go-public) we saw that the public key is for encrypting and the private key for decrypting. In fact the process can be swapped around, so that the private key is used for encrypting and the public key is used for decrypting. This mode of encryption is usually ignored because it offers no security. If Alice uses her private key to encrypt a message to Bob, then everybody can decrypt it because everybody has Alice’s public key. However, this mode of operation does verify authorship, because if Bob can decrypt a message using Alice’s public key, then it must have been encrypted using her private key-only Alice has access to her private key, so the message must have been sent by Alice.
 
 
 Nothing in PGP was original-Diffie and Hellman had already thought of digital signatures and other cryptographers had used a combination of symmetric and asymmetric ciphers to speed up encryption-but Zimmermann was the first to put everything together in one easy-to-use encryption product, which was efficient enough to run on a moderately sized personal computer.

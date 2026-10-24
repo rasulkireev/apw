@@ -67,5 +67,18 @@
       "typing `ls` to the command prompt",
       "On Windows:\\s*```"
     ]
+  },
+  {
+    "claim": "Code Book public notes do not expose private reading-app links and link Chapter6 to the existing published heading",
+    "paths": [
+      "src/content/books/the-code-book.md"
+    ],
+    "must_match": [
+      "\\[Chapter 6\\]\\(#6-alice-and-bob-go-public\\)",
+      "### 6 Alice and Bob Go Public"
+    ],
+    "must_not_match": [
+      "private://"
+    ]
   }
 ]
