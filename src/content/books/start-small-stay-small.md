@@ -8,7 +8,7 @@ description: A practical, market-first playbook for developers to bootstrap soft
 cover: "./images/start-small-stay-small.webp"
 dateRead: 2025-03-11
 dateCreated: 2025-08-11
-dateUpdated: 2025-08-11
+dateUpdated: 2026-10-25
 category: "Business"
 type: book
 hasSummaries: false
@@ -607,7 +607,7 @@ Functionality, code quality, and documentation are all a distant fourth. I know 
 
 Writing code is cut and dry. There are different ways to accomplish the same thing, but in general you know how you want your application to behave and you just need to get it there. Your constraints are constant – the compiler behaves the same way it did the last time you compiled.
 
-By comparison entrepreneurship, especially the marketing side, is never this clear. As we’ll discuss in [chapter 2](private://read/01jp5vthrymfk3ysv60z4vbz8g/Start_Small_-hing_a_Startup_split_022.html#filepos96073), marketing is about math and human behavior. The math part is straight-forward. It’s the human behavior that’s going to throw you for a loop.
+By comparison entrepreneurship, especially the marketing side, is never this clear. As we’ll discuss in [chapter 2](#chapter-2---why-niches-are-the-name-of-the-game), marketing is about math and human behavior. The math part is straight-forward. It’s the human behavior that’s going to throw you for a loop.
 
 Even the foremost marketing experts in the world are not sure whether people will buy a new product. People with 20, 30 and 40 years of experience still have to take their best guess at what will succeed. They have to try things out and adjust as they go. They often do small roll-outs to test audiences and adjust the product or the message before unleashing it on the world.
 
@@ -838,7 +838,7 @@ With niche research the problem is not finding new ideas, but narrowing to the m
 
 You only need to master two skills to sell online: human behavior and math.
 
-Understanding **human behavior** means you know how people think, what motivates them. You need to know how to speak to the voice inside of them that makes buying decisions, rather than their tough, rational exterior. We will cover this in [chapter 4](private://read/01jp5vthrymfk3ysv60z4vbz8g/Start_Small_-hing_a_Startup_split_037.html#filepos262429) when we look at building a sales website.
+Understanding **human behavior** means you know how people think, what motivates them. You need to know how to speak to the voice inside of them that makes buying decisions, rather than their tough, rational exterior. We will cover this in [chapter 4](#chapter-4---building-a-killer-sales-website) when we look at building a sales website.
 
 **Math** is the science behind every business in the world, whether they realize it or not. With internet marketing, the math involves views, clicks, click through rates, unique visitors, goals, conversion rates, gross profit and net profit.
 
@@ -1310,7 +1310,7 @@ And finally, search engine optimization (SEO) is a must. At a minimum you should
 My recommendation for PPC is to use it for finding keywords that convert for you, and spend the time and money to search engine optimize for those terms. Pouring a never-ending supply of money into Google AdWords is no way to build a business.
 
 
-As discussed in [chapter 4](private://read/01jp5vthrymfk3ysv60z4vbz8g/Start_Small_-hing_a_Startup_split_037.html#filepos262429), building a mailing list is not only pivotal to The Ideal Launch plan, but it should be the #1 goal of your website. Getting people to engage with you, to listen to and trust you will have more impact on sales than any other marketing approach.
+As discussed in [chapter 4](#chapter-4---building-a-killer-sales-website), building a mailing list is not only pivotal to The Ideal Launch plan, but it should be the #1 goal of your website. Getting people to engage with you, to listen to and trust you will have more impact on sales than any other marketing approach.
 
 Over time, your list will become an incredible asset. If you treat your list right, offering insight, discounts, perks and useful information, over time it will become invaluable to your business.
 

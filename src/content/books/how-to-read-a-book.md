@@ -7,7 +7,7 @@ description: "My review and notes on Mortimer Adler's How to Read a Book: the fo
 cover: "./images/htrab.jpg"
 dateRead: 2024-12-11
 dateCreated: 2024-12-12
-dateUpdated: 2026-10-11
+dateUpdated: 2026-10-25
 category: "Reading"
 type: book
 hasSummaries: false

@@ -8,10 +8,12 @@ import node from "@astrojs/node";
 
 import sitemap from "@astrojs/sitemap";
 import sitemapAlias from "./scripts/sitemap-alias.mjs";
+import publicReadingLinks from "./scripts/remark-public-reading-links.mjs";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.rasulkireev.com",
+  markdown: { remarkPlugins: [publicReadingLinks] },
   image: {
     service: passthroughImageService()
   },

@@ -8,7 +8,7 @@ description: I am a huge fan of this book. This is **the** book I'm recommending
 cover: "./images/hunt-gather-parent.jpg"
 dateRead: 2025-03-01
 dateCreated: 2025-03-07
-dateUpdated: 2025-03-07
+dateUpdated: 2026-10-25
 category: "Parenting"
 type: book
 hasSummaries: true
