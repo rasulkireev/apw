@@ -1,3 +1,9 @@
+## 2026-10-25 — Public book-note references
+
+- Keep imported private reading-app references as plain text instead of publishing unusable links, through a shared Markdown rendering guard.
+- Point three chapter references to their existing public headings in Start Small, Stay Small. Preserve all labels, formatting, author text and ordinary public links.
+- Update modification dates on the three affected existing book-note pages; add regression coverage. No new editorial posts.
+
 ## 2026-10-24 — Code Book public reading links
 
 - Remove two unavailable private reading-app links while retaining their reference text; point the Chapter 6 link to the existing on-page chapter.
