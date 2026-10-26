@@ -8,7 +8,7 @@ description: "This is my favorite book on the topic of entrepreneurhip. It doesn
 cover: "./images/minimalist-entrepreneur.jpeg"
 dateRead: 2021-05-08
 dateCreated: 2022-06-18
-dateUpdated: 2022-06-18
+dateUpdated: 2026-10-26
 category: "Business"
 type: book
 twitterLink: https://twitter.com/rasulkireev/status/1538688933373956096

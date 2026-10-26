@@ -19,6 +19,9 @@ export async function getStaticPaths() {
   const recipeEntries = await getCollection('recipes');
   const promptEntries = await getCollection('prompts');
 
+  // A focused reading path, rather than every broadly categorized Business book.
+  const bootstrappingSlugs = ['getting-real', 'start-small-stay-small', 'minimalist-entrepreneur'];
+
   const entries = [
     ...articleEntries,
     ...bookEntries,
@@ -33,17 +36,26 @@ export async function getStaticPaths() {
     },
     props: {
       entry,
-      relatedBooks: entry.collection === 'books' && ['Parenting', 'Productivity'].includes(entry.data.category)
+      relatedBooks: entry.collection === 'books' && (
+        bootstrappingSlugs.includes(entry.slug) || ['Parenting', 'Productivity'].includes(entry.data.category)
+      )
         ? bookEntries
-            .filter(book => book.data.category === entry.data.category && book.slug !== entry.slug)
+            .filter(book => book.slug !== entry.slug && (
+              bootstrappingSlugs.includes(entry.slug)
+                ? bootstrappingSlugs.includes(book.slug)
+                : book.data.category === entry.data.category
+            ))
             .sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'))
             .map(book => ({ slug: book.slug, title: book.data.title, author: book.data.author }))
         : [],
+      relatedHeading: entry.collection === 'books' && bootstrappingSlugs.includes(entry.slug)
+        ? 'More bootstrapping book notes'
+        : entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined,
     },
   }));
 }
 
-const { entry, relatedBooks } = Astro.props;
+const { entry, relatedBooks, relatedHeading } = Astro.props;
 const { Content } = await entry.render();
 
 const postTitle = entry.data.type == "book" ? entry.data.title + " by " + entry.data.author + " | Book Review" : entry.data.title + " | " + capitalize(entry.data.type) + " ";
@@ -90,7 +102,7 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
 
   <RelatedReading
     books={relatedBooks}
-    heading={entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined}
+    heading={relatedHeading}
   />
 
   <SocialShareButtons

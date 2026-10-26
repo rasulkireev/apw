@@ -8,7 +8,7 @@ description: A practical, market-first playbook for developers to bootstrap soft
 cover: "./images/start-small-stay-small.webp"
 dateRead: 2025-03-11
 dateCreated: 2025-08-11
-dateUpdated: 2026-10-25
+dateUpdated: 2026-10-26
 category: "Business"
 type: book
 hasSummaries: false
