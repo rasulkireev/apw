@@ -1,3 +1,7 @@
+## 2026-10-26 — Bootstrapping book-note discovery
+
+- Add reciprocal onward-reading links between the existing Getting Real, Start Small, Stay Small and The Minimalist Entrepreneur book notes. Reuse the related-reading navigation and existing titles/authors; preserve review prose and metadata apart from modification dates. No new editorial posts.
+
 ## 2026-10-25 — Public book-note references
 
 - Keep imported private reading-app references as plain text instead of publishing unusable links, through a shared Markdown rendering guard.

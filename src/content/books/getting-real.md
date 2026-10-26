@@ -8,7 +8,7 @@ description: Building software doesn’t need a large team, huge budget, or a pe
 cover: "./images/getting-real.png"
 dateRead: 2024-07-11
 dateCreated: 2025-02-22
-dateUpdated: 2025-02-22
+dateUpdated: 2026-10-26
 category: "Business"
 type: book
 hasSummaries: false
