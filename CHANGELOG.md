@@ -1,3 +1,7 @@
+## 2026-10-27 — Happy Sleeper search preview
+
+- Clarify The Happy Sleeper search preview as a personal book review with Sleep Wave notes and family experience; preserve the article, title, rating and original dates.
+
 ## 2026-10-26 — Bootstrapping book-note discovery
 
 - Add reciprocal onward-reading links between the existing Getting Real, Start Small, Stay Small and The Minimalist Entrepreneur book notes. Reuse the related-reading navigation and existing titles/authors; preserve review prose and metadata apart from modification dates. No new editorial posts.

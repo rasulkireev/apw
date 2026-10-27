@@ -4,11 +4,11 @@ subtitle: The Science-Backed Guide to Helping Your Baby Get a Good Night's Sleep
 author: Julie Wright & Heather Turgeon
 rating: 8
 slug: happy-sleeper
-description: This book will help you to teach your baby to fall asleep by himself. That's it, that's the premise on the book. And let me tell you... It delivers. The earlier you begin the better.
+description: "My review of The Happy Sleeper by Julie Wright and Heather Turgeon, with notes on the Sleep Wave method and my family's experience with bedtime routines."
 cover: "./images/happy-sleeper.jpeg"
 dateRead: 2022-09-15
 dateCreated: 2023-11-18
-dateUpdated: 2023-11-18
+dateUpdated: 2026-10-27
 category: Parenting
 type: book
 notAffiliateLink: https://bookshop.org/p/books/the-happy-sleeper-the-science-backed-guide-to-helping-your-baby-get-a-good-night-s-sleep-newborn-to-school-age-julie-wright/11297770?ean=9780399166020
