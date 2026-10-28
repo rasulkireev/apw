@@ -1,3 +1,7 @@
+## 2026-10-28 — Dhandho Investor search preview
+
+- Clarify the existing Dhandho Investor review preview with its author, summary and chapter highlights; preserve the review text, title, rating and read/creation dates, and refresh the modification date.
+
 ## 2026-10-27 — Happy Sleeper search preview
 
 - Clarify The Happy Sleeper search preview as a personal book review with Sleep Wave notes and family experience; preserve the article, title, rating and original dates.

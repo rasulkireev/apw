@@ -4,11 +4,11 @@ subtitle: The Low-Risk Value Method to High Returns
 author: Mohnish Pabrai
 rating: 8
 slug: dhandho-investor
-description: Making investments is all about minimizing risk and maximizing returns. Learn all about Mohnish's "Heads, I win; tails, I don’t lose much!" approach.
+description: My review of The Dhandho Investor by Mohnish Pabrai, with a summary of its nine-principle framework and chapter highlights on value investing.
 cover: "./images/dhandho-investor.jpg"
 dateRead: 2023-11-26
 dateCreated: 2024-08-30
-dateUpdated: 2024-08-30
+dateUpdated: 2026-10-28
 category: "Investing"
 type: book
 hasSummaries: false
