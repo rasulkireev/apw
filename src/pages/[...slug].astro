@@ -21,6 +21,8 @@ export async function getStaticPaths() {
 
   // A focused reading path, rather than every broadly categorized Business book.
   const bootstrappingSlugs = ['getting-real', 'start-small-stay-small', 'minimalist-entrepreneur'];
+  // The Dhandho review credits Wilkinson as its reading trigger; Never Enough is his memoir.
+  const wilkinsonReadingSlugs = ['dhandho-investor', 'never-enough'];
 
   const entries = [
     ...articleEntries,
@@ -37,20 +39,24 @@ export async function getStaticPaths() {
     props: {
       entry,
       relatedBooks: entry.collection === 'books' && (
-        bootstrappingSlugs.includes(entry.slug) || ['Parenting', 'Productivity'].includes(entry.data.category)
+        bootstrappingSlugs.includes(entry.slug) || wilkinsonReadingSlugs.includes(entry.slug) || ['Parenting', 'Productivity'].includes(entry.data.category)
       )
         ? bookEntries
             .filter(book => book.slug !== entry.slug && (
               bootstrappingSlugs.includes(entry.slug)
                 ? bootstrappingSlugs.includes(book.slug)
-                : book.data.category === entry.data.category
+                : wilkinsonReadingSlugs.includes(entry.slug)
+                  ? wilkinsonReadingSlugs.includes(book.slug)
+                  : book.data.category === entry.data.category
             ))
             .sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'))
             .map(book => ({ slug: book.slug, title: book.data.title, author: book.data.author }))
         : [],
       relatedHeading: entry.collection === 'books' && bootstrappingSlugs.includes(entry.slug)
         ? 'More bootstrapping book notes'
-        : entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined,
+        : entry.collection === 'books' && wilkinsonReadingSlugs.includes(entry.slug)
+          ? 'Related book notes'
+          : entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined,
     },
   }));
 }

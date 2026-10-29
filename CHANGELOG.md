@@ -1,3 +1,7 @@
+## 2026-10-29 — Connected book-note discovery
+
+- Add reciprocal related-reading navigation between the existing Dhandho Investor and Never Enough reviews, connected by the author's original Andrew Wilkinson reading reference. Reuse existing titles and authors; preserve review prose, descriptions, ratings and original dates, updating only modification dates. No new editorial posts.
+
 ## 2026-10-28 — Dhandho Investor search preview
 
 - Clarify the existing Dhandho Investor review preview with its author, summary and chapter highlights; preserve the review text, title, rating and read/creation dates, and refresh the modification date.
