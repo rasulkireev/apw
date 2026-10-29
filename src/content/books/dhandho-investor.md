@@ -8,7 +8,7 @@ description: My review of The Dhandho Investor by Mohnish Pabrai, with a summary
 cover: "./images/dhandho-investor.jpg"
 dateRead: 2023-11-26
 dateCreated: 2024-08-30
-dateUpdated: 2026-10-28
+dateUpdated: 2026-10-29
 category: "Investing"
 type: book
 hasSummaries: false

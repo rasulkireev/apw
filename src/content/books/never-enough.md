@@ -8,7 +8,7 @@ description: Andrew Wilkinson's autobiography on his path to become an accidenta
 cover: "./images/never-enough.jpeg"
 dateRead: 2024-09-05
 dateCreated: 2024-09-09
-dateUpdated: 2024-09-09
+dateUpdated: 2026-10-29
 category: "Biography"
 type: book
 hasSummaries: false
