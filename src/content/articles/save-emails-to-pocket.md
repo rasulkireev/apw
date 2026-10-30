@@ -1,7 +1,7 @@
 ---
 title: How to Save Emails to Pocket
 dateCreated: 2020-05-30
-dateUpdated: 2020-05-30
+dateUpdated: 2026-10-30
 published: true
 slug: emails-to-pocket
 icon: ./icons/email_open.svg
@@ -11,8 +11,10 @@ category: Productivity
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1268912329263022082"
 hnLink: "https://news.ycombinator.com/item?id=23428962"
-description: In this post I share how I save email to my 'Pocket' so that I can make notes on them. This is very useful for various email courses or other email with valuable content.
+description: "Archived 2020 article about saving emails to Pocket for reading and notes. Pocket has shut down; the email-forwarding workflow no longer works."
 ---
+
+> **Historical workflow — updated October 30, 2026:** [Pocket shut down on July 8, 2025](https://support.mozilla.org/en-US/kb/future-of-pocket), and its API was disabled on November 12, 2025. The original 2020 article below is preserved for context, not as current instructions. This workflow no longer works; do not follow the email-forwarding instructions below.
 
 [Pocket](https://getpocket.com/) is a great invention for people who like to read, when they **want** to read. It gives you superpowers.
 

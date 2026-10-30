@@ -1,5 +1,17 @@
 [
   {
+    "claim": "Existing Pocket workflows are historical after the verified service and API shutdown",
+    "paths": ["src/content/articles/save-emails-to-pocket.md", "src/content/articles/pocket-workflow.md"],
+    "must_match": ["Historical workflow", "July 8, 2025", "November 12, 2025", "https://support\\.mozilla\\.org/en-US/kb/future-of-pocket", "dateUpdated: 2026-10-30"],
+    "must_not_match": []
+  },
+  {
+    "claim": "The retired email-forwarding workflow is not offered as current instructions",
+    "paths": ["src/content/articles/save-emails-to-pocket.md"],
+    "must_match": ["do not follow the email-forwarding instructions below", "workflow no longer works"],
+    "must_not_match": ["description: In this post I share how I save email"]
+  },
+  {
     "claim": "Personal-site author remains Rasul Kireev",
     "paths": [
       "src/layouts/PostLayout.astro"
