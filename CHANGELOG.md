@@ -1,3 +1,7 @@
+## 2026-10-30 — Historical Pocket workflows
+
+- Clearly label the two existing 2020 Pocket workflows and their search/social previews as historical following Pocket's shutdown, with Mozilla's dated source. Tell readers not to follow the retired email-forwarding workflow; retain the original accounts, titles, URLs and publication dates. Update modification dates and add scoped truth checks. No new editorial posts.
+
 ## 2026-10-29 — Connected book-note discovery
 
 - Add reciprocal related-reading navigation between the existing Dhandho Investor and Never Enough reviews, connected by the author's original Andrew Wilkinson reading reference. Reuse existing titles and authors; preserve review prose, descriptions, ratings and original dates, updating only modification dates. No new editorial posts.

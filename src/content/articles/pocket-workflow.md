@@ -1,7 +1,7 @@
 ---
 title: "My Pocket Workflow"
 dateCreated: 2020-03-22
-dateUpdated: 2020-03-22
+dateUpdated: 2026-10-30
 published: true
 slug: "my-pocket-workflow"
 icon: "./icons/pocket.svg"
@@ -10,8 +10,10 @@ tags: [joplin, productivity]
 category: "Productivity"
 type: article
 twitterLink: "https://twitter.com/rasulkireev/status/1241842478564749314"
-description: "I wanted to discuss how I use Pocket and how it integrates into the BASB flow."
+description: "My archived 2020 Pocket-to-Joplin workflow for reading, tagging and transferring notes as part of Building a Second Brain. Pocket has since shut down."
 ---
+
+> **Historical workflow — updated October 30, 2026:** [Pocket shut down on July 8, 2025](https://support.mozilla.org/en-US/kb/future-of-pocket), and its API was disabled on November 12, 2025. The original 2020 workflow below is preserved as a historical account, not as current setup instructions.
 
 I have been slowly implementing "[Building a Second Brain](/building-a-second-brain)" (BASB) technique into my personal life. I'm doing this slowly, step-by-step. For me, any past attempts to make my life more productive, with Evernote, Pocket, or other tools, have been a failure because they have been too overwhelming. More than that, I did not have a great starting point, I had to design my flow from scratch.
 
