@@ -23,6 +23,8 @@ export async function getStaticPaths() {
   const bootstrappingSlugs = ['getting-real', 'start-small-stay-small', 'minimalist-entrepreneur'];
   // The Dhandho review credits Wilkinson as its reading trigger; Never Enough is his memoir.
   const wilkinsonReadingSlugs = ['dhandho-investor', 'never-enough'];
+  // Writing craft and online publishing, rather than the broader note-taking category.
+  const writingSlugs = ['economical-writing', 'doing-content-right-book-review', 'the-art-and-business-of-online-writing'];
 
   const entries = [
     ...articleEntries,
@@ -39,7 +41,7 @@ export async function getStaticPaths() {
     props: {
       entry,
       relatedBooks: entry.collection === 'books' && (
-        bootstrappingSlugs.includes(entry.slug) || wilkinsonReadingSlugs.includes(entry.slug) || ['Parenting', 'Productivity'].includes(entry.data.category)
+        bootstrappingSlugs.includes(entry.slug) || wilkinsonReadingSlugs.includes(entry.slug) || writingSlugs.includes(entry.slug) || ['Parenting', 'Productivity'].includes(entry.data.category)
       )
         ? bookEntries
             .filter(book => book.slug !== entry.slug && (
@@ -47,7 +49,9 @@ export async function getStaticPaths() {
                 ? bootstrappingSlugs.includes(book.slug)
                 : wilkinsonReadingSlugs.includes(entry.slug)
                   ? wilkinsonReadingSlugs.includes(book.slug)
-                  : book.data.category === entry.data.category
+                  : writingSlugs.includes(entry.slug)
+                    ? writingSlugs.includes(book.slug)
+                    : book.data.category === entry.data.category
             ))
             .sort((a, b) => a.data.title.localeCompare(b.data.title, 'en'))
             .map(book => ({ slug: book.slug, title: book.data.title, author: book.data.author }))
@@ -56,7 +60,9 @@ export async function getStaticPaths() {
         ? 'More bootstrapping book notes'
         : entry.collection === 'books' && wilkinsonReadingSlugs.includes(entry.slug)
           ? 'Related book notes'
-          : entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined,
+          : entry.collection === 'books' && writingSlugs.includes(entry.slug)
+            ? 'More writing book notes'
+            : entry.data.category === 'Productivity' ? 'More productivity book notes' : undefined,
     },
   }));
 }

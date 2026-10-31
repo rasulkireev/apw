@@ -8,7 +8,7 @@ description: Wonderful book about writing content that people will resonate. Ver
 cover: "./images/the-art-and-business-of-online-writing.jpg"
 dateRead: 2024-09-25
 dateCreated: 2024-10-10
-dateUpdated: 2024-10-10
+dateUpdated: 2026-10-31
 category: "Writing"
 type: book
 hasSummaries: false
