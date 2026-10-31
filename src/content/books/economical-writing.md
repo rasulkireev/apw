@@ -7,7 +7,7 @@ description: "Even though this book is titled and marketed as a book for economi
 cover: "./images/economical-writing.jpg"
 dateRead: 2020-12-25
 dateCreated: 2021-05-18
-dateUpdated: 2021-05-18
+dateUpdated: 2026-10-31
 category: "Writing"
 type: book
 twitterLink: "https://twitter.com/rasulkireev/status/1398244265948495872"

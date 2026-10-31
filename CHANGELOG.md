@@ -1,3 +1,7 @@
+## 2026-10-31 — Writing book-note discovery
+
+- Connect the existing Economical Writing, Doing Content Right, and The Art and Business of Online Writing reviews with reciprocal related-reading navigation. Reuse their titles and authors; preserve review prose, search previews, ratings and original dates, updating only modification dates. No new editorial posts.
+
 ## 2026-10-30 — Historical Pocket workflows
 
 - Clearly label the two existing 2020 Pocket workflows and their search/social previews as historical following Pocket's shutdown, with Mozilla's dated source. Tell readers not to follow the retired email-forwarding workflow; retain the original accounts, titles, URLs and publication dates. Update modification dates and add scoped truth checks. No new editorial posts.
