@@ -1,3 +1,7 @@
+## 2026-11-01 — Millionaire Fastlane review preview
+
+- Update the existing Millionaire Fastlane review's search and social description to identify the personal review, summary, chapter highlights and audiobook experience already on the page. Preserve the title, review text, rating and original dates; update the modification date. No new editorial posts.
+
 ## 2026-10-31 — Writing book-note discovery
 
 - Connect the existing Economical Writing, Doing Content Right, and The Art and Business of Online Writing reviews with reciprocal related-reading navigation. Reuse their titles and authors; preserve review prose, search previews, ratings and original dates, updating only modification dates. No new editorial posts.

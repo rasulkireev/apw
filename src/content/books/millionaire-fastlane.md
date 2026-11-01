@@ -4,11 +4,11 @@ subtitle: Crack the Code to Wealth and Live Rich for a Lifetime
 author: MJ DeMarco
 rating: 8
 slug: millionaire-fastlane
-description: "The Millionaire Fastlane is a highly motivational guide advocating entrepreneurship and smart money management. I strongly recommend it to anyone who wants to improve their life financially."
+description: "My review of The Millionaire Fastlane by MJ DeMarco: summary, chapter highlights, and why I found the audiobook motivating."
 cover: "./images/millionaire-fastlane.jpg"
 dateRead: 2023-03-15
 dateCreated: 2023-03-17
-dateUpdated: 2023-03-17
+dateUpdated: 2026-11-01
 category: "Finance"
 type: book
 twitterLink: https://twitter.com/rasulkireev/status/1636888586908835840
