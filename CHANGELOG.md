@@ -1,3 +1,7 @@
+## 2026-11-02 — Book library search
+
+- Add local title-and-author search to the existing book library, with a result count, empty state and clear button. Combine search with the existing category, tag, sort and history controls; keep search text out of URLs, storage and analytics. Preserve all reviews, metadata and crawlable links. No new editorial posts.
+
 ## 2026-11-01 — Millionaire Fastlane review preview
 
 - Update the existing Millionaire Fastlane review's search and social description to identify the personal review, summary, chapter highlights and audiobook experience already on the page. Preserve the title, review text, rating and original dates; update the modification date. No new editorial posts.
