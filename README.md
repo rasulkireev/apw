@@ -84,24 +84,38 @@ After each successful production rollout, the deployment workflow notifies
 [IndexNow](https://www.indexnow.org/documentation) about added, changed, and
 removed sitemap pages. No editorial content is generated or modified.
 
-- `scripts/indexnow-config.json` defines the final non-www origin and ownership
+- `scripts/indexnow-config.json` defines the final HTTPS www origin and ownership
   key. The matching `public/<key>.txt` is intentionally served publicly; it is
-  not an administrative credential. Sitemap URLs currently use `www`, which
-  redirects to the apex host; submissions normalize to the final HTTPS host.
+  not an administrative credential. Sitemap URLs and submissions both use
+  the existing canonical www host; apex requests redirect to www.
   This integration does not change existing canonicals or redirect rules.
-- The build writes `dist/indexnow-manifest.json` containing SHA-256 hashes of
-  sitemap HTML and `INDEXNOW_REVISION` (the deployed commit). A layout/asset
-  reference change can correctly mark multiple pages as changed.
+- The build writes `dist/client/indexnow-manifest.json` with `INDEXNOW_REVISION`
+  and version-2 SHA-256 page fingerprints. These ignore Astro CSS/JS filename
+  hashes, island hydration IDs and scoped-attribute identifiers, but retain content, metadata, public
+  links, images, JSON-LD and inline scripts. A real shared markup change can
+  still notify multiple pages; asset-name churn alone does not.
+- Raw HTML hashes are retained for migration from a version-1 cached manifest.
+  Before rollout, `node scripts/indexnow.mjs baseline` verifies the cached revision
+  and inventory against the still-live manifest, then fetches the old HTML at
+  concurrency four (three-minute total limit). Every raw hash must match before
+  switching fingerprint formats. Mismatches stop deployment without submissions
+  or state advancement. Version-2 state needs no migration fetches on later runs.
+  A separate pre-rollout cache preserves the verified baseline for retries if
+  deployment succeeds but notification fails; only accepted notifications advance
+  the successful-submission cache.
+  Reconcile stale cache/content before retrying an ambiguous upgrade.
 - Deployment waits up to 30 polls for that revision, verifies the live key,
   then submits batches of at most 10,000 URLs. HTTP 200 means received; 202
   means received with key validation pending. Neither guarantees indexing.
 - GitHub Actions caches the last successfully submitted manifest. Failed
   submissions fail the notification step without rolling back the website or
   advancing submission state. Rerun the failed deploy workflow to retry. If the
-  cache expires/is evicted, the next run safely resubmits the full sitemap.
+  cache expires/is evicted, the next run establishes a baseline without submitting
+  the sitemap: missing state is not evidence that all pages changed.
 - Production deployments are serialized to avoid overlapping rollout/submission
-  operations. The first deployment submits the whole sitemap.
+  operations. The first deployment establishes a baseline without submissions.
 
 Run integration checks with `node --test tests/*.test.mjs`. For an explicit
 operator retry, use `INDEXNOW_REVISION=<live-commit> node scripts/indexnow.mjs submit`
-from the matching checkout (without local state this submits all sitemap URLs).
+from the matching checkout with the last successful state. Without local state,
+this establishes a baseline only; it is not an indexing request.

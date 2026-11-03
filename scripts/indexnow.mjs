@@ -9,7 +9,7 @@ const statePath = '.indexnow-state/manifest.json';
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 export function validateManifest(manifest) {
-  if (manifest?.version !== 1 || typeof manifest.revision !== 'string' ||
+  if (![1, 2].includes(manifest?.version) || typeof manifest.revision !== 'string' ||
       !manifest.pages || typeof manifest.pages !== 'object' || Array.isArray(manifest.pages)) {
     throw new Error('Invalid IndexNow manifest');
   }
@@ -20,18 +20,97 @@ export function validateManifest(manifest) {
       throw new Error(`Invalid IndexNow page: ${url}`);
     }
   }
+  if (manifest.version === 2) {
+    // Keep raw hashes for a lossless, one-time upgrade from the legacy cache.
+    validateManifest({ version: 1, revision: manifest.revision, pages: manifest.rawPages });
+    if (JSON.stringify(Object.keys(manifest.pages).sort()) !==
+        JSON.stringify(Object.keys(manifest.rawPages).sort())) {
+      throw new Error('IndexNow raw and stable inventories differ');
+    }
+  }
   return manifest;
 }
 
 export function changedUrls(previous, current) {
   validateManifest(previous);
   validateManifest(current);
+  if (previous.version !== current.version) {
+    if (previous.version !== 1 || current.version !== 2) throw new Error('IndexNow manifest downgrade refused');
+    // Never compare unlike hash algorithms or silently forget a pending edit.
+    for (const url of Object.keys(previous.pages)) {
+      if (url in current.pages && previous.pages[url] !== current.rawPages[url]) {
+        throw new Error('Legacy IndexNow baseline differs from live HTML; reconcile before migration');
+      }
+    }
+    return [...new Set([...Object.keys(previous.pages), ...Object.keys(current.pages)])]
+      .filter(url => !(url in previous.pages) || !(url in current.pages)).sort();
+  }
   return [...new Set([...Object.keys(previous.pages), ...Object.keys(current.pages)])]
     .filter(url => previous.pages[url] !== current.pages[url]).sort();
 }
 
+export function contentFingerprint(html) {
+  // Ignore only Astro-generated build identifiers in tags. Keep body text,
+  // metadata, JSON-LD, public links, images and inline scripts byte-sensitive.
+  const stable = html.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>|<!--[\s\S]*?-->|<[^>]+>/gi, token => {
+    if (token.startsWith('<!--')) return token;
+    const end = token.indexOf('>') + 1;
+    let tag = token.slice(0, end);
+    const island = /^<astro-island\b/i.test(tag);
+    const assetTag = /^<(?:link|script|astro-island)\b/i.test(tag);
+    // Consume whole attribute values so identifier-like prose inside a meta
+    // description, island props or other quoted value is never normalized.
+    tag = tag.replace(/(\s+)([^\s"'<>\/=]+)(?:\s*=\s*("[^"]*"|'[^']*'|[^\s"'=<>`]+))?/g, (attr, space, name) => {
+      if (/^data-astro-cid-[a-z0-9]{8}$/.test(name)) return attr.replace(name, 'data-astro-cid-stable');
+      if (island && name === 'uid') return `${space}uid="stable"`;
+      if (assetTag && /^(?:href|src|component-url|renderer-url)$/.test(name)) {
+        return attr.replace(/(["']\/_astro\/[^"'?#]+)\.[A-Za-z0-9_-]{8}(\.(?:css|js)["'])$/, '$1.build$2');
+      }
+      return attr;
+    });
+    return tag + token.slice(end);
+  });
+  return createHash('sha256').update(stable).digest('hex');
+}
+
+export async function prepareBaseline({ fetchFn = fetch, previousPath = statePath } = {}) {
+  let previous;
+  try { previous = validateManifest(JSON.parse(await readFile(previousPath, 'utf8'))); }
+  catch (error) { if (error.code === 'ENOENT') return; throw error; }
+  if (previous.version === 2) return;
+  // Run BEFORE deployment. Reconstruct the old fingerprint only from HTML
+  // proven to match the exact cached legacy baseline, never from the new site.
+  const signal = AbortSignal.timeout(180000);
+  const get = async url => {
+    const response = await fetchFn(url, { signal: AbortSignal.any([signal, AbortSignal.timeout(15000)]), cache: 'no-store', redirect: 'error' });
+    if (!response.ok) throw new Error(`IndexNow baseline fetch failed: HTTP ${response.status}`);
+    return response;
+  };
+  const live = validateManifest(await (await get(`${config.origin}${manifestPath}`)).json());
+  if (live.version !== 1 || live.revision !== previous.revision ||
+      Object.keys(live.pages).length !== Object.keys(previous.pages).length ||
+      Object.keys(previous.pages).some(url => live.pages[url] !== previous.pages[url])) {
+    throw new Error('Legacy cache is not the live baseline; reconcile before migration');
+  }
+  const pages = {}, urls = Object.keys(previous.pages);
+  let next = 0;
+  await Promise.all(Array.from({ length: Math.min(4, urls.length) }, async () => {
+    while (next < urls.length) {
+      const url = urls[next++];
+      const html = await (await get(url)).text();
+      if (createHash('sha256').update(html).digest('hex') !== previous.pages[url]) {
+        throw new Error('Legacy live HTML differs from cached hash; state not advanced');
+      }
+      pages[url] = contentFingerprint(html);
+    }
+  }));
+  const upgraded = validateManifest({ version: 2, revision: previous.revision, pages, rawPages: previous.pages });
+  await writeFile(previousPath, JSON.stringify(upgraded));
+  console.log(`IndexNow baseline upgraded: ${urls.length} verified live pages, no submissions`);
+}
+
 export async function buildManifest(dist = 'dist/client', revision = process.env.INDEXNOW_REVISION || 'local') {
-  const pages = {};
+  const pages = {}, rawPages = {};
   const maps = (await readdir(dist)).filter(name => /^sitemap-\d+\.xml$/.test(name));
   if (!maps.length) throw new Error('No generated sitemaps found');
   for (const file of maps) {
@@ -45,11 +124,13 @@ export async function buildManifest(dist = 'dist/client', revision = process.env
       const relative = pathname.replace(/^\//, '');
       const htmlPath = resolve(dist, relative.endsWith('.html') ? relative : join(relative, 'index.html'));
       if (!htmlPath.startsWith(resolve(dist) + '/')) throw new Error('Invalid sitemap path');
-      pages[url] = createHash('sha256').update(await readFile(htmlPath)).digest('hex');
+      const html = await readFile(htmlPath, 'utf8');
+      pages[url] = contentFingerprint(html);
+      rawPages[url] = createHash('sha256').update(html).digest('hex');
     }
   }
   if (!Object.keys(pages).length) throw new Error('Empty sitemap');
-  const manifest = validateManifest({ version: 1, revision, pages });
+  const manifest = validateManifest({ version: 2, revision, pages, rawPages });
   await writeFile(join(dist, manifestPath.slice(1)), JSON.stringify(manifest));
   console.log(`IndexNow manifest: ${Object.keys(pages).length} pages`);
   return manifest;
@@ -58,7 +139,7 @@ export async function buildManifest(dist = 'dist/client', revision = process.env
 export async function submit({ fetchFn = fetch, sleep = delay, revision = process.env.INDEXNOW_REVISION,
   previousPath = statePath } = {}) {
   if (!revision || revision === 'local') throw new Error('INDEXNOW_REVISION is required');
-  let previous = { version: 1, revision: '', pages: {} };
+  let previous;
   try { previous = validateManifest(JSON.parse(await readFile(previousPath, 'utf8'))); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
   let current;
@@ -81,7 +162,10 @@ export async function submit({ fetchFn = fetch, sleep = delay, revision = proces
   if (!keyResponse.ok || (await keyResponse.text()).trim() !== config.key) {
     throw new Error('Live IndexNow key verification failed');
   }
-  const urls = changedUrls(previous, current);
+  // Cache loss is not evidence that every page changed. Establish a baseline;
+  // do not turn a missing cache into a healthy-URL resubmission batch.
+  const urls = previous ? changedUrls(previous, current) : [];
+  if (!previous) console.log('IndexNow: no previous state; baseline only, no URLs submitted');
   for (let offset = 0; offset < urls.length; offset += 10000) {
     const urlList = urls.slice(offset, offset + 10000);
     const response = await fetchFn('https://api.indexnow.org/indexnow', {
@@ -99,6 +183,7 @@ export async function submit({ fetchFn = fetch, sleep = delay, revision = proces
 
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
   if (process.argv[2] === 'build') await buildManifest();
+  else if (process.argv[2] === 'baseline') await prepareBaseline();
   else if (process.argv[2] === 'submit') await submit();
-  else throw new Error('Usage: node scripts/indexnow.mjs build|submit');
+  else throw new Error('Usage: node scripts/indexnow.mjs build|baseline|submit');
 }
