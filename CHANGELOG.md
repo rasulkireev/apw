@@ -1,3 +1,7 @@
+## 2026-11-03 — Precise IndexNow change notifications
+
+- Ignore Astro asset filename, hydration-ID and scope-identifier churn when comparing generated pages for IndexNow notifications. Preserve real content, metadata, link, image and structured-data changes. Verify the legacy live baseline before deployment, fail closed on ambiguous migration and seed missing caches without bulk resubmissions. No page content or new editorial posts.
+
 ## 2026-11-02 — Book library search
 
 - Add local title-and-author search to the existing book library, with a result count, empty state and clear button. Combine search with the existing category, tag, sort and history controls; keep search text out of URLs, storage and analytics. Preserve all reviews, metadata and crawlable links. No new editorial posts.

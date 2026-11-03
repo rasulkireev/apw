@@ -43,5 +43,10 @@ test('deployment does not reuse incompatible apex IndexNow state', async () => {
   const workflow = await readFile(new URL('../.github/workflows/deploy.yml', import.meta.url), 'utf8');
   assert.ok(!workflow.includes('indexnow-v1-'));
   assert.equal((workflow.match(/key: indexnow-v2-www-\$\{\{ github.sha \}\}/g) || []).length, 2);
-  assert.ok(workflow.includes('restore-keys: indexnow-v2-www-'));
+  const restore = workflow.match(/restore-keys: \|\n((?: +[^\n]+\n)+)/)?.[1];
+  assert.deepEqual(restore?.trim().split('\n').map(line => line.trim()),
+    ['indexnow-baseline-v2-www-${{ github.sha }}', 'indexnow-v2-www-']);
+  assert.ok(workflow.indexOf('node scripts/indexnow.mjs baseline') < workflow.indexOf('name: Deploy to CapRover'));
+  assert.ok(workflow.indexOf('key: indexnow-baseline-v2-www-') < workflow.indexOf('name: Deploy to CapRover'));
+  assert.ok(workflow.indexOf('node scripts/indexnow.mjs submit') > workflow.indexOf('name: Deploy to CapRover'));
 });
