@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import { compareBooks } from '../lib/book-sort.mjs';
 
 const pageTitle = "Book Reviews by Rasul Kireev";
 const pageDescription = "Discover my comprehensive book reviews and ratings covering business, personal development, fiction, technology, and more. Find your next great read with detailed insights and honest opinions.";
@@ -16,20 +17,9 @@ const selectedSort = Astro.url.searchParams.get('sort') || 'rating-desc';
 
 // Sort books based on selected sort option
 function sortBooks(books, sortOption) {
-  return [...books].sort((a, b) => {
-    switch (sortOption) {
-      case 'rating-asc':
-        return a.data.rating.valueOf() - b.data.rating.valueOf();
-      case 'rating-desc':
-        return b.data.rating.valueOf() - a.data.rating.valueOf();
-      case 'date-asc':
-        return new Date(a.data.dateRead).getTime() - new Date(b.data.dateRead).getTime();
-      case 'date-desc':
-        return new Date(b.data.dateRead).getTime() - new Date(a.data.dateRead).getTime();
-      default:
-        return b.data.rating.valueOf() - a.data.rating.valueOf();
-    }
-  });
+  return [...books].sort((a, b) => compareBooks(
+    { ...a.data, slug: a.slug }, { ...b.data, slug: b.slug }, sortOption
+  ));
 }
 
 const sortedBooks = sortBooks(allBooks, selectedSort);
@@ -134,7 +124,7 @@ const filteredBooks = sortedBooks.filter(book => {
   <p id="bookEmptyState" hidden class="my-4 text-gray-700">No books match. Try another title or author, or adjust your filters.</p>
   <div id="bookResults">
   {filteredBooks.map(p => (
-    <div class="mb-1 book-item" data-title={p.data.title} data-author={p.data.author} data-tags={p.data.tags?.join(',')} data-category={p.data.category} data-date-read={p.data.dateRead}>
+    <div class="mb-1 book-item" data-slug={p.slug} data-rating={p.data.rating} data-title={p.data.title} data-author={p.data.author} data-tags={p.data.tags?.join(',')} data-category={p.data.category} data-date-read={p.data.dateRead}>
       <a
         href={"/" + p.slug}
         class="flex flex-col items-center p-3 space-x-0 space-y-2 text-xl text-gray-900 border-0 rounded-lg md:space-x-4 md:flex-row hover:bg-gray-200"
@@ -162,6 +152,7 @@ const filteredBooks = sortedBooks.filter(book => {
 </BaseLayout>
 
 <script>
+  import { compareBooks } from '../lib/book-sort.mjs';
   import { matchesBookSearch } from '../lib/book-search.mjs';
 
   const toggleButton = document.getElementById('toggleTags');
@@ -275,25 +266,14 @@ const filteredBooks = sortedBooks.filter(book => {
   }
 
   function sortBooksClient(books, sortOption) {
-    return Array.from(books).sort((a, b) => {
-      const aRating = parseInt(a.querySelector('.rating-value')?.textContent || '0');
-      const bRating = parseInt(b.querySelector('.rating-value')?.textContent || '0');
-      const aDate = new Date(a.getAttribute('data-date-read') || '');
-      const bDate = new Date(b.getAttribute('data-date-read') || '');
-
-      switch (sortOption) {
-        case 'rating-asc':
-          return aRating - bRating;
-        case 'rating-desc':
-          return bRating - aRating;
-        case 'date-asc':
-          return aDate.getTime() - bDate.getTime();
-        case 'date-desc':
-          return bDate.getTime() - aDate.getTime();
-        default:
-          return bRating - aRating;
-      }
+    const values = book => ({
+      slug: book.getAttribute('data-slug') || '',
+      title: book.getAttribute('data-title') || '',
+      author: book.getAttribute('data-author') || '',
+      rating: Number(book.getAttribute('data-rating') || '0'),
+      dateRead: book.getAttribute('data-date-read') || '',
     });
+    return Array.from(books).sort((a, b) => compareBooks(values(a), values(b), sortOption));
   }
 
   function filterAndSortBooks() {

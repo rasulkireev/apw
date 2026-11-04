@@ -1,3 +1,7 @@
+## 2026-11-04 — Predictable book-library browsing
+
+- Keep book-library rating/date ties in a predictable title, author and URL order across builds and browser filtering. Preserve existing reviews, ratings, metadata and local search.
+
 ## 2026-11-03 — Precise IndexNow change notifications
 
 - Ignore Astro asset filename, hydration-ID and scope-identifier churn when comparing generated pages for IndexNow notifications. Preserve real content, metadata, link, image and structured-data changes. Verify the legacy live baseline before deployment, fail closed on ambiguous migration and seed missing caches without bulk resubmissions. No page content or new editorial posts.
