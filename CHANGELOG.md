@@ -1,3 +1,7 @@
+## 2026-11-05 — Reliable article discovery filters
+
+- Restore article visibility and active tag controls on browser Back/Forward and shared links. Ignore unknown tags, preserve multi-tag filtering and URL state, label controls for assistive technology, and add the Articles page heading. Preserve existing articles and search previews; no new editorial posts.
+
 ## 2026-11-04 — Predictable book-library browsing
 
 - Keep book-library rating/date ties in a predictable title, author and URL order across builds and browser filtering. Preserve existing reviews, ratings, metadata and local search.
