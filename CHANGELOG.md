@@ -1,3 +1,7 @@
+## 2026-11-06 — Mochi waffle recipe clarity
+
+- Correct the existing recipe's first step to use baking powder, matching its ingredient list and cited source. Describe the existing mochiko-flour, sugar and heat-setting details in the search/social preview; retain the author's story, quantities, title and original publication date. Update the modification date and add a scoped truth check. No new editorial posts.
+
 ## 2026-11-05 — Reliable article discovery filters
 
 - Restore article visibility and active tag controls on browser Back/Forward and shared links. Ignore unknown tags, preserve multi-tag filtering and URL state, label controls for assistive technology, and add the Articles page heading. Preserve existing articles and search previews; no new editorial posts.

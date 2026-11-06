@@ -1,5 +1,11 @@
 [
   {
+    "claim": "Mochi Waffles uses the baking powder specified by its ingredient list and cited source",
+    "paths": ["src/content/recipes/mochi-waffles.md"],
+    "must_match": ["1\\.5 teaspoons baking powder", "1\\. Mix flour and baking powder in a bowl\\."],
+    "must_not_match": ["baking soda"]
+  },
+  {
     "claim": "Existing Pocket workflows are historical after the verified service and API shutdown",
     "paths": ["src/content/articles/save-emails-to-pocket.md", "src/content/articles/pocket-workflow.md"],
     "must_match": ["Historical workflow", "July 8, 2025", "November 12, 2025", "https://support\\.mozilla\\.org/en-US/kb/future-of-pocket", "dateUpdated: 2026-10-30"],
