@@ -1,9 +1,9 @@
 ---
 title: "Mochi Waffles"
 slug: "mochi-waffles"
-description: "This is my wife's favorite breakfast."
+description: "Mochi waffles with mochiko flour and 30g sugar, adapted from Joshua Weissman's recipe. Waffle-maker heat options for a chewy or crisp exterior."
 dateCreated: 2023-11-11
-dateUpdated: 2024-06-11
+dateUpdated: 2026-11-06
 category: Breakfast
 type: recipe
 tags:
@@ -24,7 +24,7 @@ Ingredients:
 - 2 tablespoons (28g) melted unsalted butter
 
 Steps:
-1. Mix flour and baking soda in a bowl.
+1. Mix flour and baking powder in a bowl.
 2. Mix eggs, milk, sugar, salt in a separate vessel (doesn't have to be large) until sugar dissolves.
 3. Pour the liquid into the bowl with flour and mix.
 4. While mixing, put butter into that vessel you used for liquids and melt in the microwave. __Tip: cover with something to avoid butter being everywhere__.
