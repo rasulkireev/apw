@@ -1,5 +1,24 @@
 [
   {
+    "claim": "Joplin migration formats are distinguished and Apple Notes links to the correct product",
+    "paths": [
+      "src/content/articles/joplin-review.md"
+    ],
+    "must_match": [
+      "\\[Apple Notes\\]\\(https://www\\.icloud\\.com/notes/\\)",
+      "JEX for backup and re-import",
+      "HTML and PDF",
+      "ENEX or Markdown",
+      "import and export formats are not interchangeable",
+      "https://joplinapp\\.org/help/apps/import_export/"
+    ],
+    "must_not_match": [
+      "\\[Apple Notes\\]\\(https://www\\.onenote\\.com\\)",
+      "Markdown, JSON, CSV",
+      "You can similarly \\*\\*import\\*\\* those formats"
+    ]
+  },
+  {
     "claim": "Mochi Waffles uses the baking powder specified by its ingredient list and cited source",
     "paths": ["src/content/recipes/mochi-waffles.md"],
     "must_match": ["1\\.5 teaspoons baking powder", "1\\. Mix flour and baking powder in a bowl\\."],
