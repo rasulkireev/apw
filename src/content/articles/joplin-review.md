@@ -1,7 +1,7 @@
 ---
 title: "Joplin: open-source note-taking at its best"
 dateCreated: 2020-02-05
-dateUpdated: 2020-02-05
+dateUpdated: 2026-11-07
 published: true
 slug: joplin
 icon: ./icons/joplin.jpg
@@ -15,7 +15,7 @@ description: I use Joplin to take note. I use it for my personal life and for my
 
 Note taking apps are everywhere. Just to seem more credible I have to list a few:
 
-* [Apple Notes](https://www.onenote.com)
+* [Apple Notes](https://www.icloud.com/notes/)
 * [Notion](https://notion.so)
 * [Things](https://culturedcode.com/things/)
 * [Todoist](https://todoist.com/)
@@ -55,7 +55,7 @@ Joplin has its basics in a solid-state. You are free to create a structure that 
 > Personally, I don't do tags. I just don't understand them.
 
 * There is a **Web clipper** plugin for most browsers.
-* If you are migrating from/to Joplin, it has robust features for that. You can quickly **export** your notes, folder, subfolders, or the whole account to Markdown, JSON, CSV, and other formats. You can similarly **import** those formats into Joplin.
+* If you are migrating from/to Joplin, it has robust features for that. You can **export** notes and notebooks as JEX for backup and re-import them into Joplin. Other export options include HTML and PDF. To **import** notes from another app, use supported formats such as ENEX or Markdown; import and export formats are not interchangeable. See [Joplin's import/export documentation](https://joplinapp.org/help/apps/import_export/) for the available options.
 
 ## Open Source
 

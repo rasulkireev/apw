@@ -1,3 +1,7 @@
+## 2026-11-07 — Joplin migration accuracy
+
+- Correct the existing Joplin review's Apple Notes link and distinguish documented note import, export and backup formats. Preserve the author's personal account and original publication date; add a focused accuracy rule. No new editorial posts.
+
 ## 2026-11-06 — Mochi waffle recipe clarity
 
 - Correct the existing recipe's first step to use baking powder, matching its ingredient list and cited source. Describe the existing mochiko-flour, sugar and heat-setting details in the search/social preview; retain the author's story, quantities, title and original publication date. Update the modification date and add a scoped truth check. No new editorial posts.
