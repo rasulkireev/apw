@@ -1,3 +1,7 @@
+## 2026-11-08 — Accessible reading-plan controls
+
+- Replace the ten-year reading plan's JavaScript-dependent folding buttons with labeled native disclosures. Keep all years open initially, retain keyboard and no-JavaScript operation, and preserve the readings, links, year anchors and author's prose. No new editorial posts.
+
 ## 2026-11-07 — Joplin migration accuracy
 
 - Correct the existing Joplin review's Apple Notes link and distinguish documented note import, export and backup formats. Preserve the author's personal account and original publication date; add a focused accuracy rule. No new editorial posts.

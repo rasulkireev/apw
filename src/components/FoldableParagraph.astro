@@ -1,0 +1,38 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<details open class="reading-year">
+  <summary>{label}</summary>
+  <div class="reading-year-content">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .reading-year {
+    margin-block: 1rem;
+    border-left: 4px solid #bfdbfe;
+    padding-left: 1rem;
+  }
+
+  .reading-year > summary {
+    cursor: pointer;
+    min-height: 2.75rem;
+    padding-block: 0.5rem;
+    font-weight: 600;
+  }
+
+  .reading-year > summary:hover {
+    text-decoration: underline;
+  }
+
+  .reading-year > summary:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>
