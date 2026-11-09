@@ -1,5 +1,24 @@
 [
   {
+    "claim": "Joplin privacy depends on sync and encryption choices, and the current web app is not denied",
+    "paths": ["src/content/articles/joplin-review.md"],
+    "must_match": [
+      "Open source alone is not a privacy guarantee",
+      "your notes are sent to that service and its privacy policy applies",
+      "https://joplinapp\\.org/privacy/",
+      "end-to-end encryption must be enabled",
+      "https://joplinapp\\.org/help/apps/sync/e2ee/",
+      "Joplin now also has a web app",
+      "https://joplinapp\\.org/help/apps/web/",
+      "clearing the browser's site data deletes your local notes"
+    ],
+    "must_not_match": [
+      "no one is sharing your data",
+      "No servers\\.",
+      "The only platform that Joplin is not on is the Web"
+    ]
+  },
+  {
     "claim": "Joplin migration formats are distinguished and Apple Notes links to the correct product",
     "paths": [
       "src/content/articles/joplin-review.md"

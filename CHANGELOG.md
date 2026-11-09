@@ -1,3 +1,7 @@
+## 2026-11-09 — Joplin privacy and platform accuracy
+
+- Correct the existing Joplin review's unqualified privacy/server claims and outdated absence of a web app, using official privacy, encryption and browser-storage documentation. Preserve the author's experience, title, search preview and original publication date; update the modification date and scoped accuracy rules. No new editorial posts.
+
 ## 2026-11-08 — Accessible reading-plan controls
 
 - Replace the ten-year reading plan's JavaScript-dependent folding buttons with labeled native disclosures. Keep all years open initially, retain keyboard and no-JavaScript operation, and preserve the readings, links, year anchors and author's prose. No new editorial posts.

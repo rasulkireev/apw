@@ -1,7 +1,7 @@
 ---
 title: "Joplin: open-source note-taking at its best"
 dateCreated: 2020-02-05
-dateUpdated: 2026-11-07
+dateUpdated: 2026-11-09
 published: true
 slug: joplin
 icon: ./icons/joplin.jpg
@@ -62,7 +62,7 @@ Joplin has its basics in a solid-state. You are free to create a structure that 
 One of the most significant advantages, in my opinion, is that this piece of software is [open source](https://github.com/laurent22/joplin). This means:
 
 * It is **free**
-* It **belongs to the public**, no one is sharing your data
+* Its **source code is public**, so anyone can inspect how it works. Open source alone is not a privacy guarantee.
 * If it is popular, then you get a lot of different people working on it, continually improving the product. (It currently has 12.4k stars on Github)
 * If you know how to code you can easily add functionality that you need
 * If you run into a bug or some sort of error, there will be someone who can help you. There are a [ton of forums](https://discourse.joplinapp.org/)and issue trackers.
@@ -71,7 +71,7 @@ One of the recent news from the Joplin core team was that they will participate 
 
 ## Data Ownership
 
-The way Joplin works is simple. You install an app and start taking notes. Notes are saved in your computer. No servers. If you need to access through a different device, you simply connect to Dropbox. You own the data!
+The way Joplin works is simple. You install an app and start taking notes. Notes are saved on your device. If you choose to sync through a service such as Dropbox, your notes are sent to that service and its privacy policy applies. See [Joplin's privacy policy](https://joplinapp.org/privacy/). Joplin's [end-to-end encryption must be enabled](https://joplinapp.org/help/apps/sync/e2ee/) to encrypt notes before they are sent to the sync target.
 
 Actually, there are a lot of sync options, besides Dropbox. Additionally, adding more options is in the roadmap.
 
@@ -81,7 +81,7 @@ If you don't need to sync between devices, you can simply host it on your comput
 
 We already covered the fact that you can sync via Dropbox and other similar solutions. The cool thing is that there is a functioning app for every major platform.
 
-The only platform that Joplin is not on is the Web.
+Joplin now also has a web app. The [official web app documentation](https://joplinapp.org/help/apps/web/) explains its browser support, local storage and optional sync. If you use it without sync, clearing the browser's site data deletes your local notes with no way to recover them.
 
 ## Custom, yet simple
 
