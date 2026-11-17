@@ -1,3 +1,7 @@
+## 2026-11-17 — Book section links
+
+- Reveal the existing highlights, reading analysis or prompt ideas when a link points into that section, including browser Back/Forward. Restore the requested scroll position after hydration and preserve no-JavaScript reading, review text, metadata and existing anchors. No new editorial posts.
+
 ## 2026-11-09 — Joplin privacy and platform accuracy
 
 - Correct the existing Joplin review's unqualified privacy/server claims and outdated absence of a web app, using official privacy, encryption and browser-storage documentation. Preserve the author's experience, title, search preview and original publication date; update the modification date and scoped accuracy rules. No new editorial posts.
