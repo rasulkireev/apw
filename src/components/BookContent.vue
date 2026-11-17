@@ -35,7 +35,8 @@
 </template>
 
 <script>
-import { ref, onMounted, nextTick } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { revealBookFragment } from '../lib/book-fragments.mjs'
 
 export default {
   setup() {
@@ -197,7 +198,23 @@ export default {
       }
     }
 
-        onMounted(() => {
+    const revealFragment = () => {
+      const target = revealBookFragment(contentContainer.value, window.location.hash, [
+        { element: highlightsSection, reveal: loadHighlights },
+        { element: analysisSection, reveal: loadAnalysis },
+        { element: promptIdeasSection, reveal: loadPromptIdeas }
+      ])
+      // Hydration can hide the target after the browser's initial anchor jump.
+      // Restore native fragment positioning once the requested section is open.
+      if (target) nextTick(() => {
+        // Let layout/scroll anchoring settle after the section is reparented.
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (target.isConnected) target.scrollIntoView()
+        }))
+      })
+    }
+
+    onMounted(() => {
       // Hide highlights, analysis, and prompt ideas immediately without waiting for nextTick to minimize race conditions
       findAndHideHighlights()
       findAndHideAnalysis()
@@ -208,8 +225,12 @@ export default {
         findAndHideHighlights()
         findAndHideAnalysis()
         findAndHidePromptIdeas()
+        revealFragment()
       })
+      window.addEventListener('hashchange', revealFragment)
     })
+
+    onBeforeUnmount(() => window.removeEventListener('hashchange', revealFragment))
 
     return {
       highlightsLoaded,
