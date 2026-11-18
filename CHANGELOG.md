@@ -1,3 +1,7 @@
+## 2026-11-18 — Contextual classics reading
+
+- Link the Year 1 Republic entry in the existing Great Books reading plan to the author's existing Book I reflection. Retain both primary-text links, readings, prose, dates, metadata and year controls. No new editorial posts.
+
 ## 2026-11-17 — Book section links
 
 - Reveal the existing highlights, reading analysis or prompt ideas when a link points into that section, including browser Back/Forward. Restore the requested scroll position after hydration and preserve no-JavaScript reading, review text, metadata and existing anchors. No new editorial posts.
