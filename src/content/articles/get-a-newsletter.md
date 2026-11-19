@@ -1,7 +1,7 @@
 ---
 title: Get a Newsletter
 dateCreated: 2023-03-26
-dateUpdated: 2023-03-26
+dateUpdated: 2026-11-19
 published: true
 slug: get-a-newsletter
 icon: ./icons/envelope.png
@@ -24,7 +24,7 @@ description: You really need to get a newsletter it is the best way to keep up w
 
 - "The Algorithm" will make it easy for your friends to miss news share online.
 - So, we should all create a personal newsletter and keep up with each other that way.
-- Go to [Buttondown](https://buttondown.email), create a Newsletter (it's free).
+- Start a newsletter with [Buttondown](https://buttondown.com/). Check [its pricing](https://buttondown.com/pricing) for the free subscriber limit.
 - Share it with the world, your Twitter followers, Friends, or anyone else you think of.
    -  Also, share it me via [this form](https://baserow.io/form/2fyNlrdETFHg0GYkEWH_VQmbuzDrFwpRMGMZfpQrrSQ). It will show up in a [Public List of Personal Newsletters](https://baserow.io/public/grid/U0RmCAWJaiF9s2nzBFpi-J45TjBgONCKH6RM10Q8WNk).
 -  And start writing, when you have something to share.
@@ -54,13 +54,14 @@ Some people will overthink this:
 Remember that we are not talking about promoting your business. We are just concerned with personal connections. This means:
 
 - You don't have to make every week, or month. Just send it to people who subscribed, whenever you have anything to share.
-- Don’t think about pretty sign up forms. Just find a a free service that will do that boring stuff for you. [Buttondown](https://buttondown.email) is amazing for this.
+- Don’t think about pretty sign up forms. Find a service that will do that boring stuff for you. [Buttondown](https://buttondown.com/) is amazing for this.
 - You don't have to think about open rates, conversion and other stuff like that, it doesn't matter when you are sending it to friends.
 
 So, just create a newsletter and share it with the world. Also share it with me via [this form](https://baserow.io/form/2fyNlrdETFHg0GYkEWH_VQmbuzDrFwpRMGMZfpQrrSQ), so that it shows up in the [Public list of Personal Newsletters](https://baserow.io/public/grid/U0RmCAWJaiF9s2nzBFpi-J45TjBgONCKH6RM10Q8WNk).
 
-Here is a list of free tools you can use (however, in my opinion [Buttondown](https://buttondown.email) is the best):
-- [TinyLetter](https://tinyletter.com/)
-- [Substack](https://substack.com/)
-- [ListMonk](https://listmonk.app/)
-- [Beehiiv](https://www.beehiiv.com/)
+A few options:
+
+- **Hosted:** My pick is Buttondown. [Substack](https://substack.com/) and [beehiiv](https://www.beehiiv.com/) are also hosted options.
+- **Run it yourself:** [listmonk](https://listmonk.app/docs/) is self-hosted.
+
+[TinyLetter shut down in 2024](https://buttondown.com/alternatives/tinyletter) and is no longer an option.

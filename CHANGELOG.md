@@ -1,3 +1,7 @@
+## 2026-11-19 — Personal newsletter setup accuracy
+
+- Mark TinyLetter as retired in the existing newsletter article, point readers to current Buttondown pricing, and distinguish hosted services from self-hosted listmonk. Preserve the author’s original advice and publication date. No new editorial posts.
+
 ## 2026-11-18 — Contextual classics reading
 
 - Link the Year 1 Republic entry in the existing Great Books reading plan to the author's existing Book I reflection. Retain both primary-text links, readings, prose, dates, metadata and year controls. No new editorial posts.
