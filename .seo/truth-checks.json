@@ -1,5 +1,22 @@
 [
   {
+    "claim": "Personal newsletter guide distinguishes hosted services from self-hosting and does not recommend retired TinyLetter",
+    "paths": [
+      "src/content/articles/get-a-newsletter.md"
+    ],
+    "must_match": [
+      "https://buttondown\\.com/pricing",
+      "https://listmonk\\.app/docs/",
+      "is self-hosted",
+      "TinyLetter shut down in 2024"
+    ],
+    "must_not_match": [
+      "https://tinyletter\\.com/",
+      "list of free tools",
+      "it's free"
+    ]
+  },
+  {
     "claim": "Joplin privacy depends on sync and encryption choices, and the current web app is not denied",
     "paths": ["src/content/articles/joplin-review.md"],
     "must_match": [
