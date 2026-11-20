@@ -1,3 +1,7 @@
+## 2026-11-20 — Reading aids in the Adler review
+
+- Correct the existing review’s attribution of advice about outside reading aids and link directly to the existing Chapter 12 notes. Keep the author’s own AI reading workflow, original publication date and search preview. No new editorial posts.
+
 ## 2026-11-19 — Personal newsletter setup accuracy
 
 - Mark TinyLetter as retired in the existing newsletter article, point readers to current Buttondown pricing, and distinguish hosted services from self-hosted listmonk. Preserve the author’s original advice and publication date. No new editorial posts.

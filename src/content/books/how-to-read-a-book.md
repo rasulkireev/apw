@@ -7,7 +7,7 @@ description: "My review and notes on Mortimer Adler's How to Read a Book: the fo
 cover: "./images/htrab.jpg"
 dateRead: 2024-12-11
 dateCreated: 2024-12-12
-dateUpdated: 2026-10-25
+dateUpdated: 2026-11-20
 category: "Reading"
 type: book
 hasSummaries: false
@@ -25,7 +25,7 @@ That said, the book is definitely worth reading. Not only will you learn how to 
 
 Reading great literature is hard and it requires a lot of work on your part. Mortimer Adler is not hiding this fact from your. He is not giving you rules that will drastically simplify that process. He is giving you a framework that will help you make sure that all your efforts are not wasted.
 
-Another thing that I thought a lot about is AI. This books was written when there were no computers. I'm not entirely sure what would Mortimer have to say about computers and AI, but I personally view them as great helpers.
+Another thing that I thought a lot about is AI. I don't know what Adler would have made of AI, but I see it as a useful helper.
 
 I don't want to offload my thinking to AI, but I do want to use it to augment my understanding. I have just started thinking about it, but here are some prompts that I came up with, that I use in [Readwise Reader](https://readwise.io/i/rasul), when reading books:
 
@@ -35,7 +35,7 @@ I don't want to offload my thinking to AI, but I do want to use it to augment my
 
 The potential is limitless. I'm planning to write more prompt to help me read better.
 
-One thing I know for sure is that Mortimer would want me to replace my own reading with AI, since it is similar to reading cliff notes and that means I offload my thoughts and understanding to someone else.
+In [Chapter 12, Aids to Reading](#chapter-12---aids-to-reading), Adler and Van Doren recommend doing your best to read the book before turning to commentary. I want to use AI the same way: as help with what I’m reading, not as a substitute for it.
 
 If you have any ideas, please let me know.
 
