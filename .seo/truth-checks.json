@@ -153,5 +153,20 @@
     "must_not_match": [
       "private://"
     ]
+  },
+  {
+    "claim": "Adler review separates Chapter 12 reading advice from the author's own use of AI",
+    "paths": [
+      "src/content/books/how-to-read-a-book.md"
+    ],
+    "must_match": [
+      "\\[Chapter 12, Aids to Reading\\]\\(#chapter-12---aids-to-reading\\)",
+      "#### Chapter 12 - Aids to Reading",
+      "doing your best to read the book before turning to commentary"
+    ],
+    "must_not_match": [
+      "would want me to replace my own reading",
+      "when there were no computers"
+    ]
   }
 ]
