@@ -1,7 +1,7 @@
 ---
 title: Setting up Python virtual environment (for a Django Project)
 dateCreated: 2019-08-29
-dateUpdated: 2026-10-21
+dateUpdated: 2026-11-22
 published: true
 slug: django-venv
 icon: ./icons/python.svg
@@ -30,14 +30,14 @@ cd sites
 `mkdir` will create a new directory and `cd` will move into into that directory. You can call your folder whatever you want.
 
 ### 2. Creating a project folder
-Once in the `sites` directory you will need run `mkdir` again to make a folder specifically for your project
+Once in the `sites` directory you will need run `mkdir` again to make a folder specifically for your project. For example:
 ```
-mkdir {projectname}
-cd {projectname}
+mkdir mysite
+cd mysite
 ```
 
 ### 3. Setting up the environment
-Before we initiate a django project we need to setup a python virtual environment. This will make sure that whatever machine we are working with (Mac vs. Windows, for example) the website will work by setting up the same packages and libraries.
+Before we initiate a django project we need to setup a python virtual environment. This keeps the packages you install for this project separate from those installed for other projects.
 
 _Generally, having a virtual environment for each one of your projects, whether Web Dev, Data Science or General Programming, is now a standard. For one, this allows other people to help you with you projects and generally makes eveything easier in the future._
 
@@ -91,12 +91,12 @@ When your virtual environemnt is active you will see the name of the virtual env
 Finally, we can create the project. Once you make sure your venv is activated, all you have to do is:
 ```python
 # to install django within your virtual environment
-pip install django
+python -m pip install django
 
 # to actually create a project
-django-admin startproject {name of your peroject} .
+python -m django startproject config .
 ```
-Note the **dot** in the end of the command. You actually need to add it too. This will make sure that the project is created within the directory you have already created.
+Here, `config` is the Python package that will hold the project settings. Note the **dot** at the end of the command. You actually need to add it too. This will make sure that the project is created within the directory you have already created.
 
 One last step:
 ```python

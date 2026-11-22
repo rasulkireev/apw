@@ -1,3 +1,7 @@
+## 2026-11-22 — Runnable Django setup example
+
+- Replace the placeholders in the existing virtual-environment tutorial with a working project directory and settings package. Run pip and Django through the active Python interpreter.
+
 ## 2026-11-20 — Reading aids in the Adler review
 
 - Correct the existing review’s attribution of advice about outside reading aids and link directly to the existing Chapter 12 notes. Keep the author’s own AI reading workflow, original publication date and search preview. No new editorial posts.
