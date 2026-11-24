@@ -1,3 +1,7 @@
+## 2026-11-24 — Django admin setup with Poetry
+
+- Apply database migrations before creating the first admin account in the existing Poetry walkthrough.
+
 ## 2026-11-22 — Runnable Django setup example
 
 - Replace the placeholders in the existing virtual-environment tutorial with a working project directory and settings package. Run pip and Django through the active Python interpreter.
