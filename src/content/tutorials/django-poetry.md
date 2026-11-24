@@ -1,7 +1,7 @@
 ---
 title: Managing a Django Project with Poetry
 dateCreated: 2020-10-31
-dateUpdated: 2026-10-20
+dateUpdated: 2026-11-24
 published: true
 slug: managing-django-with-poetry
 icon: ./icons/broken_link.png
@@ -90,7 +90,13 @@ poetry run django-admin startproject django_poetry_example .
 
 ## 6. Working on your Django Project
 
-When you need to run any python function (for example, `python manage.py createsuperuser`) you have two options.
+Before creating your first admin account, apply the migrations so Django can create its database tables:
+
+```bash
+poetry run python manage.py migrate
+```
+
+To run a management command like `createsuperuser`, you have two options.
 
 1. You can leverage `poetry run`, which will run against the current project's dependencies. The command will be this: `poetry run python manage.py createsuperuser`.
 2. You can activate the virtual environment with a `poetry shell` command. With Poetry 2.x, first install the [shell plugin](https://github.com/python-poetry/poetry-plugin-shell) with `poetry self add poetry-plugin-shell`. Now you can run python commands, as is. They will be run with dependencies you have installed.
