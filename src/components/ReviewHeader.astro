@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import PhotoCarousel from './PhotoCarousel.astro';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -7,6 +7,7 @@ interface Props {
 }
 const { data } = Astro.props;
 const date = data.dateCreated;
+const photos = [...(data.cover ? [data.cover] : []), ...data.gallery];
 ---
 
 <header>
@@ -26,5 +27,5 @@ const date = data.dateCreated;
   {data.tags.length > 0 && <ul aria-label="Tags" class="mb-5 flex flex-wrap gap-x-3 text-sm">
     {data.tags.map(tag => <li><a class="text-blue-700 underline" href={`/tag/${encodeURIComponent(tag)}/`}>{tag}</a></li>)}
   </ul>}
-  {data.cover && <Image src={data.cover.src} alt={data.cover.alt} class="max-h-96 w-full rounded-lg object-cover" />}
+  {photos.length > 0 && <PhotoCarousel photos={photos} />}
 </header>
