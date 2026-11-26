@@ -7,6 +7,7 @@ const collections = [
   { key: 'tutorials', label: 'Tutorials', href: '/tutorials/', description: 'Things I’ve learned by building them.', entries: await getCollection('tutorials') },
   { key: 'books', label: 'Book notes', href: '/book-notes/', description: 'Good books, underlined passages, and takeaways.', entries: await getCollection('books') },
   { key: 'prompts', label: 'Prompts', href: '/prompts/', description: 'A small collection of useful AI instructions.', entries: await getCollection('prompts') },
+  { key: 'reviews', label: 'Reviews', href: '/reviews/', description: 'Places, meals, and tools worth writing about.', entries: await getCollection('reviews') },
   { key: 'recipes', label: 'Recipes', href: '/recipes/', description: 'A few things worth making again.', entries: await getCollection('recipes') },
 ];
 const entries = collections.flatMap(collection => collection.entries.map(entry => ({
@@ -87,7 +88,7 @@ const dateLabel = (date: string) => new Date(date).toLocaleDateString('en-US', {
         <noscript><p class="chart-hint">Enable JavaScript to filter by year. You can also explore every collection using the links above.</p></noscript>
       </section>
     </div>
-    <aside class="colophon"><p>A note on the numbers</p><p>These counts come from the articles, tutorials, book notes, prompts, and recipes on this site. The timeline uses publication dates, not reading dates. Topics can overlap. Updated whenever the site is built.</p></aside>
+    <aside class="colophon"><p>A note on the numbers</p><p>These counts come from the articles, tutorials, book notes, prompts, reviews, and recipes on this site. The timeline uses publication dates, not reading dates. Topics can overlap. Updated whenever the site is built.</p></aside>
   </main>
 </BaseLayout>
 
@@ -122,7 +123,7 @@ const dateLabel = (date: string) => new Date(date).toLocaleDateString('en-US', {
   .bar-track { height: 190px; border-bottom: 1px solid var(--rule); background: repeating-linear-gradient(to top, transparent 0, transparent 46px, rgb(32 43 56 / .055) 47px, transparent 48px); }
   .bar-stack { display: flex; flex-direction: column-reverse; height: 100%; padding: 0 9px; }
   .segment { height: var(--height); min-height: 0; flex-shrink: 0; }
-  .articles { background: #3869b8; } .tutorials { background: #86a9da; } .books { background: #de936c; } .prompts { background: #97ab96; } .recipes { background: #c1b89e; }
+  .articles { background: #3869b8; } .tutorials { background: #86a9da; } .books { background: #de936c; } .prompts { background: #97ab96; } .reviews { background: #627d71; } .recipes { background: #c1b89e; }
   .year:hover, .year[aria-pressed="true"] { background: #edf3fb; }
   .year[aria-pressed="true"] .year-label { color: #17498e; font-weight: 700; }
   .year-label { padding-bottom: 8px; }
@@ -175,8 +176,8 @@ const dateLabel = (date: string) => new Date(date).toLocaleDateString('en-US', {
   const root = document.querySelector<HTMLElement>('.stats');
   if (root) {
     const yearly: { year: number; counts: number[] }[] = JSON.parse(root.dataset.years!);
-    const keys = ['articles', 'tutorials', 'books', 'prompts', 'recipes'];
     const filter = root.querySelector<HTMLSelectElement>('#content-type')!;
+    const keys = Array.from(filter.options, option => option.value).filter(key => key !== 'all');
     const yearButtons = [...root.querySelectorAll<HTMLButtonElement>('[data-year].year')];
     const items = [...root.querySelectorAll<HTMLLIElement>('[data-entry]')];
     const more = root.querySelector<HTMLButtonElement>('#show-more')!;

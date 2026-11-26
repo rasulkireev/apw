@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import PostLayout from '../layouts/PostLayout.astro';
 import BookHeader from '../components/BookHeader.vue';
 import BookContent from '../components/BookContent.vue';
+import ReviewHeader from '../components/ReviewHeader.astro';
 import PostHeader from '../components/PostHeader.vue';
 import DiscussOn from '../components/DiscussOn.vue';
 import SocialShareButtons from '../components/SocialShareButtons.vue';
@@ -17,6 +18,7 @@ export async function getStaticPaths() {
   const bookEntries = await getCollection('books');
   const tutorialEntries = await getCollection('tutorials');
   const recipeEntries = await getCollection('recipes');
+  const reviewEntries = await getCollection('reviews');
   const promptEntries = await getCollection('prompts');
 
   // A focused reading path, rather than every broadly categorized Business book.
@@ -32,6 +34,7 @@ export async function getStaticPaths() {
     ...tutorialEntries,
     ...recipeEntries,
     ...promptEntries,
+    ...reviewEntries,
   ];
 
   return entries.map(entry => ({
@@ -84,9 +87,9 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
   postDescription={entry.data.description}
   postTags={entry.data.tags}
   postSlug={entry.slug}
-  socialImageUrl={socialImageUrl}
+  socialImageUrl={entry.collection === 'reviews' && entry.data.cover ? new URL(entry.data.cover.src.src, Astro.site).href : socialImageUrl}
   dateCreated={entry.data.dateCreated}
-  dateUpdated={entry.data.dateUpdated}
+  dateUpdated={entry.data.dateUpdated ?? entry.data.dateCreated}
   canonical={canonicalUrl}
 >
 
@@ -96,7 +99,9 @@ const canonicalUrl = entry.data.canonical || `https://www.rasulkireev.com/${entr
 
   <article class="mb-6">
     {entry.data.type === "book" && <BookHeader data={entry.data} />}
-    {(entry.data.type !== "book") && <PostHeader data={entry.data} />}
+    {entry.collection === 'reviews'
+      ? <ReviewHeader data={entry.data} />
+      : entry.data.type !== 'book' && <PostHeader data={entry.data} />}
 
     <TableOfContents client:load />
 

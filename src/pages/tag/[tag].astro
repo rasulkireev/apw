@@ -10,9 +10,10 @@ export async function getStaticPaths() {
   const allTutorials = await getCollection('tutorials');
   const allBooks = await getCollection('books');
   const allPrompts = await getCollection('prompts');
+  const allReviews = await getCollection('reviews');
 
   // Combine all content
-  const allContent = [...allArticles, ...allTutorials, ...allBooks, ...allPrompts];
+  const allContent = [...allArticles, ...allTutorials, ...allBooks, ...allPrompts, ...allReviews];
 
   // Extract all unique tags
   const allTags = [...new Set(
@@ -41,6 +42,7 @@ const allArticles = await getCollection('articles');
 const allTutorials = await getCollection('tutorials');
 const allBooks = await getCollection('books');
 const allPrompts = await getCollection('prompts');
+const allReviews = await getCollection('reviews');
 
 // Function to filter content by tag
 function filterContentByTag(collection, tagName) {
@@ -76,6 +78,10 @@ const contentByType = [
     emptyMessage: 'No book notes with this tag'
   },
   {
+    type: 'Reviews',
+    items: filterContentByTag(allReviews, tag),
+  },
+  {
     type: 'Prompts',
     items: promptsWithTag,
     path: 'prompts',
@@ -84,8 +90,7 @@ const contentByType = [
 ];
 
 // Total count of items with this tag
-const totalCount = articlesWithTag.length + tutorialsWithTag.length +
-                  booksWithTag.length + promptsWithTag.length;
+const totalCount = contentByType.reduce((total, group) => total + group.items.length, 0);
 
 // Function to format date
 function formatDate(date) {

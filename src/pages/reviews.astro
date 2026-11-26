@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const description = 'Notes on places to wander, places to eat, and things worth using.';
+const reviews = (await getCollection('reviews')).sort((a, b) => b.data.dateCreated.valueOf() - a.data.dateCreated.valueOf());
+---
+
+<BaseLayout pageTitle="Reviews by Rasul Kireev" pageDescription={description}>
+  <main>
+    <header class="mb-8">
+      <h1 class="mb-2 text-4xl font-bold tracking-tight">Reviews</h1>
+      <p class="text-lg text-gray-600">{description}</p>
+    </header>
+
+    <ul class="divide-y divide-gray-200 border-y border-gray-200">
+      {reviews.map(({ slug, data }) => (
+        <li>
+          <a href={'/' + slug} class="group flex flex-wrap items-center gap-5 py-6 sm:flex-nowrap">
+            {data.cover && <Image src={data.cover.src} alt="" class="aspect-[3/2] w-full rounded-lg object-cover sm:w-44" />}
+            <div class="min-w-0 flex-1">
+              <p class="text-sm font-medium text-gray-600">{data.category}</p>
+              <h2 class="my-1 text-2xl font-semibold tracking-tight group-hover:underline">{data.title}</h2>
+              <p class="text-gray-600">{data.description}</p>
+            </div>
+            <span class="self-start rounded-md bg-blue-50 px-3 py-1 font-semibold text-blue-800 sm:self-center">{data.rating}/10</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
