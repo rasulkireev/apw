@@ -1,6 +1,6 @@
 // These collections have standalone routes in pages/[...slug].astro. Stored
-// now/review entries do not: never invent a public URL from their slug.
-const routedCollections = new Set(['articles', 'books', 'tutorials', 'recipes', 'prompts']);
+// now entries do not: never invent a public URL from their slug.
+const routedCollections = new Set(['articles', 'books', 'tutorials', 'recipes', 'prompts', 'reviews']);
 
 export function localEntryUrl(entry, site) {
   if (!routedCollections.has(entry.collection)) return null;

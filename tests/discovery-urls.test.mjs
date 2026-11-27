@@ -10,17 +10,16 @@ const entry = {
 };
 
 test('discovery URLs respect actual local routing and external canonical overrides', () => {
-  for (const collection of ['articles', 'books', 'tutorials', 'recipes', 'prompts']) {
+  for (const collection of ['articles', 'books', 'tutorials', 'recipes', 'prompts', 'reviews']) {
     assert.equal(localEntryUrl({ ...entry, collection }, site), `${site}how-to-read-a-book`);
   }
   const syndicated = { ...entry, collection: 'tutorials', slug: 'django-version-control',
     data: { ...entry.data, canonical: 'https://builtwithdjango.com/blog/django-version-control' } };
   assert.equal(localEntryUrl(syndicated, site), `${site}django-version-control/`);
   assert.equal(localEntryUrl({ ...entry, data: { ...entry.data, canonical: `${site}custom-path` } }, site), `${site}custom-path`);
-  for (const collection of ['now', 'reviews']) {
-    assert.equal(localEntryUrl({ ...entry, collection }, site), null);
-    assert.throws(() => feedItem({ ...entry, collection }, site), /No standalone route/);
-  }
+  const nowEntry = { ...entry, collection: 'now' };
+  assert.equal(localEntryUrl(nowEntry, site), null);
+  assert.throws(() => feedItem(nowEntry, site), /No standalone route/);
 });
 
 test('RSS serializer changes destinations without changing existing item identities or dates', async () => {

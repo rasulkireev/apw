@@ -11,9 +11,10 @@ const allArticles = await getCollection('articles');
 const allTutorials = await getCollection('tutorials');
 const allBooks = await getCollection('books');
 const allPrompts = await getCollection('prompts');
+const allReviews = await getCollection('reviews');
 
 // Combine all content
-const allContent = [...allArticles, ...allTutorials, ...allBooks, ...allPrompts];
+const allContent = [...allArticles, ...allTutorials, ...allBooks, ...allPrompts, ...allReviews];
 
 // Extract all tags with their counts
 function extractAllTagsWithCounts(content) {

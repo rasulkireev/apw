@@ -8,10 +8,13 @@ export async function GET(context) {
   const bookEntries = await getCollection('books');
   const tutorialEntries = await getCollection('tutorials');
 
+  const reviewEntries = await getCollection('reviews');
+
   const entries = [
     ...articleEntries,
     ...bookEntries,
-    ...tutorialEntries
+    ...tutorialEntries,
+    ...reviewEntries
   ];
 
   return rss({

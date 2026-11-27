@@ -78,9 +78,27 @@ const recipeCollection = defineCollection({
   type: "content"
 })
 
+const reviewScore = z.number().int().min(1).max(10);
+
 const reviewCollection = defineCollection({
-  type: "content"
-})
+  type: 'content',
+  schema: ({ image }) => {
+    const photo = z.object({ src: image(), alt: z.string().trim().min(1) });
+    return z.object({
+      type: z.literal('review').default('review'),
+      title: z.string(),
+      description: z.string(),
+      dateCreated: z.date(),
+      dateUpdated: z.date().optional(),
+      category: z.string().trim().min(1),
+      tags: z.array(z.string()).default([]),
+      rating: reviewScore,
+      aspects: z.record(z.string().trim().min(1), reviewScore).optional(),
+      cover: photo.optional(),
+      gallery: z.array(photo).default([]),
+    });
+  },
+});
 
 const promptCollection = defineCollection({
   type: 'content',
