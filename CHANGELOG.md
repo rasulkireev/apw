@@ -1,3 +1,7 @@
+## 2026-11-27 — February retrospective reading links
+
+- Link the two publications named in the February 2025 retrospective to the original article and book notes.
+
 ## 2026-11-24 — Django admin setup with Poetry
 
 - Apply database migrations before creating the first admin account in the existing Poetry walkthrough.

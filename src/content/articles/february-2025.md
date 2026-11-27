@@ -1,7 +1,7 @@
 ---
 title: February 2025
 dateCreated: 2025-03-07
-dateUpdated: 2025-03-07
+dateUpdated: 2026-11-27
 published: true
 slug: february-2025
 icon: ./icons/cloud.png
@@ -73,6 +73,6 @@ This became my most active side project, with numerous improvements:
 - Improved error handling for scanned projects
 
 ### Content Creation
-- Published blog posts including "Throw Away Dead Code" and "Getting Real"
+- Published blog posts including "[Throw Away Dead Code](/throw-away-dead-code)" and "[Getting Real](/getting-real)"
 - Created my first video demo for SEO Blog Bot and shared it on social media
 - Started using AI to summarize books like "How to Get Rich" by Felix Dennis
